@@ -1,0 +1,40 @@
+.post {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.initiale {
+  position: absolute;
+  font-size: 8rem;
+  transform: translate(-50%, -50%);
+  opacity: 0.05;
+  user-select: none;
+  z-index: -1;
+}
+
+.title {
+  position: relative;
+  margin-bottom: 0;
+  text-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.title a {
+  color: hsla(0, 0%, 0%, 0.8);
+}
+
+.title a:hover {
+  color: #d02e77;
+}
+
+.date {
+  margin-bottom: 0;
+  text-align: right;
+}
+
+.excerpt {
+  grid-column: -1 / 1;
+  margin-top: 1.35rem;
+  margin-bottom: 0;
+}

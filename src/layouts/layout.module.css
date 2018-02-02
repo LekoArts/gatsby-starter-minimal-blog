@@ -1,0 +1,52 @@
+.layout {
+  display: grid;
+  grid-template-columns: 1fr minmax(320px, 1000px) 1fr;
+}
+
+::selection {
+  color: white;
+  background: #d02e77;
+}
+
+html {
+  background: #fff;
+}
+
+a {
+  color: #d02e77;
+  text-decoration: none;
+  transition: color 0.5s;
+}
+
+a:hover {
+  color: #624464;
+}
+
+blockquote {
+  font-style: italic;
+  position: relative;
+}
+
+blockquote:before {
+  content: "";
+  position: absolute;
+  background: #d02e77;
+  height: 100%;
+  width: 6px;
+  margin-left: -1.6rem;
+}
+
+/* Tablet */
+
+@media (max-width: 1200px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+/* Phone */
+@media (max-width: 600px) {
+  html {
+    font-size: 14px;
+  }
+}

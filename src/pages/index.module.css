@@ -1,0 +1,38 @@
+.indexContent {
+  grid-column: 2;
+  box-shadow: 0 0 120px rgba(0, 0, 0, 0.1);
+  border-radius: 0 0 1rem 1rem;
+  padding: 3rem 6rem;
+}
+
+.hero p {
+  font-size: 1.68rem;
+  margin-top: -1rem;
+}
+
+.hero {
+  margin-bottom: 12rem;
+  text-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  color: #000;
+}
+
+/* Tablet */
+
+@media (max-width: 1200px) {
+  .hero p {
+    font-size: 1.45rem;
+  }
+  .indexContent {
+    padding: 3rem 3rem;
+  }
+}
+
+/* Phone */
+@media (max-width: 600px) {
+  .hero p {
+    font-size: 1.25rem;
+  }
+  .indexContent {
+    padding: 2rem 1.5rem;
+  }
+}

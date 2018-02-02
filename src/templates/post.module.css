@@ -1,0 +1,33 @@
+.blogPost {
+  grid-column: 2;
+  box-shadow: 0 0 120px rgba(0, 0, 0, 0.1);
+  border-radius: 0 0 1rem 1rem;
+  padding: 2rem 6rem;
+}
+
+.title {
+  margin-top: 2rem;
+}
+
+.content {
+  margin-top: 4rem;
+}
+
+aside {
+  grid-column: 3;
+}
+
+/* Tablet */
+
+@media (max-width: 1200px) {
+  .blogPost {
+    padding: 3rem 4rem;
+  }
+}
+
+/* Phone */
+@media (max-width: 600px) {
+  .blogPost {
+    padding: 2rem 1.5rem;
+  }
+}

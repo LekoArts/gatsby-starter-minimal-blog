@@ -1,0 +1,49 @@
+{
+  "name": "gatsby-starter-minimal-blog",
+  "description": "Gatsby Starter - Minimal Blog",
+  "version": "1.0.0",
+  "author": "LekoArts <hello@lekoarts.de>",
+  "dependencies": {
+    "gatsby": "^1.9.175",
+    "gatsby-link": "^1.6.35",
+    "gatsby-plugin-catch-links": "^1.0.15",
+    "gatsby-plugin-favicon": "^2.1.1",
+    "gatsby-plugin-lodash": "^1.0.8",
+    "gatsby-plugin-manifest": "^1.0.13",
+    "gatsby-plugin-offline": "^1.0.13",
+    "gatsby-plugin-react-helmet": "^2.0.4",
+    "gatsby-plugin-sitemap": "^1.2.11",
+    "gatsby-plugin-typography": "^1.7.13",
+    "gatsby-remark-autolink-headers": "^1.4.11",
+    "gatsby-remark-external-links": "^0.0.4",
+    "gatsby-remark-prismjs": "^1.2.12",
+    "gatsby-source-filesystem": "^1.5.16",
+    "gatsby-transformer-remark": "^1.7.30",
+    "react-helmet": "^5.2.0"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "main": "n/a",
+  "scripts": {
+    "build": "gatsby build",
+    "dev": "gatsby develop -o"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.1",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^4.16.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.6.1",
+    "prettier": "^1.10.2",
+    "prettier-eslint": "^8.8.1"
+  },
+  "browserslist": [
+    "> 1%",
+    "IE >= 9",
+    "last 2 versions"
+  ]
+}
