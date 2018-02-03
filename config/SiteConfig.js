@@ -3,7 +3,7 @@ module.exports = {
 
   siteTitle: 'Minimal Blog', // Navigation and Site Title
   siteTitleAlt: 'Minimal Blog - Gatsby Starter', // Alternative Site title for SEO
-  siteUrl: '...', // Domain of your site. No trailing slash!
+  siteUrl: 'https://minimal-blog.netlify.com', // Domain of your site. No trailing slash!
   siteLanguage: 'en', // Language Tag on <html> element
   siteLogo: '/logos/logo-1024.png', // Used for SEO and manifest
   siteBanner: '/social/banner.jpg',
