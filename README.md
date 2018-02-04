@@ -4,6 +4,23 @@ Big typography, focus on the content & minimal style.
 
 [Demo Website](https://minimal-blog.netlify.com/)
 
+## Features
+
+As this starter is used for my (german) tutorials on my [blog](https://www.lekoarts.de/blog) the features are subject to change. I'll add more features or replace some with other features in the process.
+
+Current features:
+
+- Articles in Markdown
+- Offline Support
+- WebApp Manifest Support
+- Typography.js
+- SEO
+    - Sitemap
+    - Schema.org JSONLD
+    - OpenGraph Tags
+    - Twitter Tags
+- Favicons
+
 ## Getting Started
 
 Check your development environment! You'll need [Node.js](https://nodejs.org/en/), the [Gatsby CLI](https://www.gatsbyjs.org/docs/) and [node-gyp](https://github.com/nodejs/node-gyp#installation) installed. The official Gatsby website also lists two articles regarding this topic:
