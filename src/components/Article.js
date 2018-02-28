@@ -3,9 +3,7 @@ import Link from 'gatsby-link';
 
 import styles from './Article.module.css';
 
-const Article = ({
-  title, date, excerpt, slug,
-}) => {
+const Article = ({ title, date, excerpt, slug }) => {
   const firstChar = title.charAt(0);
 
   return (

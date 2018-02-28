@@ -4,9 +4,8 @@ import Footer from '../components/Footer';
 
 import styles from './layout.module.css';
 
-const TemplateWrapper = (props) => {
+const TemplateWrapper = props => {
   const { children } = props;
-
   return (
     <div>
       <main className={styles.layout}>

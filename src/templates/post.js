@@ -6,8 +6,8 @@ import styles from './post.module.css';
 
 import config from '../../config/SiteConfig';
 
-const Post = (props) => {
-  const { slug, next, prev } = props.pathContext;
+const Post = props => {
+  const { slug } = props.pathContext;
   const postNode = props.data.markdownRemark;
   const post = postNode.frontmatter;
 

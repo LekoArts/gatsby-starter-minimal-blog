@@ -2,7 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import config from '../../config/SiteConfig';
 
-const SEO = (props) => {
+const SEO = props => {
   const { postNode, postPath, postSEO } = props;
   let title;
   let description;
@@ -11,7 +11,7 @@ const SEO = (props) => {
   const realPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix;
   if (postSEO) {
     const postMeta = postNode.frontmatter;
-    title = postMeta.title;
+    title = postMeta.title; // eslint-disable-line prefer-destructuring
     description = postNode.excerpt;
     image = config.siteBanner;
     postURL = config.siteUrl + realPrefix + postPath;
