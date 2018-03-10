@@ -20,6 +20,7 @@
     "gatsby-remark-prismjs": "^1.2.17",
     "gatsby-source-filesystem": "^1.5.27",
     "gatsby-transformer-remark": "^1.7.36",
+    "polished": "^1.9.2",
     "prop-types": "^15.6.1",
     "react-helmet": "^5.2.0",
     "styled-components": "^3.2.1"
