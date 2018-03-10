@@ -11,23 +11,23 @@ injectGlobal`
     color: ${theme.bg};
     background: ${theme.primary};
   }
-  html {
+  body {
     background: ${theme.bg};
-    color: ${theme.body};
+    color: ${theme.default};
     @media ${media.phone} {
       font-size: 14px;
     }
-    @media ${media.tablet} {
-      font-size: 15px;
-    }
   }
   a {
-    color: ${theme.black};
+    color: ${theme.dark};
     text-decoration: none;
     transition: color ${theme.transitionTime};
   }
   a:hover {
     color: ${theme.primary};
+  }
+  h1, h2, h3, h4 {
+    color: ${theme.dark};
   }
   blockquote {
     font-style: italic;
@@ -44,11 +44,6 @@ injectGlobal`
   }
 `;
 
-const Wrapper = styled.main`
-  display: grid;
-  grid-template-columns: 1fr minmax(320px, 1000px) 1fr;
-`;
-
 const Footer = styled.footer`
   text-align: center;
   padding: 3rem 0;
@@ -59,10 +54,8 @@ const TemplateWrapper = props => {
   return (
     <ThemeProvider theme={theme}>
       <div>
-        <Wrapper>
-          <SEO />
-          {children()}
-        </Wrapper>
+        <SEO />
+        {children()}
         <Footer>&copy; 2018 by John Doe. All rights reserved.</Footer>;
       </div>
     </ThemeProvider>

@@ -1,26 +1,30 @@
 import React from 'react';
 import styled from 'styled-components';
 import Article from '../components/Article';
+import Wrapper from '../components/Wrapper';
+import SectionTitle from '../components/SectionTitle';
 
 import { media } from '../utils/media';
 
 const Content = styled.div`
   grid-column: 2;
-  box-shadow: 0 0 120px rgba(0, 0, 0, 0.1);
-  border-radius: 0 0 1rem 1rem;
+  box-shadow: 0 4px 120px rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
   padding: 3rem 6rem;
+  @media ${media.tablet} {
+    padding: 3rem 2rem;
+  }
   @media ${media.phone} {
     padding: 2rem 1.5rem;
   }
-  @media ${media.tablet} {
-    padding: 3rem 3rem;
-  }
+  overflow: hidden;
 `;
 
 const Hero = styled.div`
-  margin-bottom: 12rem;
+  grid-column: 2;
+  padding: 3rem 2rem;
   text-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
-  color: ${props => props.theme.black};
+  color: ${props => props.theme.dark};
 
   p {
     font-size: 1.68rem;
@@ -38,7 +42,7 @@ const IndexPage = props => {
   const postEdges = props.data.allMarkdownRemark.edges;
 
   return (
-    <Content>
+    <Wrapper>
       <Hero>
         <h1>Hi.</h1>
         <p>
@@ -46,16 +50,20 @@ const IndexPage = props => {
           React apps with the best UX users can get.
         </p>
       </Hero>
-      {postEdges.map(post => (
-        <Article
-          title={post.node.frontmatter.title}
-          date={post.node.frontmatter.date}
-          excerpt={post.node.excerpt}
-          slug={post.node.fields.slug}
-          key={post.node.fields.slug}
-        />
-      ))}
-    </Content>
+      <Content>
+        <SectionTitle>Latest stories</SectionTitle>
+        {postEdges.map(post => (
+          <Article
+            title={post.node.frontmatter.title}
+            date={post.node.frontmatter.date}
+            excerpt={post.node.excerpt}
+            timeToRead={post.node.timeToRead}
+            slug={post.node.fields.slug}
+            key={post.node.fields.slug}
+          />
+        ))}
+      </Content>
+    </Wrapper>
   );
 };
 

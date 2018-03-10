@@ -2,40 +2,37 @@ import React from 'react';
 import styled from 'styled-components';
 import Link from 'gatsby-link';
 
+import Subline from './Subline';
+
 const Post = styled.article`
-  display: grid;
-  grid-template-columns: 3fr 1fr;
-  align-items: center;
-  margin-bottom: 4rem;
+  display: flex;
+  flex-direction: column;
+  margin-top: 3.5rem;
+  margin-bottom: 4.5rem;
 `;
 
 const Title = styled.h2`
   position: relative;
-  margin-bottom: 0;
   text-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  margin-bottom: 0.75rem;
 `;
 
 const Initiale = styled.span`
   position: absolute;
-  font-size: 8rem;
+  font-size: 7rem;
   transform: translate(-50%, -50%);
-  opacity: 0.1;
+  opacity: 0.08;
   user-select: none;
   z-index: -1;
 `;
 
-const Date = styled.h4`
-  margin-bottom: 0;
-  text-align: right;
-`;
-
 const Excerpt = styled.p`
   grid-column: -1 / 1;
-  margin-top: 1.35rem;
-  margin-bottom: 0;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 `;
 
-const Article = ({ title, date, excerpt, slug }) => {
+const Article = ({ title, date, excerpt, slug, timeToRead }) => {
   const firstChar = title.charAt(0);
 
   return (
@@ -44,7 +41,9 @@ const Article = ({ title, date, excerpt, slug }) => {
         <Initiale>{firstChar}</Initiale>
         <Link to={slug}>{title}</Link>
       </Title>
-      <Date>{date}</Date>
+      <Subline>
+        {date} &mdash; {timeToRead} Min Read
+      </Subline>
       <Excerpt>{excerpt}</Excerpt>
     </Post>
   );
