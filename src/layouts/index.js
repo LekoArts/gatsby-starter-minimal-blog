@@ -21,7 +21,7 @@ injectGlobal`
   a {
     color: ${theme.dark};
     text-decoration: none;
-    transition: color ${theme.transitionTime};
+    transition: all ${theme.transitionTime};
   }
   a:hover {
     color: ${theme.primary};
@@ -41,6 +41,19 @@ injectGlobal`
     height: 100%;
     width: 6px;
     margin-left: -1.6rem;
+  }
+  label {
+    margin-bottom: .5rem;
+    color: ${theme.dark};
+  }
+  input, textarea {
+    border-radius: .5rem;
+    border: none;
+    background: rgba(0, 0, 0, 0.05);
+    padding: .25rem 1rem;
+    &:focus {
+      outline: none;
+    }
   }
 `;
 
