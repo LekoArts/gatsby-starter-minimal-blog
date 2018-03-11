@@ -4,6 +4,8 @@ Big typography, focus on the content & minimal style.
 
 [Demo Website](https://minimal-blog.netlify.com/)
 
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/LeKoArts/gatsby-starter-minimal-blog)
+
 ## Features
 
 As this starter is used for my (german) tutorials on my [blog](https://www.lekoarts.de/blog) the features are subject to change. I'll add more features or replace some with other features in the process.
@@ -11,6 +13,7 @@ As this starter is used for my (german) tutorials on my [blog](https://www.lekoa
 Current features:
 
 - Articles in Markdown
+- Styled Components 💅
 - Offline Support
 - WebApp Manifest Support
 - Typography.js
@@ -49,4 +52,8 @@ Copy the content of the ``public`` folder to your webhost or use a website like 
 
 ## About Me
 
-Thanks for using my *gatsby-starter*. I hope you like it and create something awesome! To see some of my work you can visit my [website](https://www.lekoarts.de) or support me on [Patreon](https://www.patreon.com/lekoarts) to get some neat rewards (4K images, project files, tutorial insights).
+I hope you like my starters and create something awesome! To see some of my work you can visit my [website](https://www.lekoarts.de) or support me on [Patreon](https://www.patreon.com/lekoarts) to get some neat rewards (4K images, project files, tutorial insights).
+
+Also check out the other *gatsby-starters*:
+- [gatsby-starter-portfolio-emma](https://github.com/LeKoArts/gatsby-starter-portfolio-emma)
+- [gatsby-starter-portfolio-emilia](https://github.com/LeKoArts/gatsby-starter-portfolio-emilia)
