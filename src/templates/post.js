@@ -50,6 +50,7 @@ const HeaderContent = styled.div`
 
 const Title = styled.h1`
   margin-top: 2rem;
+  margin-bottom: 1rem;
 `;
 
 const PostContent = styled.div`
