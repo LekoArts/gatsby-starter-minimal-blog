@@ -55,15 +55,15 @@ const Contact = () => (
       <form name="contact-form" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
         <p>
           <label htmlFor="name">Name</label>
-          <input name="name" type="text" />
+          <input name="name" type="text" required />
         </p>
         <p>
           <label htmlFor="email">E-Mail</label>
-          <input name="email" type="email" />
+          <input name="email" type="email" required />
         </p>
         <p>
           <label htmlFor="message">Your Message</label>
-          <textarea name="message" />
+          <textarea name="message" required />
         </p>
         <p>
           <Button>Send</Button>
