@@ -9,7 +9,7 @@ const Title = styled.div`
   color: ${props => props.theme.dark};
   position: relative;
   padding-bottom: 1rem;
-  margin-bottom: 5rem;
+  margin-bottom: 4rem;
 
   &:after {
     content: '';

@@ -2,6 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import Link from 'gatsby-link';
 import styled from 'styled-components';
+import kebabCase from 'lodash/kebabCase';
 import SEO from '../components/SEO';
 import Wrapper from '../components/Wrapper';
 import Header from '../components/Header';
@@ -27,7 +28,6 @@ const Content = styled.article`
 `;
 
 const Title = styled.h1`
-  margin-top: 2rem;
   margin-bottom: 1rem;
 `;
 
@@ -50,7 +50,8 @@ const Post = props => {
       <Content>
         <Title>{post.title}</Title>
         <Subline>
-          {post.date} &mdash; {postNode.timeToRead} Min Read
+          {post.date} &mdash; {postNode.timeToRead} Min Read &mdash; In{' '}
+          <Link to={`/categories/${kebabCase(post.category)}`}>{post.category}</Link>
         </Subline>
         <PostContent dangerouslySetInnerHTML={{ __html: postNode.html }} />
       </Content>
@@ -68,6 +69,7 @@ export const postQuery = graphql`
       frontmatter {
         title
         date(formatString: "DD.MM.YYYY")
+        category
       }
       timeToRead
     }

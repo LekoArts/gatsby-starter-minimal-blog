@@ -69,6 +69,7 @@ const IndexPage = props => {
             excerpt={post.node.excerpt}
             timeToRead={post.node.timeToRead}
             slug={post.node.fields.slug}
+            category={post.node.frontmatter.category}
             key={post.node.fields.slug}
           />
         ))}
@@ -91,6 +92,7 @@ export const IndexQuery = graphql`
           frontmatter {
             title
             date(formatString: "DD.MM.YYYY")
+            category
           }
           excerpt(pruneLength: 200)
           timeToRead

@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Link from 'gatsby-link';
+import kebabCase from 'lodash/kebabCase';
 
 import Subline from './Subline';
 
@@ -8,7 +9,7 @@ const Post = styled.article`
   display: flex;
   flex-direction: column;
   margin-top: 3.5rem;
-  margin-bottom: 4.5rem;
+  margin-bottom: 3.5rem;
 `;
 
 const Title = styled.h2`
@@ -32,7 +33,7 @@ const Excerpt = styled.p`
   margin-bottom: 1rem;
 `;
 
-const Article = ({ title, date, excerpt, slug, timeToRead }) => {
+const Article = ({ title, date, excerpt, slug, timeToRead, category }) => {
   const firstChar = title.charAt(0);
 
   return (
@@ -42,7 +43,8 @@ const Article = ({ title, date, excerpt, slug, timeToRead }) => {
         <Link to={slug}>{title}</Link>
       </Title>
       <Subline>
-        {date} &mdash; {timeToRead} Min Read
+        {date} &mdash; {timeToRead} Min Read &mdash; In{' '}
+        <Link to={`/categories/${kebabCase(category)}`}>{category}</Link>
       </Subline>
       <Excerpt>{excerpt}</Excerpt>
     </Post>
