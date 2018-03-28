@@ -10,6 +10,7 @@ import Subline from '../components/Subline';
 import { media } from '../utils/media';
 
 import config from '../../config/SiteConfig';
+import '../utils/prismjs-theme.css';
 
 const Content = styled.article`
   grid-column: 2;
