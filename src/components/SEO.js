@@ -32,7 +32,7 @@ const SEO = props => {
     },
   ];
   if (postSEO) {
-    schemaOrgJSONLD.push([
+    schemaOrgJSONLD.push(
       {
         '@context': 'http://schema.org',
         '@type': 'BreadcrumbList',
@@ -60,8 +60,8 @@ const SEO = props => {
           url: image,
         },
         description,
-      },
-    ]);
+      }
+    );
   }
   return (
     <Helmet>
