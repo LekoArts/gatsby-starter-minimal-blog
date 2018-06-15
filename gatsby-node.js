@@ -53,8 +53,8 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         const posts = result.data.posts.edges;
 
         posts.forEach((edge, index) => {
-          const next = index === 0 ? false : posts[index - 1].node;
-          const prev = index === posts.length - 1 ? false : posts[index + 1].node;
+          const next = index === 0 ? null : posts[index - 1].node;
+          const prev = index === posts.length - 1 ? null : posts[index + 1].node;
 
           createPage({
             path: edge.node.fields.slug,
