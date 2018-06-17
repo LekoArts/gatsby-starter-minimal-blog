@@ -62,7 +62,7 @@ const Footer = styled.footer`
   padding: 3rem 0;
 `;
 
-const TemplateWrapper = props => {
+const Layout = props => {
   const { children } = props;
   return (
     <ThemeProvider theme={theme}>
@@ -78,4 +78,4 @@ const TemplateWrapper = props => {
   );
 };
 
-export default TemplateWrapper;
+export default Layout;
