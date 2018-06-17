@@ -1,6 +1,7 @@
 /* eslint no-unused-expressions:0 */
 
 import React from 'react';
+import { StaticQuery } from 'gatsby';
 import styled, { ThemeProvider, injectGlobal } from 'styled-components';
 import SEO from '../components/SEO';
 import theme from '../../config/Theme';
@@ -62,20 +63,34 @@ const Footer = styled.footer`
   padding: 3rem 0;
 `;
 
-const TemplateWrapper = props => {
+const Layout = props => {
   const { children } = props;
   return (
-    <ThemeProvider theme={theme}>
-      <div>
-        <SEO />
-        {children()}
-        <Footer>
-          &copy; 2018 by John Doe. All rights reserved. <br />
-          <a href="https://github.com/LeKoArts/gatsby-starter-minimal-blog">GitHub Repository</a>
-        </Footer>;
-      </div>
-    </ThemeProvider>
+    <StaticQuery
+      query={graphql`
+        query LayoutQuery {
+          site {
+            siteMetadata {
+              buildTime
+            }
+          }
+        }
+      `}
+      render={data => (
+        <ThemeProvider theme={theme}>
+          <React.Fragment>
+            <SEO />
+            {children}
+            <Footer>
+              &copy; 2018 by John Doe. All rights reserved. <br />
+              <a href="https://github.com/LeKoArts/gatsby-starter-minimal-blog">GitHub Repository</a> <br />
+              {data.site.siteMetadata.buildTime}
+            </Footer>;
+          </React.Fragment>
+        </ThemeProvider>
+      )}
+    />
   );
 };
 
-export default TemplateWrapper;
+export default Layout;

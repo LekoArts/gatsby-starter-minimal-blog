@@ -1,7 +1,8 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 import styled from 'styled-components';
+import Layout from '../components/Layout';
 import Wrapper from '../components/Wrapper';
 import Header from '../components/Header';
 import Subline from '../components/Subline';
@@ -28,34 +29,36 @@ const Content = styled.div`
 `;
 
 const Category = props => {
-  const { category } = props.pathContext;
+  const { category } = props.pageContext;
   const { edges, totalCount } = props.data.allMarkdownRemark;
   const subline = `${totalCount} post${totalCount === 1 ? '' : 's'} tagged with "${category}"`;
 
   return (
-    <Wrapper>
-      <Helmet title={`${category} | ${config.siteTitle}`} />
-      <Header>
-        <Link to="/">{config.siteTitle}</Link>
-      </Header>
-      <Content>
-        <SectionTitle>Category &ndash; {category}</SectionTitle>
-        <Subline sectionTitle>
-          {subline} (See <Link to="/categories">all categories</Link>)
-        </Subline>
-        {edges.map(post => (
-          <Article
-            title={post.node.frontmatter.title}
-            date={post.node.frontmatter.date}
-            excerpt={post.node.excerpt}
-            timeToRead={post.node.timeToRead}
-            slug={post.node.fields.slug}
-            category={post.node.frontmatter.category}
-            key={post.node.fields.slug}
-          />
-        ))}
-      </Content>
-    </Wrapper>
+    <Layout>
+      <Wrapper>
+        <Helmet title={`${category} | ${config.siteTitle}`} />
+        <Header>
+          <Link to="/">{config.siteTitle}</Link>
+        </Header>
+        <Content>
+          <SectionTitle>Category &ndash; {category}</SectionTitle>
+          <Subline sectionTitle>
+            {subline} (See <Link to="/categories">all categories</Link>)
+          </Subline>
+          {edges.map(post => (
+            <Article
+              title={post.node.frontmatter.title}
+              date={post.node.frontmatter.date}
+              excerpt={post.node.excerpt}
+              timeToRead={post.node.timeToRead}
+              slug={post.node.fields.slug}
+              category={post.node.frontmatter.category}
+              key={post.node.fields.slug}
+            />
+          ))}
+        </Content>
+      </Wrapper>
+    </Layout>
   );
 };
 

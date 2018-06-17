@@ -13,6 +13,7 @@ As this starter is used for my (german) tutorials on my [blog](https://www.lekoa
 Current features:
 
 - Articles in Markdown
+- Gatsby v2
 - Styled Components 💅
 - Netlify Contact Form
 - Categories

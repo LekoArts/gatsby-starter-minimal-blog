@@ -1,8 +1,9 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 import styled from 'styled-components';
 import kebabCase from 'lodash/kebabCase';
+import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import Wrapper from '../components/Wrapper';
 import Header from '../components/Header';
@@ -37,26 +38,28 @@ const PostContent = styled.div`
 `;
 
 const Post = props => {
-  const { slug } = props.pathContext;
+  const { slug } = props.pageContext;
   const postNode = props.data.markdownRemark;
   const post = postNode.frontmatter;
 
   return (
-    <Wrapper>
-      <SEO postPath={slug} postNode={postNode} postSEO />
-      <Helmet title={`${post.title} | ${config.siteTitle}`} />
-      <Header>
-        <Link to="/">{config.siteTitle}</Link>
-      </Header>
-      <Content>
-        <Title>{post.title}</Title>
-        <Subline>
-          {post.date} &mdash; {postNode.timeToRead} Min Read &mdash; In{' '}
-          <Link to={`/categories/${kebabCase(post.category)}`}>{post.category}</Link>
-        </Subline>
-        <PostContent dangerouslySetInnerHTML={{ __html: postNode.html }} />
-      </Content>
-    </Wrapper>
+    <Layout>
+      <Wrapper>
+        <SEO postPath={slug} postNode={postNode} postSEO />
+        <Helmet title={`${post.title} | ${config.siteTitle}`} />
+        <Header>
+          <Link to="/">{config.siteTitle}</Link>
+        </Header>
+        <Content>
+          <Title>{post.title}</Title>
+          <Subline>
+            {post.date} &mdash; {postNode.timeToRead} Min Read &mdash; In{' '}
+            <Link to={`/categories/${kebabCase(post.category)}`}>{post.category}</Link>
+          </Subline>
+          <PostContent dangerouslySetInnerHTML={{ __html: postNode.html }} />
+        </Content>
+      </Wrapper>
+    </Layout>
   );
 };
 
