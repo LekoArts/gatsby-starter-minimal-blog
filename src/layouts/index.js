@@ -68,7 +68,7 @@ const TemplateWrapper = props => {
     <ThemeProvider theme={theme}>
       <div>
         <SEO />
-        {children()}
+        {children}
         <Footer>
           &copy; 2018 by John Doe. All rights reserved. <br />
           <a href="https://github.com/LeKoArts/gatsby-starter-minimal-blog">GitHub Repository</a>
