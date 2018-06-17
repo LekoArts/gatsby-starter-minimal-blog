@@ -29,7 +29,7 @@ const Content = styled.div`
 `;
 
 const Category = props => {
-  const { category } = props.pathContext;
+  const { category } = props.pageContext;
   const { edges, totalCount } = props.data.allMarkdownRemark;
   const subline = `${totalCount} post${totalCount === 1 ? '' : 's'} tagged with "${category}"`;
 

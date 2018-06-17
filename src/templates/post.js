@@ -38,7 +38,7 @@ const PostContent = styled.div`
 `;
 
 const Post = props => {
-  const { slug } = props.pathContext;
+  const { slug } = props.pageContext;
   const postNode = props.data.markdownRemark;
   const post = postNode.frontmatter;
 
