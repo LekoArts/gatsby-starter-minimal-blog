@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "author": "LekoArts <hello@lekoarts.de>",
   "dependencies": {
+    "babel-plugin-styled-components": "^1.5.1",
     "gatsby": "next",
     "gatsby-plugin-catch-links": "next",
     "gatsby-plugin-favicon": "next",
