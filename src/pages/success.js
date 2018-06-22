@@ -7,7 +7,6 @@ import styled from 'styled-components';
 import Layout from '../components/Layout';
 import Wrapper from '../components/Wrapper';
 import Header from '../components/Header';
-import Button from '../components/Button';
 import { media } from '../utils/media';
 
 import config from '../../config/SiteConfig';
@@ -44,7 +43,7 @@ const Content = styled.div`
   }
 `;
 
-const Contact = () => (
+const Success = () => (
   <Layout>
     <Wrapper>
       <Helmet title={`Contact | ${config.siteTitle}`} />
@@ -52,36 +51,11 @@ const Contact = () => (
         <Link to="/">{config.siteTitle}</Link>
       </Header>
       <Content>
-        <h1>Contact</h1>
-        <p>Super cool intro text to get people contacting me! It uses Netlify's form feature.</p>
-        <form
-          name="contact-form"
-          method="post"
-          data-netlify="true"
-          data-netlify-honeypot="bot-field"
-          netlify
-          action="/success"
-        >
-          <p>
-            <label htmlFor="name">Name</label>
-            <input name="name" type="text" required />
-          </p>
-          <p>
-            <label htmlFor="email">E-Mail</label>
-            <input name="email" type="email" required />
-          </p>
-          <p>
-            <label htmlFor="message">Your Message</label>
-            <textarea name="message" required />
-          </p>
-          <p>
-            <Button>Send</Button>
-          </p>
-          <input type="hidden" name="form-name" value="contact-form" />
-        </form>
+        <h1>Your message was sent!</h1>
+        <p>I'll answer your request as quick as possible.</p>
       </Content>
     </Wrapper>
   </Layout>
 );
 
-export default Contact;
+export default Success;
