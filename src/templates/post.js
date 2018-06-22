@@ -16,6 +16,7 @@ import '../utils/prismjs-theme.css';
 const Content = styled.article`
   grid-column: 2;
   box-shadow: 0 4px 120px rgba(0, 0, 0, 0.1);
+  max-width: 1000px;
   border-radius: 1rem;
   padding: 2rem 4rem;
   background-color: ${props => props.theme.bg};
