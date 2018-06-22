@@ -42,6 +42,7 @@ module.exports = {
     },
     'gatsby-plugin-catch-links',
     'gatsby-plugin-sitemap',
+    'gatsby-plugin-lodash',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
@@ -51,7 +52,7 @@ module.exports = {
         start_url: config.pathPrefix,
         background_color: config.backgroundColor,
         theme_color: config.themeColor,
-        display: 'minimal-ui',
+        display: 'fullscreen',
         icon: 'src/favicon.png',
       },
     },
