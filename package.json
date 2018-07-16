@@ -15,7 +15,7 @@
     "gatsby-plugin-styled-components": "next",
     "gatsby-plugin-typography": "next",
     "gatsby-remark-autolink-headers": "next",
-    "gatsby-remark-external-links": "next",
+    "gatsby-remark-external-links": "0.0.4",
     "gatsby-remark-prismjs": "next",
     "gatsby-source-filesystem": "next",
     "gatsby-transformer-remark": "next",
