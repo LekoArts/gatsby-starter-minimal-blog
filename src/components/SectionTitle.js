@@ -1,7 +1,6 @@
-import React from 'react';
 import styled from 'styled-components';
 
-const Title = styled.div`
+const SectionTitle = styled.div`
   font-size: ${props => props.theme.fontSmall};
   text-transform: uppercase;
   font-weight: bold;
@@ -22,7 +21,5 @@ const Title = styled.div`
     background: ${props => props.theme.ultraLight};
   }
 `;
-
-const SectionTitle = props => <Title>{props.children}</Title>;
 
 export default SectionTitle;
