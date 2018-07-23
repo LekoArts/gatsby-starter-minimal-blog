@@ -6,7 +6,6 @@ module.exports = {
   pathPrefix: config.pathPrefix,
   siteMetadata: {
     siteUrl: config.siteUrl + pathPrefix,
-    buildTime: new Date(Date.now()).toLocaleString(),
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -52,7 +51,7 @@ module.exports = {
         start_url: config.pathPrefix,
         background_color: config.backgroundColor,
         theme_color: config.themeColor,
-        display: 'fullscreen',
+        display: 'standalone',
         icon: 'src/favicon.png',
       },
     },

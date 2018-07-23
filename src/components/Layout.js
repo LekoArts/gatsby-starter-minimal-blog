@@ -61,6 +61,9 @@ injectGlobal`
 const Footer = styled.footer`
   text-align: center;
   padding: 3rem 0;
+  span {
+    font-size: 0.75rem;
+  }
 `;
 
 const Layout = props => {
@@ -70,9 +73,7 @@ const Layout = props => {
       query={graphql`
         query LayoutQuery {
           site {
-            siteMetadata {
-              buildTime
-            }
+            buildTime(formatString: "DD.MM.YYYY")
           }
         }
       `}
@@ -84,7 +85,7 @@ const Layout = props => {
             <Footer>
               &copy; 2018 by John Doe. All rights reserved. <br />
               <a href="https://github.com/LeKoArts/gatsby-starter-minimal-blog">GitHub Repository</a> <br />
-              {data.site.siteMetadata.buildTime}
+              <span>Last build: {data.site.buildTime}</span>
             </Footer>;
           </React.Fragment>
         </ThemeProvider>
