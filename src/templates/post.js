@@ -1,6 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import { Link } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 import styled from 'styled-components';
 import kebabCase from 'lodash/kebabCase';
 import Layout from '../components/Layout';
@@ -66,7 +66,6 @@ const Post = props => {
 
 export default Post;
 
-/* eslint no-undef: off */
 export const postQuery = graphql`
   query postBySlug($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {

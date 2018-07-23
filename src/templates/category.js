@@ -1,6 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import { Link } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 import styled from 'styled-components';
 import Layout from '../components/Layout';
 import Wrapper from '../components/Wrapper';
@@ -64,7 +64,6 @@ const Category = props => {
 
 export default Category;
 
-/* eslint no-undef: off */
 export const postQuery = graphql`
   query CategoryPage($category: String!) {
     allMarkdownRemark(

@@ -1,6 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import { Link } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 import styled from 'styled-components';
 import kebabCase from 'lodash/kebabCase';
 import Layout from '../components/Layout';
@@ -60,7 +60,6 @@ const Category = props => {
 
 export default Category;
 
-/* eslint no-undef: off */
 export const postQuery = graphql`
   query CategoriesPage {
     allMarkdownRemark {

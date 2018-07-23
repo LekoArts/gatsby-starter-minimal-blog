@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 import styled from 'styled-components';
 import Layout from '../components/Layout';
 import Article from '../components/Article';
@@ -43,7 +43,6 @@ const Hero = styled.div`
 
 const IndexPage = props => {
   const postEdges = props.data.allMarkdownRemark.edges;
-
   return (
     <Layout>
       <Wrapper>
@@ -83,7 +82,6 @@ const IndexPage = props => {
 
 export default IndexPage;
 
-/* eslint no-undef: off */
 export const IndexQuery = graphql`
   query IndexQuery {
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {

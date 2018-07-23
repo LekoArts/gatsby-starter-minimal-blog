@@ -1,7 +1,7 @@
 /* eslint no-unused-expressions:0 */
 
 import React from 'react';
-import { StaticQuery } from 'gatsby';
+import { StaticQuery, graphql } from 'gatsby';
 import styled, { ThemeProvider, injectGlobal } from 'styled-components';
 import SEO from '../components/SEO';
 import theme from '../../config/Theme';
