@@ -4,7 +4,7 @@ import Helmet from 'react-helmet';
 import { Link, graphql } from 'gatsby';
 import styled from 'styled-components';
 import kebabCase from 'lodash/kebabCase';
-import { Layout, Wrapper, Header, Subline, SEO } from 'components';
+import { Layout, Wrapper, Header, Subline, SEO, PrevNext } from 'components';
 import { media } from '../utils/media';
 import config from '../../config/SiteConfig';
 import '../utils/prismjs-theme.css';
@@ -35,7 +35,7 @@ const PostContent = styled.div`
 `;
 
 const Post = props => {
-  const { slug } = props.pageContext;
+  const { slug, prev, next } = props.pageContext;
   const postNode = props.data.markdownRemark;
   const post = postNode.frontmatter;
 
@@ -54,6 +54,7 @@ const Post = props => {
             <Link to={`/categories/${kebabCase(post.category)}`}>{post.category}</Link>
           </Subline>
           <PostContent dangerouslySetInnerHTML={{ __html: postNode.html }} />
+          <PrevNext prev={prev} next={next} />
         </Content>
       </Wrapper>
     </Layout>
@@ -65,10 +66,19 @@ export default Post;
 Post.propTypes = {
   pageContext: PropTypes.shape({
     slug: PropTypes.string.isRequired,
-  }).isRequired,
+    next: PropTypes.object,
+    prev: PropTypes.object,
+  }),
   data: PropTypes.shape({
     markdownRemark: PropTypes.object.isRequired,
   }).isRequired,
+};
+
+Post.defaultProps = {
+  pageContext: PropTypes.shape({
+    next: null,
+    prev: null,
+  }),
 };
 
 export const postQuery = graphql`
