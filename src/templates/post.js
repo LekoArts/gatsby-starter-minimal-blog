@@ -1,15 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { Link, graphql } from 'gatsby';
 import styled from 'styled-components';
 import kebabCase from 'lodash/kebabCase';
-import Layout from '../components/Layout';
-import SEO from '../components/SEO';
-import Wrapper from '../components/Wrapper';
-import Header from '../components/Header';
-import Subline from '../components/Subline';
+import { Layout, Wrapper, Header, Subline, SEO } from 'components';
 import { media } from '../utils/media';
-
 import config from '../../config/SiteConfig';
 import '../utils/prismjs-theme.css';
 
@@ -65,6 +61,15 @@ const Post = props => {
 };
 
 export default Post;
+
+Post.propTypes = {
+  pageContext: PropTypes.shape({
+    slug: PropTypes.string.isRequired,
+  }).isRequired,
+  data: PropTypes.shape({
+    markdownRemark: PropTypes.object.isRequired,
+  }).isRequired,
+};
 
 export const postQuery = graphql`
   query postBySlug($slug: String!) {

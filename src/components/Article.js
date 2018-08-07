@@ -1,9 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 import kebabCase from 'lodash/kebabCase';
 
-import Subline from './Subline';
+import { Subline } from 'components';
 
 const Post = styled.article`
   display: flex;
@@ -52,3 +53,12 @@ const Article = ({ title, date, excerpt, slug, timeToRead, category }) => {
 };
 
 export default Article;
+
+Article.propTypes = {
+  title: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
+  excerpt: PropTypes.string.isRequired,
+  slug: PropTypes.string.isRequired,
+  timeToRead: PropTypes.number.isRequired,
+  category: PropTypes.string.isRequired,
+};

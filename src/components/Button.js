@@ -1,8 +1,7 @@
-import React from 'react';
 import styled from 'styled-components';
 import { lighten } from 'polished';
 
-const Wrapper = styled.button`
+const Button = styled.button`
   background: ${props => props.theme.primary};
   border: none;
   display: inline-flex;
@@ -28,7 +27,5 @@ const Wrapper = styled.button`
     fill: white;
   }
 `;
-
-const Button = props => <Wrapper big={props.big}>{props.children}</Wrapper>;
 
 export default Button;
