@@ -38,7 +38,8 @@
   "main": "n/a",
   "scripts": {
     "build": "gatsby build",
-    "dev": "gatsby develop -o"
+    "dev": "gatsby develop -o",
+    "serve": "gatsby build && gatsby serve"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.2",
