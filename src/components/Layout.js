@@ -10,26 +10,26 @@ import { media } from '../utils/media';
 
 injectGlobal`
   ::selection {
-    color: ${theme.bg};
-    background: ${theme.primary};
+    color: ${theme.colors.bg};
+    background: ${theme.colors.primary};
   }
   body {
-    background: ${theme.bg};
+    background: ${theme.colors.bg};
     color: ${theme.default};
     @media ${media.phone} {
       font-size: 14px;
     }
   }
   a {
-    color: ${theme.dark};
+    color: ${theme.colors.grey.dark};
     text-decoration: none;
-    transition: all ${theme.transitionTime};
+    transition: all ${theme.transitions.normal};
   }
   a:hover {
-    color: ${theme.primary};
+    color: ${theme.colors.primary};
   }
   h1, h2, h3, h4 {
-    color: ${theme.dark};
+    color: ${theme.colors.grey.dark};
   }
   blockquote {
     font-style: italic;
@@ -39,14 +39,14 @@ injectGlobal`
   blockquote:before {
     content: "";
     position: absolute;
-    background: ${theme.primary};
+    background: ${theme.colors.primary};
     height: 100%;
     width: 6px;
     margin-left: -1.6rem;
   }
   label {
     margin-bottom: .5rem;
-    color: ${theme.dark};
+    color: ${theme.colors.grey.dark};
   }
   input, textarea {
     border-radius: .5rem;

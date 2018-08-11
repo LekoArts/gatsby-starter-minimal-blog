@@ -23,7 +23,7 @@ const Hero = styled.div`
   grid-column: 2;
   padding: 3rem 2rem 6rem 2rem;
   text-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
-  color: ${props => props.theme.dark};
+  color: ${props => props.theme.colors.grey.dark};
 
   p {
     font-size: 1.68rem;

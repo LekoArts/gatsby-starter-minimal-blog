@@ -7,7 +7,7 @@ const Wrapper = styled.div`
   display: flex;
   margin: 6rem auto 0 auto;
   a {
-    color: ${props => props.theme.primary};
+    color: ${props => props.theme.colors.primary};
     display: flex;
     align-items: center;
   }
@@ -18,7 +18,7 @@ const Prev = styled.div`
   span {
     text-transform: uppercase;
     font-size: 0.8rem;
-    color: ${props => props.theme.light};
+    color: ${props => props.theme.colors.grey.light};
   }
 `;
 
@@ -28,7 +28,7 @@ const Next = styled.div`
   span {
     text-transform: uppercase;
     font-size: 0.8rem;
-    color: ${props => props.theme.light};
+    color: ${props => props.theme.colors.grey.light};
   }
 `;
 

@@ -15,7 +15,7 @@ const Content = styled.article`
   max-width: 1000px;
   border-radius: 1rem;
   padding: 2rem 4rem;
-  background-color: ${props => props.theme.bg};
+  background-color: ${props => props.theme.colors.bg};
   z-index: 9000;
   margin-top: -3rem;
   @media ${media.tablet} {

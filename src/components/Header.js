@@ -6,8 +6,8 @@ import { darken, lighten } from 'polished';
 const Wrapper = styled.header`
   background: linear-gradient(
     45deg,
-    ${props => darken(0.1, props.theme.primary)},
-    ${props => lighten(0.1, props.theme.primary)}
+    ${props => darken(0.1, props.theme.colors.primary)},
+    ${props => lighten(0.1, props.theme.colors.primary)}
   );
   grid-column: 1 / -1;
   margin-left: -1rem;
