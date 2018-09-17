@@ -43,7 +43,7 @@ Current features:
 
 Check your development environment! You'll need [Node.js](https://nodejs.org/en/), the [Gatsby CLI](https://www.gatsbyjs.org/docs/) and [node-gyp](https://github.com/nodejs/node-gyp#installation) installed. The official Gatsby website also lists two articles regarding this topic:
 - [Gatsby on Windows](https://www.gatsbyjs.org/docs/gatsby-on-windows/)
-- [Check your development environment](https://www.gatsbyjs.org/tutorial/part-one/#check-your-development-environment)
+- [Check your development environment](https://www.gatsbyjs.org/tutorial/part-zero/)
 
 To copy and install this starter run this command (with "project-name" being the name of your folder you wish to install it in):
 
