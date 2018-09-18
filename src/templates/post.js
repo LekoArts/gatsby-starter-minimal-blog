@@ -85,6 +85,7 @@ export const postQuery = graphql`
   query postBySlug($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
+      excerpt
       frontmatter {
         title
         date(formatString: "DD.MM.YYYY")
