@@ -49,6 +49,8 @@ const SEO = props => {
           url: image,
         },
         description,
+        datePublished: postNode.frontmatter.date,
+        dateModified: postNode.frontmatter.date,
         author: {
           '@type': 'Person',
           name: config.author,
