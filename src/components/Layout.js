@@ -3,12 +3,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
-import styled, { ThemeProvider, injectGlobal } from 'styled-components';
+import styled, { ThemeProvider, createGlobalStyle } from 'styled-components';
 import { SEO } from 'components';
 import theme from '../../config/Theme';
 import { media } from '../utils/media';
 
-injectGlobal`
+const GlobalStyle = createGlobalStyle`
   ::selection {
     color: ${theme.colors.bg};
     background: ${theme.colors.primary};
@@ -80,6 +80,7 @@ const Layout = ({ children }) => (
       <ThemeProvider theme={theme}>
         <React.Fragment>
           <SEO />
+          <GlobalStyle />
           {children}
           <Footer>
             &copy; 2018 by John Doe. All rights reserved. <br />
