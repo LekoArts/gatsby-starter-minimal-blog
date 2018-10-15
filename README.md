@@ -49,6 +49,7 @@ To copy and install this starter run this command (with "project-name" being the
 
 ```
 gatsby new project-name https://github.com/LeKoArts/gatsby-starter-minimal-blog
+cd project-name
 npm run dev
 ```
 
