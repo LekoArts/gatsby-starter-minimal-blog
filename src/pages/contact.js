@@ -31,11 +31,13 @@ const Content = styled.div`
       }
       input {
         min-width: 275px;
+        margin-top: 0.5rem;
       }
       textarea {
         resize: vertical;
         min-height: 150px;
         width: 100%;
+        margin-top: 0.5rem;
       }
     }
   }
@@ -53,16 +55,20 @@ const Contact = () => (
         <p>Super cool intro text to get people contacting me! It uses Netlify's form feature.</p>
         <form name="contact-form" method="post" data-netlify="true" data-netlify-honeypot="bot-field" action="/success">
           <p>
-            <label htmlFor="name">Name</label>
-            <input name="name" type="text" required />
+            <label htmlFor="contact-name">
+              Name
+              <input name="name" id="contact-name" type="text" required />
+            </label>
           </p>
           <p>
-            <label htmlFor="email">E-Mail</label>
-            <input name="email" type="email" required />
+            <label htmlFor="contact-email">
+              E-Mail <input name="email" id="contact-email" type="email" required />
+            </label>
           </p>
           <p>
-            <label htmlFor="message">Your Message</label>
-            <textarea name="message" required />
+            <label htmlFor="contact-message">
+              Your Message <textarea name="message" id="contact-message" required />
+            </label>
           </p>
           <p>
             <Button>Send</Button>

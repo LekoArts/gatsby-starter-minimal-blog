@@ -29,9 +29,9 @@ const Content = styled.div`
   }
 `;
 
-const Header = props => (
+const Header = ({ children }) => (
   <Wrapper>
-    <Content>{props.children}</Content>
+    <Content>{children}</Content>
   </Wrapper>
 );
 

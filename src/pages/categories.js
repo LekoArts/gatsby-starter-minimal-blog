@@ -46,9 +46,8 @@ const Category = ({
         <SectionTitle>Categories</SectionTitle>
         {group.map(category => (
           <Title key={category.fieldValue}>
-            <Link to={`/categories/${kebabCase(category.fieldValue)}`}>{category.fieldValue}</Link> ({
-              category.totalCount
-            })
+            <Link to={`/categories/${kebabCase(category.fieldValue)}`}>{category.fieldValue}</Link> (
+            {category.totalCount})
           </Title>
         ))}
       </Content>

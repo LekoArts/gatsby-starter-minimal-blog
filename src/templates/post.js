@@ -34,9 +34,7 @@ const PostContent = styled.div`
   margin-top: 4rem;
 `;
 
-const Post = props => {
-  const { slug, prev, next } = props.pageContext;
-  const postNode = props.data.markdownRemark;
+const Post = ({ pageContext: { slug, prev, next }, data: { markdownRemark: postNode } }) => {
   const post = postNode.frontmatter;
 
   return (
