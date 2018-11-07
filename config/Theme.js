@@ -10,7 +10,7 @@ const colors = {
 };
 
 const transitions = {
-  normal: '0.5s',
+  normal: '0.3s',
 };
 
 const fontSize = {
