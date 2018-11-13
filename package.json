@@ -30,7 +30,7 @@
     "react-typography": "latest",
     "styled-components": "^4.0.3",
     "typography": "latest",
-    "palette": "latest"
+    "palette": "^2.21.0"
   },
   "keywords": [
     "gatsby",
