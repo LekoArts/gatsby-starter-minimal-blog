@@ -4,6 +4,8 @@ import { Link, graphql } from 'gatsby';
 import styled from 'styled-components';
 import { Layout, Article, Wrapper, Button, SectionTitle } from 'components';
 import { media } from '../utils/media';
+import { Avatar, Playground, PropsTable } from '@artsy/palette';
+
 
 const Content = styled.div`
   grid-column: 2;
@@ -49,6 +51,9 @@ const IndexPage = ({
         <p>
           I&apos;m John Doe, a Senior UX Developer with five years of industry experience, specializing in developing
           React apps with the best UX users can get.
+          <Playground>
+            <Avatar src="https://picsum.photos/110/110/?random" />
+          </Playground>
         </p>
         <Link to="/contact">
           <Button big>
