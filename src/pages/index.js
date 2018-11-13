@@ -4,7 +4,7 @@ import { Link, graphql } from 'gatsby';
 import styled from 'styled-components';
 import { Layout, Article, Wrapper, Button, SectionTitle } from 'components';
 import { media } from '../utils/media';
-import { Avatar, Playground, PropsTable } from '@artsy/palette';
+import { Avatar, BorderBox, PropsTable } from '@artsy/palette';
 
 
 const Content = styled.div`
