@@ -21,6 +21,7 @@
     "gatsby-source-filesystem": "^2.0.7",
     "gatsby-transformer-remark": "^2.1.11",
     "gatsby-plugin-typescript": "latest",
+    "gatsby-plugin-web-font-loader": "latest",
     "lodash": "^4.17.11",
     "polished": "^2.3.0",
     "prismjs": "^1.15.0",
