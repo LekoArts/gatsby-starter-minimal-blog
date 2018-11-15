@@ -7,6 +7,8 @@ import styled, { ThemeProvider, createGlobalStyle } from 'styled-components';
 import { SEO } from 'components';
 import theme from '../../config/Theme';
 import { media } from '../utils/media';
+import { Avatar, BorderBox, PropsTable } from '@artsy/palette';
+
 
 const GlobalStyle = createGlobalStyle`
   ::selection {
@@ -83,9 +85,11 @@ const Layout = ({ children }) => (
           <GlobalStyle />
           {children}
           <Footer>
-            &copy; 2018 by John Doe. All rights reserved. <br />
-            <a href="https://github.com/LekoArts/gatsby-starter-minimal-blog">GitHub Repository</a> <br />
-            <span>Last build: {data.site.buildTime}</span>
+          <BorderBox hover>
+              &copy; 2018 by John Doe. All rights reserved. <br />
+              <a href="https://github.com/LekoArts/gatsby-starter-minimal-blog">GitHub Repository</a> <br />
+              <span>Last build: {data.site.buildTime}</span>
+          </BorderBox>
           </Footer>
         </React.Fragment>
       </ThemeProvider>
