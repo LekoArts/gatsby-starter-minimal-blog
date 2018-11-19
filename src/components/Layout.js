@@ -16,6 +16,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     background: ${theme.colors.bg};
     color: ${theme.default};
+    font-display: swap;
     @media ${media.phone} {
       font-size: 14px;
     }
