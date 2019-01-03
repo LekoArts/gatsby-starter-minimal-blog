@@ -1,4 +1,3 @@
 User-agent: *
-Disallow:
 
 sitemap: https://minimal-blog.netlify.com/sitemap.xml
