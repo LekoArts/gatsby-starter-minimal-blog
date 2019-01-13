@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const SectionTitle = styled.div`
   font-size: ${props => props.theme.fontSize.small};
@@ -20,6 +20,6 @@ const SectionTitle = styled.div`
     margin-left: -25px;
     background: ${props => props.theme.colors.grey.ultraLight};
   }
-`;
+`
 
-export default SectionTitle;
+export default SectionTitle

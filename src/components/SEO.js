@@ -1,29 +1,29 @@
 /* eslint-disable react/require-default-props */
-import React from 'react';
-import PropTypes from 'prop-types';
-import Helmet from 'react-helmet';
-import config from '../../config/SiteConfig';
+import React from 'react'
+import PropTypes from 'prop-types'
+import Helmet from 'react-helmet'
+import config from '../../config/SiteConfig'
 
 const SEO = props => {
-  const { postNode, postPath, postSEO } = props;
-  let title;
-  let description;
-  let image;
-  let postURL;
-  const realPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix;
+  const { postNode, postPath, postSEO } = props
+  let title
+  let description
+  let image
+  let postURL
+  const realPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix
   if (postSEO) {
-    const postMeta = postNode.frontmatter;
-    title = postMeta.title; // eslint-disable-line prefer-destructuring
-    description = postNode.excerpt;
-    image = config.siteBanner;
-    postURL = config.siteUrl + realPrefix + postPath;
+    const postMeta = postNode.frontmatter
+    title = postMeta.title // eslint-disable-line prefer-destructuring
+    description = postNode.excerpt
+    image = config.siteBanner
+    postURL = config.siteUrl + realPrefix + postPath
   } else {
-    title = config.siteTitle;
-    description = config.siteDescription;
-    image = config.siteBanner;
+    title = config.siteTitle
+    description = config.siteDescription
+    image = config.siteBanner
   }
-  image = config.siteUrl + realPrefix + image;
-  const blogURL = config.siteUrl + config.pathPrefix;
+  image = config.siteUrl + realPrefix + image
+  const blogURL = config.siteUrl + config.pathPrefix
   let schemaOrgJSONLD = [
     {
       '@context': 'http://schema.org',
@@ -33,7 +33,7 @@ const SEO = props => {
       name: title,
       alternateName: config.siteTitleAlt ? config.siteTitleAlt : '',
     },
-  ];
+  ]
   if (postSEO) {
     schemaOrgJSONLD = [
       {
@@ -69,7 +69,7 @@ const SEO = props => {
           '@id': blogURL,
         },
       },
-    ];
+    ]
   }
   return (
     <Helmet>
@@ -93,13 +93,13 @@ const SEO = props => {
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
     </Helmet>
-  );
-};
+  )
+}
 
-export default SEO;
+export default SEO
 
 SEO.propTypes = {
   postNode: PropTypes.object,
   postPath: PropTypes.string,
   postSEO: PropTypes.bool,
-};
+}

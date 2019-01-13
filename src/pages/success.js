@@ -1,13 +1,13 @@
 /* eslint jsx-a11y/label-has-for:0 */
 
-import React from 'react';
-import Helmet from 'react-helmet';
-import { Link } from 'gatsby';
-import styled from 'styled-components';
-import { Layout, Wrapper, Header } from 'components';
-import { media } from '../utils/media';
+import React from 'react'
+import Helmet from 'react-helmet'
+import { Link } from 'gatsby'
+import styled from 'styled-components'
+import { Layout, Wrapper, Header } from 'components'
+import { media } from '../utils/media'
 
-import config from '../../config/SiteConfig';
+import config from '../../config/SiteConfig'
 
 const Content = styled.div`
   grid-column: 2;
@@ -39,7 +39,7 @@ const Content = styled.div`
       }
     }
   }
-`;
+`
 
 const Success = () => (
   <Layout>
@@ -54,6 +54,6 @@ const Success = () => (
       </Content>
     </Wrapper>
   </Layout>
-);
+)
 
-export default Success;
+export default Success

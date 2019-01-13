@@ -1,9 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Link, graphql } from 'gatsby';
-import styled from 'styled-components';
-import { Layout, Article, Wrapper, Button, SectionTitle } from 'components';
-import { media } from '../utils/media';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Link, graphql } from 'gatsby'
+import styled from 'styled-components'
+import { Layout, Article, Wrapper, Button, SectionTitle } from 'components'
+import { media } from '../utils/media'
 
 const Content = styled.div`
   grid-column: 2;
@@ -17,7 +17,7 @@ const Content = styled.div`
     padding: 2rem 1.5rem;
   }
   overflow: hidden;
-`;
+`
 
 const Hero = styled.div`
   grid-column: 2;
@@ -35,7 +35,7 @@ const Hero = styled.div`
       font-size: 1.45rem;
     }
   }
-`;
+`
 
 const IndexPage = ({
   data: {
@@ -75,9 +75,9 @@ const IndexPage = ({
       </Content>
     </Wrapper>
   </Layout>
-);
+)
 
-export default IndexPage;
+export default IndexPage
 
 IndexPage.propTypes = {
   data: PropTypes.shape({
@@ -85,7 +85,7 @@ IndexPage.propTypes = {
       edges: PropTypes.array.isRequired,
     }),
   }).isRequired,
-};
+}
 
 export const IndexQuery = graphql`
   query IndexQuery {
@@ -106,4 +106,4 @@ export const IndexQuery = graphql`
       }
     }
   }
-`;
+`

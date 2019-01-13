@@ -1,13 +1,13 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Helmet from 'react-helmet';
-import { Link, graphql } from 'gatsby';
-import styled from 'styled-components';
-import kebabCase from 'lodash/kebabCase';
-import { Layout, Wrapper, Header, SectionTitle } from 'components';
-import { media } from '../utils/media';
+import React from 'react'
+import PropTypes from 'prop-types'
+import Helmet from 'react-helmet'
+import { Link, graphql } from 'gatsby'
+import styled from 'styled-components'
+import kebabCase from 'lodash/kebabCase'
+import { Layout, Wrapper, Header, SectionTitle } from 'components'
+import { media } from '../utils/media'
 
-import config from '../../config/SiteConfig';
+import config from '../../config/SiteConfig'
 
 const Content = styled.div`
   grid-column: 2;
@@ -23,13 +23,13 @@ const Content = styled.div`
   @media ${media.phone} {
     padding: 2rem 1.5rem;
   }
-`;
+`
 
 const Title = styled.h3`
   position: relative;
   text-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
   margin-bottom: 0.75rem;
-`;
+`
 
 const Category = ({
   data: {
@@ -53,9 +53,9 @@ const Category = ({
       </Content>
     </Wrapper>
   </Layout>
-);
+)
 
-export default Category;
+export default Category
 
 Category.propTypes = {
   data: PropTypes.shape({
@@ -63,7 +63,7 @@ Category.propTypes = {
       group: PropTypes.array.isRequired,
     }),
   }).isRequired,
-};
+}
 
 export const postQuery = graphql`
   query CategoriesPage {
@@ -74,4 +74,4 @@ export const postQuery = graphql`
       }
     }
   }
-`;
+`

@@ -7,20 +7,20 @@ const colors = {
     light: 'rgba(0, 0, 0, 0.5)',
     ultraLight: 'rgba(0, 0, 0, 0.25)',
   },
-};
+}
 
 const transitions = {
   normal: '0.5s',
-};
+}
 
 const fontSize = {
   small: '0.9rem',
-};
+}
 
 const theme = {
   colors,
   transitions,
   fontSize,
-};
+}
 
-export default theme;
+export default theme

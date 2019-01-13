@@ -1,13 +1,13 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Helmet from 'react-helmet';
-import { Link, graphql } from 'gatsby';
-import styled from 'styled-components';
-import kebabCase from 'lodash/kebabCase';
-import { Layout, Wrapper, Header, Subline, SEO, PrevNext } from 'components';
-import { media } from '../utils/media';
-import config from '../../config/SiteConfig';
-import '../utils/prismjs-theme.css';
+import React from 'react'
+import PropTypes from 'prop-types'
+import Helmet from 'react-helmet'
+import { Link, graphql } from 'gatsby'
+import styled from 'styled-components'
+import kebabCase from 'lodash/kebabCase'
+import { Layout, Wrapper, Header, Subline, SEO, PrevNext } from 'components'
+import { media } from '../utils/media'
+import config from '../../config/SiteConfig'
+import '../utils/prismjs-theme.css'
 
 const Content = styled.article`
   grid-column: 2;
@@ -24,18 +24,18 @@ const Content = styled.article`
   @media ${media.phone} {
     padding: 2rem 1.5rem;
   }
-`;
+`
 
 const Title = styled.h1`
   margin-bottom: 1rem;
-`;
+`
 
 const PostContent = styled.div`
   margin-top: 4rem;
-`;
+`
 
 const Post = ({ pageContext: { slug, prev, next }, data: { markdownRemark: postNode } }) => {
-  const post = postNode.frontmatter;
+  const post = postNode.frontmatter
 
   return (
     <Layout>
@@ -56,10 +56,10 @@ const Post = ({ pageContext: { slug, prev, next }, data: { markdownRemark: postN
         </Content>
       </Wrapper>
     </Layout>
-  );
-};
+  )
+}
 
-export default Post;
+export default Post
 
 Post.propTypes = {
   pageContext: PropTypes.shape({
@@ -70,14 +70,14 @@ Post.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.object.isRequired,
   }).isRequired,
-};
+}
 
 Post.defaultProps = {
   pageContext: PropTypes.shape({
     next: null,
     prev: null,
   }),
-};
+}
 
 export const postQuery = graphql`
   query postBySlug($slug: String!) {
@@ -92,4 +92,4 @@ export const postQuery = graphql`
       timeToRead
     }
   }
-`;
+`

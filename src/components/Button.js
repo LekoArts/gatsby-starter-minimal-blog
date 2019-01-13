@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { lighten } from 'polished';
+import styled from 'styled-components'
+import { lighten } from 'polished'
 
 const Button = styled.button`
   background: ${props => props.theme.colors.primary};
@@ -26,6 +26,6 @@ const Button = styled.button`
     margin-right: 0.75rem;
     fill: white;
   }
-`;
+`
 
-export default Button;
+export default Button

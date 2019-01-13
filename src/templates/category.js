@@ -1,11 +1,11 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Helmet from 'react-helmet';
-import { Link, graphql } from 'gatsby';
-import styled from 'styled-components';
-import { Layout, Wrapper, Header, Subline, Article, SectionTitle } from 'components';
-import { media } from '../utils/media';
-import config from '../../config/SiteConfig';
+import React from 'react'
+import PropTypes from 'prop-types'
+import Helmet from 'react-helmet'
+import { Link, graphql } from 'gatsby'
+import styled from 'styled-components'
+import { Layout, Wrapper, Header, Subline, Article, SectionTitle } from 'components'
+import { media } from '../utils/media'
+import config from '../../config'
 
 const Content = styled.div`
   grid-column: 2;
@@ -21,11 +21,11 @@ const Content = styled.div`
   @media ${media.phone} {
     padding: 2rem 1.5rem;
   }
-`;
+`
 
 const Category = ({ pageContext: { category }, data: { allMarkdownRemark } }) => {
-  const { edges, totalCount } = allMarkdownRemark;
-  const subline = `${totalCount} post${totalCount === 1 ? '' : 's'} tagged with "${category}"`;
+  const { edges, totalCount } = allMarkdownRemark
+  const subline = `${totalCount} post${totalCount === 1 ? '' : 's'} tagged with "${category}"`
 
   return (
     <Layout>
@@ -53,10 +53,10 @@ const Category = ({ pageContext: { category }, data: { allMarkdownRemark } }) =>
         </Content>
       </Wrapper>
     </Layout>
-  );
-};
+  )
+}
 
-export default Category;
+export default Category
 
 Category.propTypes = {
   pageContext: PropTypes.shape({
@@ -68,7 +68,7 @@ Category.propTypes = {
       totalCount: PropTypes.number.isRequired,
     }),
   }).isRequired,
-};
+}
 
 export const postQuery = graphql`
   query CategoryPage($category: String!) {
@@ -93,4 +93,4 @@ export const postQuery = graphql`
       }
     }
   }
-`;
+`
