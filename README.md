@@ -44,7 +44,7 @@ Check your development environment! You'll need [Node.js](https://nodejs.org/en/
 To copy and install this starter run this command (with "project-name" being the name of your folder you wish to install it in):
 
 ```
-gatsby new project-name https://github.com/LeKoArts/gatsby-starter-minimal-blog
+gatsby new project-name https://github.com/LekoArts/gatsby-starter-minimal-blog
 cd project-name
 npm run dev
 ```
@@ -52,14 +52,6 @@ npm run dev
 ### Adding new features/plugins
 
 You can add other features by having a look at the official [plugins page](https://www.gatsbyjs.org/docs/plugins/)
-
-### Changing the date format
-
-This starter uses Gatsby's built-in date formatter in the GraphQL queries. If you want to change the date format you see on the index page or other overviews have a look at the GraphQL query. It contains the line:
-
-```graphql
-date(formatString: "DD.MM.YYYY")
-```
 
 ### Building your site
 

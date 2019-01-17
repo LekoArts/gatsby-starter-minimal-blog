@@ -5,6 +5,7 @@ module.exports = {
   siteTitleAlt: 'Minimal Blog - Gatsby Starter', // Alternative Site title for SEO
   siteUrl: 'https://minimal-blog.netlify.com', // Domain of your site. No trailing slash!
   siteLanguage: 'en', // Language Tag on <html> element
+  siteHeadline: 'Writing and publishing content', // Headline for schema.org JSONLD
   siteBanner: '/social/banner.jpg', // Your image for og:image tag. You can find it in the /static folder
   favicon: 'src/favicon.png', // Your image for favicons. You can find it in the /src folder
   siteDescription: 'Minimal Blog with big typography', // Your site description

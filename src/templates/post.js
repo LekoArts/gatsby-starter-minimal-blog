@@ -1,12 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
 import { Link, graphql } from 'gatsby'
 import styled from 'styled-components'
 import kebabCase from 'lodash/kebabCase'
-import { Layout, Wrapper, Header, Subline, SEO, PrevNext } from 'components'
+import MDXRenderer from 'gatsby-mdx/mdx-renderer'
+import { Layout, Wrapper, Header, Subline, SEO, PrevNext } from '../components'
 import { media } from '../utils/media'
-import config from '../../config/SiteConfig'
+import config from '../../config'
 import '../utils/prismjs-theme.css'
 
 const Content = styled.article`
@@ -40,8 +40,7 @@ const Post = ({ pageContext: { slug, prev, next }, data: { markdownRemark: postN
   return (
     <Layout>
       <Wrapper>
-        <SEO postPath={slug} postNode={postNode} postSEO />
-        <Helmet title={`${post.title} | ${config.siteTitle}`} />
+        <SEO postPath={slug} postNode={postNode} article />
         <Header>
           <Link to="/">{config.siteTitle}</Link>
         </Header>
@@ -51,7 +50,9 @@ const Post = ({ pageContext: { slug, prev, next }, data: { markdownRemark: postN
             {post.date} &mdash; {postNode.timeToRead} Min Read &mdash; In{' '}
             <Link to={`/categories/${kebabCase(post.category)}`}>{post.category}</Link>
           </Subline>
-          <PostContent dangerouslySetInnerHTML={{ __html: postNode.html }} />
+          <PostContent>
+            <MDXRenderer>{postNode.code.body}</MDXRenderer>
+          </PostContent>
           <PrevNext prev={prev} next={next} />
         </Content>
       </Wrapper>
@@ -68,7 +69,7 @@ Post.propTypes = {
     prev: PropTypes.object,
   }),
   data: PropTypes.shape({
-    markdownRemark: PropTypes.object.isRequired,
+    mdx: PropTypes.object.isRequired,
   }).isRequired,
 }
 
@@ -81,15 +82,23 @@ Post.defaultProps = {
 
 export const postQuery = graphql`
   query postBySlug($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
+    mdx(fields: { slug: { eq: $slug } }) {
+      code {
+        body
+      }
       excerpt
       frontmatter {
         title
-        date(formatString: "DD.MM.YYYY")
+        date(formatString: "MM/DD/YYYY")
         category
       }
       timeToRead
+      parent {
+        ... on File {
+          mtime
+          birthtime
+        }
+      }
     }
   }
 `

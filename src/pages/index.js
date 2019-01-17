@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
 import styled from 'styled-components'
-import { Layout, Article, Wrapper, Button, SectionTitle } from 'components'
+import { Layout, Article, Wrapper, Button, SectionTitle } from '../components'
 import { media } from '../utils/media'
 
 const Content = styled.div`
@@ -81,7 +81,7 @@ export default IndexPage
 
 IndexPage.propTypes = {
   data: PropTypes.shape({
-    allMarkdownRemark: PropTypes.shape({
+    allMdx: PropTypes.shape({
       edges: PropTypes.array.isRequired,
     }),
   }).isRequired,
@@ -89,7 +89,7 @@ IndexPage.propTypes = {
 
 export const IndexQuery = graphql`
   query IndexQuery {
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
           fields {
@@ -97,7 +97,7 @@ export const IndexQuery = graphql`
           }
           frontmatter {
             title
-            date(formatString: "DD.MM.YYYY")
+            date(formatString: "MM/DD/YYYY")
             category
           }
           excerpt(pruneLength: 200)

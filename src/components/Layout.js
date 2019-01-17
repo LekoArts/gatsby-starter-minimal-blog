@@ -1,11 +1,9 @@
-/* eslint no-unused-expressions:0 */
-
 import React from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 import styled, { ThemeProvider, createGlobalStyle } from 'styled-components'
-import { SEO } from 'components'
-import theme from '../../config/Theme'
+import SEO from './SEO'
+import theme from '../../config/theme'
 import { media } from '../utils/media'
 
 const GlobalStyle = createGlobalStyle`
@@ -68,23 +66,23 @@ const Footer = styled.footer`
   }
 `
 
-const Layout = ({ children }) => (
+const Layout = ({ children, customSEO }) => (
   <StaticQuery
     query={graphql`
       query LayoutQuery {
         site {
-          buildTime(formatString: "DD.MM.YYYY")
+          buildTime(formatString: "YYYY-MM-DD")
         }
       }
     `}
     render={data => (
       <ThemeProvider theme={theme}>
         <React.Fragment>
-          <SEO />
+          {!customSEO && <SEO buildTime={data.site.buildTime} />}
           <GlobalStyle />
           {children}
           <Footer>
-            &copy; 2018 by John Doe. All rights reserved. <br />
+            &copy; 2019 by John Doe. All rights reserved. <br />
             <a href="https://github.com/LekoArts/gatsby-starter-minimal-blog">GitHub Repository</a> <br />
             <span>Last build: {data.site.buildTime}</span>
           </Footer>
@@ -98,4 +96,9 @@ export default Layout
 
 Layout.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.node]).isRequired,
+  customSEO: PropTypes.bool,
+}
+
+Layout.defaultProps = {
+  customSEO: false,
 }

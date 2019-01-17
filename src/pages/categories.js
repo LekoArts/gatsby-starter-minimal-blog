@@ -4,10 +4,10 @@ import Helmet from 'react-helmet'
 import { Link, graphql } from 'gatsby'
 import styled from 'styled-components'
 import kebabCase from 'lodash/kebabCase'
-import { Layout, Wrapper, Header, SectionTitle } from 'components'
+import { Layout, Wrapper, Header, SectionTitle } from '../components'
 import { media } from '../utils/media'
 
-import config from '../../config/SiteConfig'
+import config from '../../config'
 
 const Content = styled.div`
   grid-column: 2;
@@ -59,7 +59,7 @@ export default Category
 
 Category.propTypes = {
   data: PropTypes.shape({
-    allMarkdownRemark: PropTypes.shape({
+    allMdx: PropTypes.shape({
       group: PropTypes.array.isRequired,
     }),
   }).isRequired,
@@ -67,7 +67,7 @@ Category.propTypes = {
 
 export const postQuery = graphql`
   query CategoriesPage {
-    allMarkdownRemark {
+    allMdx {
       group(field: frontmatter___category) {
         fieldValue
         totalCount

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { Link, graphql } from 'gatsby'
 import styled from 'styled-components'
-import { Layout, Wrapper, Header, Subline, Article, SectionTitle } from 'components'
+import { Layout, Wrapper, Header, Subline, Article, SectionTitle } from '../components'
 import { media } from '../utils/media'
 import config from '../../config'
 
@@ -63,7 +63,7 @@ Category.propTypes = {
     category: PropTypes.string.isRequired,
   }).isRequired,
   data: PropTypes.shape({
-    allMarkdownRemark: PropTypes.shape({
+    allMdx: PropTypes.shape({
       edges: PropTypes.array.isRequired,
       totalCount: PropTypes.number.isRequired,
     }),
@@ -72,7 +72,7 @@ Category.propTypes = {
 
 export const postQuery = graphql`
   query CategoryPage($category: String!) {
-    allMarkdownRemark(
+    allMdx(
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { category: { eq: $category } } }
     ) {
@@ -81,7 +81,7 @@ export const postQuery = graphql`
         node {
           frontmatter {
             title
-            date(formatString: "DD.MM.YYYY")
+            date(formatString: "MM/DD/YYYY")
             category
           }
           fields {
