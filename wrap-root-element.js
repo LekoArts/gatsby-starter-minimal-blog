@@ -1,4 +1,5 @@
 /* eslint react/prop-types: 0 */
+/* eslint react/display-name: 0  */
 import React from 'react'
 import { MDXProvider } from '@mdx-js/tag'
 import { preToCodeBlock } from 'mdx-utils'

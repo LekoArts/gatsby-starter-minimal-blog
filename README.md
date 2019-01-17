@@ -22,6 +22,7 @@ Check out the [Gatsby Starter Portfolio Overview](https://gatsby-starter-portfol
 ## Features
 
 - Articles in MDX ([gatsby-mdx](https://github.com/ChristopherBiscardi/gatsby-mdx))
+- Code highlighting (with prism-react-renderer) and live preview (with react-live)
 - Styled Components 💅
 - Netlify Contact Form
 - Categories
@@ -32,7 +33,6 @@ Check out the [Gatsby Starter Portfolio Overview](https://gatsby-starter-portfol
   - Schema.org JSONLD
   - OpenGraph Tags
   - Twitter Tags
-- Favicons
 
 ## Getting Started
 
