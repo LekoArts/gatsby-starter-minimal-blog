@@ -5,7 +5,9 @@ const wrapper = promise => promise.then(result => ({ result, error: null })).cat
 
 exports.onCreateNode = ({ node, actions }) => {
   const { createNodeField } = actions
+
   let slug
+
   if (node.internal.type === 'Mdx') {
     if (
       Object.prototype.hasOwnProperty.call(node, 'frontmatter') &&
@@ -26,13 +28,13 @@ exports.onCreateNode = ({ node, actions }) => {
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
-  const postPage = require.resolve('src/templates/post.js')
-  const categoryPage = require.resolve('src/templates/category.js')
+  const postTemplate = require.resolve('./src/templates/post.js')
+  const categoryTemplate = require.resolve('./src/templates/category.js')
 
   const { error, result } = await wrapper(
-    graphql`
+    graphql(`
       {
-        posts: allMdx {
+        allMdx {
           edges {
             node {
               fields {
@@ -46,11 +48,11 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
-    `
+    `)
   )
 
   if (!error) {
-    const posts = result.data.posts.edges
+    const posts = result.data.allMdx.edges
 
     posts.forEach((edge, index) => {
       const next = index === 0 ? null : posts[index - 1].node
@@ -58,7 +60,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
       createPage({
         path: edge.node.fields.slug,
-        component: postPage,
+        component: postTemplate,
         context: {
           slug: edge.node.fields.slug,
           prev,
@@ -80,7 +82,7 @@ exports.createPages = async ({ graphql, actions }) => {
     categories.forEach(category => {
       createPage({
         path: `/categories/${_.kebabCase(category)}`,
-        component: categoryPage,
+        component: categoryTemplate,
         context: {
           category,
         },

@@ -145,19 +145,19 @@ const SEO = props => {
   return (
     <Helmet>
       <html lang={config.siteLanguage} />
-      <title>{config.siteTitle}</title>
+      <title>{title}</title>
       <meta name="description" content={description} />
       <meta name="image" content={image} />
       <meta name="gatsby-starter" content="Gatsby Starter Minimal Blog" />
       <meta property="og:locale" content={config.ogLanguage} />
       <meta property="og:site_name" content={config.ogSiteName ? config.ogSiteName : ''} />
       <meta property="og:url" content={URL} />
-      {article ? <meta property="og:type" content="article" /> : null}
+      <meta property="og:type" content={article ? 'article' : 'website'} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={image} />
       <meta property="og:image:alt" content={description} />
-      <meta property="fb:app_id" content={config.siteFBAppID ? config.siteFBAppID : ''} />
+      {config.siteFBAppID && <meta property="fb:app_id" content={config.siteFBAppID} />}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:creator" content={config.userTwitter ? config.userTwitter : ''} />
       <meta name="twitter:title" content={title} />

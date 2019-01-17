@@ -13,7 +13,7 @@ const Content = styled.article`
   box-shadow: 0 4px 120px rgba(0, 0, 0, 0.1);
   max-width: 1000px;
   border-radius: 1rem;
-  padding: 2rem 4rem;
+  padding: 2rem 4.5rem;
   background-color: ${props => props.theme.colors.bg};
   z-index: 9000;
   margin-top: -3rem;
@@ -22,6 +22,20 @@ const Content = styled.article`
   }
   @media (max-width: ${props => props.theme.breakpoints.phone}) {
     padding: 2rem 1.5rem;
+  }
+  p {
+    font-size: 1.1rem;
+    letter-spacing: -0.003em;
+    line-height: 1.58;
+    --baseline-multiplier: 0.179;
+    --x-height-multiplier: 0.35;
+  }
+
+  .prism-code {
+    padding: 0.75rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    font-size: 16px;
   }
 `
 
@@ -33,11 +47,11 @@ const PostContent = styled.div`
   margin-top: 4rem;
 `
 
-const Post = ({ pageContext: { slug, prev, next }, data: { markdownRemark: postNode } }) => {
+const Post = ({ pageContext: { slug, prev, next }, data: { mdx: postNode } }) => {
   const post = postNode.frontmatter
 
   return (
-    <Layout>
+    <Layout customSEO>
       <Wrapper>
         <SEO postPath={slug} postNode={postNode} article />
         <Header>

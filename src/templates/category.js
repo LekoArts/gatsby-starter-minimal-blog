@@ -23,8 +23,8 @@ const Content = styled.div`
   }
 `
 
-const Category = ({ pageContext: { category }, data: { allMarkdownRemark } }) => {
-  const { edges, totalCount } = allMarkdownRemark
+const Category = ({ pageContext: { category }, data: { allMdx } }) => {
+  const { edges, totalCount } = allMdx
   const subline = `${totalCount} post${totalCount === 1 ? '' : 's'} tagged with "${category}"`
 
   return (

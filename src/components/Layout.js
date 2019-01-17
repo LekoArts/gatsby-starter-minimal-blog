@@ -7,32 +7,69 @@ import SEO from './SEO'
 import theme from '../../config/theme'
 
 const GlobalStyle = createGlobalStyle`
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+  html,
+  body {
+    padding: 0;
+    margin: 0;
+  }
   ::selection {
-    color: ${theme.colors.bg};
-    background: ${theme.colors.primary};
+    color: ${props => props.theme.colors.bg};
+    background: ${props => props.theme.colors.primary};
   }
   html {
-    font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+    font-family: ${props => props.theme.fontFamily.sansSerif};
     font-size: ${props => props.theme.baseFontSize};
-  }
-  body {
-    background: ${theme.colors.bg};
-    color: ${theme.default};
     @media (max-width: ${props => props.theme.breakpoints.phone}) {
-      font-size: 14px;
+      font-size: 16px;
+    }
+    h1 {
+      font-size: 3.052rem;
+    }
+    h2 {
+      font-size: 2.441rem;
+    }
+    h3 {
+      font-size: 1.953rem;
+    }
+    h4 {
+      font-size: 1.563rem;
+    }
+    h5 {
+      font-size: 1.25rem;
     }
   }
+  body {
+    background: ${props => props.theme.colors.bg};
+    color: ${props => props.theme.colors.grey.default};
+  }
   a {
-    color: ${theme.colors.grey.dark};
+    color: ${props => props.theme.colors.primary};
     text-decoration: none;
-    transition: all ${theme.transitions.normal};
+    transition: all ${props => props.theme.transitions.normal};
   }
   a:hover {
-    color: ${theme.colors.primary};
+    color: ${props => props.theme.colors.primaryLight};
+  }
+  a:not([href]):not([tabindex]) {
+    color: inherit;
+    text-decoration: none;
+    &:hover,
+    &:focus {
+      color: inherit;
+      text-decoration: none;
+    }
+    &:focus {
+      outline: 0;
+    }
   }
   h1, h2, h3, h4, h5, h6 {
-    color: ${theme.colors.grey.dark};
-    font-family: 'Bitter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', serif;
+    color: ${props => props.theme.colors.grey.dark};
+    font-family: ${props => props.theme.fontFamily.serif};
   }
   blockquote {
     font-style: italic;
@@ -42,23 +79,95 @@ const GlobalStyle = createGlobalStyle`
   blockquote:before {
     content: "";
     position: absolute;
-    background: ${theme.colors.primary};
+    background: ${props => props.theme.colors.primary};
     height: 100%;
     width: 6px;
     margin-left: -1.6rem;
   }
   label {
     margin-bottom: .5rem;
-    color: ${theme.colors.grey.dark};
+    color: ${props => props.theme.colors.grey.dark};
+  }
+  input, textarea, button {
+    font-size: 1rem;
+  }
+  textarea {
+    font-family: ${props => props.theme.fontFamily.sansSerif};
   }
   input, textarea {
     border-radius: .5rem;
     border: none;
     background: rgba(0, 0, 0, 0.05);
-    padding: .25rem 1rem;
+    padding: .4rem 1rem;
     &:focus {
       outline: none;
     }
+  }
+  pre {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    overflow: auto;
+  }
+  figure {
+    margin: 0 0 1rem 0;
+  }
+  img {
+    vertical-align: middle;
+  }
+  [role='button'] {
+    cursor: pointer;
+  }
+  a,
+  area,
+  button,
+  [role='button'],
+  input,
+  label,
+  select,
+  summary,
+  textarea {
+    touch-action: manipulation;
+  }
+  table {
+    border-collapse: collapse;
+    background-color: ${props => props.theme.colors.bg};
+  }
+  caption {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    color: ${props => props.theme.colors.color};
+    text-align: center;
+    caption-side: bottom;
+  }
+  th {
+    text-align: left;
+  }
+  fieldset {
+    min-width: 0;
+    padding: 0;
+    margin: 0;
+    border: 0;
+  }
+  legend {
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    line-height: inherit;
+  }
+  input[type='search'] {
+    -webkit-appearance: none;
+  }
+  output {
+    display: inline-block;
+  }
+  svg:not(:root) {
+    overflow: hidden;
+    vertical-align: middle;
+  }
+  [hidden] {
+    display: none !important;
   }
 `
 

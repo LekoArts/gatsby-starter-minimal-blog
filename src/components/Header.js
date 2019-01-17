@@ -22,6 +22,7 @@ const Content = styled.div`
 
   a {
     color: ${props => props.theme.colors.white};
+    font-size: 1.2rem;
     &:hover {
       opacity: 0.85;
       color: ${props => props.theme.colors.white};
