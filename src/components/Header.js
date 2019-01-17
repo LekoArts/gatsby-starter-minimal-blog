@@ -17,14 +17,14 @@ const Wrapper = styled.header`
 `
 
 const Content = styled.div`
-  max-width: 1000px;
+  max-width: ${props => props.theme.maxWidth};
   margin: 0 auto;
 
   a {
-    color: white;
+    color: ${props => props.theme.colors.white};
     &:hover {
       opacity: 0.85;
-      color: white;
+      color: ${props => props.theme.colors.white};
     }
   }
 `

@@ -2,20 +2,23 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 import styled, { ThemeProvider, createGlobalStyle } from 'styled-components'
+
 import SEO from './SEO'
 import theme from '../../config/theme'
-import { media } from '../utils/media'
 
 const GlobalStyle = createGlobalStyle`
   ::selection {
     color: ${theme.colors.bg};
     background: ${theme.colors.primary};
   }
+  html {
+    font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+    font-size: ${props => props.theme.baseFontSize};
+  }
   body {
     background: ${theme.colors.bg};
     color: ${theme.default};
-    font-display: swap;
-    @media ${media.phone} {
+    @media (max-width: ${props => props.theme.breakpoints.phone}) {
       font-size: 14px;
     }
   }
@@ -27,8 +30,9 @@ const GlobalStyle = createGlobalStyle`
   a:hover {
     color: ${theme.colors.primary};
   }
-  h1, h2, h3, h4 {
+  h1, h2, h3, h4, h5, h6 {
     color: ${theme.colors.grey.dark};
+    font-family: 'Bitter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', serif;
   }
   blockquote {
     font-style: italic;

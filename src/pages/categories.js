@@ -4,9 +4,8 @@ import Helmet from 'react-helmet'
 import { Link, graphql } from 'gatsby'
 import styled from 'styled-components'
 import kebabCase from 'lodash/kebabCase'
-import { Layout, Wrapper, Header, SectionTitle } from '../components'
-import { media } from '../utils/media'
 
+import { Layout, Wrapper, Header, SectionTitle } from '../components'
 import config from '../../config'
 
 const Content = styled.div`
@@ -17,10 +16,10 @@ const Content = styled.div`
   background-color: ${props => props.theme.colors.bg};
   z-index: 9000;
   margin-top: -3rem;
-  @media ${media.tablet} {
+  @media (max-width: ${props => props.theme.breakpoints.tablet}) {
     padding: 3rem 3rem;
   }
-  @media ${media.phone} {
+  @media (max-width: ${props => props.theme.breakpoints.phone}) {
     padding: 2rem 1.5rem;
   }
 `
@@ -33,7 +32,7 @@ const Title = styled.h3`
 
 const Category = ({
   data: {
-    allMarkdownRemark: { group },
+    allMdx: { group },
   },
 }) => (
   <Layout>

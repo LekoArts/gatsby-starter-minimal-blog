@@ -7,6 +7,7 @@ const colors = {
     light: 'rgba(0, 0, 0, 0.5)',
     ultraLight: 'rgba(0, 0, 0, 0.25)',
   },
+  white: 'white',
 }
 
 const transitions = {
@@ -17,10 +18,18 @@ const fontSize = {
   small: '0.9rem',
 }
 
+const breakpoints = {
+  tablet: '1200px',
+  phone: '600px',
+}
+
 const theme = {
   colors,
   transitions,
   fontSize,
+  breakpoints,
+  maxWidth: '1000px',
+  baseFontSize: '18px',
 }
 
 export default theme

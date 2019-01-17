@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
+
 import config from '../../config'
 
 const SEO = props => {
@@ -19,7 +20,7 @@ const SEO = props => {
     title = `${postMeta.title} | ${config.siteTitle}`
     description = postNode.excerpt
   } else {
-    title = config.siteTitle
+    title = config.siteTitleAlt
     description = config.siteDescription
   }
 

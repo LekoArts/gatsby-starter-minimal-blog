@@ -8,7 +8,7 @@
     "@mdx-js/tag": "^0.16.6",
     "babel-plugin-styled-components": "^1.10.0",
     "gatsby": "^2.0.91",
-    "gatsby-mdx": "^0.3.3",
+    "gatsby-mdx": "^0.3.4",
     "gatsby-plugin-catch-links": "^2.0.9",
     "gatsby-plugin-lodash": "^3.0.3",
     "gatsby-plugin-manifest": "^2.0.13",
@@ -29,7 +29,9 @@
     "react-dom": "^16.7.0",
     "react-helmet": "^5.2.0",
     "react-live": "^1.12.0",
-    "styled-components": "^4.1.3"
+    "styled-components": "^4.1.3",
+    "typeface-bitter": "^0.0.71",
+    "typeface-open-sans": "^0.0.54"
   },
   "keywords": [
     "gatsby",
@@ -42,7 +44,7 @@
     "build": "gatsby build",
     "dev": "gatsby develop -o",
     "develop": "gatsby develop",
-    "serve": "gatsby build && gatsby serve",
+    "serve": "gatsby serve",
     "lint": "eslint . --ext .js,.jsx --ignore-path .gitignore",
     "lint:fix": "eslint . --ext .js,.jsx --fix --ignore-path .gitignore",
     "format": "prettier \"**/*.{md,mdx} \" --write"
@@ -51,11 +53,11 @@
     "babel-eslint": "^10.0.1",
     "eslint": "^5.12.0",
     "eslint-config-airbnb": "^17.1.0",
-    "eslint-config-prettier": "^3.4.0",
+    "eslint-config-prettier": "^3.5.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-prettier": "^3.0.1",
-    "eslint-plugin-react": "^7.12.3",
+    "eslint-plugin-react": "^7.12.4",
     "prettier": "^1.15.3"
   }
 }

@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { Link, graphql } from 'gatsby'
 import styled from 'styled-components'
+
 import { Layout, Wrapper, Header, Subline, Article, SectionTitle } from '../components'
-import { media } from '../utils/media'
 import config from '../../config'
 
 const Content = styled.div`
@@ -15,10 +15,10 @@ const Content = styled.div`
   background-color: ${props => props.theme.colors.bg};
   z-index: 9000;
   margin-top: -3rem;
-  @media ${media.tablet} {
+  @media (max-width: ${props => props.theme.breakpoints.tablet}) {
     padding: 3rem 3rem;
   }
-  @media ${media.phone} {
+  @media (max-width: ${props => props.theme.breakpoints.phone}) {
     padding: 2rem 1.5rem;
   }
 `

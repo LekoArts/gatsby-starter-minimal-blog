@@ -4,10 +4,9 @@ import { Link, graphql } from 'gatsby'
 import styled from 'styled-components'
 import kebabCase from 'lodash/kebabCase'
 import MDXRenderer from 'gatsby-mdx/mdx-renderer'
+
 import { Layout, Wrapper, Header, Subline, SEO, PrevNext } from '../components'
-import { media } from '../utils/media'
 import config from '../../config'
-import '../utils/prismjs-theme.css'
 
 const Content = styled.article`
   grid-column: 2;
@@ -18,10 +17,10 @@ const Content = styled.article`
   background-color: ${props => props.theme.colors.bg};
   z-index: 9000;
   margin-top: -3rem;
-  @media ${media.tablet} {
+  @media (max-width: ${props => props.theme.breakpoints.tablet}) {
     padding: 3rem 3rem;
   }
-  @media ${media.phone} {
+  @media (max-width: ${props => props.theme.breakpoints.phone}) {
     padding: 2rem 1.5rem;
   }
 `

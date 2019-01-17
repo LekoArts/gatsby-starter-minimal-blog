@@ -2,7 +2,7 @@
 
 Typography driven, focus on the content & minimal style. Powered by MDX.
 
-[Demo Website](https://minimal-blog.netlify.com/)
+[Demo Website](https://minimal-blog.lekoarts.de)
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/LekoArts/gatsby-starter-minimal-blog) [![Edit gatsby-starter-minimal-blog](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/LekoArts/gatsby-starter-minimal-blog/tree/master/)
 
@@ -46,7 +46,7 @@ To copy and install this starter run this command (with "project-name" being the
 ```
 gatsby new project-name https://github.com/LekoArts/gatsby-starter-minimal-blog
 cd project-name
-npm run dev
+npm run develop
 ```
 
 ### Adding new features/plugins
