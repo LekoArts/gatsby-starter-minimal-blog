@@ -1,4 +1,3 @@
 User-agent: *
-Disallow:
 
-sitemap: https://minimal-blog.netlify.com/sitemap.xml
+sitemap: https://minimal-blog.lekoarts.de/sitemap.xml

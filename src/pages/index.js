@@ -25,6 +25,10 @@ const Hero = styled.div`
   text-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
   color: ${props => props.theme.colors.grey.dark};
 
+  @media (max-width: ${props => props.theme.breakpoints.phone}) {
+    padding: 2rem 1rem 4rem 1rem;
+  }
+
   p {
     font-size: 1.68rem;
     margin-top: -1rem;

@@ -11,6 +11,11 @@ const Post = styled.article`
   flex-direction: column;
   margin-top: 3.5rem;
   margin-bottom: 3.5rem;
+
+  @media (max-width: ${props => props.theme.breakpoints.phone}) {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
 `
 
 const Title = styled.h2`

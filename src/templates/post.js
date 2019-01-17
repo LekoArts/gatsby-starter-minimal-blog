@@ -29,6 +29,9 @@ const Content = styled.article`
     line-height: 1.58;
     --baseline-multiplier: 0.179;
     --x-height-multiplier: 0.35;
+    @media (max-width: ${props => props.theme.breakpoints.phone}) {
+      font-size: 1rem;
+    }
   }
 
   .prism-code {

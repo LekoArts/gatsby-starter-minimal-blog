@@ -30,7 +30,7 @@ const Category = ({ pageContext: { category }, data: { allMdx } }) => {
   return (
     <Layout>
       <Wrapper>
-        <Helmet title={`${category} | ${config.siteTitle}`} />
+        <Helmet title={`Category: ${category} | ${config.siteTitle}`} />
         <Header>
           <Link to="/">{config.siteTitle}</Link>
         </Header>

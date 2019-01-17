@@ -22,7 +22,7 @@ Check out the [Gatsby Starter Portfolio Overview](https://gatsby-starter-portfol
 ## Features
 
 - Articles in MDX ([gatsby-mdx](https://github.com/ChristopherBiscardi/gatsby-mdx))
-- Code highlighting (with prism-react-renderer) and live preview (with react-live)
+- Code highlighting (with [prism-react-renderer](https://github.com/FormidableLabs/prism-react-renderer)) and live preview (with [react-live](https://github.com/FormidableLabs/react-live))
 - Styled Components 💅
 - Netlify Contact Form
 - Categories
