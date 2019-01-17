@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const Subline = styled.div`
   font-size: ${props => props.theme.fontSize.small};
@@ -6,6 +6,6 @@ const Subline = styled.div`
   ${props => props.sectionTitle && 'margin-top: -3rem'};
   ${props => props.sectionTitle && 'margin-bottom: 4rem'};
   ${props => props.sectionTitle && 'text-align: center'};
-`;
+`
 
-export default Subline;
+export default Subline

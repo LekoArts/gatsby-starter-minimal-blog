@@ -1,10 +1,12 @@
 # Gatsby Starter: Minimal Blog
 
-Big typography, focus on the content & minimal style.
+Typography driven, focus on the content & minimal style. Powered by MDX.
 
-[Demo Website](https://minimal-blog.netlify.com/)
+[Demo Website](https://minimal-blog.lekoarts.de)
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/LeKoArts/gatsby-starter-minimal-blog) [![Edit gatsby-starter-minimal-blog](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/LekoArts/gatsby-starter-minimal-blog/tree/master/)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/LekoArts/gatsby-starter-minimal-blog) [![Edit gatsby-starter-minimal-blog](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/LekoArts/gatsby-starter-minimal-blog/tree/master/)
+
+[![CircleCI](https://circleci.com/gh/LekoArts/gatsby-starter-minimal-blog.svg?style=svg)](https://circleci.com/gh/LekoArts/gatsby-starter-minimal-blog)
 
 ## About Me
 
@@ -12,33 +14,27 @@ I hope you like my starters and create something awesome! To see some of my work
 
 Also check out the other _gatsby-starters_:
 
-- [gatsby-starter-portfolio-emma](https://github.com/LeKoArts/gatsby-starter-portfolio-emma)
-- [gatsby-starter-portfolio-emilia](https://github.com/LeKoArts/gatsby-starter-portfolio-emilia)
-- [gatsby-starter-portfolio-bella](https://github.com/LeKoArts/gatsby-starter-portfolio-bella)
-- [gatsby-starter-portfolio-cara](https://github.com/LeKoArts/gatsby-starter-portfolio-cara)
+- [gatsby-starter-portfolio-emma](https://github.com/LekoArts/gatsby-starter-portfolio-emma)
+- [gatsby-starter-portfolio-emilia](https://github.com/LekoArts/gatsby-starter-portfolio-emilia)
+- [gatsby-starter-portfolio-bella](https://github.com/LekoArts/gatsby-starter-portfolio-bella)
+- [gatsby-starter-portfolio-cara](https://github.com/LekoArts/gatsby-starter-portfolio-cara)
 
 Check out the [Gatsby Starter Portfolio Overview](https://gatsby-starter-portfolio.netlify.com/)!
 
 ## Features
 
-As this starter is used for my (german) tutorials on my [blog](https://www.lekoarts.de/blog) the features are subject to change. I'll add more features or replace some with other features in the process.
-
-Current features:
-
-- Gatsby v2.0.0
-- Articles in Markdown
+- Articles in MDX ([gatsby-mdx](https://github.com/ChristopherBiscardi/gatsby-mdx))
+- Code highlighting (with [prism-react-renderer](https://github.com/FormidableLabs/prism-react-renderer)) and live preview (with [react-live](https://github.com/FormidableLabs/react-live))
 - Styled Components 💅
 - Netlify Contact Form
 - Categories
 - Offline Support
 - WebApp Manifest Support
-- Typography.js
 - SEO
   - Sitemap
   - Schema.org JSONLD
   - OpenGraph Tags
   - Twitter Tags
-- Favicons
 
 ## Getting Started
 
@@ -50,22 +46,14 @@ Check your development environment! You'll need [Node.js](https://nodejs.org/en/
 To copy and install this starter run this command (with "project-name" being the name of your folder you wish to install it in):
 
 ```
-gatsby new project-name https://github.com/LeKoArts/gatsby-starter-minimal-blog
+gatsby new project-name https://github.com/LekoArts/gatsby-starter-minimal-blog
 cd project-name
-npm run dev
+npm run develop
 ```
 
 ### Adding new features/plugins
 
 You can add other features by having a look at the official [plugins page](https://www.gatsbyjs.org/docs/plugins/)
-
-### Changing the date format
-
-This starter uses Gatsby's built-in date formatter in the GraphQL queries. If you want to change the date format you see on the index page or other overviews have a look at the GraphQL query. It contains the line:
-
-```graphql
-date(formatString: "DD.MM.YYYY")
-```
 
 ### Building your site
 

@@ -1,36 +1,90 @@
-/* eslint no-unused-expressions:0 */
+import React from 'react'
+import PropTypes from 'prop-types'
+import { StaticQuery, graphql } from 'gatsby'
+import styled, { ThemeProvider, createGlobalStyle } from 'styled-components'
 
-import React from 'react';
-import PropTypes from 'prop-types';
-import { StaticQuery, graphql } from 'gatsby';
-import styled, { ThemeProvider, createGlobalStyle } from 'styled-components';
-import { SEO } from 'components';
-import theme from '../../config/Theme';
-import { media } from '../utils/media';
+import SEO from './SEO'
+import theme from '../../config/theme'
 
 const GlobalStyle = createGlobalStyle`
-  ::selection {
-    color: ${theme.colors.bg};
-    background: ${theme.colors.primary};
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
   }
+  html,
   body {
-    background: ${theme.colors.bg};
-    color: ${theme.default};
-    font-display: swap;
-    @media ${media.phone} {
-      font-size: 14px;
+    padding: 0;
+    margin: 0;
+  }
+  ::selection {
+    color: ${props => props.theme.colors.bg};
+    background: ${props => props.theme.colors.primary};
+  }
+  html {
+    font-family: ${props => props.theme.fontFamily.sansSerif};
+    font-size: ${props => props.theme.baseFontSize};
+    h1 {
+      font-size: 3.052rem;
+    }
+    h2 {
+      font-size: 2.441rem;
+    }
+    h3 {
+      font-size: 1.953rem;
+    }
+    h4 {
+      font-size: 1.563rem;
+    }
+    h5 {
+      font-size: 1.25rem;
+    }
+    @media (max-width: ${props => props.theme.breakpoints.phone}) {
+      font-size: 16px;
+      h1 {
+        font-size: 2.488rem;
+      }
+      h2 {
+        font-size: 2.074rem;
+      }
+      h3 {
+        font-size: 1.728rem;
+      }
+      h4 {
+        font-size: 1.444rem;
+      }
+      h5 {
+        font-size: 1.2rem;
+      }
     }
   }
+  body {
+    background: ${props => props.theme.colors.bg};
+    color: ${props => props.theme.colors.grey.default};
+  }
   a {
-    color: ${theme.colors.grey.dark};
+    color: ${props => props.theme.colors.primary};
     text-decoration: none;
-    transition: all ${theme.transitions.normal};
+    transition: all ${props => props.theme.transitions.normal};
   }
   a:hover {
-    color: ${theme.colors.primary};
+    color: ${props => props.theme.colors.primaryLight};
   }
-  h1, h2, h3, h4 {
-    color: ${theme.colors.grey.dark};
+  a:not([href]):not([tabindex]) {
+    color: inherit;
+    text-decoration: none;
+    &:hover,
+    &:focus {
+      color: inherit;
+      text-decoration: none;
+    }
+    &:focus {
+      outline: 0;
+    }
+  }
+  h1, h2, h3, h4, h5, h6 {
+    color: ${props => props.theme.colors.grey.dark};
+    font-family: ${props => props.theme.fontFamily.serif};
   }
   blockquote {
     font-style: italic;
@@ -40,51 +94,123 @@ const GlobalStyle = createGlobalStyle`
   blockquote:before {
     content: "";
     position: absolute;
-    background: ${theme.colors.primary};
+    background: ${props => props.theme.colors.primary};
     height: 100%;
     width: 6px;
     margin-left: -1.6rem;
   }
   label {
     margin-bottom: .5rem;
-    color: ${theme.colors.grey.dark};
+    color: ${props => props.theme.colors.grey.dark};
+  }
+  input, textarea, button {
+    font-size: 1rem;
+  }
+  textarea {
+    font-family: ${props => props.theme.fontFamily.sansSerif};
   }
   input, textarea {
     border-radius: .5rem;
     border: none;
     background: rgba(0, 0, 0, 0.05);
-    padding: .25rem 1rem;
+    padding: .4rem 1rem;
     &:focus {
       outline: none;
     }
   }
-`;
+  pre {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    overflow: auto;
+  }
+  figure {
+    margin: 0 0 1rem 0;
+  }
+  img {
+    vertical-align: middle;
+  }
+  [role='button'] {
+    cursor: pointer;
+  }
+  a,
+  area,
+  button,
+  [role='button'],
+  input,
+  label,
+  select,
+  summary,
+  textarea {
+    touch-action: manipulation;
+  }
+  table {
+    border-collapse: collapse;
+    background-color: ${props => props.theme.colors.bg};
+  }
+  caption {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    color: ${props => props.theme.colors.color};
+    text-align: center;
+    caption-side: bottom;
+  }
+  th {
+    text-align: left;
+  }
+  fieldset {
+    min-width: 0;
+    padding: 0;
+    margin: 0;
+    border: 0;
+  }
+  legend {
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    line-height: inherit;
+  }
+  input[type='search'] {
+    -webkit-appearance: none;
+  }
+  output {
+    display: inline-block;
+  }
+  svg:not(:root) {
+    overflow: hidden;
+    vertical-align: middle;
+  }
+  [hidden] {
+    display: none !important;
+  }
+`
 
 const Footer = styled.footer`
   text-align: center;
-  padding: 3rem 0;
+  padding: 3rem 1rem;
   span {
     font-size: 0.75rem;
   }
-`;
+`
 
-const Layout = ({ children }) => (
+const Layout = ({ children, customSEO }) => (
   <StaticQuery
     query={graphql`
       query LayoutQuery {
         site {
-          buildTime(formatString: "DD.MM.YYYY")
+          buildTime(formatString: "YYYY-MM-DD")
         }
       }
     `}
     render={data => (
       <ThemeProvider theme={theme}>
         <React.Fragment>
-          <SEO />
+          {!customSEO && <SEO buildTime={data.site.buildTime} />}
           <GlobalStyle />
           {children}
           <Footer>
-            &copy; 2018 by John Doe. All rights reserved. <br />
+            &copy; 2019 by John Doe. All rights reserved. <br />
             <a href="https://github.com/LekoArts/gatsby-starter-minimal-blog">GitHub Repository</a> <br />
             <span>Last build: {data.site.buildTime}</span>
           </Footer>
@@ -92,10 +218,15 @@ const Layout = ({ children }) => (
       </ThemeProvider>
     )}
   />
-);
+)
 
-export default Layout;
+export default Layout
 
 Layout.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.node]).isRequired,
-};
+  customSEO: PropTypes.bool,
+}
+
+Layout.defaultProps = {
+  customSEO: false,
+}
