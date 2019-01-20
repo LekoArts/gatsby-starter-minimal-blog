@@ -46,7 +46,7 @@ const Category = ({ pageContext: { category }, data: { allMdx } }) => {
               excerpt={post.node.excerpt}
               timeToRead={post.node.timeToRead}
               slug={post.node.fields.slug}
-              category={post.node.frontmatter.category}
+              categories={post.node.frontmatter.categories}
               key={post.node.fields.slug}
             />
           ))}
@@ -74,7 +74,7 @@ export const postQuery = graphql`
   query CategoryPage($category: String!) {
     allMdx(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { category: { eq: $category } } }
+      filter: { frontmatter: { categories: { eq: $category } } }
     ) {
       totalCount
       edges {
@@ -82,7 +82,7 @@ export const postQuery = graphql`
           frontmatter {
             title
             date(formatString: "MM/DD/YYYY")
-            category
+            categories
           }
           fields {
             slug

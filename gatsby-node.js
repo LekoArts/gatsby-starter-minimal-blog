@@ -42,7 +42,7 @@ exports.createPages = async ({ graphql, actions }) => {
               }
               frontmatter {
                 title
-                category
+                categories
               }
             }
           }
@@ -69,15 +69,17 @@ exports.createPages = async ({ graphql, actions }) => {
       })
     })
 
-    let categories = []
+    const categorySet = new Set()
 
     _.each(posts, edge => {
-      if (_.get(edge, 'node.frontmatter.category')) {
-        categories = categories.concat(edge.node.frontmatter.category)
+      if (_.get(edge, 'node.frontmatter.categories')) {
+        edge.node.frontmatter.categories.forEach(cat => {
+          categorySet.add(cat)
+        })
       }
     })
 
-    categories = _.uniq(categories)
+    const categories = Array.from(categorySet)
 
     categories.forEach(category => {
       createPage({
