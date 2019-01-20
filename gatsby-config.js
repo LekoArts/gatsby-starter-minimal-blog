@@ -10,6 +10,7 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-styled-components',
+    'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -29,7 +30,20 @@ module.exports = {
             },
           },
           {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 830,
+              quality: 90,
+              withWebp: true,
+              linkImagesToOriginal: false,
+            },
+          },
+          // TODO: Replace with "mdx-component-autolink-headers"
+          {
             resolve: 'gatsby-remark-autolink-headers',
+            options: {
+              maintainCase: false,
+            },
           },
         ],
       },
