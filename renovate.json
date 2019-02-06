@@ -19,6 +19,7 @@
       "groupName": "@mdx-js"
     }
   ],
+  "labels": ["renovate"],
   "prHourlyLimit": 2,
   "prConcurrentLimit": 15,
   "rangeStrategy": "bump",
