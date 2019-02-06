@@ -8,16 +8,20 @@
   },
   "packageRules": [
     {
-      "packagePatterns": [ "eslint" ],
+      "packagePatterns": ["^eslint"],
       "groupName": "eslint"
     },
     {
-      "packagePatterns": [ "gatsby" ],
+      "packagePatterns": ["gatsby"],
       "groupName": "gatsby"
     },
     {
-      "packagePatterns": [ "@mdx-js" ],
+      "packagePatterns": ["@mdx-js"],
       "groupName": "@mdx-js"
+    },
+    {
+      "packageNames": ["react", "react-dom"],
+      "groupName": "react"
     }
   ],
   "labels": ["renovate"],
