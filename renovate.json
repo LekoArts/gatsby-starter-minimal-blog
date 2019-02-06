@@ -20,7 +20,7 @@
     }
   ],
   "labels": ["renovate"],
-  "prHourlyLimit": 2,
+  "prHourlyLimit": 4,
   "prConcurrentLimit": 15,
   "rangeStrategy": "bump",
   "bumpVersion": null
