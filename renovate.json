@@ -4,7 +4,6 @@
   ],
   "automerge": true,
   "major": {
-    "enabled": false,
     "automerge": false
   },
   "packageRules": [
@@ -24,6 +23,8 @@
   "labels": ["renovate"],
   "prHourlyLimit": 4,
   "prConcurrentLimit": 15,
+  "prCreation": "not-pending",
   "rangeStrategy": "bump",
-  "bumpVersion": null
+  "bumpVersion": null,
+  "semanticCommits": true
 }
