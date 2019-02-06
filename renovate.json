@@ -13,7 +13,7 @@
     {
       "packagePatterns": [ "gatsby" ],
       "groupName": "gatsby"
-    },
+    }
   ],
   "prHourlyLimit": 2,
   "prConcurrentLimit": 15,
