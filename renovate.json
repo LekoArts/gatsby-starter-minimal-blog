@@ -30,5 +30,6 @@
   "prCreation": "not-pending",
   "rangeStrategy": "bump",
   "bumpVersion": null,
-  "semanticCommits": true
+  "semanticCommits": true,
+  "schedule": "before 8am on Monday"
 }
