@@ -1,5 +1,10 @@
 {
   "extends": [
     "config:base"
-  ]
+  ],
+  "major": {
+    "enabled": false
+  },
+  "prHourlyLimit": 2,
+  "prConcurrentLimit": 20,
 }
