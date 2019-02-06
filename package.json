@@ -4,7 +4,7 @@
   "version": "3.0.0",
   "author": "LekoArts <hello@lekoarts.de> (https://www.lekoarts.de)",
   "dependencies": {
-    "@mdx-js/mdx": "^0.16.6",
+    "@mdx-js/mdx": "^0.16.8",
     "@mdx-js/tag": "^0.16.6",
     "babel-plugin-styled-components": "^1.10.0",
     "gatsby": "^2.0.91",
