@@ -13,6 +13,10 @@
     {
       "packagePatterns": [ "gatsby" ],
       "groupName": "gatsby"
+    },
+    {
+      "packagePatterns": [ "@mdx-js" ],
+      "groupName": "@mdx-js"
     }
   ],
   "prHourlyLimit": 2,
