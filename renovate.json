@@ -2,8 +2,10 @@
   "extends": [
     "config:base"
   ],
+  "automerge": true,
   "major": {
-    "enabled": false
+    "enabled": false,
+    "automerge": false
   },
   "packageRules": [
     {
