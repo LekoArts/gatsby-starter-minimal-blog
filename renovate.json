@@ -6,5 +6,5 @@
     "enabled": false
   },
   "prHourlyLimit": 2,
-  "prConcurrentLimit": 20,
+  "prConcurrentLimit": 20
 }
