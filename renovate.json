@@ -6,8 +6,7 @@
     "enabled": false
   },
   "prHourlyLimit": 2,
-  "prConcurrentLimit": 20,
-  "rebaseStalePrs": false,
+  "prConcurrentLimit": 15,
   "rangeStrategy": "bump",
   "bumpVersion": null
 }
