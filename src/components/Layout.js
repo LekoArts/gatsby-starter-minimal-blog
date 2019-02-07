@@ -1,10 +1,10 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { StaticQuery, graphql } from 'gatsby'
-import styled, { ThemeProvider, createGlobalStyle } from 'styled-components'
+import React from "react";
+import PropTypes from "prop-types";
+import { StaticQuery, graphql } from "gatsby";
+import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
 
-import SEO from './SEO'
-import theme from '../../config/theme'
+import SEO from "./SEO";
+import theme from "../../config/theme";
 
 const GlobalStyle = createGlobalStyle`
   *,
@@ -184,7 +184,7 @@ const GlobalStyle = createGlobalStyle`
   [hidden] {
     display: none !important;
   }
-`
+`;
 
 const Footer = styled.footer`
   text-align: center;
@@ -192,7 +192,7 @@ const Footer = styled.footer`
   span {
     font-size: 0.75rem;
   }
-`
+`;
 
 const Layout = ({ children, customSEO }) => (
   <StaticQuery
@@ -210,23 +210,23 @@ const Layout = ({ children, customSEO }) => (
           <GlobalStyle />
           {children}
           <Footer>
-            &copy; 2019 by John Doe. All rights reserved. <br />
-            <a href="https://github.com/LekoArts/gatsby-starter-minimal-blog">GitHub Repository</a> <br />
+            &copy; 2019 by SaaS Bootstrapper Team. All rights reserved. <br />
+            <br />
             <span>Last build: {data.site.buildTime}</span>
           </Footer>
         </React.Fragment>
       </ThemeProvider>
     )}
   />
-)
+);
 
-export default Layout
+export default Layout;
 
 Layout.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.node]).isRequired,
-  customSEO: PropTypes.bool,
-}
+  customSEO: PropTypes.bool
+};
 
 Layout.defaultProps = {
-  customSEO: false,
-}
+  customSEO: false
+};
