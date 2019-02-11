@@ -27,7 +27,7 @@
     "mdx-utils": "^0.0.2",
     "polished": "^2.3.3",
     "prism-react-renderer": "^0.1.5",
-    "prop-types": "^15.6.2",
+    "prop-types": "^15.7.1",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-helmet": "^5.2.0",
