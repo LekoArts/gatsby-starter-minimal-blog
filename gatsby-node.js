@@ -1,7 +1,15 @@
 const _ = require('lodash')
 
 // graphql function returns a promise so we can use this little promise helper to have a nice result/error state
-const wrapper = promise => promise.then(result => ({ result, error: null })).catch(error => ({ error, result: null }))
+const wrapper = promise =>
+  promise
+    .then(result => {
+      if (result.errors) {
+        throw result.errors
+      }
+      return { result, error: null }
+    })
+    .catch(error => ({ error, result: null }))
 
 exports.onCreateNode = ({ node, actions }) => {
   const { createNodeField } = actions
