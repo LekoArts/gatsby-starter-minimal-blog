@@ -32,11 +32,11 @@ const Hero = styled.div`
   p {
     font-size: 1.68rem;
     margin-top: -1rem;
-    @media (max-width: ${props => props.theme.breakpoints.phone}) {
-      font-size: 1.25rem;
-    }
     @media (max-width: ${props => props.theme.breakpoints.tablet}) {
       font-size: 1.45rem;
+    }    
+    @media (max-width: ${props => props.theme.breakpoints.phone}) {
+      font-size: 1.25rem;
     }
   }
 `
