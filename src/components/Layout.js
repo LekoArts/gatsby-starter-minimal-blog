@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { StaticQuery, graphql } from 'gatsby'
 import styled, { ThemeProvider, createGlobalStyle } from 'styled-components'
 
 import SEO from './SEO'
 import theme from '../../config/theme'
+import useBuildTime from '../hooks/useBuildTime'
 
 const GlobalStyle = createGlobalStyle`
   *,
@@ -194,31 +194,24 @@ const Footer = styled.footer`
   }
 `
 
-const Layout = ({ children, customSEO }) => (
-  <StaticQuery
-    query={graphql`
-      query LayoutQuery {
-        site {
-          buildTime(formatString: "YYYY-MM-DD")
-        }
-      }
-    `}
-    render={data => (
-      <ThemeProvider theme={theme}>
-        <React.Fragment>
-          {!customSEO && <SEO buildTime={data.site.buildTime} />}
-          <GlobalStyle />
-          {children}
-          <Footer>
-            &copy; 2019 by John Doe. All rights reserved. <br />
-            <a href="https://github.com/LekoArts/gatsby-starter-minimal-blog">GitHub Repository</a> <br />
-            <span>Last build: {data.site.buildTime}</span>
-          </Footer>
-        </React.Fragment>
-      </ThemeProvider>
-    )}
-  />
-)
+const Layout = ({ children, customSEO }) => {
+  const buildTime = useBuildTime()
+
+  return (
+    <ThemeProvider theme={theme}>
+      <>
+        {!customSEO && <SEO buildTime={buildTime} />}
+        <GlobalStyle />
+        {children}
+        <Footer>
+          &copy; 2019 by John Doe. All rights reserved. <br />
+          <a href="https://github.com/LekoArts/gatsby-starter-minimal-blog">GitHub Repository</a> <br />
+          <span>Last build: {buildTime}</span>
+        </Footer>
+      </>
+    </ThemeProvider>
+  )
+}
 
 export default Layout
 
