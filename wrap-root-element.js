@@ -1,7 +1,7 @@
 /* eslint react/prop-types: 0 */
 /* eslint react/display-name: 0  */
 import React from 'react'
-import { MDXProvider } from '@mdx-js/tag'
+import { MDXProvider } from '@mdx-js/react'
 import { preToCodeBlock } from 'mdx-utils'
 import Code from './src/components/Code'
 
@@ -17,5 +17,6 @@ const components = {
     // it's possible to have a pre without a code in it
     return <pre {...preProps} />
   },
+  wrapper: ({ children }) => <>{children}</>,
 }
 export const wrapRootElement = ({ element }) => <MDXProvider components={components}>{element}</MDXProvider>
