@@ -18,6 +18,9 @@ Also check out the other _gatsby-starters_:
 - [gatsby-starter-portfolio-emilia](https://github.com/LekoArts/gatsby-starter-portfolio-emilia)
 - [gatsby-starter-portfolio-bella](https://github.com/LekoArts/gatsby-starter-portfolio-bella)
 - [gatsby-starter-portfolio-cara](https://github.com/LekoArts/gatsby-starter-portfolio-cara)
+- [gatsby-starter-portfolio-jodie](https://github.com/LekoArts/gatsby-starter-portfolio-jodie)
+- [gatsby-starter-prismic](https://github.com/LekoArts/gatsby-starter-prismic)
+- [gatsby-starter-prismic-i18n](https://github.com/LekoArts/gatsby-starter-prismic-i18n)
 
 Check out the [Gatsby Starter Portfolio Overview](https://gatsby-starter-portfolio.netlify.com/)!
 
