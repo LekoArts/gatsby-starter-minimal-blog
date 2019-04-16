@@ -24,7 +24,6 @@ const Content = styled.div`
 
 const PostList = ({ pageContext: { limit, skip }, data: { allMdx } }) => {
   const { edges, totalCount } = allMdx
-  const subline = `subline here, was category`
 
   return (
     <Layout>
@@ -34,10 +33,6 @@ const PostList = ({ pageContext: { limit, skip }, data: { allMdx } }) => {
           <Link to="/">{config.siteTitle}</Link>
         </Header>
         <Content>
-          <SectionTitle>Category &ndash;</SectionTitle>
-          <Subline sectionTitle>
-            {subline} (See <Link to="/categories">all categories</Link>)
-          </Subline>
           {edges.map(post => (
             <Article
               title={post.node.frontmatter.title}
@@ -47,6 +42,7 @@ const PostList = ({ pageContext: { limit, skip }, data: { allMdx } }) => {
               slug={post.node.fields.slug}
               categories={post.node.frontmatter.categories}
               key={post.node.fields.slug}
+              body={post.node.code.body}
             />
           ))}
         </Content>
@@ -86,6 +82,9 @@ export const postQuery = graphql`
           }
           excerpt(pruneLength: 200)
           timeToRead
+          code {
+            body
+          }
         }
       }
     }

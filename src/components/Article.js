@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 import kebabCase from 'lodash/kebabCase'
+import MDXRenderer from 'gatsby-mdx/mdx-renderer'
 
 import Subline from './Subline'
 
@@ -18,7 +19,7 @@ const Post = styled.article`
   }
 `
 
-const Title = styled.h2`
+const Title = styled.h1`
   position: relative;
   text-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
   margin-bottom: 0.75rem;
@@ -44,8 +45,11 @@ const Excerpt = styled.p`
   margin-top: 1rem;
   margin-bottom: 1rem;
 `
+const PostContent = styled.div`
+  margin-top: 4rem;
+`
 
-const Article = ({ title, date, excerpt, slug, timeToRead, categories }) => {
+const Article = ({ title, date, excerpt, slug, timeToRead, categories, body }) => {
   const firstChar = title.charAt(0)
 
   return (
@@ -64,6 +68,9 @@ const Article = ({ title, date, excerpt, slug, timeToRead, categories }) => {
         ))}
       </Subline>
       <Excerpt>{excerpt}</Excerpt>
+      <PostContent>
+        <MDXRenderer>{body}</MDXRenderer>
+      </PostContent>
     </Post>
   )
 }
@@ -77,4 +84,5 @@ Article.propTypes = {
   slug: PropTypes.string.isRequired,
   timeToRead: PropTypes.number.isRequired,
   categories: PropTypes.array.isRequired,
+  body: PropTypes.string.isRequired,
 }
