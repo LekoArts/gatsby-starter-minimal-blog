@@ -49,30 +49,26 @@ const PostContent = styled.div`
   margin-top: 4rem;
 `
 
-const Article = ({ title, date, excerpt, slug, timeToRead, categories, body }) => {
-  const firstChar = title.charAt(0)
-
-  return (
-    <Post>
-      <Title>
-        <Initiale>{firstChar}</Initiale>
-        <Link to={slug}>{title}</Link>
-      </Title>
-      <Subline>
-        {categories.map((cat, i) => (
-          <React.Fragment key={cat}>
-            {!!i && ', '}
-            <Link to={`/categories/${kebabCase(cat)}`}>{cat}</Link>
-          </React.Fragment>
-        ))}
-      </Subline>
-      <Excerpt>{excerpt}</Excerpt>
-      <PostContent>
-        <MDXRenderer>{body}</MDXRenderer>
-      </PostContent>
-    </Post>
-  )
-}
+const Article = ({ title, date, excerpt, slug, timeToRead, categories, body }) => (
+  <Post>
+    <Title>
+      <Link to={slug}>{title}</Link>
+    </Title>
+    <Subline>
+      {date} &mdash;&nbsp;
+      {categories.map((cat, i) => (
+        <React.Fragment key={cat}>
+          {!!i && ', '}
+          <Link to={`/categories/${kebabCase(cat)}`}>{cat}</Link>
+        </React.Fragment>
+      ))}
+    </Subline>
+    <Excerpt>{excerpt}</Excerpt>
+    <PostContent>
+      <MDXRenderer>{body}</MDXRenderer>
+    </PostContent>
+  </Post>
+)
 
 export default Article
 

@@ -60,6 +60,7 @@ const Post = ({ pageContext: { slug, prev, next }, data: { mdx: postNode } }) =>
         <Content>
           <Title>{post.title}</Title>
           <Subline>
+            {post.date} &mdash;&nbsp;
             {post.categories.map((cat, i) => (
               <React.Fragment key={cat}>
                 {!!i && ', '}
