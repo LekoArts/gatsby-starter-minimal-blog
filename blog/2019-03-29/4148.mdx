@@ -13,17 +13,18 @@ Tom &amp; Matthew talk through the <a href="https://github.com/vector-im/riot-we
 The matrix.org homeserver will be down for essential database maintenance between 12:00 and 12:30 UTC on 2019-04-01
 <h2 id="synapse">Synapse</h2>
 Neil, Synapse overseer, reports on the acceleration towards <em>1.0</em>:
-<blockquote>We have much improved sytest support for Synapse worker mode, Hawkowl landed a brand new super fast super shiny user directory implementation, Brendan fixed a bunch of niggles in <a href="https://matrix.org/federationtester">the federation tester</a> and we <em>finally</em> got to the bottom of our <a href="https://github.com/matrix-org/synapse/pull/4956">sync caching bug that obscured accepting invites</a> (thanks richvdh for sticking with it). Erik solved our presence spamming bug and anoa fixed some LDAP auth bugs and submitted a PR for certificate checking - one of our final blockers for Synapse 1.0. For all the latest checkout out our latest release candidate <a href="https://github.com/matrix-org/synapse/releases/tag/v0.99.3rc1">0.99.3rc1</a>.
 
-Next week, we'll ship 0.99.3, we'll be looking at <a href="https://github.com/matrix-org/synapse/issues/4364">server key validity periods</a>, adding a <a href="https://github.com/matrix-org/matrix-doc/pull/1915">3PID unbind API</a> and starting work on tuning low powered Synapse installations.
+> We have much improved sytest support for Synapse worker mode, Hawkowl landed a brand new super fast super shiny user directory implementation, Brendan fixed a bunch of niggles in <a href="https://matrix.org/federationtester">the federation tester</a> and we <em>finally</em> got to the bottom of our <a href="https://github.com/matrix-org/synapse/pull/4956">sync caching bug that obscured accepting invites</a> (thanks richvdh for sticking with it). Erik solved our presence spamming bug and anoa fixed some LDAP auth bugs and submitted a PR for certificate checking - one of our final blockers for Synapse 1.0. For all the latest checkout out our latest release candidate <a href="https://github.com/matrix-org/synapse/releases/tag/v0.99.3rc1">0.99.3rc1</a>.  
+> Next week, we'll ship 0.99.3, we'll be looking at <a href="https://github.com/matrix-org/synapse/issues/4364">server key validity periods</a>, adding a <a href="https://github.com/matrix-org/matrix-doc/pull/1915">3PID unbind API</a> and starting work on tuning low powered Synapse installations.  
+> <a href="https://www.arewereadyyet.com/">https://www.arewereadyyet.com/</a> is still rising so keep banging to everyone you know that they ensure their federation certificates are valid.
 
-<a href="https://www.arewereadyyet.com/">https://www.arewereadyyet.com/</a> is still rising so keep banging to everyone you know that they ensure their federation certificates are valid.</blockquote>
 <a href="https://matrix.org/blog/wp-content/uploads/2019/03/Screenshot-2019-03-29-at-18.38.23.png"><img class="alignnone size-full wp-image-4155" src="https://matrix.org/blog/wp-content/uploads/2019/03/Screenshot-2019-03-29-at-18.38.23.png" alt="" width="429" height="339" /></a>
 <h2 id="pantalaimon">Pantalaimon</h2>
 <a href="https://github.com/poljar">poljar</a> gave this update on his new project <a href="https://github.com/matrix-org/pantalaimon">Pantalaimon</a>:
-<blockquote><a href="https://github.com/matrix-org/pantalaimon">Pantalaimon</a> is a new project that acts as a reverse proxy for clients to connect to. Once a client is connected Pantalaimon handles end to end encryption for the client transparently.
 
-The project is only a week old but already at a working prototype phase. A demo can be found here: <a href="http://webmshare.com/play/Qn4wg">http://webmshare.com/play/Qn4wg</a></blockquote>
+> <a href="https://github.com/matrix-org/pantalaimon">Pantalaimon</a> is a new project that acts as a reverse proxy for clients to connect to. Once a client is connected Pantalaimon handles end to end encryption for the client transparently.  
+> The project is only a week old but already at a working prototype phase. A demo can be found here: <a href="http://webmshare.com/play/Qn4wg">http://webmshare.com/play/Qn4wg</a>
+
 This is a huge gain! Use of this project, as you will see in the video, permits any Matrix client to support End-to-End encryption of messages, by handling encryption/decryption in a daemon rather than in the client.
 
 <a href="http://webmshare.com/play/Qn4wg">Watch the video</a>, and you'll see <a href="https://github.com/tulir/gomuks">gomuks</a>, which does not support encryption, chatting in an encrypted room. Also, go chat in <a href="https://matrix.to/#/#pantalaimon:matrix.org">#pantalaimon:matrix.org</a> and get involved!
