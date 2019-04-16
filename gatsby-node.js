@@ -27,6 +27,12 @@ exports.onCreateNode = ({ node, actions }) => {
     ) {
       slug = `/${_.kebabCase(node.frontmatter.title)}`
     }
+    if (
+      Object.prototype.hasOwnProperty.call(node, 'frontmatter') &&
+      Object.prototype.hasOwnProperty.call(node.frontmatter, 'date')
+    ) {
+      slug = `/blog/${node.frontmatter.date.replace(/-/g, '/')}${slug}`
+    }
     createNodeField({ node, name: 'slug', value: slug })
   }
 }
