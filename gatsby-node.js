@@ -107,7 +107,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const numPages = Math.ceil(posts.length / postsPerPage)
   Array.from({ length: numPages }).forEach((x, i) => {
     createPage({
-      path: i === 0 ? `/blog` : `/blog/${i + 1}`,
+      path: i === 0 ? `/blog/posts` : `/blog/posts/${i + 1}`,
       component: postListTemplate,
       context: { limit: postsPerPage, skip: i * postsPerPage, numPages, currentPage: i + 1 },
     })
