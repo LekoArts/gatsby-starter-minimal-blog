@@ -56,12 +56,10 @@ const Post = ({ pageContext: { slug, prev, next }, data: { mdx: postNode } }) =>
     <Layout customSEO>
       <Wrapper>
         <SEO postPath={slug} postNode={postNode} article />
-        <Header>
-        </Header>
+        <Header />
         <Content>
           <Title>{post.title}</Title>
           <Subline>
-            {post.date} &mdash; {postNode.timeToRead} Min Read &mdash; In{' '}
             {post.categories.map((cat, i) => (
               <React.Fragment key={cat}>
                 {!!i && ', '}
