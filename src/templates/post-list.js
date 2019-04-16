@@ -4,7 +4,7 @@ import Helmet from 'react-helmet'
 import { Link, graphql } from 'gatsby'
 import styled from 'styled-components'
 
-import { Layout, Wrapper, Header, Subline, Article, SectionTitle } from '../components'
+import { Layout, Wrapper, Header, Article, PrevNext } from '../components'
 import config from '../../config'
 
 const Content = styled.div`
@@ -22,8 +22,14 @@ const Content = styled.div`
   }
 `
 
-const PostList = ({ pageContext: { limit, skip }, data: { allMdx } }) => {
+const PostList = ({ pageContext: { limit, skip, currentPage }, data: { allMdx } }) => {
   const { edges, totalCount } = allMdx
+
+  const prevTitle = `Page ${currentPage - 1}`
+  const prevSlug = currentPage === 2 ? `blog/posts/` : `blog/posts/${currentPage - 1}`
+  const prev = currentPage === 1 ? null : { frontmatter: { title: prevTitle }, fields: { slug: prevSlug } }
+  const nextTitle = `Page ${currentPage + 1}`
+  const nextSlug = `blog/posts/${currentPage + 1}`
 
   return (
     <Layout>
@@ -45,6 +51,13 @@ const PostList = ({ pageContext: { limit, skip }, data: { allMdx } }) => {
               body={post.node.code.body}
             />
           ))}
+          <PrevNext
+            prev={prev}
+            next={{
+              frontmatter: { title: nextTitle },
+              fields: { slug: nextSlug },
+            }}
+          />
         </Content>
       </Wrapper>
     </Layout>
