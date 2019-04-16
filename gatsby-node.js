@@ -42,6 +42,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const postTemplate = require.resolve('./src/templates/post.js')
   const categoryTemplate = require.resolve('./src/templates/category.js')
+  const postListTemplate = require.resolve('./src/templates/post-list.js')
 
   const result = await wrapper(
     graphql(`
@@ -99,6 +100,16 @@ exports.createPages = async ({ graphql, actions }) => {
       context: {
         category,
       },
+    })
+  })
+
+  const postsPerPage = 6
+  const numPages = Math.ceil(posts.length / postsPerPage)
+  Array.from({ length: numPages }).forEach((x, i) => {
+    createPage({
+      path: i === 0 ? `/blog` : `/blog/${i + 1}`,
+      component: postListTemplate,
+      context: { limit: postsPerPage, skip: i * postsPerPage, numPages, currentPage: i + 1 },
     })
   })
 }
