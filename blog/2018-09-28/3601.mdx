@@ -1,0 +1,93 @@
+---
+date: '2018-09-28'
+title: This Week in Matrix 2018-09-28
+categories:
+  - General
+---
+
+<h2 id="dsntraveller">DSN Traveller</h2>
+If you've spent any time using Matrix public rooms, you've probably seen the bot <code>DSN Traveller</code>. This is a post-grad project from Florian Jacob, an informatics student at the <a href="https://kit.edu/">Karlsruhe Institute for Technology</a>. This week, Florian handed in his thesis on Matrix!
+<blockquote>In summary, I could show that Matrix has few large but many small servers. Large servers reduce the overall network load, but a significant fraction of the load is concentrated in them. Introducing more small servers would further increase the load concentration. The Matrix event graph as a Conflict-Free Replicated Data Type showed to be well-suited for reliable messaging and history synchronization, and is applicable beyond Matrix.
+
+I'm now working on a scientific paper on the results, which will boil down the more than 80 pages of the thesis to something much more digestible. ? You'll hear it in TWIM when that is finished!
+
+Room for discussions: <a href="https://matrix.to/#/#dsn-traveller:matrix.org">#dsn-traveller:matrix.org</a>
+Website wtih more information on the DSN Traveller: <a href="https://dsn-traveller.dsn.scc.kit.edu/">https://dsn-traveller.dsn.scc.kit.edu/</a></blockquote>
+This really is exciting stuff! The thesis will be made available online in the future (we'll post it here.) Florian is also hoping to continue his work into Matrix research:
+<blockquote>I'm currently in the process of trying to secure funding for a doctorate with Matrix as the topic, as that's where I can proof experience.</blockquote>
+<a href="https://matrix.org/blog/wp-content/uploads/2018/09/dsn_logo.png"><img class="alignnone size-full wp-image-3604" src="https://matrix.org/blog/wp-content/uploads/2018/09/dsn_logo.png" alt="" width="136" height="128" /></a>
+<h3 id="opensciencematrixvgorcumcom">#open-science:matrix.vgorcum.com</h3>
+All this talk of academia led <a href="https://matrix.to/#/@mathijs:matrix.vgorcum.com">Mathijs</a> and <a href="https://matrix.to/#/@cadair:cadair.com">Cadair</a> to create <a href="https://matrix.to/#/#open-science:matrix.vgorcum.com">#open-science:matrix.vgorcum.com</a>, room for discussion of Open Science topics.
+<h2 id="halfshotircconnectiontracker">Half-Shot IRC Connection Tracker</h2>
+As you may know, although he's now back studying for the final year of his Computer Science degree, <a href="https://matrix.to/#/@Half-Shot:half-shot.uk">Half-Shot</a> will continue to dedicate some time to bridge maintenance. He's been working on <a href="https://github.com/Half-Shot/irc-conntrack/">IRC Connection Tracker</a>, the next gen bridge for Matrix-IRC:
+<blockquote>The IRC connection tracker has had yet more code and love applied to it. The headline changes are:
+<ul>
+ 	<li>We now have a fully working IRC client that can connect to an IRCd, join channels and chat. These client's persist over &gt; the lifetime of the service.</li>
+ 	<li>There is a tool included with the service <code>ircctl</code> which allows you to spawn and use connections en masse. It also lets &gt; you list the state of the currently connected clients.</li>
+ 	<li>Work has just begun on a client library for connecting this up to the bridge, but should be swiftly completed thanks to…</li>
+ 	<li>A brand new spec website in the works for describing the protocol (thanks Brendan for pointing me in the right direction)</li>
+</ul>
+</blockquote>
+Spec docs: <a href="https://half-shot.github.io/irc-conntrack/">https://half-shot.github.io/irc-conntrack/</a>
+Repo: <a href="https://github.com/Half-Shot/irc-conntrack/">https://github.com/Half-Shot/irc-conntrack/</a>
+Room: <a href="https://matrix.to/#/#irc-conntrack:half-shot.uk">#irc-conntrack:half-shot.uk</a>
+<h2 id="fractal">Fractal</h2>
+<a href="@afranke:matrix.org">Alexandre Franke</a> has the handle on <a href="https://wiki.gnome.org/Apps/Fractal">Fractal</a>, the Matrix client for GNOME:
+<blockquote>This week in Fractal, more refactoring and small bugfixes. About 50 commits by 5 people, one of which made their first contributions this week (congrats Rasmus!).</blockquote>
+<a href="https://matrix.to/#/@iamjsparber:matrix.org">Julian Sparber</a>, who was part of <a href="https://summerofcode.withgoogle.com/projects/?sp-search=matrix">GSOC 2018</a> on the Fractal team, has been working on Room History:
+<blockquote>The room history refactor I was working on for fractal is upstream, now we can start to improve how messages are displayed and make the loading of older messages better.</blockquote>
+Julian is also pleased to still be heavily involved with Fractal outside GSOC.
+<h2 id="synapse03351releasedplusdockerimagesavailable">Synapse</h2>
+<a href="https://matrix.org/blog/2018/09/24/synapse-0-33-5-released/">Synapse 0.33.5.1</a> was released with Py3 beta support:
+<blockquote>0.33.5.1 is an interesting release. On the one hand it contains the usual bug fixes and performance improvements of a point release, but it also our first versioned release where monolith installs can be run under Python 3.5 and 3.6! Python 3 support is very much in beta, so please be cautious but if you would like to try running under a py3 environment we'd love to get your feedback.</blockquote>
+Check out <a href="https://hub.docker.com/r/avhost/docker-matrix/tags/">https://hub.docker.com/r/avhost/docker-matrix/tags/</a> for Python 3 docker images of Synapse, look for the <code>v0.33.5.1.dev.py3</code> tag.
+
+Says <a href="https://matrix.to/#/@mathijs:matrix.vgorcum.com">Mathijs</a>:
+<blockquote>it is functional, but much like python3 support it is still a work in progress, hence the larger size</blockquote>
+<h2 id="matrixonhyperboria">Matrix on Hyperboria</h2>
+<a href="https://matrix.to/#/@jan.christian:gruenhage.xyz">jcg</a> has set up hypertrix.ovh:
+<blockquote>I spent last night setting up hypertrix.ovh, a matrix server only listening on <a href="https://docs.meshwith.me/">Hyperboria</a>, a cjdns based end-to-end encrypted IPv6 overlay mesh network. I'd be glad if someone could be found to peer and federate with me there! Registration is open, but your client needs to be connected to Hyperboria to be able to talk to the server.</blockquote>
+If you are currently using Hyperboria, go join hypertrix.ovh, or start your matrix server listening on it, and go chat to JC!
+<h2 id="seaglass">Seaglass</h2>
+Lots of discussion about this project, specifically the question of how to efficiently render Rich Text. macOS does not make this easy, so a solution being considered is to use a WebKit for room rendering:
+<blockquote>WebKit has the advantage of being super super fast on macOS, and also very low overheads
+The current approach uses Cocoa NSTableViews and it's horrible because Apple clearly couldn't decide how they wanted them to work and therefore it's not very optimised
+Moving to WebKit only adds about 16mb to the RAM usage and redraws far faster than the NSTableViews can when resizing etc, and we'll save a lot on the text formatting too which currently is a bit of a mess</blockquote>
+<h2 id="cadairandhalfshotontheslackbridge">Cadair and Half-Shot on the Slack Bridge</h2>
+<a href="https://matrix.to/#/@cadair:cadair.com">Cadair</a> has been helping <a href="https://matrix.to/#/@Half-Shot:half-shot.uk">Half-Shot</a> with bridge maintenance, specifically by <a href="https://github.com/matrix-org/matrix-appservice-slack/pull/91">contributing to matrix-appservice-slack</a>.
+
+<a href="https://github.com/matrix-org/matrix-appservice-slack">matrix-appservice-slack</a> is a Node project, built on <a href="https://github.com/matrix-org/matrix-appservice-bridge">matrix-appservice-bridge</a>, which is designed to bridge messages and metadata between Slack and Matrix. These updates:
+<ul>
+ 	<li>Improves pills substitutions to use the new slack mentions</li>
+ 	<li>Add Gitter style edit bridging</li>
+ 	<li>Adds a config option to specify the directory the user-store.db and room-store.db files go in</li>
+ 	<li>Converts slack snippets to inline code dumps in matrix</li>
+</ul>
+<h2 id="ma1utatestsforclient">ma1uta tests for client</h2>
+<a href="https://matrix.to/#/@ma1uta:matrix.org">ma1uta</a> has been adding tests to <a href="https://github.com/ma1uta/jmsdk">jmsdk</a>.
+<h2 id="spectral">Spectral</h2>
+<a href="http://matrix.to/#/@bhat:encom.eu.org">Black Hat</a> has been working on the client formerly-known-as-Matrique: <a href="https://gitlab.com/b0/spectral">Spectral</a>:
+<blockquote>I added elevation shadows for some components, such as message bubble, panels, etc.</blockquote>
+<a href="https://matrix.org/blog/wp-content/uploads/2018/09/spectral-raised.png"><img class="alignnone size-full wp-image-3603" src="https://matrix.org/blog/wp-content/uploads/2018/09/spectral-raised.png" alt="" width="960" height="674" /></a>
+<h2 id="nativetoronionserviceenabledformatrixorgandriotim">Native Tor onion service enabled for matrix.org and riot.im</h2>
+Cloudflare now provide Onion routing, this service has been enabled for matrix.org and riot.im. Cloudflare have a thorough explanation which is worth reading: <a href="https://blog.cloudflare.com/cloudflare-onion-service/">https://blog.cloudflare.com/cloudflare-onion-service/</a>.
+<blockquote class="twitter-tweet" data-lang="en">
+<p dir="ltr" lang="en">We just turned on the new native Tor onion service support for <a href="https://t.co/vidAnPoIo2">https://t.co/vidAnPoIo2</a> &amp; <a href="https://t.co/UIjS6gDkvf">https://t.co/UIjS6gDkvf</a> in cloudflare; feedback welcome! <a href="https://t.co/keXC4bjo5F">https://t.co/keXC4bjo5F</a> <a href="https://t.co/nTRmGHCt8P">pic.twitter.com/nTRmGHCt8P</a></p>
+— Matrix (@matrixdotorg) <a href="https://twitter.com/matrixdotorg/status/1045612532038344704?ref_src=twsrc%5Etfw">September 28, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<h2>Spec</h2>
+September was mainly spent cleaning up loose ends on the Spec after <a href="https://matrix.org/blog/2018/09/03/matrix-spec-update-august-2018/">all the releases at the end of August</a>, and catching up on the never-ending maintenance burden of improving Synapse.  However, in October the plan is to to go back again to working full out on the S2S r0 release. Wish us luck...
+<h2>Riot</h2>
+<ul>
+ 	<li>Lazy loading members is now on by default on riot.im/develop - reducing Riot's RAM by 3-5x.  Please give it a go and test it before we ship it in Riot 0.17 (probably next week) so we can iron out any last bugs (which will probably look like user profiles going missing)</li>
+ 	<li>Lazy loading also ships by default in Riot/iOS in Testflight 0.7.4 - if you want in on Testflight let us know in #riot-ios:matrix.org and we'll share an invite link!</li>
+ 	<li>Lazy loading in Riot/Android coming real soon now; it's behind a labs flag on the develop branch if you want to experiment.</li>
+ 	<li>Travis has started attacking the Riot/Web '<a href="https://github.com/vector-im/riot-web/projects/12">First Impressions</a>' project (starting with unbreaking onboarding in Riot/Web when GDPR consent is enabled)</li>
+ 	<li>Lots and lots of UX work from Nad on E2E, Communities, Onboarding and the overall redesign, complete with a <a href="https://twitter.com/RiotChat/status/1044609832609861632">redesign workshop</a> with Jouni.</li>
+ 	<li>Aiming for end of Oct for first cut of redesign to be live as an experimental branch on riot.im.</li>
+ 	<li>Lots and lots of E2E implementation work in general; backups, cross-signing, and verification.</li>
+</ul>
+<h2>The end is nigh!</h2>
+But only for this blog post! Check out Matrix Live below, and we'll see you back here next week. :D
+
+https://youtu.be/zo4IH4nUQ9w

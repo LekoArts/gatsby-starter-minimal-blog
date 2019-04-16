@@ -1,0 +1,64 @@
+---
+date: '2018-10-19'
+title: This Week in Matrix 2018-10-19
+categories:
+  - General
+---
+
+<h2 id="bridgesandsdks">Bridges and SDKs</h2>
+<h3 id="slackbridge020rc1">Slack Bridge 0.2.0-rc1</h3>
+<a href="https://matrix.to/#/@Half-Shot:half-shot.uk">Half-Shot</a>, master of the bridge, has been working with <a href="https://matrix.to/#/@cadair:cadair.com">Cadair</a> to produce a new RC for <a href="https://github.com/matrix-org/matrix-appservice-slack">bridging Matrix and Slack</a>.
+<blockquote>We've got a Slack RC out at long last! Rejoice! It's absolutely massive and full of features.</blockquote>
+Half-Shot even provided this explanation of how it works:
+<blockquote>Integrations manager &gt; sign into slack &gt; click your channel &gt; ??? &gt; channel bridged :)</blockquote>
+See <a href="https://github.com/matrix-org/matrix-appservice-slack/releases/tag/0.2.0-rc1">release notes</a>:
+<blockquote>This is the first release of the Slack bridge. 0.1.0 has been the version number for previous efforts but was never an official release.</blockquote>
+To test this integration, use Riot on <a href="https://riot.im/develop">https://riot.im/develop</a> and select the "Event Bridging" when adding the integration.
+<h3 id="maubotpython">maubot Python</h3>
+<a href="https://matrix.to/#/@tulir:maunium.net">tulir</a>'s maubot bot system:
+<blockquote>The <a href="https://github.com/maubot/maubot">maubot</a> Python rewrite I <a href="https://matrix.org/blog/2018/10/05/this-week-in-matrix-2018-10-05/#sdks">twimmed two weeks ago</a> is now complete. The plugin system seems to work well and I'm pretty sure I'll be able to implement proper plugin reloading now.
+Next I'll implement plugin config storage and some way to manage maubot and plugins (maybe a plugin to manage plugins?)</blockquote>
+<h2 id="clients">Clients</h2>
+<h3 id="riotweb017riotandroid0818lazyloading">Riot Web 0.17, Riot Android 0.8.18: Lazy Loading</h3>
+This week saw the launch of Riot Web 0.17, and two bug-release updates (0.17.1 and 0.17.2) to fix issues on the Windows desktop app. This version is substantially faster due to its use of Lazy Loading room members. <a href="https://medium.com/@RiotChat/riot-im-web-0-17-and-ios-0-7-6-smaller-footprint-faster-launch-5ddd18a65abb">Read more here</a>.   Meanwhile, Travis continues his foray into 'first impressions' bugs - including an initial implementation of .well-known URI support!
+
+Riot Android 0.8.18 is also available from the <a href="https://play.google.com/store/apps/details?id=im.vector.alpha">Play Store</a> and <a href="https://f-droid.org/en/packages/im.vector.alpha/">F-Droid</a>, with Lazy Loading option available in the Labs menu (but still has a few bugs left).
+
+Riot iOS meanwhile is busy implementing incremental server-side E2E key backups, and there's generally been a huge amount of work on E2E encryption UX across the board in preparation for all-new E2E on Web and iOS.  More details will be coming soon!
+
+With this done, Riot is now getting a lot more attention on the <a href="https://medium.com/@RiotChat/a-sneak-peek-at-a-whole-new-riot-im-1114df653782">impending redesign</a>, with Bruno <a href="https://github.com/matrix-org/matrix-react-sdk/pulls?utf8=%E2%9C%93&amp;q=is%3Apr+redesign+author%3Abwindels">starting to merge</a> code to the experimental branch.
+<h3 id="quaternion0093">Quaternion 0.0.9.3</h3>
+<blockquote>After being in RC for a week, Quaternion 0.0.9.3 is ready and will be released over the weekend. Most importantly, you can now translate it into your language! Just head over to <a href="https://lokalise.co/public/730769035bbc328c31e863.62506391/">https://lokalise.co/public/730769035bbc328c31e863.62506391/</a>, register (you can optionally reuse your GitHub account), ask in #qmatrixclient:matrix.org to add your language to the list (if it's not there yet) and start translating!</blockquote>
+<h3 id="coffeeonmatrixconsoleforandroid">Coffee on Matrix Console for Android</h3>
+<a href="https://github.com/Matrixcoffee">Coffee</a> rolled a natural twenty for bravery this week.
+<blockquote>I have decided to take up maintainership of the <a href="https://github.com/matrix-org/matrix-android-console">Matrix Console for Android</a> client. This is still the only multi-account capable Android client, but it is unmaintained and growing long in tooth. In particular, the API endpoints it uses may be removed from Synapse soon.
+I will not be developing new features for it, but I will integrate reasonable patches if others want to take that on.
+My own goals are to remove GCM and analytics, and get it added to F-Droid. And of course to switch to the latest API.
+As part of this work, I have been fighting Gradle and its bugs to get <a href="https://github.com/matrix-org/matrix-android-sdk">matrix-android-sdk</a> to build together with <a href="https://github.com/matrix-org/matrix-android-console">matrix-android-console</a> as a git submodule, so it's no longer necessary to inject the precompiled sdk into the source code. I did not win yet.</blockquote>
+<h3 id="fluffychatstablereleasecreepscloser">FluffyChat stable release creeps closer</h3>
+Ubuntu Touch fans will know that <a href="https://github.com/ChristianPauly/fluffychat">FluffyChat</a> has been progressing rapidly, and the project is approaching a first stable release. You can find current features being tested as part of the release <a href="https://github.com/ChristianPauly/fluffychat/blob/master/CHANGELOG.md">here</a>.
+<h3 id="nheko">nheko</h3>
+<a href="https://matrix.to/#/@mujx:matrix.org">mujx</a> has decided to stop maintaining <a href="https://github.com/mujx/nheko">nheko</a>. Since many people are using it, we hope that someone will step in to continue his work. Thanks to mujx for his work so far.
+<h2 id="featuredonmozillahacksblog">Featured on Mozilla Hacks blog</h2>
+If you like blog posts about Matrix (and if you're reading this, you may well do), then you'll be interested to see that Matrix was featured on the <a href="https://hacks.mozilla.org/">Mozilla Hacks</a> blog: <a href="https://hacks.mozilla.org/2018/10/dweb-decentralised-real-time-interoperable-communication-with-matrix/">Decentralised, Real-Time, Interoperable Communication with Matrix</a>. The article was also picked up by <a href="https://news.ycombinator.com/item?id=18240253">Hacker News</a>.
+<h2 id="raidennetworkusesmatrixfortransportthisarticleexplainsit">Raiden Network uses Matrix for transport - this article explains it</h2>
+The Raiden Network enables fast payments for Ethereum. From <a href="https://raiden.network/">their website</a>:
+<blockquote>The Raiden Network is an off-chain scaling solution, enabling near-instant, low-fee and scalable payments. It's complementary to the Ethereum blockchain and works with any ERC20 compatible token.</blockquote>
+To help explain their use of Matrix in their solution, they have prepared an article: <a href="https://medium.com/raiden-network/raiden-transport-explained-939d7741b6f4">Raiden Transport Explained</a>.
+<h2 id="synapse0337">Synapse 0.33.7</h2>
+Soon, so soon, there will be a full Python 3 release for those running Synapse in worker configuration, but this one is not it. Check out <a href="https://matrix.org/blog/2018/10/18/synapse-0-33-7-released/">Synapse 0.33.7 changes here</a>.
+<h2 id="synapseonkubernetesupdate">Synapse on kubernetes update</h2>
+<a href="https://github.com/ananace/">Ananace</a>:
+<blockquote>tracking the latest synapse release on my <a href="https://github.com/ananace/matrix-synapse">K8s optimized image</a>. Got no real time to work on things due to deadlines at work, but that should end come November, so expect more odd Ruby stuff after that point.</blockquote>
+"Odd Ruby stuff" will hopefully include a return to the <a href="https://github.com/ananace/ruby-matrix-sdk">Matrix Ruby SDK</a>!
+<h2 id="mxisdv120beta2">mxisd v1.2.0-beta.2</h2>
+<a href="https://matrix.to/#/@max:kamax.io">Max</a> continues work on <a href="https://github.com/kamax-io/mxisd">mxisd</a>:
+<blockquote><a href="https://github.com/kamax-matrix/mxisd">mxisd</a> <a href="https://github.com/kamax-matrix/mxisd/releases/tag/v1.2.0-beta.2">v1.2.0-beta.2</a> is out, fixing bugs found during beta.1</blockquote>
+<h2 id="cadairatgsoc">Cadair at GSOC</h2>
+<a href="https://matrix.to/#/@cadair:cadair.com">Cadair</a> was at the <a href="https://summerofcode.withgoogle.com/projects/?sp-search=matrix">GSOC 2018</a> Mentors Summit in Mountain View last week:
+<blockquote>I attended the GSOC mentor summit. I had some great conversations with people who are using matrix and with people about bridging in different chat services. A lot of matrix stickers all vanished off the overloaded sticker table. I have lots of ideas for GSOC next year, and plan to try and get many more community projects involved. Finally, I dont need to eat chocolate for a month.</blockquote>
+<a style="font-weight: bold;" href="https://matrix.org/blog/wp-content/uploads/2018/10/gsoc-chocolate.jpg"><img class="alignnone wp-image-3650 size-medium" src="https://matrix.org/blog/wp-content/uploads/2018/10/gsoc-chocolate-300x289.jpg" alt="" width="300" height="289" /></a>
+
+GSOC chocolate: GCHOC
+<h2 id="untilnextweek">Until next week</h2>
+Next Friday <code>/me</code> is going to be at <a href="https://mozillafestival.org/">MozFest 2018</a>, promoting Matrix, Open Source, decentralisation etc. (all the stuff we know and love), so I may change the schedule a little next week.  We're also going to reboot Matrix Live, so consider this a hiatus before Season 3 begins next week!!

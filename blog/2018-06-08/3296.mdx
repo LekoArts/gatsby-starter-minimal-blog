@@ -1,0 +1,144 @@
+---
+date: '2018-06-08'
+title: This Week in Matrix 2018-06-08
+categories:
+  - General
+---
+
+<h1 id="gsoc-updates">GSOC Updates</h1>
+With the first evaluation date coming up, let's take a look at what some of the GSOC students have been working on.
+<h2 id="zil0-on-the-matrix-python-sdk"><a href="https://matrix.to/#/@Zil0:matrix.org">Zil0</a> on the <a href="https://github.com/matrix-org/matrix-python-sdk">matrix-python-sdk</a></h2>
+<blockquote>I am working on implementing end-to-end encryption in the <a href="https://github.com/matrix-org/matrix-python-sdk">Python SDK</a>. As of now, I have done a good part of the encryption and decryption work with Olm and Megolm, enough to allow communicating with Riot in an encrypted room. My next goals include device list tracking and key persistence, which are the main steps left before the implementation starts being usable in a real environment.</blockquote>
+<h2 id="apwhitehat-on-dendrite"><a href="https://matrix.to/#/@apwhitehat:matrix.org">apwhitehat</a> on Dendrite</h2>
+<blockquote>My aim is to achieve feature completion on <a href="https://github.com/matrix-org/dendrite">Dendrite</a>. Have got lots of help from <a href="https://matrix.to/#/@andrewm:amorgan.xyz">anoa</a>, for which I'm very grateful.</blockquote>
+Features worked on this month:
+<blockquote>
+<ul>
+ 	<li>we made a transactions cache/table for idempotency. So now dendrite will not reprocess events as far as client-server api is concerned.</li>
+ 	<li>added request authentication function which recognises an application service user (partially landed.)</li>
+ 	<li>username auto generation, which let's you register without username (will be used for guest access later.)</li>
+ 	<li>We also added a tokens library based on macaroons, however we might not be using it anytime soon. Since it's been known to be very problematic (on synapse).</li>
+ 	<li>Other small bug fixes not big enough to mention.</li>
+</ul>
+</blockquote>
+<h1 id="clients">Clients</h1>
+We are rich in client announcements this week!
+<h2 id="palaver">palaver</h2>
+<a href="https://matrix.to/#/@arne:matrix.localtoast.de">Arne</a> has announced v0.1.0 of <a href="https://github.com/MrCustomizer/palaver/">Palaver</a>:
+<blockquote>More news from the JVM-world: I've just released the first Alpha version (v0.1.0) of Palaver, a Desktop client written in Kotlin: <a href="https://github.com/MrCustomizer/palaver/releases/tag/v0.1.0">https://github.com/MrCustomizer/palaver/releases/tag/v0.1.0</a>. As backend it uses the <a href="https://github.com/kamax-io/matrix-java-sdk">matrix-java-sdk</a>, the GUI is written in TornadoFX, a Kotlin-Wrapper for JavaFX. The room for this client is <a href="https://matrix.to/#/#palaver:matrix.localtoast.de">#palaver:matrix.localtoast.de</a>. The current features are listed in the changelog: <a href="https://github.com/MrCustomizer/palaver/blob/v0.1.0/CHANGELOG.md">https://github.com/MrCustomizer/palaver/blob/v0.1.0/CHANGELOG.md</a>. And there is a little demo video on youtube, too: <a href="https://www.youtube.com/watch?v=AuGuxAPuRIM">https://www.youtube.com/watch?v=AuGuxAPuRIM</a>.</blockquote>
+I enjoyed this video enough that I'm embedding it here:
+
+<iframe src="https://www.youtube.com/embed/AuGuxAPuRIM" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+<h2 id="matrique-returns"><a href="https://gitlab.com/b0/matrique-go">matrique</a> returns</h2>
+<a href="http://matrix.to/#/@bhat:encom.eu.org">Black Hat</a> is working on <a href="https://gitlab.com/b0/matrique-go">Matrique</a>:
+<blockquote>a matrix client using golang and QtQuick controls 2.
+It is not ready...Yet. PRs and issues are welcomed!</blockquote>
+<h2 id="neilalexander-and-the-hard-to-name-osx-client-now--seaglass"><a href="https://matrix.to/#/@neilalexander:matrix.org">neilalexander</a> has a new macOS Client: seaglass</h2>
+<a href="https://matrix.to/#/@neilalexander:matrix.org">neilalexander</a> has begun work on "<a href="https://github.com/neilalexander/seaglass">seaglass</a>", a client for macOS using <a href="https://github.com/matrix-org/matrix-ios-sdk">matrix-ios-sdk</a>, he's only just begun, but for now see the screenshot below:
+
+<a href="https://matrix.org/blog/wp-content/uploads/2018/06/neilalexander-osx-client-1.png"><img class="alignnone size-full wp-image-3301" src="https://matrix.org/blog/wp-content/uploads/2018/06/neilalexander-osx-client-1.png" alt="" width="1896" height="1336" /></a>
+<h2 id="kitsune--gtad-and-libqmatrixclient"><a href="https://matrix.to/#/@kitsune:matrix.org">kitsune</a>: <a href="https://github.com/KitsuneRal/gtad">GTAD</a> and <a href="https://github.com/QMatrixClient/libqmatrixclient">libQMatrixClient</a></h2>
+<a href="https://matrix.to/#/@kitsune:matrix.org">kitsune</a> has announced <a href="https://github.com/KitsuneRal/gtad">GTAD</a> v0.6 and <a href="https://github.com/QMatrixClient/libqmatrixclient">libQMatrixClient</a> v0.3. We've covered <a href="https://github.com/KitsuneRal/gtad">GTAD</a> before, but I think it's worth including this note from the readme:
+<blockquote>GTAD (Generate Things from an API Description) is a generator of code from a Swagger/OpenAPI specification. Initially made to generate marshalling/unmarshalling C++ code for Matrix CS API, it can be extended to support other API descriptions and other programming languages with static type checking.</blockquote>
+<a href="https://matrix.to/#/@kitsune:matrix.org">kitsune</a> regarding the GTAD 0.6 release:
+<blockquote>A new version of API code generator, GTAD, 0.6, has been released today, adding support of variant types, proper dealing with definitions referencing other files ($ref) and more options to override schema names - even defined inline. Most importantly, GTAD has got extensive README.md that describes (most of) the things needed to start writing your own templates! As usual, kitsune will be happy to help those who would like to try it (both with C/C++ projects and other languages).</blockquote>
+<blockquote>libQMatrixClient has been benefiting from GTAD over the last 4 months or so - but this is the first release where GTAD is stable and feature-complete enough to be shared with other projects.</blockquote>
+<a href="http://matrix.to/#/#gtad:matrix.org">#gtad:matrix.org</a> is the new room for GTAD chat and support.
+
+and <a href="https://github.com/QMatrixClient/libqmatrixclient">libQMatrixClient</a> 0.3:
+<blockquote>A new version of libQMatrixClient, 0.3, comes out this weekend. This is the first libQMatrixClient release to include (almost) all CS API requests and supplementary (non-event) definitions, thanks to GTAD 0.6. Notably, it now includes jobs to register users, manage devices and keys on the server (no local key management yet - E2E work has just begun). This version also gains centralised request error handling so that clients could deal with problems in a unified way, and support "Consent not given" errors of GDPR fame, so that client authors could automatically open consent pages. You can also trigger logging out of all devices through libQMatrixClient thanks to a very recent addition to CS API spec from <a href="https://github.com/turt2live">TravisR</a>.</blockquote>
+<h2 id="fractal">Fractal</h2>
+Last week we linked to <a href="https://matrix.to/#/@iamjsparber:matrix.org">Julian</a>'s blog notes on the User Settings panel - this has now landed in <a href="https://wiki.gnome.org/Apps/Fractal">Fractal</a> master.
+<h2 id="nheko">nheko</h2>
+<a href="https://github.com/mujx/nheko">nheko</a> v0.4.3 is now available, from the release notes:
+<ul>
+ 	<li>Overdue fixes for some regressions with regard to widget height introduced in the previous two releases</li>
+ 	<li>The matrix id will be shown on hover on the display name.</li>
+</ul>
+<h2 id="riot-web">riot-web</h2>
+Riot-web: released an RC for 0.15.5. This RC includes some small bugfixes.
+<h2 id="riot-android">riot-android</h2>
+<blockquote>We have been working on Riot stability: fixing crashes and adding more tools to control code quality
+The community on android adds a more readable display of keys and a floating actions menu is coming.</blockquote>
+<h2 id="riot-ios">riot-ios</h2>
+<blockquote>Working on perf. On stability too (like killing build warnigs). Users can now re-request keys when they have UTCs.</blockquote>
+<h1 id="other-projects">Other projects</h1>
+<h2 id="anoa-on-dendrite"><a href="https://matrix.to/#/@andrewm:amorgan.xyz">anoa</a> on <a href="https://github.com/matrix-org/dendrite">dendrite</a></h2>
+<blockquote>We've got a shiny new application service component which runs as a separate process (if you're doing multiprocess dendrite) that handles all outbound communication to application services. Last week I got event sending working. This week I'm hooking up an internal API for other components (roomserver, c-s api) to talk to the app service component, as we occasionally need to ping AS's to ask about existence of rooms or users. Getting those two endpoints covered is the goal of this week.</blockquote>
+<h2 id="ma1uta-full-spec-implementation-in-java"><a href="https://matrix.to/#/@ma1uta:matrix.org">ma1uta</a> <em>Full</em> Spec Implementation in Java</h2>
+<a href="https://matrix.to/#/@ma1uta:matrix.org">ma1uta</a> appeared with an extremely ambitious piece of work. His goal:
+<blockquote>I want to create a full spec's implementation on java (all 5 specification). After that I want try to write a homeserver (2 variants: distributed on java+kafka and simple which can run on a ligth vps). But it's a long-term goal.</blockquote>
+So far work has begun on an implementation of the Matrix API in Java:
+<blockquote><a href="https://gitlab.com/ma1uta/jeon">https://gitlab.com/ma1uta/jeon</a> - another java implementation of the matrix api (client-server, server-server, application server, push server, identity server) using jax-ws. It corresponds the specification on <a href="https://matrix.org/docs/spec">https://matrix.org/docs/spec</a>. On the next step I want dive deep into synapse to parse it's api and fill the gaps of the spec with sending pull request. May be I will write something like a TCK (test compability kit).</blockquote>
+And an SDK for which there is a sample bot for mastodon:
+<blockquote>Also this project has a very early sdk (client, bot). I will fix it after finishing works with the spec.
+<a href="https://gitlab.com/ma1uta/mxtoot">https://gitlab.com/ma1uta/mxtoot</a> - matrix-mastodon bridge.
+With this bridge you can invite a bot and read your home mastodon's timeline, post messages, reply and boost messages.</blockquote>
+There are rooms to follow progress on these projects:
+<ul>
+ 	<li><a href="https://matrix.to/#/#mxtoot:matrix.org">#mxtoot:matrix.org</a> for Matrix-Mastodon bridge.</li>
+ 	<li><a href="https://matrix.to/#/#jeon:matrix.org">#jeon:matrix.org</a> for Matrix implementation on java.</li>
+</ul>
+Also find updates on Mastodon: ma1uta@mastodon.social
+<h2 id="the-continuing-adventures-of-half-shot-and-the-discord-bridge">The Continuing Adventures of <a href="https://matrix.to/#/@Half-Shot:half-shot.uk">Half-Shot</a> and the <a href="https://github.com/Half-Shot/matrix-appservice-discord">Discord Bridge</a></h2>
+<a href="https://matrix.to/#/@Half-Shot:half-shot.uk">Half-Shot</a> has been at work on <a href="https://github.com/Half-Shot/matrix-appservice-discord">matrix-appservice-discord</a>, and has made a v0.2.0 release! Looong feature list below is taken from <a href="https://github.com/Half-Shot/matrix-appservice-discord/releases/tag/v0.2.0">https://github.com/Half-Shot/matrix-appservice-discord/releases/tag/v0.2.0</a>:
+<ul>
+ 	<li>Support Node v10</li>
+ 	<li>Option to disable @here and @everyone on the bridge - Permission based mentions coming soon.</li>
+ 	<li>Sending large files over the Discord limit now sends them as URLs</li>
+ 	<li>Added support for external and animated emoji - Thanks <a href="https://github.com/Sorunome">@Sorunome</a>!</li>
+ 	<li>Initial support for m.sticker</li>
+ 	<li>Sender avatars are now thumbnailed - Thanks <a href="https://github.com/turt2live">@turt2live</a></li>
+ 	<li>Support for message edits. Thanks <a href="https://github.com/anoadragon453">@anoadragon453</a></li>
+ 	<li>Support for custom and animated discord emoji parsing M-&gt;D. Thanks <a href="https://github.com/anoadragon453">@anoadragon453</a></li>
+ 	<li>Throw discord.js logs into our logging to help debug connection issues</li>
+ 	<li>Warn when turning on encryption that the bridge will no longer work.</li>
+ 	<li>Clarify where to specify protocols in the registration config. Thanks <a href="https://github.com/anoadragon453">@anoadragon453</a></li>
+ 	<li>Add attachments into the event store and fix up some of our Inserts. Thanks <a href="https://github.com/eeeeeta">@eeeeeta</a></li>
+ 	<li>Fail if the event.content.url is not present.</li>
+</ul>
++ lots of testing and fixes
+<h2 id="t3chguy-matrix-search-including-e2e"><a href="https://matrix.to/#/@x:riot.ovh">t3chguy</a> <a href="https://github.com/matrix-org/matrix-search/">matrix-search</a> including e2e</h2>
+<a href="https://matrix.to/#/@x:riot.ovh">t3chguy</a>, straight out of exams, went back to working on <a href="https://github.com/matrix-org/matrix-search/">matrix-search</a>, now with a working release, including e2e chats!
+<blockquote>a local Full Text Search engine for Matrix, which will index the events locally and then provide a search api interface for matrix clients to query it
+matrix-search mimics the standard /search API</blockquote>
+<a href="https://matrix.to/#/@tom:lant.uk">toml</a> has already been looking at this and has created a docker container for it: <a href="https://github.com/matrix-org/matrix-search/tree/toml#to-run-in-a-docker-container">https://github.com/matrix-org/matrix-search/tree/toml#to-run-in-a-docker-container</a>
+<h2 id="ananace-on-kubernetes">Ananace on Kubernetes</h2>
+<blockquote>Switched the <a href="https://github.com/ananace/matrix-synapse">Kubernetes-oriented Synapse image</a> over to running on the official one as a base, seems to still work quite well. Even if there were some issues at first due to Alpine and busybox.</blockquote>
+<blockquote>I've been building slightly specialized Synapse docker images since 0.25.1 - and running them on my Kubernetes cluster at home. Moved them to being based on the official images now instead of building them on CentOS as I used to.</blockquote>
+<h2 id="synapse-0310-and-0311-released">Synapse 0.31.0 and 0.31.1 released</h2>
+Changes for <a href="https://matrix.org/blog/2018/06/06/synapse-v0-31-0-released/">Synapse 0.31.0</a>
+<ul>
+ 	<li>Most notable change from v0.30.0 is to switch to python prometheus library to improve system stats reporting. WARNING this changes a number of prometheus metrics in a backwards-incompatible manner.</li>
+ 	<li>There are still many changes being made relating to the Python 3 migration.</li>
+</ul>
+For <a href="https://matrix.org/blog/2018/06/08/synapse-0-31-1-released/">Synapse 0.31.1</a>
+<blockquote>v0.31.1 fixes a security bug in the “get_missing_events“ federation API where event visibility rules were not applied correctly.</blockquote>
+<a href="https://matrix.to/#/@andrew:shadura.me">andrewsh</a> has been packaging synapse for Debian.
+<h2 id="guides-index">Guides index</h2>
+I'm going to start making a list of guides from around the web to be linked from <a href="https://matrix.org">https://matrix.org</a>. If you have, or know of, useful guides relating to matrix, please <a href="https://matrix.to/#/@benpa:matrix.org">let me know</a> or share in <a href="https://matrix.to/#/#TWIM:matrix.org">#twim:matrix.org</a>.
+<h1 id="new-rooms">New rooms</h1>
+<ul>
+ 	<li>mentioned above, from <a href="https://matrix.to/#/@ma1uta:matrix.org">ma1uta</a>:
+<ul>
+ 	<li><a href="https://matrix.to/#/#mxtoot:matrix.org">#mxtoot:matrix.org</a> for Matrix-Mastodon bridge.</li>
+ 	<li><a href="https://matrix.to/#/#jeon:matrix.org">#jeon:matrix.org</a> for Matrix implementation on java.</li>
+</ul>
+</li>
+ 	<li><a href="http://matrix.to/#/#gtad:matrix.org">#gtad:matrix.org</a> is <a href="https://matrix.to/#/@kitsune:matrix.org">kitsune</a>'s room for <a href="https://github.com/KitsuneRal/gtad">gtad</a>.</li>
+ 	<li><a href="https://matrix.to/#/#palaver:matrix.localtoast.de">#palaver:matrix.localtoast.de</a> for Palaver discussion</li>
+</ul>
+<h1 id="other-points-of-interest">other points of interest</h1>
+<ul>
+ 	<li>things are happening with <a href="https://github.com/FabricLabs/doorman">doorman</a> but I have not checked in for some time</li>
+ 	<li><a href="@tulir:maunium.net">tulir</a> mentioned that <a href="https://github.com/Dhole">https://github.com/Dhole</a> is working on a matrix Go client and an e2e lib</li>
+ 	<li>Coffee migrated to Gitlab, including: <a href="https://gitlab.com/Matrixcoffee/matrix-client-core">https://gitlab.com/Matrixcoffee/matrix-client-core</a></li>
+ 	<li>Naming things is hard. <a href="https://matrix.to/#/@neilalexander:matrix.org">neilalexander</a>'s previously nameless client and <a href="https://gitlab.com/b0/matrique-go">Matrique</a> both came under discussion for naming issues.</li>
+ 	<li><a href="https://matrix.to/#/@benpa:matrix.org">benpa</a> <em>just</em> discovered VS Code markdown preview and can't believe the time he wasted before</li>
+</ul>
+<h1 id="the-end-is-nigh">The end is nigh...</h1>
+And here it is. As you may have noticed, I'm leaning much more toward quoting wherever possible, rather than trying to paraphrase. The aim is to keep the content authentic and community-driven, rather than a narrative from one fairly naive observer. The risk is it makes the post awkward to read as it switches voice too frequently. Come to <a href="https://matrix.to/#/#TWIM:matrix.org">#twim:matrix.org</a> and let me know if you have opinions on this.
+
+Check out Matrix Live:
+
+<iframe src="https://www.youtube.com/embed/_DQY0qTvyAw" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe>

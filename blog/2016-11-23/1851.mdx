@@ -1,0 +1,48 @@
+---
+date: '2016-11-23'
+title: When Ericsson discovered Matrix...
+categories:
+  - General
+---
+
+<i><span style="font-weight: 400;">As something completely different, we've invited Stefan Ålund and his team at Ericsson to write a guest blog post about the really cool stuff Ericsson is doing with Matrix.  This is a fascinating glimpse into how major folks are already launching commercial products on top of Matrix - whilst also making significant contributions back to the projects and the community.  We'd like to thank Stefan and Ericsson for all their support and perseverance, and we wish them the very best with the Ericsson Contextual Communication Cloud!</span></i>
+
+<i><span style="font-weight: 400;">-- Matthew</span></i>
+
+<span style="font-weight: 400;">At the end of 2014, my colleague Adam Bergkvist and I attended the WebRTC Expo in Paris, partly to promote our Open Source project</span><a href="https://www.openwebrtc.org"> <span style="font-weight: 400;">OpenWebRTC</span></a><span style="font-weight: 400;">, but also to meet the rest of the European WebRTC community and see what others were working on. </span>
+
+<span style="font-weight: 400;">At Ericsson Research we had been working on WebRTC for quite some time. Not only on the client-side framework and how those could enable some truly</span><a href="https://www.youtube.com/watch?v=0nl0fuWzoGk"> <span style="font-weight: 400;">experimental stuff</span></a><span style="font-weight: 400;">, but more importantly how this emerging technology could be used to build new kinds of communication services where communication is not *the* service (A calling B), but is integrated as part of some other service or context. A simple example would be a health care solution, where the starting point could be the patient records and communication technologies are integrated to enable remote discussions between patients and their doctors.</span>
+
+<span style="font-weight: 400;">Our research in this area, that we started calling “contextual communication”, pointed in a different direction from Ericsson's traditional communication business, therefore making it hard for us to transfer our ideas and technologies out from Ericsson Research. We increasingly had the feeling that we needed to build something new and start from a clean slate, so to speak.</span>
+
+<span style="font-weight: 400;">Some of our guiding principles:</span>
+<ul>
+ 	<li style="font-weight: 400;"><span style="font-weight: 400;">Flexibility - the communication should be able to integrate anywhere</span></li>
+ 	<li style="font-weight: 400;"><span style="font-weight: 400;">Fast iterations - browsers and WebRTC are moving targets</span></li>
+ 	<li style="font-weight: 400;"><span style="font-weight: 400;">Open - interoperability is important for communication systems</span></li>
+ 	<li style="font-weight: 400;"><span style="font-weight: 400;">Low cost - operations for the core communication should approach 0</span></li>
+ 	<li style="font-weight: 400;"><span style="font-weight: 400;">Trust - build on the Ericsson brand and technology leadership </span></li>
+</ul>
+<span style="font-weight: 400;">We had a pretty good idea about what we wanted to build, but even though Ericsson is a big company, the team working in this area was relatively small and also had a number of other commitments that we couldn't abandon.</span>
+
+<span style="font-weight: 400;">I think that is enough of a background, let's circle back to the WebRTC Expo and the reason why I am writing this post on the Matrix blog.</span>
+
+<span style="font-weight: 400;">Adam and I were pretty busy in</span><a href="https://twitter.com/OpenWebRTC/status/544781293838684161"> <span style="font-weight: 400;">our booth</span></a><span style="font-weight: 400;"> talking to people and giving demos, so we actually missed when Matrix won the</span><a href="https://matrix.org/blog/2014/12/24/matrix-wins-best-innovation-award-at-webrtc-paris/"> <span style="font-weight: 400;">Best Innovation Award</span></a><span style="font-weight: 400;">. Nonetheless we finally got some time to walk around and I started chatting with Matthew and Amandine who were manning the Matrix booth. Needless to say, I was really impressed with their vision and what they wanted to build. The comparison to email and how they wanted to make it possible to build an interoperable bridge between communication “islands”, all in an open (source) manner, really appealed to me.</span>
+
+<span style="font-weight: 400;">To be honest, the altruistic aspects of decentralising communication was not the most important part for us, even if we were sympathetic to the cause, working for a company that was founded from “</span><a href="http://www.ericsson.hr/lars-magnus-ericsson-entrepreneur"><span style="font-weight: 400;">the belief that communication is a basic human need</span></a><span style="font-weight: 400;">”. We ultimately wanted to build a new kind of communication offering from Ericsson, and it looked like Matrix might be able to play a part in that.</span>
+
+<span style="font-weight: 400;">I had recently hired a couple of</span><a href="http://teknikspranget.se"> <span style="font-weight: 400;">interns</span></a><span style="font-weight: 400;"> and as soon as I came back from Paris, we set them to work evaluating Matrix. They were quickly able to port an existing WebRTC service (developed and used in-house) to use Matrix signalling and user management. We initially had some concerns about the maturity of the reference Home Server</span><a href="https://github.com/matrix-org/synapse"> <span style="font-weight: 400;">implementation</span></a><span style="font-weight: 400;"> (remember, this was almost 2 years ago) and we didn't want to start developing our own since we were still a small team. However, Matthew and the rest of the Matrix team worked closely with us, helping to answer all our (dumb) questions and we finally got to a point where we had the confidence to say “screw it, let's try this and see if it flies”. ?</span>
+
+<span style="font-weight: 400;">Ericsson had recently launched the</span><a href="https://www.ericsson.com/innovation/ericsson-garage"> <span style="font-weight: 400;">Ericsson Garage</span></a><span style="font-weight: 400;"> where employees could pitch ideas for how to build new business. So we decided to give the process a try and presented an idea on how Ericsson could start selling contextual communication as-a-Service, directly to enterprises that wanted help integrating communication into their business processes, but didn't necessarily have the competence or business interest to run their own communication services. We got accepted and moved (physically) out of Research to sit in the Garage for the next 4 months, developing a</span><a href="https://en.wikipedia.org/wiki/Minimum_viable_product"> <span style="font-weight: 400;">MVP</span></a><span style="font-weight: 400;">.</span>
+
+<span style="font-weight: 400;">Since the primary interface to our offering would be through SDKs on various platforms, we decided early on to develop our own. The SDKs were implementing the standard Matrix specification, but we put a lot of time in increasing the robustness and flexibility in the WebRTC call handling and eventually with added peer-2-peer data and collaboration features, on top of the secure WebRTC</span><a href="https://tools.ietf.org/html/draft-ietf-rtcweb-data-channel-13"> <span style="font-weight: 400;">DataChannel</span></a><span style="font-weight: 400;">. On the server side, our initial concerns about Synapse were eventually removed completely as the Matrix team relentlessly kept working on fixing performance issues, patching security holes and provided a story on how to scale. Over the years we have contributed with several patches to Synapse (SAML auth and auth improvements; application service improvements) and provided input to the Matrix specification. We have always found the Matrix team be very inclusive and easy to work with.</span>
+
+<span style="font-weight: 400;">The project graduated successfully from the Ericsson Garage and moved in to Ericsson's Business Unit IT &amp; Cloud Products, where we started to increase the size of the team and just last month signed a contract with our first customer. We call the solution Ericsson Contextual Communication Cloud, or ECCC for short, and it can be summarised on a high level by the following picture:</span>
+
+<img class="aligncenter size-full wp-image-1852" src="https://matrix.org/blog/wp-content/uploads/2016/11/Picture1.png" alt="ECCC in a nutshell" width="975" height="546" />
+
+<span style="font-weight: 400;">If you are interested in ECCC, feel free to reach out at </span><a href="https://discuss.c3.ericsson.net"><span style="font-weight: 400;">https://discuss.c3.ericsson.net</span></a>
+
+<span style="font-weight: 400;">As with any project developed in the open, it is essential to have a healthy community around it. We have received excellent support from the Matrix project and they have always been open for discussion, engaged our developers and listened to our needs. We depend on Matrix now and we see great potential for the future. We hope that others will adopt the technology and help make the community grow even stronger.</span>
+
+<span style="font-weight: 400;">- Stefan Ålund and the Ericsson ECCC Team</span>

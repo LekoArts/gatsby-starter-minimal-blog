@@ -1,0 +1,89 @@
+---
+date: '2018-07-27'
+title: This Week in Matrix 2018-07-27
+categories:
+  - General
+---
+
+<h2 id="mautrixtelegramnowsupportsdoublepuppeting">mautrix-telegram now supports double puppeting</h2>
+<a href="@tulir:maunium.net">tulir</a> has been working away on <a href="https://github.com/tulir/mautrix-telegram">mautrix-telegram</a>, and has a major breakthrough:
+<blockquote>It means you can log in to the bridge with your Matrix account to make messages you send from other Telegram clients appear from your Matrix account.
+
+It can also be used to enable bridging of ephemeral events, which synapse doesn't send to appservices (read receipts, typing notifications, presence).
+
+Also, the bridge has a new HTML parser which should be much better than the old one. It might have caused some new bugs though (like m.emote bridging breaking)</blockquote>
+<h2 id="coffeeandthefaqbot">Coffee and the FAQBot</h2>
+I've been slowly working on matrix.org the last couple of months, updating the FAQ, updating content and UI/appearance of <a href="https://matrix.org/blog/try-matrix-now">try-matrix-now</a>. As you may know, the <a href="https://github.com/Matrixcoffee/FAQBot">FAQBot</a>, created and maintained by <a href="https://github.com/Matrixcoffee">Coffee</a>, uses try-matrix-now for it's data, so Coffee updated the bot to start to use some of the new fields.
+<blockquote>The final puzzle piece needed for FAQBot has been put into place: https://gitlab.com/Matrixcoffee/extract-web-to-org
+This is the bit that grabs "Try Matrix Now!" and turns it into questions that FAQBot can use.
+
+While I was working on that bit of code anyway, I also added support for the new 'home', 'repo', 'room' and 'language' fields. FAQBot will now give more and better information accordingly. For example, it is now possible to ask, "where is the Riot Android source code?" although it is generally better to just ask "where can I find Riot Android?" which combines several fields into a single answer.
+
+4 of 7 items are now completed: https://gitlab.com/Matrixcoffee/FAQBot/issues/2
+
+and the remaining 3 items before FAQBot's release are just the final review and integration tests.</blockquote>
+<h2 id="newdiscordbridgemaintainer">New Discord Bridge Maintainer</h2>
+<a href="https://matrix.to/#/@Half-Shot:half-shot.uk">Half-Shot</a> has been working stridently on the <a href="https://github.com/Half-Shot/matrix-appservice-discord">Discord Bridge</a> lately, and the project has now attracted a second maintainer:
+<blockquote>We've got a new member of the maintainer crew in discord bridge land (bringing the total count to 2.) I'd like to welcome Sorunome :). They are going to be helping review the influx of PRs, chew some issues and be a point of contact in the community. They've already filled my PR queue up and it's going to help us move even faster!</blockquote>
+In other Bridge news, <a href="https://github.com/matrix-org/matrix-appservice-bridge">matrix-appservice-bridge</a> 1.5.0 is out now, uses the latest matrix-js-sdk and matrix-appservice-node, and <a href="https://github.com/matrix-org/matrix-appservice-bridge/blob/master/CHANGES.md">contains a lot of changes</a>.
+<h2 id="brunounittests">Bruno unit tests</h2>
+Bruno, the latest and greatest addition to the [riot-web] team, has been working on configuring end to end unit tests. His scripts now install synapse from the metal, install riot and then run a test suite. Take a look at the animation below to get the idea!
+
+<a href="https://matrix.org/blog/wp-content/uploads/2018/07/riot-run-integration-tests.gif"><img class="alignnone size-full wp-image-3424" src="https://matrix.org/blog/wp-content/uploads/2018/07/riot-run-integration-tests.gif" alt="" width="893" height="555" /></a>
+<h2 id="fractal3295">Fractal 3.29.5</h2>
+<a href="@afranke:matrix.org">Alexandre Franke</a> tells us about new features in Fractal 3.29.5, and how the project has benefited from <a href="https://summerofcode.withgoogle.com/projects/?sp-search=matrix">GSOC 2018</a> contributors:
+<blockquote>Fractal got a big new release 3.29.5, which includes Eisha's multi-line input (with markdown syntax highlighting) and Julian's room details redesign, as well as his refactor on avatar code which leads to a perf boost.</blockquote>
+<h2 id="ananacegrafanawebhookformatrixnotifications">Ananace: Grafana webhook for Matrix notifications</h2>
+<a href="https://github.com/ananace/">Ananace</a>, always working on sysadmin tooling with matrix, comes back with a new tool: <a href="https://github.com/ananace/ruby-grafana-matrix">Grafana webhook for Matrix notifications</a>. This release is described as "the very first 'It doesn't crash instantly' version", but this is surely a useful project.
+
+<a href="https://matrix.org/blog/wp-content/uploads/2018/07/ananace-grafana.png"><img class="alignnone size-full wp-image-3425" src="https://matrix.org/blog/wp-content/uploads/2018/07/ananace-grafana.png" alt="" width="458" height="145" /></a>
+<h2 id="quaternionlibqmatrixclientsupportlocalecho">Quaternion / libQMatrixClient support local echo</h2>
+<a href="https://matrix.to/#/@kitsune:matrix.org">kitsune</a> had a surprising week while working on his QMatrix projects:
+<blockquote>/me accidentally found a year-old feature branch in his Git and thought of rebasing it in order to <em>eventually</em> continue working on it. As a result, libQMatrixClient and Quaternion master branches support local echo from today. Too bad the same trick doesn't work for E2EE.</blockquote>
+Too bad indeed!
+<h2>Riot/Web</h2>
+<ul>
+ 	<li>Cut the release candidate for 0.16-RC1</li>
+ 	<li>Lots of final polishing on Jitsi; all bugs fixed now</li>
+ 	<li>Likewise all Slate bugs fixed - many thanks to t3chguy for finishing them off</li>
+ 	<li>Lazy Loading Members implementation progressing well</li>
+ 	<li>Release due on Monday</li>
+ 	<li>On crypto: uhoreg has also been progressing on hooking up incremental key backup</li>
+</ul>
+<h2>Riot/Mobile</h2>
+<ul>
+ 	<li>Room version upgrade support!</li>
+ 	<li>Replies UI implemented on iOS and working well</li>
+ 	<li>Lazy Loading Members is done and working on iOS - speeds up launch by a minimum of 3x</li>
+</ul>
+<h2>Synapse</h2>
+<ul>
+ 	<li>Hawkowl is running the first ever Python 3.6 synapse! RAM usage looks to be 2-3x less than on Python 2.7. Still work to be done to merge all the PRs though.</li>
+ 	<li>Landing all the Lazy Loading patches; 3 down, 3 to go</li>
+ 	<li>Gathering feedback on the state res prop - thanks to uhoreg for wading through it!</li>
+ 	<li>Catching up Lots and lots of PRs</li>
+ 	<li>Implementing room versioning and gathering feedback on the MSC</li>
+ 	<li>Perf fixes - optimising current state res a bit &amp; fixing sync performance</li>
+ 	<li>=&gt; End-to-end message latency on matrix.org has been improved by 3-5x over the last few days(!!!)</li>
+</ul>
+<h2>Dendrite</h2>
+<ul>
+ 	<li>Super-exciting to see E2E working thanks to fadeAce's PR: <a href="https://twitter.com/matrixdotorg/status/1022887733931520001">https://twitter.com/matrixdotorg/status/1022887733931520001</a></li>
+</ul>
+<blockquote class="twitter-tweet" data-lang="en">
+<p dir="ltr" lang="en">Super-exciting to see end-to-end encryption working with Dendrite thanks to a massive PR from first-time contributor fadeAce!! <a href="https://t.co/SLIPvgYGAm">https://t.co/SLIPvgYGAm</a> <a href="https://t.co/s47SWjY46o">pic.twitter.com/s47SWjY46o</a></p>
+— Matrix (@matrixdotorg) <a href="https://twitter.com/matrixdotorg/status/1022887733931520001?ref_src=twsrc%5Etfw">July 27, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<ul>
+ 	<li>OpenTracing support has been dusted off and is working again cross-service</li>
+ 	<li>See the community update for much more!</li>
+</ul>
+<h2>Spec</h2>
+<ul>
+ 	<li>Travis continues to blitz through the S2S spec, PRs are flying around everywhere (and even landing!)</li>
+ 	<li>Uhoreg continues to work on the E2E spec merges with Zil0</li>
+</ul>
+<h2 id="wellmeetagain">We'll meet again…</h2>
+See you next week, and don't forget to watch Matrix Live below!
+
+<iframe src="https://www.youtube.com/embed/hOM0y2Q45xY" width="1280" height="720" frameborder="0" allowfullscreen="allowfullscreen"></iframe>

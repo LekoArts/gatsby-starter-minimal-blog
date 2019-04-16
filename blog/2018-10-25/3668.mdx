@@ -1,0 +1,23 @@
+---
+date: '2018-10-25'
+title: Olm 3.0.0 released!
+categories:
+  - General
+---
+
+Olm 3.0.0 has been released, which features several big changes. It can be downloaded from <a href="https://git.matrix.org/git/olm/">https://git.matrix.org/git/olm/</a>. The npm package for JavaScript can be downloaded from <a href="https://matrix.org/packages/npm/olm/olm-3.0.0.tgz">https://matrix.org/packages/npm/olm/olm-3.0.0.tgz</a>
+<h1 id="python">Python</h1>
+The biggest change is the merge of <a href="https://github.com/poljar/">poljar's</a> improved Python bindings. These bindings should be much easier to use for Python programmers, and are used by <a href="https://github.com/Zil0/">Zil0's</a> <a href="https://github.com/Zil0/matrix-python-sdk/tree/e2e_sample">E2E support in the Matrix Python SDK</a>.
+
+Since the binding API has changed, existing Python code will need to be rewritten in order to work with this release.
+
+poljar has also included <a href="https://poljar.github.io/python-olm/html/index.html">comprehensive documentation</a> for the new API.
+<h1 id="cmake">CMake</h1>
+<a href="https://github.com/mujx/">mujx</a> contributed support for building olm using CMake. This should allow for easier building on different platforms. Currently the library can be built using either make or CMake. In the future, make support may be removed.
+<h1 id="javascript">JavaScript</h1>
+The JavaScript bindings now use <a href="https://webassembly.org/">WebAssembly</a> by default. WebAssembly is much faster than the previous <a href="http://asmjs.org/">asm.js</a> build, and is supported by recent versions of the most popular browsers. For compatibility with browsers that do not support WebAssembly, the asm.js version is still provided.
+
+Due to adding support for WebAssembly, the API had to be changed slightly.
+There is now an <code>init</code> function that must be called before the library can be used. This function will return a promise that will resolve once the library is ready to be used. The <a href="https://github.com/matrix-org/matrix-js-sdk">matrix-js-sdk</a> has not yet been updated to do this, so users of matrix-js-sdk should continue using olm 2.x until it has been updated.
+<h1 id="keybackups">Key backups</h1>
+The public key API has been updated to support the <a href="https://github.com/matrix-org/matrix-doc/pull/1538">proposal for server-side key backups</a>. More details on how to use these functions will be published in the future.

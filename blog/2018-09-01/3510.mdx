@@ -1,0 +1,218 @@
+---
+date: '2018-09-01'
+title: This Week in Matrix 2018-08-31
+categories:
+  - General
+---
+
+<h2 id="spec">The Spec</h2>
+As many know, we've been aiming for the end of August to cut the first ever stable releases of the remaining APIs in the spec which have up to now been marked unstable - i.e. providing a snapshot of the spec which correctly matches the reference implementations (other than implementation bugs) and which can be used in isolation to develop production grade implementations of clients, servers, etc without need to reference any other implementations. There's been a massive sprint to pull this together, and as of the time of writing there are still <a href="https://github.com/matrix-org/matrix-doc/pulls?utf8=%E2%9C%93&amp;q=is%3Apr">PRs and commits</a> landing every few minutes.  We'll post a full update on our progress on Monday; meanwhile you can see a sneak peek over at the <a href="https://github.com/matrix-org/matrix-doc/projects/1">August 2018 r0</a> project board.
+
+Spec work has completely precluded any other backend dev this week.
+<h2 id="halfshotgonebutnotreallygone">Half-Shot, gone but not really gone</h2>
+This week we <a href="https://matrix.org/blog/2018/08/31/so-long-half-shot-thanks-for-all-the-bridges/">say farewell</a> to <a href="https://matrix.to/#/@Half-Shot:half-shot.uk">Half-Shot</a>, who has been working fulltime on bridges over the summer. He has managed the matrix.org bridges largely single-handedly, with a big focus on the often-volatile IRC bridge(s).
+<h2 id="bridges">Bridges</h2>
+<h3 id="matrixappserviceirc0110">matrix-appservice-irc 0.11.0</h3>
+It's a big deal, and it's rolling out to IRC networks this week. <a href="https://matrix.to/#/@Half-Shot:half-shot.uk">Half-Shot</a> released <a href="https://github.com/matrix-org/matrix-appservice-irc/releases/tag/0.11.0">matrix-appservice-irc 0.11.0</a>, with the following included:
+
+New features &amp; improvements:
+<ul>
+ 	<li>Cache modes internally</li>
+ 	<li>Replace nicks with user pill mentions</li>
+ 	<li>Kick users if we fail to create an IRC client for them on join (aka ILINE kicks)</li>
+ 	<li>SASL support</li>
+ 	<li>Add err_nononreg so we can announce PMs that failed</li>
+ 	<li>Formatting of replies</li>
+</ul>
+Bug Fixes:
+<ul>
+ 	<li>Fix invalidchar nick</li>
+ 	<li>Don't answer any msgtypes other than text in an admin room.</li>
+ 	<li>Fix provisoner leaving users on unlink</li>
+ 	<li>Fixed a bug where content of events the bridge hadn't cached were not being used in replies.</li>
+ 	<li>We were calling authedRequest but the request was not mocked out.</li>
+ 	<li>There was a bug involving intents in m-a-b so it was bumped</li>
+</ul>
+Metrics:
+<ul>
+ 	<li>Metrics for MatrixHandler - Iline Kicks</li>
+ 	<li>Idle connection metrics</li>
+ 	<li>QueuePool.waitingItems should use it's internal queue size</li>
+</ul>
+Misc:
+<ul>
+ 	<li>Section out tests, linting and coverage into seperate stages for Travis</li>
+</ul>
+<h3 id="whatsapp">WhatsApp</h3>
+<a href="https://matrix.to/#/@tulir:maunium.net">tulir</a> has been working on <a href="https://github.com/tulir/mautrix-whatsapp">mautrix-whatsapp</a> bridge.
+<blockquote>now bridges a lot more stuff, such as formatting, media and replies. I'm also almost done with desegregating users so that Matrix users join the same group chat portals rather than everyone having their own portal to the same chat</blockquote>
+<h3 id="zulipchatbridgedbyzulip">Zulip chat, bridged by Zulip</h3>
+Matthew discovered there is a Matrix-Zulip bridge on the Zulip side. So if you're running a Zulip server (for some reason), and want to bridge with Matrix <a href="https://zulipchat.com/integrations/doc/matrix">check out the integration docs here</a>.
+<h3 id="ircconnectiontracker">IRC Connection Tracker</h3>
+<a href="https://matrix.to/#/@Half-Shot:half-shot.uk">Half-Shot</a> created a new component to enhance the reliability of IRC-Matrix bridging:
+<blockquote><a href="https://github.com/Half-Shot/irc-conntrack">IRC Connection Tracker</a> is a thing now. It's a project to separate out the IRC connections from the appservice so the two can be run independently, so that restarting the appservice doesn't affect the IRC connections. It's hopefully going to allow bridge stuff to run faster when it's done.</blockquote>
+This project is still really early stage. You can take a look at the <a href="https://docs.google.com/document/d/1NZRdUYHWltq9rh-nFZeSp3FYwtQQh5vBxa6Lw8YNtCo/">Proposal document here</a>.
+<h2 id="clients">Clients</h2>
+<h3 id="nheko054">Nheko 0.5.4</h3>
+Not technically this week, but <a href="https://github.com/mujx/nheko">Nheko</a> <a href="https://github.com/mujx/nheko/releases/tag/v0.5.4">0.5.4 was recently released</a>
+<ul>
+ 	<li>The settings page now includes the device id &amp; device fingerprint (thanks <a href="https://github.com/valkum">@valkum</a> )</li>
+ 	<li>The Polish translation has been updated (thanks <a href="https://github.com/m4sk1n">@m4sk1n</a> )</li>
+</ul>
+<a href="https://bintray.com/mujx/matrix/nheko/v0.5.4">Get the latest builds of Nheko from bintray</a>.
+
+<a href="https://matrix.org/blog/wp-content/uploads/2018/08/Screen-Shot-2018-09-01-at-00.00.25.png"><img class="aligncenter size-large wp-image-3518" src="https://matrix.org/blog/wp-content/uploads/2018/08/Screen-Shot-2018-09-01-at-00.00.25-1024x663.png" alt="" width="1024" height="663" /></a>
+<h3 id="fractal">Fractal</h3>
+<a href="@afranke:matrix.org">Alexandre Franke</a> and the <a href="https://www.amazon.com/Blizzard-Bay-Hanging-Gnomies-Sweater/dp/B0744PKXMK">GNOME crew</a> have been working on <a href="https://wiki.gnome.org/Apps/Fractal">Fractal</a>, gearing up for their upcoming 3.30 release.
+<blockquote>Fractal 3.29.92 got released and we are freezing strings to give GNOME translators a bit of time to complete translations for 3.30 next week. Latest developments include tweaks for the title bar, misc bug fixes, a new presentation for uploaded files (that are not images, those are still displayed inline) with buttons to download or open them.
+Development builds are now parallel installable for easier testing and CI has been improved.</blockquote>
+<h3 id="seaglass">Seaglass</h3>
+<a href="https://matrix.to/#/@neilalexander:matrix.org">neilalexander</a>:
+<blockquote><a href="https://github.com/neilalexander/seaglass">Seaglass</a> now has some early support for inline images and attachments, and supports Quick Look. Also handles emotes and notices better. It also has version numbers now, various other little fixes and Aaron Raimist has been working on auto-update support.</blockquote>
+Version numbers! Now when you go to <a href="https://bintray.com/neilalexander/Seaglass/Seaglass/_latestVersion#files">download the tarball from bintray</a>, you can see what's going on!
+
+There's also been some work on supporting dark mode on Mojave (which looks particularly sexy) and even Touch Bar support!
+
+<a href="https://matrix.org/blog/wp-content/uploads/2018/08/mojave.jpg"><img class="aligncenter size-large wp-image-3516" src="https://matrix.org/blog/wp-content/uploads/2018/08/mojave-1024x640.jpg" alt="" width="1024" height="640" /></a>
+<h3 id="riotandroidv0815">Riot Android v0.8.15</h3>
+Riot Android v0.8.15 is on it's way to the Play Store.
+<h4 id="changesinriotandroid081520180830">Changes in Riot Android 0.8.15 (2018-08-30)</h4>
+MatrixSdk:
+<ul>
+ 	<li>Upgrade to version 0.9.9.</li>
+</ul>
+Improvements:
+<ul>
+ 	<li>Improve intent to open document (#2544)</li>
+ 	<li>Avoid useless dialog for permission (#2331)</li>
+ 	<li>Improve wording when exporting keys (#2289)</li>
+</ul>
+Other changes:
+<ul>
+ 	<li>Upgrade lib libphonenumber from v8.0.1 to 8.9.12</li>
+ 	<li>Upgrade Google firebase libs</li>
+</ul>
+Bugfix:
+<ul>
+ 	<li>Handle <code>\\/</code> at the beginning of a message to send a message starting with <code>/</code> (#658)</li>
+ 	<li>Escape nicknames starting with a forward slash <code>/</code> in mentions (#2146)</li>
+ 	<li>Improve management of Push feature</li>
+ 	<li>MatrixError mResourceLimitExceededError is now managed in MxDataHandler (vector-im/riot-android#2547 point 2)</li>
+</ul>
+<h4 id="changesinriotandroid081420180827">Changes in Riot Android 0.8.14 (2018-08-27)</h4>
+MatrixSdk:
+<ul>
+ 	<li>Upgrade to version 0.9.8.</li>
+</ul>
+Features:
+<ul>
+ 	<li>Manage server quota notices (#2440)</li>
+</ul>
+Improvements:
+<ul>
+ 	<li>Do not ask permission to write external storage at startup (#2483)</li>
+ 	<li>Update settings icon and transparent logo for notifications and navigation drawer (#2492)</li>
+ 	<li>URL previews are no longer requested from the server when displaying URL previews is disabled (PR #2514)</li>
+ 	<li>Fix some plural and puzzle strings, and remove other unused ones (#2444)</li>
+ 	<li>Manage System Alerts in a dedicated section</li>
+</ul>
+Other changes:
+<ul>
+ 	<li>Upgrade olm-sdk.aar from version 2.2.2 to version 2.3.0</li>
+ 	<li>move PieFractionView from the SDK to the client (#2525)</li>
+</ul>
+Bugfix:
+<ul>
+ 	<li>Fix media sharing (#2530)</li>
+ 	<li>Fix notification sound issue in settings (#2524)</li>
+ 	<li>Disable app icon badge for "listen for event" notification (#2104)</li>
+</ul>
+<h3 id="riotios073">Riot iOS 0.7.3</h3>
+<h4 id="changesin07320180827">Changes in 0.7.3 (2018-08-27)</h4>
+Improvements:
+<ul>
+ 	<li>Upgrade MatrixKit version (v0.8.3).</li>
+</ul>
+Bug fix:
+<ul>
+ 	<li>Fix input toolbar reset in RoomViewController on MXSession state change (#2006 and #2008).</li>
+ 	<li>Fix user interaction disabled in master view of UISplitViewContoller when selecting a room (#2005).</li>
+</ul>
+<h4 id="changesin07220180824">Changes in 0.7.2 (2018-08-24)</h4>
+Improvements:
+<ul>
+ 	<li>Upgrade MatrixKit version (v0.8.2).</li>
+ 	<li>Server Quota Notices in Riot (#1937).</li>
+</ul>
+Bug fix:
+<ul>
+ 	<li>User defaults: the preset application language (if any) is ignored.</li>
+ 	<li>Recents: Avoid to open a room twice (it crashed on room creation on quick HSes).</li>
+ 	<li>Riot-bot: Do not try to create a room with it if the user homeserver is not federated.</li>
+</ul>
+<h3 id="riotweb">Riot Web</h3>
+There's been lots of work debugging and optimising Lazy Loading, which is edging closer to being turned on by default.  We've also been working away at improving E2E UX - starting with finishing key backup, and then improved verification, and then finally cross-signing (at last!)
+<h2 id="sdks">SDKs</h2>
+<h3 id="rubymatrixsdk">Ruby Matrix SDK</h3>
+<a href="https://github.com/ananace/">ananace</a> is working on the <a href="https://github.com/ananace/ruby-matrix-sdk">Ruby Matrix SDK</a> "fixing issues and documenting as I go".
+<h3 id="matrixandroidsdk">Matrix Android SDK</h3>
+<h4 id="changestomatrixandroidsdkin09920180830">Changes to Matrix Android SDK in 0.9.9 (2018-08-30)</h4>
+Improvements:
+<ul>
+ 	<li>Clear unreachable Url when clearing media cache (vector-im/riot-android#2479)</li>
+ 	<li>"In reply to" is not clickable on Riot Android yet. Make it a plain text (vector-im/riot-android#2469)</li>
+</ul>
+Bugfix:
+<ul>
+ 	<li>Removing room from 'low priority' or 'favorite' does not work (vector-im/riot-android#2526)</li>
+ 	<li>MatrixError mResourceLimitExceededError is now managed in MxDataHandler (vector-im/riot-android#2547)</li>
+</ul>
+API Change:
+<ul>
+ 	<li>MxSession constructor is now private. Please use MxSession.Builder() to create a MxSession</li>
+</ul>
+<h4 id="changestomatrixandroidsdkin09820180827">Changes to Matrix Android SDK in 0.9.8 (2018-08-27)</h4>
+Features:
+<ul>
+ 	<li>Manage server_notices tag and server quota notices (vector-im/riot-android#2440)</li>
+</ul>
+Bugfix:
+<ul>
+ 	<li>Room aliases including the '@' and '=' characters are now recognized as valid (vector-im/riot-android#2079, vector-im/riot-android#2542)</li>
+ 	<li>Room name and topic can be now set back to empty (vector-im/riot-android#2345)</li>
+</ul>
+API Change:
+<ul>
+ 	<li>Remove PieFractionView class from the Matrix SDK. This class is now in Riot sources (#336)</li>
+ 	<li>MXMediasCache.createTmpMediaFile() methods are renamed to createTmpDecryptedMediaFile()</li>
+ 	<li>MXMediasCache.clearTmpCache() method is renamed to clearTmpDecryptedMediaCache()</li>
+ 	<li>Add MXMediasCache.moveToShareFolder() to move a tmp decrypted file to another folder to prevent deletion during sharing. New API MXMediasCache.clearShareDecryptedMediaCache() can be called when the application is resumed. (vector-im/riot-android#2530)</li>
+</ul>
+<h3 id="matrixiossdk">Matrix iOS SDK</h3>
+<h4 id="changesinmatrixiossdkin011320180827">Changes in Matrix iOS SDK in 0.11.3 (2018-08-27)</h4>
+Bug fix:
+<ul>
+ 	<li>MXJSONModel: Manage <code>m.server_notice</code> empty tag sent due to a bug server side (PR #556).</li>
+</ul>
+<h4 id="changesinmatrixiossdkin011220180824">Changes in Matrix iOS SDK in 0.11.2 (2018-08-24)</h4>
+Improvements:
+<ul>
+ 	<li>MXSession: Add the supportedMatrixVersions method getting versions of the specification supported by the homeserver.</li>
+ 	<li>MXRestClient: Add testUserRegistration to check earlier if a username can be registered.</li>
+ 	<li>MXSession: Add MXSessionStateSyncError state and MXSession.syncError to manage homeserver resource quota on /sync requests (vector-im/riot-ios/issues/1937).</li>
+ 	<li>MXError: Add kMXErrCodeStringResourceLimitExceeded to manage homeserver resource quota (vector-im/riot-ios/issues/1937).</li>
+ 	<li>MXError: Define constant strings for keys and values that can be found in a Matrix JSON dictionary error.</li>
+ 	<li>Tests: MXHTTPClient_Private.h: Add method to set fake delay in HTTP requests.</li>
+</ul>
+Bug fix:
+<ul>
+ 	<li>People tab is empty in the share extension (vector-im/riot-ios/issues/1988).</li>
+ 	<li>MXError: MXError lost NSError.userInfo information.</li>
+</ul>
+<h2 id="tools">Tools</h2>
+<h3 id="matrixtoriot">matrix-to-riot</h3>
+<a href="https://matrix.to/#/@Half-Shot:half-shot.uk">Half-Shot</a> shared a handy Firefox extension: <a href="https://github.com/Half-Shot/matrix-to-riot">matrix-to-riot</a>
+<blockquote>This is a tiny webextension to forward matrix.to links to an open Riot tab.</blockquote>
+Really useful if you often click matrix.to links and find yourself needing to URL-hack to get to where you need to be.
+<h2 id="thatsallfornow">That's all for now</h2>
+We're going to shift this week's Matrix Live to Monday, alongside the upcoming blog post on the spec release progress. Have a good weekend!

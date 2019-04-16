@@ -1,0 +1,79 @@
+---
+date: '2018-11-26'
+title: This Week in Matrix 2018-11-26
+categories:
+  - General
+---
+
+A little delay to the release of this week's TWIM, expect us to resume normal schedule on Friday.
+<h2 id="specfoundation">Spec &amp; Foundation</h2>
+<ul>
+ 	<li>Two workshops happened with the Foundation lawyers to work on <a href="https://github.com/matrix-org/matrix-doc/issues/1318">MSC1318</a> - basically fleshing out a proposal for the details of the foundation governance in terms of how the Guardians (i.e. directors of the foundation board) should interact with the Core Spec Team to act as a back-stop - and working out how to port the MSC (once finished) into formal Articles of Association &amp; adjunct documents. We'll get the workshop notes written up as a rewrite of <a href="https://github.com/matrix-org/matrix-doc/issues/1318">MSC1318</a> very shortly.</li>
+ 	<li>New MSCs from vdH on:
+<ul>
+ 	<li><a href="https://github.com/matrix-org/matrix-doc/pull/1721">MSC1721</a> Rename m.login.cas to m.login.sso</li>
+ 	<li><a href="https://github.com/matrix-org/matrix-doc/pull/1730">MSC1730</a> Mechanism for redirecting to an alternative server during login</li>
+</ul>
+</li>
+ 	<li>…and an alternate to MSC1730: MSC1731 Mechanism for redirecting to an alternative server during SSO login.</li>
+ 	<li>These three SSO-related MSCs are derived from work being done for a large-scale Matrix deployment for a New Vector customer which we should be able to talk about in future. Improving SSO and other auth/identity work in Matrix is vital, and needless to say we're trying to ensure all the resulting work ends up in the spec to the benefit of the whole ecosystem :)</li>
+</ul>
+<h2 id="matrixmediarepo">matrix-media-repo</h2>
+<a href="https://github.com/turt2live">TravisR</a> reports that:
+<blockquote><a href="https://github.com/turt2live/matrix-media-repo">matrix-media-repo</a> has received a lot of updates in the last few weeks. Although mostly bug fixes and improvements, there's added support for streaming downloads from remote servers. This is mostly useful when someone posts a 100mb video in a room: previously the media repo would download the entire thing then send it over to you. Now it'll send you the video while it also caches it.</blockquote>
+<h2 id="matrixdockeransibledeploy">matrix-docker-ansible-deploy</h2>
+Big update from <a href="https://matrix.to/#/@slavi:devture.com">Slavi</a> this week:
+<blockquote><a href="https://github.com/spantaleev/matrix-docker-ansible-deploy">matrix-docker-ansible-deploy</a> has received some updates in the past few weeks - fixing minor bugs, improving documentation, adding support for additional <a href="https://github.com/matrix-org/synapse">Synapse</a>/<a href="https://github.com/vector-im/riot-web">Riot</a> features, etc.
+
+Most notably (in oldest to most-recent order):
+<ul>
+ 	<li><a href="https://matrix.to/#/@cadair:cadair.com">Cadair</a> heard you like playbooks, so he made it possible to <a href="https://github.com/spantaleev/matrix-docker-ansible-deploy/commit/67e2bf285d44c0cb392ba1e28e615053b748c03c">run the playbook from another playbook</a>. Thanks Cadair!</li>
+ 	<li>some <a href="https://github.com/spantaleev/matrix-docker-ansible-deploy/blob/master/CHANGELOG.md#bc-break-renaming-playbook-variables">configuration renaming</a> to make things more consistent. Most people would likely be unaffected.</li>
+ 	<li>support has been added for <a href="https://github.com/spantaleev/matrix-docker-ansible-deploy/blob/master/CHANGELOG.md#postgres-11-support">Postgres 11</a>. Upgrading is possible and easy (as a related success story, Aaron Raimist shared that he recently upgraded his ~40GB database)</li>
+ 	<li><a href="https://github.com/spantaleev/matrix-docker-ansible-deploy/blob/master/CHANGELOG.md#ssl-protocols-used-to-serve-riot-and-synapse">more flexible and more secure-by-default TLS configuration</a>. Thanks Aaron Raimist!</li>
+ 	<li>the ability to <a href="https://github.com/spantaleev/matrix-docker-ansible-deploy/blob/master/CHANGELOG.md#customize-parts-of-riots-config">customize more parts of riot-web</a>. Thanks Aaron Raimist!</li>
+ 	<li><a href="https://github.com/spantaleev/matrix-docker-ansible-deploy/blob/master/CHANGELOG.md#ability-to-set-synapse-log-levels">better control over Synapse logging</a>. Thanks Aaron Raimist!</li>
+ 	<li>the ability to <a href="https://github.com/spantaleev/matrix-docker-ansible-deploy/blob/master/CHANGELOG.md#support-for-controlling-public-registration-and-room-auto-join">set up a public server</a> and the ability to make use of Synapse's \\"auto-join\\" feature. Until now, the playbook was only suited for setting up a private server, but with this, setting up public servers is now a possibility. Thanks <a href="https://github.com/anadahz">@anadahz</a></li>
+</ul>
+I'm quite happy that the playbook is getting more contributions from others now and is improving in such diverse ways!
+
+Additionally, the <a href="https://matrix.to/#/#matrix-docker-ansible-deploy:devture.com">#matrix-docker-ansible-deploy:devture.com</a> support room in Matrix is now bridged to the <code>#matrix-docker-ansible-deploy</code> IRC Freenode channel, making it easier for people to get support when they don't have a working homeserver.</blockquote>
+<h2 id="libqmatrixclient">libQMatrixClient</h2>
+<a href="https://matrix.to/#/@kitsune:matrix.org">kitsune</a> has been working on <a href="https://github.com/QMatrixClient/libqmatrixclient">libQMatrixClient</a>:
+<blockquote>the work on lazy-loading in <a href="https://github.com/QMatrixClient/libqmatrixclient">libQMatrixClient</a> has advanced to the point when client authors may start trying to integrate it in their applications (welcome to <a href="https://matrix.to/#/#qmatrixclient:matrix.org">#qmatrixclient:matrix.org</a> for details - it's a bit rough around the edges yet).</blockquote>
+<h2 id="spectral">Spectral</h2>
+This week <a href="https://matrix.to/#/@bhat:encom.eu.org">Black Hat</a> has been working to give <a href="https://gitlab.com/b0/spectral">Spectral</a> a more Material design oriented UI.
+
+<img src="twim/spectral-material.png" alt="" /><a href="https://matrix.org/blog/wp-content/uploads/2018/11/spectral-material.png"><img class="alignnone size-full wp-image-3779" src="https://matrix.org/blog/wp-content/uploads/2018/11/spectral-material.png" alt="" width="960" height="674" /></a>
+<h2 id="smsmatrix">SMSMatrix</h2>
+<a href="https://matrix.to/#/@swedneck:swedneck.xyz">swedneck</a> reports that:
+<blockquote><a href="https://github.com/tijder/SmsMatrix">SMSMatrix</a> now has a room (<a href="https://matrix.to/#/#smsmatrix:matrix.org">#smsmatrix:matrix.org</a>). SMSMatrix is a simple bridge between Matrix and SMS, developed by tijder. You install an android app and register a bot account which will invite you to direct chats under the name of anyone who sends you an SMS, which will then act as a normal SMS conversation.</blockquote>
+I had a very quick play with this tool and it works great - a good way to quickly bridge SMS to Matrix.
+
+<a href="https://matrix.org/blog/wp-content/uploads/2018/11/smsmatrix.png"><img class="alignnone size-full wp-image-3780" src="https://matrix.org/blog/wp-content/uploads/2018/11/smsmatrix.png" alt="" width="499" height="288" /></a>
+<h2 id="riot">Riot</h2>
+News from the <a href="https://riot.im/">Riot</a> teams:
+<ul>
+ 	<li><a href="https://github.com/vector-im/riot-android-redesign-PoC/tree/develop">Android rewrite is continuing in Kotlin</a> - lots of infrastructure work over the last few weeks</li>
+ 	<li>E2E key backups landed in Riot/iOS develop (but no UI yet, as we finalise the implementation first on Riot/Web)</li>
+ 	<li>E2E key backups also landed in Riot/Web develop (but with placeholder UI)</li>
+ 	<li>E2E key backups in dev on Riot/Android too (using Realm for storage!)</li>
+ 	<li><span style="font-weight: 400;">Lots of work from uhoreg on E2E cross-signing</span></li>
+ 	<li>Work on the Riot/Web redesign paused for a week due to other commitments but as of Nov 26th we're back on the case again, making up for lost time.</li>
+</ul>
+<h2 id="synapse">Synapse</h2>
+Most of the focus from the <a href="https://github.com/matrix-org/synapse/">Synapse</a> team this week has been on the new version using Python 3:
+<ul>
+ 	<li>Py3 is finished, other than Debian packages - ongoing debate on whether they should use a virtualenv or depend on debian dependencies, and who should maintain them in a Py3 world…</li>
+ 	<li>Lots of running around on final Py3 bugs</li>
+</ul>
+<h2 id="matrixappservicepurple">matrix-appservice-purple</h2>
+<a href="https://matrix.to/#/@Half-Shot:half-shot.uk">Half-Shot</a> has continued work on <a href="https://github.com/matrix-org/matrix-appservice-purple">matrix-appservice-purple</a>.
+<h2 id="modular">Modular</h2>
+<a href="https://www.modular.im/">Modular.im</a> provides Hosted Homeservers for Matrix.
+<ul>
+ 	<li>Modular now has full support for Custom DNS (letting you point your own SRV records at it)</li>
+ 	<li>Lots of work on a migration tool to allow folks to easily shift Matrix accounts between servers, as well as (in future) migrations from HipChat, Slack &amp; others.</li>
+</ul>
+<h2>That's it!</h2>
+Apologies for the delayed release this week - please expect an episode of Matrix Live in the week, and back to a normal schedule for TWIM as of Friday. As always, come talk to us in <a href="https://matrix.to/#/#thisweekinmatrix:matrix.org">#thisweekinmatrix:matrix.org</a> and tell us what you've been doing.

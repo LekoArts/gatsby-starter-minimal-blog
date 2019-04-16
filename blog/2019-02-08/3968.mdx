@@ -1,0 +1,126 @@
+---
+date: '2019-02-08'
+title: This Week in Matrix 2019-02-08
+categories:
+  - General
+---
+
+Huge week! Let's go!
+<h2 id="matrixliveriotredesignchat20190208season3episode13">Matrix Live: Riot Redesign Chat (2019-02-08 - Season 3, Episode 13)</h2>
+<iframe src="https://www.youtube.com/embed/Fq3Q50RxQyM" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+
+Riot-web new version coming out so soon. So soon! It looks and runs great, you can use it today at <a href="https://riot.im/develop">https://riot.im/develop</a>. Includes a labs flag for displaying custom tags, which I love. Watch the vid.
+<h2 id="fosdem2019">FOSDEM 2019</h2>
+FOSDEM happened.
+<ul>
+ 	<li>two Matrix-themed packed-room talks</li>
+ 	<li>lots of people coming to chat at the stall to say things like "hi" or "I like Matrix" or "what is Matrix? … wow that sounds amazing, how can I get involved?"</li>
+ 	<li>1000s of stickers decentralised out of my bag onto people's laptops</li>
+</ul>
+If you didn't yet, take a look at the <a href="https://matrix.org/blog/2019/02/04/matrix-at-fosdem-2019/">summary blogpost, which also contains videos of both talks</a>.
+<h2 id="synapse0990">Synapse 0.99.0</h2>
+With the release of <a href="https://matrix.org/docs/spec/server_server/r0.1.0.html">Server to Server Spec r0.1</a>, Synapse 0.99.0 is shipping now.
+<blockquote>Synapse 1.0.0 will be compliant with r0.1 and the goal of Synapse 0.99.0 is to act as a stepping stone to Synapse 1.0. Synapse 0.99.0 supports the r0.1 release of the server to server specification, but is compatible with both the legacy Matrix federation behaviour (pre-r0.1) as well as post-r0.1 behaviour, in order to allow for a smooth upgrade across the federation.
+It is critical that all admins upgrade to 0.99.0 and configure a valid TLS certificate. Admins will have 1 month to do so, after which 1.0.0 will be released and those servers without a valid certificate will no longer be able to federate with &gt;= 1.0.0 servers.</blockquote>
+<em>Please</em> <a href="https://matrix.org/blog/2019/02/05/synapse-0-99-0/">read the announcement post</a> and be sure to come and chat in <a href="https://matrix.to/#/#synapse:matrix.org">#synapse:matrix.org</a> if you need help!
+<h2 id="gsoc2019">GSOC 2019</h2>
+<a href="https://matrix.to/#/@cadair:cadair.com">Cadair</a> has been helping admin this year's GSOC application:
+<blockquote>Matrix.org has applied to be a GSOC (Google Summer of Code) mentoring organisation. If your matrix project has a feature a summer student could tackle and you have the time to mentor them over the summer, why not <a href="http://matrix-org.github.io/gsoc/#/projects">add a project idea to our website</a> by submitting a PR to <a href="https://github.com/matrix-org/gsoc/tree/master/_projects">this repo</a>. Feel free to ask questions in <a href="https://matrix.to/#/#gsoc:matrix.org">#gsoc:matrix.org</a> as well.</blockquote>
+<h2 id="latestmscs">Latest MSCs</h2>
+<h3 id="approvedmscs">Approved MSCs</h3>
+<ul>
+ 	<li><a href="https://github.com/matrix-org/matrix-doc/issues/1504">[MSC 1504]: Homeserver resource limiting error codes</a></li>
+</ul>
+<h3 id="inprogressmscs">In Progress MSCs</h3>
+<ul>
+ 	<li><a href="https://github.com/matrix-org/matrix-doc/pull/1840">[MSC 1840]: MSC1840: Typed rooms</a></li>
+ 	<li><a href="https://github.com/matrix-org/matrix-doc/pull/1849">[MSC 1849]: MSC1849: WIP: Proposal for m.relates_to aggregations</a></li>
+ 	<li><a href="https://github.com/matrix-org/matrix-doc/pull/1866">[MSC 1866]: Add proposal for invite error code for unsupported room version</a></li>
+ 	<li><a href="https://github.com/matrix-org/matrix-doc/pull/1862">[MSC 1862]: MSC1862: Presence Capabilities</a></li>
+</ul>
+<h2 id="matrixpuppetbridges010releasedwithbidirectionalimagesupport">matrix-puppet-hangouts 0.1.0 released, with bidirectional image support</h2>
+<a href="https://matrix.to/#/@root:thomasprofitt.com">tom</a> reports that:
+<blockquote><a href="https://github.com/matrix-hacks/matrix-puppet-hangouts/">matrix-puppet-hangouts</a> version <a href="https://github.com/matrix-hacks/matrix-puppet-hangouts/releases/tag/0.1.0">0.1.0</a> has been released!
+This release adds bidirectional (Hangouts -&gt; Matrix and Matrix -&gt; Hangouts) image support!
+It also bumps the version of <a href="https://github.com/matrix-hacks/matrix-puppet-bridge/">matrix-puppet-bridge</a> (the common core of matrix-puppet-bridge bridges, which handles most of the stuff that's the same between different third-party service bridges, and makes implementing new matrix-puppet-bridge bridges easier) required to 1.16.2, the current latest, for recent bugfixes that improve all <a href="https://github.com/matrix-hacks/matrix-puppet-bridge/">matrix-puppet-bridge</a> bridges.
+0.1.0 also requires Python 3.5+, for async. Older versions of python3 won't work. PRs getting python3 &lt; 3.5 working again are welcome.</blockquote>
+tom also gives credit to <a href="https://github.com/d3m3vilurr">d3m3vilurr</a>:
+<blockquote>These changes are also brought to us by <a href="https://github.com/d3m3vilurr">d3m3vilurr</a>, <em>Honored Hero of Matrix Puppet Bridge</em></blockquote>
+Praise indeed!
+<h2 id="bifrostbridge">Bifrost Bridge</h2>
+<a href="https://matrix.to/#/@Half-Shot:half-shot.uk">Half-Shot</a> working on <a href="https://github.com/matrix-org/matrix-bifrost">matrix-bifrost</a>, a matrix bridge for libpurple and xmpp.js:
+<blockquote>This week I have been hard at work fixing a lot of the bugs that have cropped up from bifrost's rapid development. We now have a docker image available (<a href="https://github.com/matrix-org/matrix-bifrost">https://github.com/matrix-org/matrix-bifrost</a>).</blockquote>
+<h2 id="smsmatrixnowavailableonfdroid">SMSMatrix now available on F-Droid</h2>
+A recent favourite of mine, <a href="https://github.com/tijder/SmsMatrix">SMSMatrix</a> runs a tiny service on your Android device, which forwards SMS messages to and from Matrix rooms. This week <a href="https://matrix.to/#/@tijder:matrix.org">tijder</a> announced that it's now available on F-Droid:
+<blockquote>SmsMatrix just got released in the F-droid store. Now everybody can install and get updates from the F-droid store. <a href="https://f-droid.org/app/eu.droogers.smsmatrix">https://f-droid.org/app/eu.droogers.smsmatrix</a></blockquote>
+<a href="https://matrix.org/blog/wp-content/uploads/2019/02/smsmatrix-fdroid.png"><img class="alignnone size-large wp-image-3969" src="https://matrix.org/blog/wp-content/uploads/2019/02/smsmatrix-fdroid-576x1024.png" alt="" width="576" height="1024" /></a>
+<h2 id="matrixmediarepofromtravisrnowsupportswellknownserverdelegation">matrix-media-repo from TravisR now supports .well-known server delegation</h2>
+<a href="https://github.com/turt2live">TravisR</a> reports that:
+<blockquote><a href="https://github.com/turt2live/matrix-media-repo">matrix-media-repo</a> now supports .well-known server delegation (compatible with Synapse 0.99 and r0.1 of the server-server specification), among many other bug fixes and improvements. Actually validating the certificates presented by servers will be implemented alongside Synapse 1.0's requirement for it.</blockquote>
+<h2 id="dimensionfromtravisrnowsupportswellknownserverdelegation">Dimension from TravisR now supports .well-known server delegation</h2>
+Similar to <a href="https://github.com/turt2live/matrix-media-repo">matrix-media-repo</a> above, <a href="https://github.com/turt2live">TravisR</a> has been implementing .well-known server delegation in <a href="https://dimension.t2bot.io/">Dimension</a>:
+<blockquote><a href="https://dimension.t2bot.io/">Dimension</a> now supports .well-known server delegation (compatible with Synapse 0.99 and r0.1 of the server-server specification). Actually validating the certificates presented by servers will be implemented alongside Synapse 1.0's requirement for it.</blockquote>
+<h2 id="mxisdv130rc3">mxisd v1.3.0-rc.3</h2>
+<a href="https://matrix.to/#/@max:kamax.io">Max</a>:
+<blockquote><a href="https://github.com/kamax-matrix/mxisd">mxisd</a> <a href="https://github.com/kamax-matrix/mxisd/releases/tag/v1.3.0-rc.3">v1.3.0-rc.3</a> is out. This is hopefully the last RC before release, but we would like as much testing as possible! the v1.3 branch is a big enhancement on the previous release with big performance and privacy improvements. It's smaller, faster, stronger and protects you privacy even better than before! You know you want it!</blockquote>
+<h2 id="matrixdockeransibledeploynowsupportssynapsev099">matrix-docker-ansible-deploy now supports Synapse v0.99</h2>
+<a href="https://matrix.to/#/@slavi:devture.com">Slavi</a> reports that:
+<blockquote><a href="https://github.com/spantaleev/matrix-docker-ansible-deploy">matrix-docker-ansible-deploy</a> now supports Synapse v0.99 and should be ready for Synapse v1.0.
+If you're using the playbook to manage your Matrix server you should upgrade soon.
+Depending on how you've customized your setup, you may not even have to do anything for the big Synapse v0.99/v1.0 transition, besides upgrading and re-running the playbook. A good place to start is the changelog entry: <a href="https://github.com/spantaleev/matrix-docker-ansible-deploy/blob/46accfdb3c53f0a6b9e5fd7aacf9adaf21172ebc/CHANGELOG.md#synapse-v099-support-and-preparation-for-synapse-v10">Synapse v0.99 support and preparation for Synapse v1.0</a></blockquote>
+I have been using these playbooks to test my own homeserver deployment and am happy.
+<h2 id="tchapandroidclient">Tchap Android client</h2>
+<a href="https://matrix.to/#/@willem:canarymod.net">Willem</a> reports that:
+<blockquote>After seeing a demo at FOSDEM of <a href="https://github.com/dinsic-pim/tchap-android">Tchap</a>, the app the French government uses to access their Matrix network, I decided to try to get it to work as a general-purpose Matrix client. The app uses email and password to log in, and infers the homeserver address from the homeserver name. So to get it to work, I had to patch the app and write a little proxy so it gets the proper homeserver (and optionally identity server) from an email address.
+A patched version of Tchap can be found at <a href="https://github.com/14mRh4X0r/tchap-android">https://github.com/14mRh4X0r/tchap-android</a>, code for the proxy at <a href="https://git.snt.utwente.nl/14mRh4X0r/tchap-proxy">https://git.snt.utwente.nl/14mRh4X0r/tchap-proxy</a>. At the moment it's very crude, and images/files don't work since the virus scan API is unimplemented, but at least it can be used outside the French government. ?</blockquote>
+<h2 id="riotios">Riot iOS</h2>
+From the team:
+<blockquote>
+<ul>
+ 	<li>Still iterating on key backup UX</li>
+ 	<li>Fix various share extension bugs (image sending failure, links share as text, etc…)</li>
+</ul>
+</blockquote>
+<h2 id="riotandroid">Riot Android</h2>
+<blockquote>
+<ul>
+ 	<li>Still iterating on the key backup UX, changes concern Riot and the Matrix SDK</li>
+ 	<li>Valere has worked on Riot Android Notifications, we intend to merge this work on develop at the beginning of the next Sprint.</li>
+ 	<li>RiotX: no update this week due to François being out of the office</li>
+</ul>
+</blockquote>
+<h2 id="netsdk">.NET SDK</h2>
+<a href="https://matrix.to/#/@Half-Shot:half-shot.uk">Half-Shot</a>, working on "not bridging":
+<blockquote>I opened up the <a href="https://github.com/Half-Shot/matrix-dotnet-sdk">.NET SDK</a> project for the first time in two years and revived it to just about work with a r0.4.0 home server. Its now based on .NET core 2.0.</blockquote>
+<a href="https://twitter.com/migueldeicaza/status/1093148021980889088">Related .NET lovin'</a>.
+<h2 id="spectralsoonforkdeplasmamobile">Spectral, soon for KDE Plasma Mobile</h2>
+<a href="https://matrix.to/#/@bhat:encom.eu.org">Black Hat</a> is clearing:
+<blockquote>I'm porting <a href="https://gitlab.com/b0/spectral">Spectral</a> to KDE Plasma Mobile with Kirigami framework. This provides full convergence and mobile support.</blockquote>
+Some progress pictures below, desktop and mobile version.
+
+<a href="https://matrix.org/blog/wp-content/uploads/2019/02/spectral-kirigami-desktop.png"><img class="alignnone size-full wp-image-3970" src="https://matrix.org/blog/wp-content/uploads/2019/02/spectral-kirigami-desktop.png" alt="" width="938" height="713" /></a>
+
+<a href="https://matrix.org/blog/wp-content/uploads/2019/02/spectral-kirigami-mobile.png"><img class="alignnone size-full wp-image-3971" src="https://matrix.org/blog/wp-content/uploads/2019/02/spectral-kirigami-mobile.png" alt="" width="454" height="679" /></a>
+<h2 id="preparingforsynapseonopenbsd">Preparing for Synapse on OpenBSD</h2>
+<a href="https://matrix.to/#/@lindalap:matrix.org">Linda</a> has been making progress on a project to get Synapse running on OpenBSD, and to that end has been preparing and improving the dependencies that we take for granted on Linux. To summarise the current status:
+<blockquote>This week I've been porting Synapse's dependencies to OpenBSD <code>-current</code> distribution. There is no port yet for Synapse in OpenBSD.
+Ports missing from OpenBSD <code>6.4</code> for Synapse's dependencies were:
+<ul>
+ 	<li><code>py-frozendict</code>: ok'd, waiting…</li>
+ 	<li><code>py-unpaddedbase64</code>: TBD</li>
+ 	<li><code>py-canonicaljson</code>: TBD</li>
+ 	<li><code>py-signedjson</code>: TBD</li>
+ 	<li><code>py-treq</code>: WIP (this will take a while, lots of dependencies)</li>
+ 	<li><code>py-daemonize</code>: ok'd, waiting…</li>
+ 	<li><code>py-pymacaroons</code>: TBD</li>
+ 	<li><code>py-phonenumbers</code>: <code>8.10.4</code> done, waiting to be imported…</li>
+ 	<li><code>py-prometheus_client</code> done, needs to be tested/imported…</li>
+ 	<li><code>coturn</code>: TBD, maybe?</li>
+</ul>
+waiting = usually waiting for an OpenBSD developer to "ok" and import
+
+Of those, <code>py-phonenumbers</code> was added to OpenBSD <code>-snapshots</code> (<code>-current</code>) distribution. <code>py-phonenumbers</code> (?) and <code>py-service_identity</code> received updates to ports. <code>py-prometheus_client</code>, <code>py-daemonize</code> and <code>py-frozendict</code> are ported ready and waiting to be given "ok" at OpenBSD's <code>ports@</code> mailing list.
+There is <a href="https://github.com/jasperla/openbsd-wip/tree/master/net/synapse">an unofficial up-to-date Synapse port exists at GitHub</a> maintained by someone else, which I've not yet tested. (At glance, I can take a guess the <code>devel/tz</code> port may not be required.)
+(<code>coturn</code> doesn't have a port yet, may have to look at it later.)</blockquote>
+<h2 id="cul8r">c u l8r</h2>
+Phew! That was a lot! See you next week, and if you have a project you'd like to see featured in This Week in Matrix, come chat to us in <a href="https://matrix.to/#/#TWIM:matrix.org">#twim:matrix.org</a>!

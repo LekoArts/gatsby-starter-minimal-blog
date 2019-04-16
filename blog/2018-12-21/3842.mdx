@@ -1,0 +1,96 @@
+---
+date: '2018-12-21'
+title: This Week in Matrix 2018-12-21
+categories:
+  - General
+---
+
+<h2 id="matrixlivehalfshottalksbridgesandworkingonlibpurplebridgingtomatrix">Matrix Live: Half-Shot talks bridges, and working on libpurple bridging to Matrix</h2>
+<p style="text-align: left;">You may have seen that <a href="https://matrix.to/#/@Half-Shot:half-shot.uk">Half-Shot</a> been working fearlessly and tirelessly on bridges for many, many months. In this episode of Matrix Live Half-Shot chats with Matthew about his work, progress and achievements, with a focus on recent <a href="https://github.com/matrix-org/matrix-appservice-purple">matrix-appservice-purple</a> and XMPP work. Audio is not amazing, but worth listening to get acquainted with recent work.</p>
+<p style="text-align: center;"><iframe src="https://www.youtube.com/embed/B0faoVdw0ak" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe></p>
+As a note from <a href="https://matrix.to/#/@Half-Shot:half-shot.uk">Half-Shot</a>:
+<blockquote>The <a href="https://github.com/matrix-org/matrix-appservice-purple">matrix-appservice-purple</a> bridge gained a XMPP specific backend for better performance when you want to do just xmpp bridging. It's rather quick right now, and needs dogfooding.</blockquote>
+Chat in <a href="https://matrix.to/#/#purple-bridge:half-shot.uk">#purple-bridge:half-shot.uk</a>!
+<h2 id="matrixbadgesonshieldsio">Matrix badges on shields.io</h2>
+<a href="https://matrix.to/#/#twim:matrix.org"><img src="https://img.shields.io/matrix/twim:matrix.org.svg" alt="TWIM" /></a>
+
+<a href="https://matrix.to/#/@brendan:abolivier.bzh">Brendan</a>:
+<blockquote>A couple of weeks ago, <a href="https://github.com/fr1kin">fr1kin</a> PR'd a nice Matrix badge to the <a href="https://shields.io/">Shields</a> project that tells you how many users are in a public room. There were a few issues with it so I PR'd some changes to make the badge more usable, and it's now merged and live (as of yesterday evening), with examples available <a href="https://shields.io/#/examples/chat">here</a>! ?
+For instance, here's a badge for TWIM: <a href="https://img.shields.io/matrix/twim:matrix.org.svg">https://img.shields.io/matrix/twim:matrix.org.svg</a> ?</blockquote>
+<h2 id="specupdate">Spec update</h2>
+<a href="https://github.com/matrix-org/matrix-doc/pull/1756">New MSC for cross-signing</a>, which has different (hopefully better) semantics from the <a href="https://github.com/matrix-org/matrix-doc/issues/1680">previous cross-signing MSC</a>.
+<h2 id="matrixjssdkbotsupportforapplicationservices">matrix-js-bot-sdk support for application services</h2>
+<a href="https://github.com/turt2live">TravisR</a>, author of <a href="https://github.com/turt2live/matrix-js-bot-sdk">matrix-js-bot-sdk</a>:
+<blockquote><a href="https://github.com/turt2live/matrix-js-bot-sdk">matrix-js-bot-sdk</a> has received early support for application services. Similar to the official <a href="https://github.com/matrix-org/matrix-js-sdk">matrix-js-sdk</a>, the bot-sdk uses an Intent-based model for making bridges easier to write. Check out the simple example <a href="https://github.com/turt2live/matrix-js-bot-sdk/blob/master/examples/appservice.ts">here</a> for more information on how it works.</blockquote>
+<h2 id="komalibrary">koma-library</h2>
+<a href="https://matrix.to/#/@druig:matrix.org">druig</a> continues work on their JavaFX/kotlin client project:
+<blockquote>The matrix client API implementation in <a href="https://github.com/koma-im/koma">koma</a> is being extracted into <a href="https://github.com/koma-im/koma-library">a new repo</a>, which is going to be a lightweight library for Kotlin.</blockquote>
+<h2 id="seaglassnowavailableonhomebrew">Seaglass now available on homebrew</h2>
+<a href="https://matrix.to/#/@aaron:raim.ist">Aaron Raimist</a> reports that Seaglass is available on homebrew for macOS:
+<blockquote>Installing Seaglass is now easier than ever. If you already use Homebrew to manage other packages, you can now install Seaglass with a simple <code>brew cask install seaglass</code>.
+
+If you don't use Homebrew, you can still <a href="https://github.com/neilalexander/seaglass/releases">download Seaglass from GitHub</a>.</blockquote>
+<h2 id="matrixclientelexists">matrix-client.el is reborn!</h2>
+<a href="https://matrix.to/#/@alphapapa:matrix.org">alphapapa</a> reports from a team who have forked and are maintaining a Matrix client for Emacs:
+<blockquote>Many additions and improvements to matrix-client.el (https://github.com/jgkamat/matrix-client-el) recently, including a "standalone client" mode that launches Emacs to look like this.</blockquote>
+Chat in <a href="https://matrix.to/#/#matrix-client-el:matrix.org">#matrix-client-el:matrix.org</a>.
+
+<a href="https://matrix.org/blog/wp-content/uploads/2018/12/matrix-client.el_.png"><img class="alignnone size-full wp-image-3844" src="https://matrix.org/blog/wp-content/uploads/2018/12/matrix-client.el_.png" alt="" width="738" height="426" /></a>
+<h2 id="matrixdockeransibledeploy">matrix-docker-ansible-deploy</h2>
+<a href="https://matrix.to/#/@slavi:devture.com">Slavi</a>:
+<blockquote>the <a href="https://github.com/spantaleev/matrix-docker-ansible-deploy">matrix-docker-ansible-deploy</a> playbook has received some bugfixes and improvements lately. Most importantly, it's now running the freshly-released Synapse 0.34.0 under Python 3, so memory usage should be much better.</blockquote>
+<h2 id="libqmatrixclientquaternion">libQMatrixClient/Quaternion</h2>
+<a href="https://matrix.to/#/@kitsune:matrix.org">kitsune</a>:
+<blockquote>I started work on matrix: scheme support in libQMatrixClient/Quaternion. Expect more news on this around New Year.</blockquote>
+<h2 id="fractalroadto40">Fractal road to 4.0</h2>
+Fresh from their hackfest in Seville last week, <a href="@afranke:matrix.org">Alexandre Franke</a> reports:
+<blockquote>The <a href="https://wiki.gnome.org/Apps/Fractal">Fractal</a> crew spent the week chasing last minutes bugs and made two beta releases (3.99.0 and 3.99.1) in preparation for the big new stable release, 4.0, which is right around the corner.</blockquote>
+<h2 id="newroomsforspacelaunchesandaviation">New Rooms for Space Launches and Aviation</h2>
+<a href="https://matrix.to/#/@aaron:raim.ist">Aaron Raimist</a> has been creating some new rooms:
+<blockquote><strong><a href="https://matrix.to/#/#space:im.kabi.tk">#space:im.kabi.tk</a></strong> for anyone interested in space, rocket launches, satellites, etc.
+Are you wondering what NASA's new Mars Rover is doing? Maybe you live on the west coast of the United States, and you saw that meteor on Wednesday night that came within minutes of a scheduled rocket launch and just after three astronauts left the space station. If any of that sounds interesting to you, feel free to join the room.
+A Matrix bot is being tested to send updates about upcoming rocket launches to the room.
+
+<strong><a href="https://matrix.to/#/#aviation:matrix.org">#aviation:matrix.org</a></strong> for anyone interested in aviation. Whether you are a pilot, someone who visits an airshow once in a while, or if <a href="https://www.youtube.com/watch?v=CXv1j3GbgLk">https://www.youtube.com/watch?v=CXv1j3GbgLk</a> piqued your interest, come join.</blockquote>
+<h2 id="t2botioupgrade">t2bot.io upgrade</h2>
+<a href="https://github.com/turt2live">TravisR</a>:
+<blockquote>Just a head's up that I've increased the storage capacity of the database. With current projections, the server should be good for another year or two.
+
+The database is also 1ms closer to Synapse and has a faster CPU in it. It probably won't make a dent in speed on federation, but it is a step forward.
+
+I'll be rolling out python 3 to the homeserver this week too, which should help a little bit.</blockquote>
+<a href="https://riot.im/experimental/#/room/#help:t2bot.io/$154511414912clELm:t2l.io">https://riot.im/experimental/#/room/#help:t2bot.io/$154511414912clELm:t2l.io</a>
+<h2 id="fluffychat80rcannounced">FluffyChat 8.0 RC announced</h2>
+<a href="https://matrix.to/#/@krille:chat.regionetz.net">Krille</a> and his Ubuntu Touch fans are looking forward to FluffyChat 8.0:
+<blockquote>Hey guys, in order to release the FluffyChat 8.0 Christmas Edition, the <a href="https://github.com/ChristianPauly/fluffychat">FluffyChat</a> 8.0 release candidate is ready for you! :-)
+Also the weblate translations are ready: <a href="https://hosted.weblate.org/projects/fluffychat/">https://hosted.weblate.org/projects/fluffychat/</a></blockquote>
+<h2 id="riotios">Riot iOS</h2>
+From the Riot iOS team:
+<ul>
+ 	<li>We have fixed and improved some e2e stuff.</li>
+ 	<li>Back to reskin. We start to implement e2e backup screens.</li>
+</ul>
+<h2 id="riotandroid">Riot Android</h2>
+From the Riot Android team:
+<ul>
+ 	<li>New screen to troubleshoot notification issue has been merged on <code>/develop</code>.</li>
+ 	<li>Splitting current Android SDK to separate crypto part is on it's way. We're doing this in order to be able to integrate crypto faster in the Riot reboot.</li>
+</ul>
+<h2 id="synapse">Synapse</h2>
+Neil from <a href="https://github.com/matrix-org/synapse/">Synapse</a> reports:
+<blockquote>We released <a href="https://github.com/matrix-org/synapse/releases/tag/v0.34.0">0.34.0</a>! This release recommends Python 3 for production and brings with it huge performance improvements. If you've been putting upgrading off upgrading your Synapse, now is the time to do so. For more details <a href="https://matrix.org/blog/2018/12/21/porting-synapse-to-python-3/">here is a post</a> that explains what you should expect and a <a href="https://www.youtube.com/watch?v=Ad3oqEo5leM">recent Matrix Live interviews</a> Amber (hawkowl) on the subject.
+
+Aside from that we are working furiously towards federation R0 and have a bunch of MSCs to get us ever closer. You can <a href="https://github.com/orgs/matrix-org/projects/2">track our progress here</a>.</blockquote>
+<a href="https://matrix.to/#/@andrewsh:matrix.org">andrewsh</a> notes that 0.34.0 is also available in the Debian repos:
+<blockquote>Synapse 0.34.0~rc2 in Debian since Tuesday, 0.34.0 uploaded today; both use Python 3 only</blockquote>
+<h2 id="dendrite">Dendrite</h2>
+<a href="https://matrix.to/#/@brendan:abolivier.bzh">Brendan</a> reports:
+<blockquote>Dendrite's internal audit is progressing very well and is getting very close to its end.
+What's left to do for me is check the implementation status of a few Matrix features, and translate those into tagged GitHub issues so that everyone can have as clear of a view as possible on what's left to work on.
+I'm on holiday all of next week, but hopefully will have some good news about that the following week.</blockquote>
+<h2 id="thatreallyisitfornow">That really is it for now</h2>
+Did you get to the end? What was your favourite section? Come tell us in <a href="https://matrix.to/#/#TWIM:matrix.org">#twim:matrix.org</a>! Do you have your own update you'd like to add? Same place, come chat in <a href="https://matrix.to/#/#TWIM:matrix.org">#twim:matrix.org</a>.
+
+Next week is various things. It's Christmas, which means there will be more hacking and coding happening than usual I expect! It's also <a href="https://events.ccc.de/congress/2018/wiki/index.php/Main_Page">35c3</a>, which I will be attending, and might affect scheduling next week. Stay tuned in <a href="https://matrix.to/#/#TWIM:matrix.org">#twim:matrix.org</a> for news, and come join us in <a href="https://matrix.to/#/#matrix-35c3:matrix.org">#matrix-35c3:matrix.org</a> if you'll be there and want to meet up!
+
+Merry Christmas!

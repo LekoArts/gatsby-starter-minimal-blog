@@ -1,0 +1,75 @@
+---
+date: '2018-08-10'
+title: This Week in Matrix 2018-08-10
+categories:
+  - General
+---
+
+<h2 id="communityguidesindex">Community Guides Index</h2>
+As part of an overhaul of the documentation surrounding Matrix, I'm planning to launch a "Community Guides Index". This will be a page or section on Matrix.org with links to useful and informative documentation hosted elsewhere. If you have or know of informative articles, please <a href="https://matrix.to/#/@benpa:matrix.org">let me know</a>, or share them in <a href="https://matrix.to/#/#TWIM:matrix.org">#TWIM:matrix.org</a>.
+<h2 id="clients">Clients</h2>
+<h3 id="seaglass">Seaglass</h3>
+<a href="https://github.com/neilalexander/seaglass">Seaglass</a> now supports <strong>E2E</strong> rooms, leveraging <a href="https://github.com/matrix-org/matrix-ios-sdk">matrix-ios-sdk</a>! Additionally, maintainer <a href="https://matrix.to/#/@neilalexander:matrix.org">neilalexander</a> has had a productive week:
+<blockquote>Seaglass has had many updates, including:
+<ul>
+ 	<li>message coalescing</li>
+ 	<li>room settings (history/join rules and changing aliases/addresses)</li>
+ 	<li>loading member list in rooms</li>
+ 	<li>some starting work on loading avatars</li>
+ 	<li>various UI and stability tweaks!</li>
+</ul>
+</blockquote>
+<a href="https://matrix.org/blog/wp-content/uploads/2018/08/seaglass-august18.png"><img class="alignnone size-large wp-image-3466" src="https://matrix.org/blog/wp-content/uploads/2018/08/seaglass-august18-1024x687.png" alt="" width="1024" height="687" /></a> <a href="https://matrix.org/blog/wp-content/uploads/2018/08/seaglass-august18-roomaliases.png"><img class="alignnone size-large wp-image-3465" src="https://matrix.org/blog/wp-content/uploads/2018/08/seaglass-august18-roomaliases-1024x627.png" alt="" width="1024" height="627" /></a>
+<h3 id="quaternionnewredactedmessagehandlingoptions">Quaternion: new redacted message handling options</h3>
+Many of you will have seen the incredible volumes of spam plaguing Freenode over the last few weeks. <a href="https://matrix.to/#/@kitsune:matrix.org">Kitsune</a> has added new features to <a href="https://github.com/QMatrixClient/Quaternion">Quaternion</a> to help:
+<blockquote>In response to the recent spam deluge from Freenode Quaternion has got an option to tidy up your timeline after all the spam-cleaning: you can hide all redacted messages or just those that came from recently joined users (along with the join message). So as long as the spammer gets moderated, it can become inexistent for you.
+The experimental code doing that will eventually be moved to <a href="https://github.com/QMatrixClient/libqmatrixclient">libQMatrixClient</a> for the benefit of <a href="https://gitlab.com/b0/matrique-go">Matrique</a>, <a href="https://github.com/uMatriks/uMatriks">uMatriks</a> and other clients based on the library.</blockquote>
+This is especially cool: moving functionality to the lib for the benefit of other projects makes me very happy. :D
+<h3 id="fractalgsocwriteups">Fractal GSOC write-ups</h3>
+Eisha and Julian finished their <a href="https://summerofcode.withgoogle.com/projects/?sp-search=matrix">GSOC 2018</a> Fractal involvements this week, and Eisha has a blog post recounting her experience: <a href="https://eishagsoc.wordpress.com/2018/08/09/my-final-report-for-gsoc-2018/">My Final Report for GSOC 2018</a>. Julian will have his ready too.
+<h3 id="riotiosv070">Riot</h3>
+Big updates are on the horizon for both iOS and Android, with 0.7.0 of iOS headed to TestFlight today with a release due once it's through beta &amp; AppStore review.  More details once the releases are out!
+
+Meanwhile on Riot/Web, Lazy Loading members is pretty much complete - just writing end-to-end tests to ensure that encryption still works well when lazy loading is enabled.  Next up is actually progressing the redesign at last!
+<h2 id="specstatus">Spec status</h2>
+<ul>
+ 	<li><strong><a href="https://github.com/matrix-org/matrix-doc/issues/1425">MSC1425</a></strong>/<strong><a href="https://github.com/matrix-org/matrix-doc/issues/1501">MSC1501</a></strong> richvdh has been thinking about Room Versioning
+<ul>
+ 	<li>A summary in his words: "room upgrades are implemented by creating a new room, shutting down the old one, and linking between the two"</li>
+</ul>
+</li>
+ 	<li><strong><a href="https://github.com/matrix-org/matrix-doc/issues/1497">MSC1497</a></strong> thorough discussion happening against Matthew's proposal for Capabilities support in the CS API</li>
+ 	<li><strong><a href="https://github.com/matrix-org/matrix-doc/issues/1442">MSC1442</a></strong> though you may have seen it previously, I recommend anyone who is able to take a look at Erik's "State Resolution: Reloaded" proposal. This documents his "thoughts on the next iteration of the state resolution algorithm that aims to mitigate currently known attacks". It very clearly explains the current problem, and the proposed solution. While heavy, I found it really useful for helping to understand State Res and everything it affects.</li>
+ 	<li><strong><a href="https://github.com/matrix-org/matrix-doc/issues/1485">MSC1485</a></strong> <a href="@tulir:maunium.net">tulir</a> proposes "Hint buttons in messages", which effectively provide pre-defined responses for users. This is especially valuable for Bots which can only accept a certain range of replies. I'd love to see this implemented, having long ago built a <a href="https://github.com/benparsons/MessengerStorytime/">"choose your own adventure" engine</a> using similar features from another messaging platform.</li>
+</ul>
+<h2 id="apisandsdks">APIs and SDKs</h2>
+<h3 id="geneminimalisticclientserverapiformatrix">Gene, minimalistic client-server api for Matrix</h3>
+Not strictly this week, but we missed it before. <a href="https://matrix.to/#/@ma1uta:matrix.org">ma1uta</a> has been working away on his Java-based Matrix suite. <a href="https://github.com/ma1uta/gene">Gene</a> is a more lightweight API implementation than <a href="https://gitlab.com/ma1uta/jeon">Jeon</a>, covering all of the current C2S spec. A big motivation is to be able to use Gene on Android, which is not possible for Jeon due to it having more dependencies.
+<h3 id="rubymatrixsdk">Ruby Matrix SDK</h3>
+The <a href="https://github.com/ananace/ruby-matrix-sdk">Ruby Matrix SDK</a> now has auto-generated, proper documentation, thanks to <a href="https://github.com/ananace/">Ananace</a>. v0.0.2 is the current release, but it's under active development and v0.0.3 is expected presently.
+<h2 id="telegrampuppetingont2botiowithmautrixtelegram">Telegram Puppeting on t2bot.io with mautrix-telegram</h2>
+<a href="https://github.com/turt2live">TravisR</a> has rolled out <a href="@tulir:maunium.net">tulir</a>'s <a href="https://github.com/tulir/mautrix-telegram">mautrix-telegram</a> bridge for everyone on <a href="https://t2bot.io">t2bot.io</a>'s bridge.
+<blockquote>This is a public trial to see how the bridge copes with multiple people puppeting their accounts. Of course, you don't need to puppet your account unless you want to.
+For more information on how to set this up, please visit <a href="https://t2bot.io/telegram">https://t2bot.io/telegram</a></blockquote>
+As part of this project, mautrix-telegram 0.3.0 release candidate was released.
+<h2 id="informoprojectreleasessaltstackstates">Informo project releases SaltStack states</h2>
+vabd, from the <a href="https://github.com/Informo/">Informo</a> project, arrived to say they have produced "a set of SaltStack states that includes deploying fully working Synapse homeservers: <a href="https://github.com/Informo/salt-states">https://github.com/Informo/salt-states</a>"
+
+They introduce the Informo project:
+<blockquote>Informo's a project (still a work in progress, currently) that aims at bypassing censorship of information on the Internet, by basically having news items go through a decentralised and federated network made of Matrix homeservers. Since we need to host nodes to this network (at least for testing purposes), we've worked on a working and automated infrastructure using <a href="https://saltstack.com/salt-open-source/">SaltStack</a>, which involved hand-writing a few SaltStack states, including states handling the installation and configuration of working Synapse homeservers. In the spirit of giving back to the community, we're publishing all of those hand-written states (available at the GH link above) under the GPLv3 license. If you want to discuss with us about what we're doing, or this topic specifically, please join us in <a href="https://matrix.to/#/#discuss:weu.informo.network">#discuss:weu.informo.network</a> ?
+The project is still pretty much a WIP and the technical specifics (even the ones we already implemented in our projects) are still under discussion and subject to changes (as mentioned in the GH repo's readme). All I can add for sure to what we already say is that we'll be working in partnership with NGOs to promote the project in countries where the press is heavily censored, and we're planning on implementing a cryptographic verification chain of some sort to reduce the risk of intentional disinformation.</blockquote>
+<h2 id="synapse0332">Synapse 0.33.2</h2>
+<a href="https://matrix.org/blog/2018/08/09/synapse-0-33-2-is-here/">Synapse 0.33.2 is out now</a>:
+<blockquote>The release focuses on performance, notable highlights include reducing CPU consumption through speeding up state delta calculations and reducing I/O through lazily loading state on the master process
+Separately work continues on our python 3 port and we hope to have something concrete to trial very soon – we're really excited about this and expect step change improvements in CPU and memory use.</blockquote>
+Lastest synapse is now available on Debian thanks to <a href="https://matrix.to/#/@andrew:shadura.me">andrewsh</a>.
+<h2 id="roomtagging">Room Tagging</h2>
+This is not from this week at all, other than that it was new information to me. Actually it's ancient, matrix-wise, but I think it's interesting for those who don't know! Although Riot doesn't have an interface for adding custom room tags ("Favourites" and "Low Priority" come by default), Matrix supports arbitrary strings as room tags, and will display them if you add them via another CS API call. To facilitate this <a href="https://github.com/turt2live">TravisR</a> created <a href="https://gist.github.com/turt2live/697d5b3781fb7ab7e11d704ea90e3dbe">a small script, tag_room.sh</a>, which makes it very simple to set your own room tags.
+<h2 id="fin">FIN</h2>
+That's all folks! Remember, lots of progress is happening with the Spec, if you want to be involved or follow along the best place to start is by joining <a href="https://matrix.to/#/#matrix-spec:matrix.org">#matrix-spec:matrix.org</a>.
+
+No Matrix Live this week due to vacation and general scheduling fun; sorry!
+
+If you have documentation or articles related to matrix, <a href="https://matrix.to/#/@benpa:matrix.org">let me know</a>!
+
+We'll meet again!

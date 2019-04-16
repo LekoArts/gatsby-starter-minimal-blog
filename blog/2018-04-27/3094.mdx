@@ -1,0 +1,177 @@
+---
+date: '2018-04-27'
+title: This Week In Matrix – 2018-04-27
+categories:
+  - General
+---
+
+<h1> Matrix Ecosystem Updates</h1>
+<h2>Big News</h2>
+<h4 id="gsocstudents">GSoC students</h4>
+
+<p>Google Summer of Code acceptees were announced, and we're really excited to have FIVE Matrix-related projects to look forward to!</p>
+
+<p>Three of the students will be mentored by matrix.org folk, and two more will work on Fractal under the GNOME org.</p>
+
+<ul>
+<li>Valentin D. (Zil0) will work on <a href="https://summerofcode.withgoogle.com/projects/#5468043765874688">adding E2E to matrix-python-sdk</a>, mentored by RichVDH </li>
+
+<li>Badrul Chowdhury will <a href="https://summerofcode.withgoogle.com/projects/#5936132521459712">develop an alternative to GCM/FCM on Android and APNS on iOS</a> that provides the homeserver with facilities to push notifications, mentored by David Baker</li>
+
+<li>APwhitehat will work on <a href="https://summerofcode.withgoogle.com/projects/#6239747115057152">Dendrite (Federation and Sync Server APIs)</a>, mentored by erikj</li>
+
+<li>Eisha CHEN-YEN-SU will work on a <a href="https://summerofcode.withgoogle.com/projects/#5159367150665728">new UI for Fractal</a>, mentored by Daniel García Moreno</li>
+
+<li>Julian Sparber will work on <a href="https://summerofcode.withgoogle.com/projects/#5646994115133440">Fractal UI improvements and some features like a user account settings and a spell checker</a>. Mentored by Daniel García Moreno</li>
+</ul>
+
+<h4 id="fractalhackfest2018">Fractal Hackfest 2018</h4>
+
+<p><a href="https://wiki.gnome.org/Hackfests/Fractal2018">Fractal Hackfest 2018</a> will take place next month in Strasbourg, hosted by Epitech. They'll be planning a roadmap for the year, and working on their current focus areas.</p>
+
+<p><a href="https://wiki.gnome.org/Hackfests/Fractal2018">https://wiki.gnome.org/Hackfests/Fractal2018</a></p>
+
+<h4 id="">Coverage of French Matrix adoption</h4>
+<p>After the blog post on matrix.org yesterday, lots of attention developed around the news. Take a look at this <a href="https://news.ycombinator.com/item?id=16933736">Hacker News</a> thread with lots of discussion, which has stayed on the front page for nearly 24 hours, and a megathread on <a href="https://www.reddit.com/r/linux/comments/8f3f30/matrix_and_riot_confirmed_as_the_basis_for/">Reddit/r/linux</a>: nearly 1000 upvotes and growing.
+
+<h2>Project Updates</h2>
+<h3>Clients</h3>
+<h4 id="libqmatrixclient">libqmatrixclient</h4>
+
+<p><a href="https://matrix.to/#/@kitsune:matrix.org">kitsune</a> reports a new release of <a href="https://github.com/QMatrixClient/libqmatrixclient">libqmatrixclient</a>, <a href="https://github.com/QMatrixClient/libqmatrixclient/releases/tag/v0.2.1">v0.2.1</a>, this is mostly a bugfix release, fully backwards-compatible with v0.2. Check out the <a href="https://github.com/QMatrixClient/libqmatrixclient/releases/tag/v0.2.1">release notes</a> for details.</p>
+
+<p><a href="https://matrix.to/#/@kitsune:matrix.org">kitsune</a> - <a href="https://github.com/QMatrixClient/libqmatrixclient">https://github.com/QMatrixClient/libqmatrixclient</a> - <a href="https://matrix.to/#/#qmatrixclient:matrix.org">#qmatrixclient:matrix.org</a></p>
+
+<h4 id="quaternion">Quaternion</h4>
+
+<p>Staying in QMatrix-land, there is a pre-release of <a href="https://github.com/QMatrixClient/Quaternion">Quaternion</a> available. Take a look at <a href="https://github.com/QMatrixClient/Quaternion/releases/tag/v0.0.9">v0.0.9</a>, improvements include "redactions, file downloading, room creation and settings editing, better timeline visualisation and much more"!</p>
+
+<p><a href="https://matrix.to/#/@kitsune:matrix.org">kitsune</a> - <a href="https://github.com/QMatrixClient/Quaternion">https://github.com/QMatrixClient/Quaternion</a> - <a href="https://matrix.to/#/#qmatrixclient:matrix.org">#qmatrixclient:matrix.org</a></p>
+
+<h4 id="neo">neo</h4>
+
+<p><a href="https://matrix.to/#/@f0x:disroot.org">f0x</a> has been beavering away on <a href="https://github.com/f0x52/neo/">neo</a>, and has announced that <a href="https://github.com/f0x52/neo/releases/tag/alpha0.01">Alpha 0.01</a> is available now. <a href="https://github.com/f0x52/neo/">neo</a> is a webclient in React, it feels really light and fast. I asked <a href="https://matrix.to/#/@f0x:disroot.org">f0x</a> about the uptick in work, and he mentioned he got started with React recently, but likes it a lot.</p>
+
+<p><a href="https://matrix.to/#/@f0x:disroot.org">f0x</a> - <a href="https://github.com/f0x52/neo/">https://github.com/f0x52/neo/</a> - <a href="https://matrix.to/#/#neo_client:matrix.org">#neo_client:matrix.org</a></p>
+
+<h4 id="fractal">Fractal</h4>
+
+<p><a href="https://gitlab.gnome.org/World/fractal">Fractal</a> released <a href="https://gitlab.gnome.org/World/fractal/commit/7373582cee7e040892f29b74d1da23b828e0929b">0.1.27</a> with many new features and bugfixes. Lot's going on but I'm most excited to see Markdown support land.</p>
+
+<p><a href="https://gitlab.gnome.org/World/fractal">https://gitlab.gnome.org/World/fractal</a> - <a href="https://matrix.to/#/#fractal-gtk:matrix.org">#fractal-gtk:matrix.org</a></p>
+
+<h3>Bots</h3>
+<h4 id="matrixtrellobot">matrix-trello-bot</h4>
+
+<p>Says <a href="https://github.com/turt2live">TravisR</a>: "I've whipped together a simple Trello notification bot for matrix: <a href="https://github.com/turt2live/matrix-trello-bot">matrix-trello-bot</a>. Future plans include the ability to create/update/delete cards and more granular control of what is notified about. Currently it acts very similar to how the Github notifications bot works."</p>
+
+<p><a href="https://github.com/turt2live">TravisR</a> - <a href="https://github.com/turt2live/matrix-trello-bot">https://github.com/turt2live/matrix-trello-bot</a> - <a href="https://matrix.to/#/#trellobot:t2bot.io">#trellobot:t2bot.io</a></p>
+
+<h3>Others</h3>
+<h4 id="matrixdsl">Matrix DSL</h4>
+
+<p><a href="https://matrix.to/#/@MTRNord:matrix.ffslfl.net">MTRNord</a> is working on a "matrix DSL", basically a config file language that generates a project Template in multiple languages. The project is just now at the discussion stage, so join <a href="https://matrix.to/#/#matrix_dsl:matrix.ffslfl.net">#matrix_dsl:matrix.ffslfl.net</a> to check out what's going on. (DSL = Domain Specific Language.)</p>
+
+<p><a href="https://matrix.to/#/@MTRNord:matrix.ffslfl.net">MTRNord</a> - <a href="https://matrix.to/#/#matrix_dsl:matrix.ffslfl.net">#matrix_dsl:matrix.ffslfl.net</a></p>
+
+<h4 id="urllibrequestsadapter">urllib-requests-adapter</h4>
+
+<p>Says <a href="https://matrix.to/#/@Coffee:matrix.org">Coffee</a>: "<a href="https://github.com/Matrixcoffee/urllib-requests-adapter">urllib-requests-adapter</a> has been updated to work with <a href="https://github.com/matrix-org/matrix-python-sdk">matrix-python-sdk</a> 0.2.0. urllib-requests-adapter is a lightweight replacement for <a href="https://github.com/kennethreitz/requests">requests</a> and its dependencies, currently standing at 126 SLOC."</p>
+
+<p><a href="https://matrix.to/#/@Coffee:matrix.org">Coffee</a> - <a href="https://github.com/Matrixcoffee/urllib-requests-adapter">https://github.com/Matrixcoffee/urllib-requests-adapter</a></p>
+
+<h4 id="mxisd">mxisd</h4>
+
+<p><a href="https://github.com/kamax-io/mxisd">mxisd</a>, the Identity Server from kamax, saw a <a href="https://github.com/kamax-io/mxisd/releases/tag/v1.0.2">v1.0.2</a> release, following the big one-point-zero last week. Changes include de-duplicated directory search results, plus bugfixes.</p>
+
+<p><a href="https://matrix.to/#/@max:kamax.io">Max</a> - <a href="https://github.com/kamax-io/mxisd">https://github.com/kamax-io/mxisd</a></p>
+
+<h4 id="matrixstfu">matrix-stfu</h4>
+
+<p>Missed this one last week, but <a href="https://github.com/xwiki-labs/matrix-stfu">matrix-stfu</a> from <a href="https://www.xwiki.com/">xwiki</a> is a message filtering tool released recently, it can "mass remove everything which was said by a particular user in a particular room". XWiki use matrix as their internal chat system for the ~30 people at the company.</p>
+
+<p><a href="https://www.xwiki.com/">xwiki</a> - <a href="https://github.com/xwiki-labs/matrix-stfu">https://github.com/xwiki-labs/matrix-stfu</a> - <a href="https://matrix.to/#/#xwiki:matrix.xwiki.com">#xwiki:matrix.xwiki.com</a></p>
+
+<h4 id="riotweb">Riot/Web</h4>
+
+<ul>
+<li>We're committing to 2-weekly releases come what may, to avoid another massive gap like the one between 0.13 and 0.14.</li>
+
+<li>RCs will get cut starting from Wednesday; actual release then happens on the Monday having given folks a chance to test the RC on /staging (and to iterate on the RCs).</li>
+
+<li>Obviously this is flexible if we need to rush out fixes sooner.</li>
+
+<li>On that note, 0.14.2-rc1 was cut on Wednesday!  Please test it at riot.im/staging. It's mainly bugfixes but also the full relayering between riot-web and matrix-react-sdk.</li>
+
+<li>Dave's working on finally hooking in Jitsi as the default conferencing system</li>
+
+<li>t3chguy's been working on Replies, which continue to look awesome</li>
+
+<li>Next up: E2E cross-signing (at last!!!!)</li>
+</ul>
+
+<h4 id="riotmobile">Riot/Mobile</h4>
+
+<ul>
+<li>New releases are out! Mainly preparing for sticker viewing and trying to fix the Android push notification situation.  PLEASE TELL US IF YOU ARE STILL HAVING ANDROID PUSH NOTIFICATION PROBLEMS!</li>
+
+<li>Lots of review of Android by Benoit - adding in Kotlin support as of today and establishing a formal roadmap for Android work (we'll show the blog post when we have it)</li>
+
+<li>Lots of Matrix-for-French-Government stuff.</li>
+</ul>
+
+<h4 id="synapse">Synapse</h4>
+
+<ul>
+<li><a href="https://matrix.org/blog/2018/04/27/synapse-0-28-0-released/">Synapse 28.0 was released!</a> A major bump mainly thanks to lots and lots of contributions from the wider community.</li>
+<li>Massive experimental work on GDPR in progress - doing the thought experiment of pseudonymising MXIDs throughout Matrix on a per-room basis so that it's possible to redact MXIDs in the event of a “right-to-erasure” GDPR event.  Rich vdH is leading the work.</li>
+
+<li>The good news is that introducing an MXID abstraction layer like this could help us enormously with some of Matrix's longest-term architectural issues - i.e. account migration and portability; improving on PERSPECTIVEs for managing server identity; future support for P2P Matrix; solving the domain name reuse problem; etc.</li>
+
+<li>The bad news is that it would obviously be a very significant change to the Matrix spec, although we'd be doing it in such a way which minimises impact to client implementers and keep the CS API looking as similar as possible.</li>
+
+<li>We're not sure whether we need to rush this through or not yet; still waiting for final GDPR clarification from lawyers, but it feels like this might be a good opportunity to force us to finally tackle some of these harder problems.</li>
+
+<li>Meanwhile, Erik's Delta State Resolution algorithm work is continuing well; we're hoping to finish &amp; merge it asap in order to get back headroom on the server.</li>
+
+<li>Thankfully the matrix.org synapse itself has been relatively stable this week, other than being completely overloaded causing Freenode to be almost unusable.</li>
+
+<li>We've started using Ansible in production, although the playbooks need some iteration before we're fully happy to announce them &amp; recommend folks use them as an official way of running Synapse in production.</li>
+</ul>
+
+<h4 id="spec">try-matrix-now</h4>
+
+<p>There is a update out on <a href="https://matrix.org/docs/projects/try-matrix-now.html">try-matrix-now</a>, matrix.org's central listing of projects. Try filtering and see whether <a href="https://matrix.to/#/@benpa:matrix.org">benpa</a> mangled the metadata for <em>your</em> project. Submit any changes as markdown PRs on <a href="https://github.com/matrix-org/matrix.org/">the repo</a>.</p>
+
+<h4 id="spec">Spec</h4>
+
+<p><a href="https://matrix.to/#/@benpa:matrix.org">benpa</a> is currently working on a Proposals page for the Spec to properly stack spec proposal status, at last!</p>
+
+<h1>Articles around the web</h1>
+<h4 id="riotadistributedwayofhavingircandvoipclientandhomeserver">Riot: A Distributed Way of Having IRC and VOIP Client and Home Server</h4>
+
+<p><a href="https://matrix.to/#/@uhoreg">uhoreg</a> pointed to some charming coverage over on <a href="itsfoss.com">https://itsfoss.com</a>: <a href="https://itsfoss.com/riot-desktop/">Riot: A Distributed Way of Having IRC and VOIP Client and Home Server</a>, by <a href="https://itsfoss.com/author/shirish/">Shirish</a>. The article covers some details about riot-web and the open source ethos of Matrix, but my favourite quote by far:</p>
+
+<blockquote>
+  <p>"Without Matrix, Riot would be like a body without a soul."</p>
+</blockquote>
+
+<p><a href="https://itsfoss.com/author/shirish/">Shirish</a> - <a href="https://itsfoss.com/riot-desktop/">https://itsfoss.com/riot-desktop/</a></p>
+
+<h4 id="servicenotifswithmatrix">Service notifs with Matrix</h4>
+
+<p><a href="https://matrix.to/#/@Half-Shot:half-shot.uk">Half-Shot</a> shared an article he wrote, <a href="https://dev.to/halfshot/service-notifs-with-matrix-3fb5">Service notifs with Matrix</a>, about using Matrix and Riot to deliver automated notifications to different types of end-user at his company.</p>
+
+<p><a href="https://matrix.to/#/@Half-Shot:half-shot.uk">Half-Shot</a> - <a href="https://dev.to/halfshot/service-notifs-with-matrix-3fb5">https://dev.to/halfshot/service-notifs-with-matrix-3fb5</a></p>
+
+<h1>New Rooms roundup</h1>
+<ul>
+<li><a href="https://matrix.to/#/#matrix_dsl:matrix.ffslfl.net">#matrix_dsl:matrix.ffslfl.net</a> As mentioned above, MTRNord is looking at creating a DSL for matrix. In his words: "A room to discuss about making a Matrix DSL to allow non coders to write simple as and bots. I would love to see some people discussing about syntax with me as this is my very first DSL and very first time trying JetBrains MSP. Anyone with Ideas what it should allow to do and how to have the syntax a welcome to join (and people who want to follow of course too)"</li>
+
+<li><a href="https://matrix.to/#/#trellobot:t2bot.io">#trellobot:t2bot.io</a> (from above) TravisR: "a discussion/developer room for Matrix Trello Bot (https://github.com/turt2live/matrix-trello-bot). This is a bot that notifies rooms of changes to tracked Trello boards, similar to how the Github bot works. Future enhancements include being able to create, update, and delete cards from within Matrix."</li>
+</ul>
+
+<h1>Lastly...</h1>
+<p><a href="https://www.youtube.com/watch?v=b3OuPFQ1ELg">Matrix Live - Season 2, Episode 17: Apr 27th is now available!</a></p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/b3OuPFQ1ELg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<p>This Week in Matrix is printed fresh every week! There will be another post before you know it, so if you'd like to be included join us in <a href="https://matrix.to/#/#twim:matrix.org">#twim:matrix.org</a> and let us know what you've been working on. See you next week!</p>

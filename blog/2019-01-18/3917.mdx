@@ -1,0 +1,124 @@
+---
+date: '2019-01-18'
+title: This Week in Matrix 2019-01-18
+categories:
+  - General
+---
+
+<h3>Matrix Live S3E11</h3>
+This week I chatted with Jason Robinson about all things decentralisation, especially his projects <a href="https://github.com/jaywink/socialhome">socialhome</a>, <a href="https://the-federation.info/">the-federation.info</a>, and <a href="https://feneas.org">feneas.org</a>. Jason has been interested in decentralisation for many years, and had a lot to say about how we can look forward to a more decentralised Internet.
+
+<iframe src="https://www.youtube.com/embed/xPoMre1DKjQ" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+<h3>Latest MSC updates (from anoa's MSC bot)</h3>
+<strong>Approved MSCs</strong>
+
+<a href="https://github.com/matrix-org/matrix-doc/issues/1229">[MSC 1229]: Mitigating abuse of the event depth parameter over federation</a>
+<a href="https://github.com/matrix-org/matrix-doc/issues/1497">[MSC 1497]: MSC1497: Advertising support of experimental features in the CS API</a>
+<a href="https://github.com/matrix-org/matrix-doc/issues/1501">[MSC 1501]: Room version upgrades</a>
+<a href="https://github.com/matrix-org/matrix-doc/issues/1354">[MSC 1354]: Widget API extension: Always-on-screen</a>
+<a href="https://github.com/matrix-org/matrix-doc/issues/1339">[MSC 1339]: Proposal to add a GET method to read account data</a>
+
+<strong>Final Comment Period</strong>
+
+<a href="https://github.com/matrix-org/matrix-doc/pull/1794">MSC 1794: Federation v2 Invite API</a>
+
+<strong>In Progress MSCs</strong>
+
+<a href="https://github.com/matrix-org/matrix-doc/pull/1796">[MSC 1796]: improved e2e notifications</a>
+<a href="https://github.com/matrix-org/matrix-doc/pull/1797">[MSC 1797]: Proposal for more granular profile error codes</a>
+<a href="https://github.com/matrix-org/matrix-doc/pull/1607">[MSC 1607]: Proposal for room alias grammar</a>
+<a href="https://github.com/matrix-org/matrix-doc/pull/1544">[MSC 1544]: Key verification using QR codes</a>
+<a href="https://github.com/matrix-org/matrix-doc/pull/1802">[MSC 1802]: Standardised federation response formats</a>
+<a href="https://github.com/matrix-org/matrix-doc/pull/1804">[MSC 1804]: Advertising capable room versions to clients</a>
+<a href="https://github.com/matrix-org/matrix-doc/pull/1538">[MSC 1538]: storing megolm keys serverside</a>
+<a href="https://github.com/matrix-org/matrix-doc/pull/1681">[MSC 1681]: cross-signing</a>
+<a href="https://github.com/matrix-org/matrix-doc/pull/1659">[MSC 1659]: Proposal: Change Event IDs to Hashes</a>
+<a href="https://github.com/matrix-org/matrix-doc/pull/1767">[MSC 1767]: Extensible event types &amp; fallback in Matrix (v2)</a>
+<a href="https://github.com/matrix-org/matrix-doc/pull/1768">[MSC 1768]: Proposal to authenticate with public keys</a>
+<a href="https://github.com/matrix-org/matrix-doc/pull/1769">[MSC 1769]: Extensible profiles as rooms</a>
+<a href="https://github.com/matrix-org/matrix-doc/pull/1772">[MSC 1772]: Groups as rooms (v2)</a>
+<a href="https://github.com/matrix-org/matrix-doc/pull/1776">[MSC 1776]: Implementing peeking via /sync</a>
+<a href="https://github.com/matrix-org/matrix-doc/issues/1640">[MSC 1640]: MSC: Replace event IDs with hashes</a>
+<a href="https://github.com/matrix-org/matrix-doc/pull/1777">[MSC 1777]: peeking over federation</a>
+<h3>matrix-docker-ansible-deploy</h3>
+<a href="https://matrix.to/#/@slavi:devture.com">Slavi</a> <a href="https://matrix.to/#/!FPUfgzXYWTKgIrwKxW:matrix.org/$154773871684rLCxo:devture.com">reports that</a>:
+<blockquote>It's a New Year and there have been a lot of improvements to the <a href="https://github.com/spantaleev/matrix-docker-ansible-deploy">matrix-docker-ansible-deploy</a> playbook:
+<ul>
+ 	<li>there's now support for <a href="https://github.com/spantaleev/matrix-docker-ansible-deploy/blob/fef6c052c34404a15985a87ad9593596c349cd04/docs/importing-postgres.md">importing an existing Postgres database</a>, which should make it easier for people with another setup to migrate over.</li>
+ 	<li>there's now support for <a href="https://github.com/spantaleev/matrix-docker-ansible-deploy/blob/fef6c052c34404a15985a87ad9593596c349cd04/docs/configuring-playbook-ssl-certificates.md">manually-managed and self-signed certificates</a>, in addition to the Let's Encrypt support we've always had</li>
+ 	<li>the playbook now uses a much better (20x smaller, faster) riot-web Docker image (<a href="https://hub.docker.com/r/avhost/docker-matrix-riot/">avhost/docker-matrix-riot</a> -&gt; <a href="https://hub.docker.com/r/bubuntux/riot-web/">bubuntux/riot-web</a>). At least until <a href="https://github.com/vector-im/riot-web/pull/7771">vector-im/riot-web#7771</a> gets merged and official images become available.</li>
+ 	<li><a href="https://github.com/spantaleev/matrix-docker-ansible-deploy/blob/fef6c052c34404a15985a87ad9593596c349cd04/CHANGELOG.md#bc-break-mxisd-configuration-changes">completely redone</a> way of generating mxisd configuration, letting people unleash the full power of mxisd without us having to explicitly add support for new features</li>
+ 	<li>mxisd 1.3.0-ready. We default to a stable mxisd release still (1.2.2), but people can try the much-improved 1.3.0 alpha releases even now (e.g. <code>matrix_mxisd_docker_image: "kamax/mxisd:1.3.0-alpha.2"</code>).</li>
+ 	<li>we now utilize <a href="https://github.com/kamax-matrix/mxisd/blob/4185b644b7b69af36bb1fdc81976a36590b1b97f/docs/features/directory.md">mxisd's User Directory Search feature</a> to augment the results coming from Synapse</li>
+ 	<li>the playbook has been <a href="https://github.com/spantaleev/matrix-docker-ansible-deploy/blob/fef6c052c34404a15985a87ad9593596c349cd04/CHANGELOG.md#splitting-the-playbook-into-multiple-roles">split into multiple roles</a> (one role per component) and the <a href="https://github.com/spantaleev/matrix-docker-ansible-deploy/blob/fef6c052c34404a15985a87ad9593596c349cd04/CHANGELOG.md#bc-break-making-the-playbooks-roles-more-independent-of-one-another">roles have been made independent of one another</a>. People who want to re-use our roles in their own playbooks can now more-easily do so.</li>
+ 	<li>even more components have become optional and can now be turned off completely (coturn, mailer)</li>
+</ul>
+Lots of thanks go to Maximus, jcgruenhage and Cadair for helping out!</blockquote>
+<h3>libQMatrixClient and Quaternion</h3>
+<a href="https://matrix.to/#/@kitsune:matrix.org">kitsune</a> <a href="https://matrix.to/#/!FPUfgzXYWTKgIrwKxW:matrix.org/$1547372159502087lVDqI:matrix.org">reports that</a>:
+<blockquote>libQMatrixClient 0.4.2 has been released, fixing a security issue (the library could be tricked into altering the local room state by fake state events - those without state_key). The master branch of the library is updated as well - it is strongly recommended to update to either 0.4.2 or master, depending on which branch you live on.</blockquote>
+<blockquote>For those who want to help testing Quaternion or just can't wait to the next release, we now have CI builds collected at bintray: <a href="https://bintray.com/qmatrixclient/ci/Quaternion">https://bintray.com/qmatrixclient/ci/Quaternion</a>. Linux and macOS are already there, and Windows binaries will also be available any day soon.</blockquote>
+<h3>matrix-client.el</h3>
+<a href="https://matrix.to/#/@alphapapa:matrix.org">alphapapa</a> <a href="https://matrix.to/#/!FPUfgzXYWTKgIrwKxW:matrix.org/$1547472348798423INfaD:matrix.org">reports that</a>:
+<blockquote>matrix-client.el can now send typing notifications.</blockquote>
+<h3>matrix-puppet-slack</h3>
+<a href="https://matrix.to/#/@root:thomasprofitt.com">tom</a> <a href="https://matrix.to/#/!FPUfgzXYWTKgIrwKxW:matrix.org/$154752330618986viSAk:thomasprofitt.com">reports that</a>:
+<blockquote><a href="https://github.com/matrix-hacks/matrix-puppet-slack">matrix-puppet-slack v1.10.0</a> has been released, thanks to <a href="https://github.com/Cadair">Cadair</a> and (once again!) <a href="https://github.com/d3m3vilurr">d3m3vilurr</a>!
+
+v1.10.0 fixes Matrix-to-Slack image upload, and no longer sends markdown-formatted @-mention links in the plaintext body of Matrix events; instead, it uses plaintext username the way text-only clients traditionally have it.</blockquote>
+<blockquote>The version bump is also the project's 100th commit, and I've updated the supported feature checklist in the README to paint a more comprehensive picture of what is and isn't supported, and link out to the GitHub Issues for some of the unsupported features, in hopes of making life easier for users and encouraging contributions.</blockquote>
+<h3>opsdroid</h3>
+<a href="https://matrix.to/#/@SolarDrew:matrix.org">SolarDrew</a> <a href="https://matrix.to/#/!FPUfgzXYWTKgIrwKxW:matrix.org/$1547653505205271kEVTV:matrix.org">reports that</a>:
+<blockquote><a href="https://opsdroid.readthedocs.io/en/stable/">opsdroid</a>'s Matrix connector is now a core part of the library rather than an external addition. This should open up a lot of cool possibilities for doing fancy stuff with bots on matrix. Many thanks to Cadair for helping with this.</blockquote>
+<h3>mxisd</h3>
+<a href="https://matrix.to/#/@max:kamax.io">Maximus</a> <a href="https://matrix.to/#/!FPUfgzXYWTKgIrwKxW:matrix.org/$15477209272657DusTE:kamax.io">reports that</a>:
+<blockquote><a href="https://github.com/kamax-matrix/mxisd">mxisd</a> has a new alpha release: <a href="https://github.com/kamax-matrix/mxisd/releases/tag/v1.3.0-alpha.2">v1.3.0-alpha.2</a> - Fixes a set of issues from <code>alpha.1</code> and is now close to <code>v1.2.2</code> stability. If you are already on <code>alpha.1</code>, update is highly recommended.</blockquote>
+<h3>continuum (previously, "koma")</h3>
+<a href="https://matrix.to/#/@uforia:matrix.org">uforia</a> <a href="https://matrix.to/#/!FPUfgzXYWTKgIrwKxW:matrix.org/$1547794230713503hGkcK:matrix.org">reports that</a>:
+<blockquote>made some minor changes to <a href="https://github.com/koma-im/continuum-desktop">continuum</a> to make the GUI more intuitive. Now when there are no joined rooms, buttons for joining or creating rooms are shown instead of an empty list. And when there are issues with syncing or syncing takes longer than usual, a status bar with options is shown.</blockquote>
+<h3>mauview</h3>
+<a href="https://matrix.to/#/@tulir:maunium.net">tulir</a> <a href="https://matrix.to/#/!FPUfgzXYWTKgIrwKxW:matrix.org/$154780910215898ndotw:maunium.net">reports that</a>:
+<blockquote>I've been working on a new Go TUI library for gomuks: <a href="https://github.com/tulir/mauview">https://github.com/tulir/mauview</a>
+
+Still not quite sure if it's a good idea, but at least the input area component is very nice. It should also make it easier to add more fancy stuff like html tables and selecting messages (for replying/redacting)</blockquote>
+<h3><span style="font-weight: 400;">Riot iOS</span></h3>
+<blockquote><span style="font-weight: 400;">We are still working on the key backup screens. The last bit on the SDK side, the passphrase support, has been implemented this week.</span>
+
+<span style="font-weight: 400;">Reskin is almost done. It just needs some small adjustments. We will release a beta soon so that we can gather users feedback.</span>
+
+<span style="font-weight: 400;">This week, we have also fixed small but boring UX issues in Riot and we will continue to do so up to the end of the month and FOSDEM!</span></blockquote>
+<h3><span style="font-weight: 400;">Riot Android</span></h3>
+<blockquote><span style="font-weight: 400;">Reskin is almost done too and available on develop builds.</span>
+
+<span style="font-weight: 400;">Benoit has started to implement the key backup passphrase management in the SDK. Valere is still improving push notifications at the code level but also at the display level.</span>
+
+<span style="font-weight: 400;">We are working hard to polish the app for FOSDEM.</span></blockquote>
+<h3><span style="font-weight: 400;">Modular</span></h3>
+Rick reports:
+<blockquote><span style="font-weight: 400;">We now have a</span><b> HipChat migration tool - </b><a href="https://www.modular.im/tools/hipchat-migration"><span style="font-weight: 400;">https://www.modular.im/tools/hipchat-migration</span></a><b>. </b><span style="font-weight: 400;">This tool helps migrate a HipChat workspace to your very own Modular Hosted Homeserver. Migration is performed by uploading an exported copy of an existing HipChat workspace so that the tool can automatically re-create all of the users and rooms (including messages and attachments) on your new Matrix homeserver. Once the migration is complete all of the migrated users will be emailed with login instructions, so that they can seamlessly continue chatting where they left off in HipChat. If your organisation (or if you know of an organisation that) has not yet decided what to do when Stride &amp; HipChat is discontinued next month, come and try Modular!</span></blockquote>
+<h3>Synapse</h3>
+<blockquote>The Synapse gang are working flat out towards r0 and a v1.0 release - you can track our progress here (<a href="https://github.com/orgs/matrix-org/projects/8">https://github.com/orgs/matrix-org/projects/8</a>). Aside from that if you haven't already done please please upgrade to v0.34.1.1 (<a href="https://matrix.org/blog/2019/01/15/further-details-on-critical-security-update-in-synapse-affecting-all-versions-prior-to-0-34-1-cve-2019-5885/">https://matrix.org/blog/2019/01/15/further-details-on-critical-security-update-in-synapse-affecting-all-versions-prior-to-0-34-1-cve-2019-5885/</a>)</blockquote>
+<h3><span style="font-weight: 400;">Dendrite</span></h3>
+<a href="https://matrix.to/#/@brendan:abolivier.bzh">Brendan</a> reports:
+<blockquote><span style="font-weight: 400;">People have been generally happy about the flood of new issues following the completion of the internal audit last week, and a few folks have been opening PRs addressing some of the “good-first-issues” labeled ones, which has been amazing to see, including fixing room joins and a couple of default variables. Thanks a lot to </span><a href="https://matrix.to/#/@cnly:matrix.org"><span style="font-weight: 400;">Cnly</span></a><span style="font-weight: 400;"> and </span><a href="https://matrix.to/#/@manasseh:matrix.org"><span style="font-weight: 400;">Behouba</span></a><span style="font-weight: 400;"> for these!</span>
+
+<span style="font-weight: 400;">On my end, this week mainly consisted in reviewing most of these PRs (and merging them when that was possible), while </span><a href="https://matrix.to/#/@andrewm:amorgan.xyz"><span style="font-weight: 400;">anoa</span></a><span style="font-weight: 400;"> worked on making Dendrite's CI more complete and reliable, especially by configuring it to run </span><a href="https://github.com/matrix-org/sytest"><span style="font-weight: 400;">sytest</span></a><span style="font-weight: 400;"> against Dendrite which will allow us to better track its compliance to the Matrix specification.</span>
+
+<span style="font-weight: 400;">If you're interested in contributing on Dendrite, there's still some </span><a href="https://github.com/matrix-org/dendrite/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22"><span style="font-weight: 400;">“good first issues”</span></a><span style="font-weight: 400;"> open, and we'll be happy to chat and help in </span><a href="https://matrix.to/#/#dendrite-dev:matrix.org"><span style="font-weight: 400;">#dendrite-dev:matrix.org</span></a><span style="font-weight: 400;"> ?</span></blockquote>
+<h3>Synapse in Debian</h3>
+<a href="https://matrix.to/#/@andrewsh:matrix.org">andrewsh</a> <a href="https://matrix.to/#/!FPUfgzXYWTKgIrwKxW:matrix.org/$1547811410764148ueMlL:matrix.org">reports that</a>:
+<blockquote>the most recent synapse, using Python 3, is available in both stretch-backports and Debian testing</blockquote>
+<h3>Discord Bridge</h3>
+<a href="https://matrix.to/#/@Half-Shot:half-shot.uk">Half-Shot</a> <a href="https://matrix.to/#/!FPUfgzXYWTKgIrwKxW:matrix.org/$15478126461343dzUVV:half-shot.uk">reports that</a>:
+<blockquote>Discord bridge v0.4.0 is out now, nothing new since rc1 because it was <strong>that good</strong>. There have been no changes since rc1 because either <a href="https://matrix.to/#/@sorunome:sorunome.de">Sorunome</a> did a stellar job of keeping things stable, or nobody spoke up out of fear :p. Thanks one and all for continuing to run the bridge.</blockquote>
+<h3>New Dart/Flutter Matrix SDK</h3>
+<a href="https://matrix.to/#/@bhat:encom.eu.org">Black Hat</a> <a href="https://matrix.to/#/!FPUfgzXYWTKgIrwKxW:matrix.org/$1547818996124dKXHQ:encom.eu.org">reports that</a>:
+<blockquote>I am prototyping a Matrix client SDK in Dart. It will target Flutter (Android, Fuchsia and iOS), web (AngularDart or other) and Dart VM.</blockquote>
+<h3>f0x returns to Neo</h3>
+<a href="https://matrix.to/#/@f0x:lain.haus">f0x</a> <a href="https://matrix.to/#/!FPUfgzXYWTKgIrwKxW:matrix.org/$15478279713767eylAY:lain.haus">reports that</a>:
+<blockquote>Neo v4: Iris is coming up, focusing on design first. It will be based on React, and the matrix js sdk
+I didn't plan ahead enough with old Neo (v3), so it became a bit of a clobbered togeather mess, which I'm trying to prevent this time around
+<a href="https://git.lain.haus/f0x/iris">https://git.lain.haus/f0x/iris</a></blockquote>
+<a href="https://matrix.org/blog/wp-content/uploads/2019/01/neo.png"><img class="alignnone size-large wp-image-3918" src="https://matrix.org/blog/wp-content/uploads/2019/01/neo-1024x446.png" alt="" width="1024" height="446" /></a>
+<h3>That's all for now</h3>
+Come chat in <a href="https://matrix.to/#/#twim:matrix.org">#twim:matrix.org</a> to discuss what's happening, and especially come and share what YOU'VE been working on!

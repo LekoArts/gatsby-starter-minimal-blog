@@ -1,0 +1,182 @@
+---
+date: '2014-09-03'
+title: FAQ
+categories:
+  - General
+---
+
+<h2><strong>Categories</strong></h2>
+<p style="padding-left: 30px;"><a href="#_General">General</a></p>
+<p style="padding-left: 30px;"><a href="#_Quick_Start">Quick Start</a></p>
+<p style="padding-left: 30px;"><a href="#_Standard">Standard</a></p>
+<p style="padding-left: 30px;"><a href="#_APIS">APIs</a></p>
+<p style="padding-left: 30px;"><a href="#_Reference_Implementations">Reference Implementations</a></p>
+
+
+<hr />
+
+<h2></h2>
+<h2>FAQ Content</h2>
+[toc]
+<h3><a name="_General"></a>General</h3>
+<h5 style="padding-left: 30px;"><em>What's Matrix?</em></h5>
+<p style="padding-left: 30px;">Matrix is an ambitious new open standard for open, distributed, real-time communication over IP. It defines interoperable Instant Messaging and VoIP, providing pragmatic HTTP APIs and open source reference implementations for creating and running your own real-time communication infrastructure.</p>
+
+<h5 style="padding-left: 30px;"><em>What is Matrix's Mission?</em></h5>
+<p style="padding-left: 30px;">Matrix.org's initial inspiration and goal has been to fix the problem of fragmented IP communications. But Matrix's real potential and ultimate mission is to be a generic messaging and data synchronisation system for the web - allowing people, services and devices to easily communicate with each other with full history.</p>
+
+<h5 style="padding-left: 30px;"> <em>What does Matrix provide?</em></h5>
+<p style="padding-left: 30px;">Today Matrix provides a new <a href="/docs/spec">open standard</a>, <a href="/docs/api">APIs</a> to integrate a service to the Matrix ecosystem and reference <a href="http://github.com/matrix-org/synapse">open source implementations</a> of the standard.</p>
+
+<h5 style="padding-left: 30px;"><em>What does this mean for users?</em></h5>
+<p style="padding-left: 30px;">The aim is to provide an analogous ecosystem to email - one where you can communicate with pretty much anyone, without caring what app or server they are using, using whichever app &amp; server you chose to use, and a nice neutral identity system like an e-mail address or phone number to discover people to talk to.</p>
+
+<h5 style="padding-left: 30px;"><em>What kind of company is Matrix.org?</em></h5>
+<p style="padding-left: 30px;">Matrix is an open initiative which acts as a neutral custodian of the Matrix standard. It's not actually incorporated anywhere at the moment but we are looking at the best legal structure for the future. We are committed to keeping the Matrix project open.</p>
+
+<h5 style="padding-left: 30px;"><em>Who's funding Matrix.org?</em></h5>
+<p style="padding-left: 30px;">We have been given permission by our employers, Amdocs, to work on Matrix as an independent non-profit initiative.</p>
+
+<h5 style="padding-left: 30px;"><em>Who's building Matrix?</em></h5>
+<p style="padding-left: 30px;">We're a team of ~10 people with decades of experience building custom VoIP and Messaging apps for mobile network operators. Most of us have day jobs at Amdocs or OpenMarket, but we are supported by a mix of freelancers and volunteers.</p>
+
+<h5 style="padding-left: 30px;"><em>Why are you called Matrix?</em></h5>
+<p style="padding-left: 30px;">We're called Matrix because we provide a structure in which all communication can be matrixed together.</p>
+
+<h5 style="padding-left: 30px;"><em>Why have you released this as open source?</em></h5>
+<p style="padding-left: 30px;">We believe that any open standard defining interoperable communication needs to be justified, demonstrated and validated with transparent open source implementations. For Matrix to achieve its mission of making all communications services interoperable we believe it needs to be truly open, giving people access to take all the code we produce and to use and build on top of it.</p>
+
+<h5 style="padding-left: 30px;"><em>What do you mean by open?</em></h5>
+<p style="padding-left: 30px;">Matrix is an open standard, meaning that we have freely published the details for how to interface with Matrix compliant servers and clients, and encourage anyone and everyone to interface with them.  We also ensure the standard is not encumbered by any known patent licensing requirements.</p>
+<p style="padding-left: 30px;">Matrix is also open source, meaning that we have released the source code of the reference servers and clients to the public domain under the <a href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache Licence v2</a>, to encourage anyone and everyone to run their own servers and clients, and enhance them and contribute their enhancements as they see fit.</p>
+
+<h5 style="padding-left: 30px;"><em>What does federated mean?</em></h5>
+<p style="padding-left: 30px;">Federation allows separate deployments of a communication service to communicate with each other - for instance a mail server run by Google federates with a mail server run by Microsoft when you send email from @gmail.com to @outlook.com.</p>
+<p style="padding-left: 30px;">Federation is different to interoperability, as interoperable clients may simply be running on the same deployment - whereas in federation the deployments themselves are exchanging data in a compatible manner.</p>
+<p style="padding-left: 30px;">Matrix provides open federation - meaning that anyone on the internet can join into the Matrix ecosystem by deploying their own server.</p>
+
+<h5 style="padding-left: 30px;"><em>How is this like e-mail?</em></h5>
+<p style="padding-left: 30px;">When email was first set up in the early ‘80s, companies like Compuserve and AT&amp;T and Sprint set up isolated email communities which only allowed you to exchange mail with users on the same system.  If you got your email from one service and your friend from another, then you couldn't message each other.  This is basically the situation we're in today with VoIP and IM.</p>
+
+<h5 style="padding-left: 30px;"><em>Why has no-one done this before?</em></h5>
+<p style="padding-left: 30px;">There have been several attempts before including SIP, XMPP and RCS.  All of these have had some level of success, but technological/usability/economic factors have ended up limiting their success in providing true open federation.</p>
+
+<h5 style="padding-left: 30px;"><em>What's the difference between Matrix and IRC?</em></h5>
+<p style="padding-left: 30px;">We love IRC.  In fact, as of today the core Matrix team still uses it as our primary communication tool. Between us we've written IRCds, IRC bots and admined dreamforge, UnrealIRCd, epona, ircservices and several others.  That said, it has some limitations that Matrix seeks to improve on:</p>
+
+<ul style="padding-left: 30px;">
+	<li>Text only</li>
+	<li>No history</li>
+	<li>No multiple-device support</li>
+	<li>No presence support</li>
+	<li>Fragmented identity model</li>
+	<li>No open federation</li>
+	<li>No standard APIs, just an archaic TCP line protocol</li>
+	<li>Non-standardised federation protocol</li>
+	<li>No built-in end-to-end encryption</li>
+	<li>Disruptive net-splits</li>
+	<li>Non-extensible</li>
+</ul>
+<h5 style="padding-left: 30px;"><em>What's the difference between Matrix and XMPP?</em></h5>
+<p style="padding-left: 30px;">The Matrix team used XMPP (Openfire, ejabberd, spectrum, asmack, XMPPFramework) for IM before starting to experiment with open HTTP APIs as an alternative.   The main issues with XMPP that drove us in this direction were:</p>
+
+<ul style="padding-left: 30px;">
+	<li>Not particularly web-friendly - you can't easily speak XMPP from a web browser.  (N.B. Nowadays you have options like XMPP-FTW and Stanza.io that help loads with letting browsers talk XMPP).</li>
+	<li>Single logical server per MUC is a single point of control and availability.  (MUCs can be distributed over multiple physical servers, but they still sit behind a single logical JID and domain.  FMUC improves this with a similar approach to Matrix, but at time of writing there are no open implementations.)</li>
+	<li>History synchronisation is very much a second class citizen feature</li>
+	<li>Stanzas aren't framed or reliably delivered without extensions.  (See <a href="http://wiki.xmpp.org/web/Myths#Myth_Four:_XMPP_is_unreliable_without_a_bunch_of_extensions.">wiki.xmpp.org</a> for an XMPP take on this)</li>
+	<li>Multiple device support is limited.  (Apparently Carbons and MAM help with this)</li>
+	<li>Baseline feature set is so minimal that fragmentation of features between clients and servers is common</li>
+	<li>No strong identity system (i.e. no standard E2E PKI, unless you count X.509 certs, which <a href="http://www.thoughtcrime.org/blog/ssl-and-the-future-of-authenticity/">are questionable</a>)</li>
+	<li>Not particularly well designed for mobile use cases: push; bandwidth-efficient transports.  (Since the time of writing a <a href="http://xmpp.org/extensions/xep-0357.html">Push XEP has appeared</a>,  and <a href="http://wiki.xmpp.org/web/Myths#Myth_Three:_It.27s_too_bandwidth-inefficient_for_mobile.">wiki.xmpp.org</a> claims that XMPP runs fine over a 9600bps + 30s latency link.</a>)</li>.
+</ul>
+
+The whole subject of XMPP v. Matrix seems to bring out the worst in people.  We think of the standards as being quite different; at its core Matrix can be thought of as an eventually consistent global JSON db with an HTTP API and pubsub semantics - whilst XMPP can be thought of as a message passing protocol.  You can use them both to build chat systems; you can use them both to build pubsub systems; each comes with different tradeoffs.  Matrix has a 'kitchen sink' baseline of functionality; XMPP has a deliberately minimal baseline set of functionality.  If XMPP does what you need it to do, then we're genuinely happy for you :)
+
+Meanwhile, rather than competing, an XMPP Bridge like <a href="https://github.com/SkaveRat/xmpptrix">Skaverat's xmpptrix beta</a> has potential to let both environments coexist and make the most of each other's benefits.
+
+<h5 style="padding-left: 30px;"><em>What's the difference between Matrix and PSYC?</em></h5>
+<p style="padding-left: 30px;">PSYC is a open federated messaging protocol loosely inspired by IRC.  In version 1 it was a standalone protocol, and in version 2 it is being reutilised as the messaging layer on top of GNUnet.  We honestly don't know that much about it, beyond trying to use psycd as an XMPP&lt;-&gt;IRC bridge in 2010. Matrix differentiates primarily by providing simple HTTP APIs rather than the more exotic compact line protocol in PSYC v1 or the complicated GNUnet stack in v2.  Meanwhile, Matrix doesn't provide of the metadata protection guarantees that GNUnet/PSYC aims for.
+
+See <a href="http://about.psyc.eu/Matrix">http://about.psyc.eu/Matrix</a> for PSYC's views on Matrix.
+</p>
+
+<h5 style="padding-left: 30px;"><em>What's the difference between Matrix and Tox?</em></h5>
+<p style="padding-left: 30px;">Tox.im looks to be a very cool clone of Skype - a fully decentralised peer-to-peer network.  Matrix is deliberately not peer-to-peer; instead each user has a well-defined homeserver which stores his data and that he can depend upon.  Matrix provides HTTP APIs; Tox.im provides C APIs.  We haven't actually played with Tox at all yet.</p>
+
+<h5 style="padding-left: 30px;"><em>How does Matrix compare with something like Trillian or Pidgin?</em></h5>
+<p style="padding-left: 30px;">Trillian and Pidgin and similar aggregating IM clients merge all your IM activity into a single user experience.  However, your history and identity is still fragmented across the networks.  People can't find you easily, and your history is fragmented (other than on the device where the client runs).   And rather than being able to chose the right app for the job when communicating with people, you are pushed towards relying on a specific aggregation app.</p>
+
+<h5 style="padding-left: 30px;"><em>What Matrix compliant apps are there?</em></h5>
+<p style="padding-left: 30px;">None yet, other than our examples.  It's early days :)</p>
+
+<h5 style="padding-left: 30px;"><em>Why do you think existing apps will ever join this?</em></h5>
+<p style="padding-left: 30px;">We firmly believe it is what is right for the consumer. As people begin to use interoperable communications tools service providers will see the benefit and compete on quality of service, security and features rather than relying on locking people into their walled garden. We believe as soon as users see the availability and benefits of interoperable services they will demand it.</p>
+
+<h5 style="padding-left: 30px;"><em>Why aren't you doing this through the IETF? or W3C? or 3GPP?</em></h5>
+<p style="padding-left: 30px;">We do recognise the advantages of working with existing standards bodies. We have been focused on writing code and getting it out. As Matrix matures it may well be appropriate to work with an official standard body.</p>
+
+<h3><a name="_Quick_Start"></a>Quick Start</h3>
+<h5 style="padding-left: 30px;"><em>How do I get an account and get started?</em></h5>
+<p style="padding-left: 30px;">The quickest way is to just jump to the demo webclient at http://matrix.org/beta and sign up.  Please note that you can point the webclient to access any homeserver - you don't have to use matrix.org, although as of day 1, matrix.org is the only communal homeserver available.</p>
+
+<h5 style="padding-left: 30px;"><em>What can I actually do with this?</em></h5>
+<p style="padding-left: 30px;">The demo webclient provides a simple chatroom interface to Matrix - letting the user interact with users and rooms anywhere within the Matrix federation.  Text and image messages are supported, and basic voice-only VoIP calling via WebRTC is supported in one-to-one rooms.</p>
+
+<h5 style="padding-left: 30px;"><span style="color: #000000;"><em>How do I connect my homeserver to the public Matrix network?</em></span></h5>
+<p style="padding-left: 30px;">See <a href="http://github.com/matrix-org/synapse">http://github.com/matrix-org/synapse</a> for details</p>
+
+<h5 style="padding-left: 30px;"><em>How do I Matrix-enable my existing app?</em></h5>
+<p style="padding-left: 30px;">See the <a href="http://matrix.org/docs/howtos/client-server.html">Client-Server API HOWTO</a> for an example of how to use Matrix's client-server API to let your app communicate with users via Matrix.  We're currently working out the best way to integrate your application's existing identity system with Matrix.</p>
+
+<h5 style="padding-left: 30px;"><em>How can I write a client on Matrix?</em></h5>
+<p style="padding-left: 30px;">See the <a href="http://matrix.org/docs/howtos/client-server.html">Client-Server API HOWTO</a> and the <a href="/docs/api">API docs</a> and <a href="/docs/spec">the Spec</a> for all the details you need to write a client.</p>
+
+<h5 style="padding-left: 30px;"><strong>How can I help out with this?</strong></h5>
+<p style="padding-left: 30px;">Install synapse and tell us how you get on. Critique the spec.  Write clients.  Just come say hi on <a href="/alpha">#matrix:matrix.org</a> or the <a href="/mailman/listinfo/matrix-users">mailing lists</a>!</p>
+
+<h5 style="padding-left: 30px;"><em>Where can I get support?</em></h5>
+<p style="padding-left: 30px;"><a href="/alpha">#matrix:matrix.org</a>, #matrix on irc.freenode.net or the <a href="/mailman/listinfo/matrix-users">mailing lists</a> are your best bets.</p>
+
+<h5 style="padding-left: 30px;"><em>How do I register custom matrix event types?</em></h5>
+<p style="padding-left: 30px;">We're not yet managing a registry of custom matrix event types.  If you have any particularly good ones you want to tell the world about, please use the <a href="/mailman/listinfo/matrix-users">mailing list</a> for now.</p>
+
+<h5 style="padding-left: 30px;"><em>How mature is this?</em></h5>
+<p style="padding-left: 30px;">We started working on Matrix in July 2014, and have opened it to the public in September 2014.  It's early days, and under no circumstances should you use Matrix or Synapse for anything other than experimentation and learning at this point.  Obviously the spec and apps are maturing rapidly, but as of the time of writing APIs are not frozen and the apps are very much a work in progress.</p>
+<em>Sorry , the FAQ is still work in progress, the rest of it will up soon!</em>
+
+<em>In the mean time don't hesitate to get in touch on <a href="/alpha">#matrix:matrix.org</a> or the <a href="/mailman/listinfo/matrix-users">mailing lists</a>!</em>
+<h3><a name="_Standard"></a>Standard</h3>
+<h5 style="padding-left: 30px;"><em>What's a home server?</em></h5>
+<!--
+<p style="padding-left: 30px;">A home server is where you sign up for an account, and where all your user and conversation data is stored.  You use it to send and receive communication, and it synchronises your communication across multiple devices.</p>
+-->
+<h5 style="padding-left: 30px;"><em>What's an identity sever?</em></h5>
+<h5 style="padding-left: 30px;"><em>Where do my conversations get stored?</em></h5>
+<h5 style="padding-left: 30px;"><em>What's a 3PID?</em></h5>
+<h5 style="padding-left: 30px;"><span class="author-g-syd143j1jn10ec9q"><em>How do you do VoIP calls on Matrix? </em> </span></h5>
+<!--Note: I'm expecting the tech answer, if it's just where in the web client the Q should probably be elsewhere-->
+<h5 style="padding-left: 30px;"><em>Can I log into other homeservers with my username and password?</em></h5>
+<h5 style="padding-left: 30px;"><em>Why Apache Licence?</em></h5>
+<h5 style="padding-left: 30px;"><em>Can I write a Matrix homeserver?</em></h5>
+<h5 style="padding-left: 30px;"><em>How secure is this?</em></h5>
+<h5 style="padding-left: 30px;"><em><span class="author-g-syd143j1jn10ec9q">Why aren't you using an ORM layer like SqlAlchemy?  </span></em></h5>
+<!--Not sure if this is about the general specs or the implementation)-->
+<h3><a name="_APIs"></a>APIs</h3>
+<h5 id="magicdomid316" class="ace-line" style="color: #000000; padding-left: 30px;"><em><span class="author-g-syd143j1jn10ec9q">How do I join the global Matrix federation?</span></em></h5>
+<h5 class="ace-line" style="color: #000000; padding-left: 30px;"><em>What ports do I have to open up to join the global Matrix federation?</em></h5>
+<h3><a name="_Reference_Implementations"></a>Reference Implementations</h3>
+<h5 style="padding-left: 30px;"><em>What is Matrix built on &amp; why?</em></h5>
+<!-- Our initial reference implementation of a Matrix “homeserver” is called Synapse, and is built on Python and the Twisted framework because it's mature and easily accessible to the opensource community and I encourage anyone to go and take a look at what's going on Github and have a play. -->
+<h5 style="padding-left: 30px;"><em>How do I run my own home server?</em></h5>
+<h5 style="padding-left: 30px;"><em>Can I run my own identity server?</em></h5>
+<p style="padding-left: 30px;">Yes - the reference implementation is <a href="https://github.com/matrix-org/sydent">sydent</a> and you can run your own ID server cluster that tracks 3rd party to Matrix ID mappings.  If you want your server to participate in the global replicated Matrix ID service then please get in touch with us.  Meanwhile, we are looking at ways of decentralising the 'official' Matrix identity service so that identity servers are 100% decentralised and can openly federate with each other.  <b>N.B. that you can use Matrix without ever using the identity service - it exists only to map 3rd party IDs (e.g. email addresses) to matrix IDs to aid user discovery</b>.</p>
+
+<h5 style="padding-left: 30px;"><em>What's Synapse?</em></h5>
+<h5 style="padding-left: 30px;"><em>Why is Synapse in Python/Twisted?</em></h5>
+<h5 style="padding-left: 30px;"><em>What are Synapse's platform requirements?</em></h5>
+<!-- It runs on a raspberry pi! :)  -->
+<h5 style="padding-left: 30px;"><em>What are the Synapse webclient's requirements?</em></h5>
+<h5 style="padding-left: 30px;"><em>Where's the mobile app?! This is 2014!!</em></h5>
+<h5 style="padding-left: 30px;"><em>What decides the room member order on the webclient?</em></h5>
+Any other question? Please contact us on #<a href="/alpha">#matrix:matrix.org</a> or the <a href="/mailman/listinfo/matrix-users">mailing lists</a>!

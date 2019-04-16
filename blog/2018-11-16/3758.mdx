@@ -1,0 +1,75 @@
+---
+date: '2018-11-16'
+title: This Week in Matrix 2018-11-16
+categories:
+  - General
+---
+
+<h2 id="matrixlives3e04">Matrix Live S3E04</h2>
+This week we continue Matrix Live Season 3 by talking to community member <a href="https://matrix.to/#/@axx:jaccu.se">axx</a>, Axel Simon from <a href="https://www.laquadrature.net/">La Quadrature du Net</a>, a French advocacy group that promotes digital rights and freedoms of citizens. We talk about the work La Quadrature du Net do, with a focus on the importance of decentralisation and how Matrix helps support this.
+
+<iframe src="https://www.youtube.com/embed/rgaeiQUhsCs" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+<h2 id="mxisdv120released">mxisd v1.2.0 released</h2>
+<a href="https://matrix.to/#/@max:kamax.io">Max</a> has been giving updates on the road to <a href="https://github.com/kamax-matrix/mxisd/">mxisd</a> v1.2.0, which was released this week:
+<blockquote>A new stable version of mxisd is out: <a href="https://github.com/kamax-matrix/mxisd/releases/tag/v1.2.0">v1.2.0</a>. It comes with:
+<ul>
+ 	<li>The ultimate identity store that lets you run any command on the system to fetch info, making it the most generic yet. The sky is now your limit!</li>
+ 	<li>The ability to send email notifications about room invites when done using a Matrix ID regardless if their users is already provisioned on synapse, using emails found in an Identity store. Targeted at onboarding/migration to Matrix for any org/corp.</li>
+</ul>
+</blockquote>
+<h2 id="spec">Spec</h2>
+<a href="https://matrix.to/#/@uhoreg:matrix.org">uhoreg</a>:
+<blockquote>TWIM: five(!) new MSCs so far this week, including a long-awaited MSC for displaying math(s) in messages: <a href="https://github.com/matrix-org/matrix-doc/pull/1722">https://github.com/matrix-org/matrix-doc/pull/1722</a></blockquote>
+<h2 id="maubotmanagementui">maubot management UI</h2>
+<a href="https://matrix.to/#/@tulir:maunium.net">tulir</a> has had a busy week:
+<blockquote>The <a href="https://github.com/maubot/maubot">maubot</a> management UI is now ready, which means you should be able to install, update and configure plugins with just the UI.</blockquote>
+<a href="https://matrix.org/blog/wp-content/uploads/2018/11/maubot-manager2.png"><img class="alignnone size-large wp-image-3759" src="https://matrix.org/blog/wp-content/uploads/2018/11/maubot-manager2-1008x1024.png" alt="" width="1008" height="1024" /></a>
+<h2 id="matrixappservicepurple">matrix-appservice-purple</h2>
+<a href="https://matrix.to/#/@Half-Shot:half-shot.uk">Half-Shot</a> has been working on important work for his final undergrad year. Just kidding! He's been working on bridges as you'd expect:
+<blockquote>I've been working on <a href="https://github.com/matrix-org/matrix-appservice-purple">matrix-appservice-purple</a>, and the community immediately rallied around and helped me get it into shape. We've got automated builds for both the bridge and the libpurple binding modules. In features land, group chats are now working at a basic level and I will be working on supporting profiles next.
+<a href="https://matrix.to/#/#purple-bridge:half-shot.uk">#purple-bridge:half-shot.uk</a> is now a room where you can tell me why your favorite protocol doesn't work with the bridge. (It's also used for updates.)</blockquote>
+<h2 id="informo">Informo</h2>
+<a href="https://matrix.to/#/@vabd:weu.informo.network">vabd</a>:
+<blockquote>A couple of SCS (Specs Changes Submissions) have been merged into the Informo specs, notably <a href="https://github.com/Informo/specs/pull/2">SCS #2</a> which introduces a complete technical description of the network's nodes and their expected behaviour, and <a href="https://github.com/Informo/specs/pull/4">SCS #4</a> which changes the duration of the call for public review period, shrinking it from 14 days to 7 days, in order to speed specs work up while letting a decent amount of time for people to give a look at new SCSs and voice their concerns.</blockquote>
+<h2 id="quaternion">Quaternion</h2>
+<a href="https://matrix.to/#/@kitsune:matrix.org">kitsune</a> hasn't been seen for a couple of weeks, but he's been working on <a href="https://github.com/QMatrixClient/Quaternion">Quaternion</a>:
+<blockquote>aside from mundane bugfixing, Quaternion's timeline scrolling has been improved in the master branch. Along with that, the native scrollbar can now be used instead of the shuttle scroller that is loved by some and equally hated by some others. Unfortunately, all that work has a side-effect that under some circumstances the timeline backlog is no more loaded. This will be fixed later this week.
+Together with the ongoing work on refactoring room state cache and lazy-loading this makes Quaternion quite prone to regressions: unless you want to help to iron them out, it's advised to stick with Quaternion 0.0.9.3 and wait for further announcements.
+By the way, the latest Quaternion release is now available in OpenSUSE Tumbleweed rolling distribution.</blockquote>
+<h2 id="synapse0339rc1">Synapse 0.33.9rc1</h2>
+<blockquote>Synapse has a new release candidate - 0.33.9rc1 - If you'd like to help us test it, you can <a href="https://github.com/matrix-org/synapse/releases/tag/v0.33.9rc1">get it here</a>.</blockquote>
+<h2 id="koma">Koma</h2>
+<a href="https://matrix.to/#/@druig:matrix.org">druig</a>:
+<blockquote>This week in <a href="https://github.com/koma-im/koma/">Koma</a>, I have been working on a correct implementation of the user registration process. Currently waiting for a small issue with synapse to get fixed
+For kotlin programmer who might be interested <a href="https://github.com/koma-im/koma/pull/6">https://github.com/koma-im/koma/pull/6</a></blockquote>
+<h2 id="fdroidorghassetupanewmatrixsynapseserver">f-droid.org has set up a new matrix (synapse) server</h2>
+<a href="https://matrix.to/#/@mathijs:matrix.vgorcum.com">Mathijs</a>:
+<blockquote>f-droid.org has set up a new matrix (synapse) server for internal conversation and to chat in #fdroid:matrix.org , which will obviously also get a :f-droid.org alias.
+
+For now the server is private, only allowing core team members to get an account in order to keep the performance manageable.</blockquote>
+<h2 id="mautrixtelegramv040">mautrix-telegram v0.4.0</h2>
+<a href="https://matrix.to/#/@tulir:maunium.net">tulir</a> released an RC for <a href="https://github.com/tulir/mautrix-telegram">mautrix-telegram</a>:
+<blockquote><a href="https://github.com/tulir/mautrix-telegram">mautrix-telegram</a> 0.4.0 release candidate was released. It's mostly a lot of bugfixes.</blockquote>
+…and <a href="https://github.com/turt2live">TravisR</a> hosted it on t2bot.io:
+<blockquote>as of a few minutes ago, the <a href="https://t2bot.io/">t2bot.io</a> Telegram bridge is updated to 0.4.0rc2</blockquote>
+<h2 id="pushtotalkforjitsicallsinriot">Push-to-Talk for Jitsi calls in Riot</h2>
+<a href="https://matrix.to/#/@andrewm:amorgan.xyz">anoa</a>:
+<blockquote>An implementation for Push-to-Talk for Jitsi calls in Riot has now been completed and is in the review phase. This was a result of multiple weeks of work, with code changes across many different repositories. Will hopefully make a difference with background noise or many participants. Look forward to seeing it land in /develop sometime shortly! Works with both Scalar and Dimension setups.
+<ul>
+ 	<li><a href="https://github.com/matrix-org/matrix-react-sdk/pull/2280">https://github.com/matrix-org/matrix-react-sdk/pull/2280</a></li>
+ 	<li><a href="https://github.com/vector-im/riot-web/pull/7709">https://github.com/vector-im/riot-web/pull/7709</a></li>
+</ul>
+</blockquote>
+<h2 id="gomuksprogress">gomuks progress</h2>
+<a href="again!">tulir</a>:
+<blockquote><a href="https://github.com/tulir/gomuks">gomuks</a> development is slowly continuing. It now uses <a href="https://github.com/tulir/mautrix-go">mautrix-go</a> and I also added proper reply rendering.</blockquote>
+<h2 id="morethings">More Things</h2>
+<a href="https://matrix.org/blog/2018/11/09/this-week-in-matrix-2018-11-09/">Last week</a> we mentioned that <a href="https://matrix.to/#/@iamjsparber:matrix.org">Julian Sparber</a> has been working on <a href="https://wiki.gnome.org/Apps/Fractal">Fractal</a> UI. He has since published a blog post about the work, and also notes that Purism are beginning to sponsor Fractal development: <a href="https://blogs.gnome.org/jsparber/2018/11/10/purism-fractal-sponsorship/">https://blogs.gnome.org/jsparber/2018/11/10/purism-fractal-sponsorship/</a>
+
+Half-Shot: "The events API update for Slack was <a href="https://matrix.org/blog/2018/10/19/this-week-in-matrix-2018-10-19/">released on riot.im/develop a little while ago</a>, which let you do more than webhooks could let you do. The UI scalar/integration manager bits were left on /develop for testing but got rolled out to /app this week."
+
+If you have feedback about the <a href="https://matrix.org">matrix.org website</a> (which you may be on right now!), we have a new room to collect and organise it: <a href="https://matrix.to/#/#matrix.org-website:matrix.org">#matrix.org-website:matrix.org</a>. Thank you to <a href="https://matrix.to/#/@aaron:raim.ist">Aaron Raimist</a> for much-needed chasing (of me) on this work…
+
+This week I attended TADSummit in Lisbon to tell them about the excellent progress Matrix has been making this year. You can see more details of the conference (plus video) here: <a href="http://blog.tadsummit.com/2018/11/16/tadsummit-2018-web3/">http://blog.tadsummit.com/2018/11/16/tadsummit-2018-web3/</a>
+<h2 id="thatsalligot">That's all I got!</h2>
+If you need more, come back here next week, for all the latest from This Week in Matrix! Also, join us in <a href="https://matrix.to/#/#TWIM:matrix.org">#twim:matrix.org</a> to tell us what <em>you've</em> been doing.

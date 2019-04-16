@@ -1,0 +1,206 @@
+---
+date: '2018-10-16'
+title: Usage of the matrix-js-sdk
+categories:
+  - General
+---
+
+We have a brand new, exciting guide page offering an introduction to <a href="https://github.com/matrix-org/matrix-js-sdk">matrix-js-sdk</a>. This guide will live with the documentation at <a href="https://matrix.org/docs/guides/usage-of-the-matrix-js-sdk">https://matrix.org/docs/guides/usage-of-the-matrix-js-sdk</a>,  but you can find the text below.
+
+<hr />
+
+Matrix allows open real-time communications over the Internet using HTTP and JSON. This makes developing clients to connect to Matrix servers really easy! Because it's open, and uses simple syntax for messages, you can connect Matrix to anything that communicates over a standard HTTP interface - later projects in this series will explore ideas such as building bots, performing machine learning on message content, and connecting IoT devices such as Philips Hue lights.
+<h2 id="making-a-matrix-client">Making a Matrix Client</h2>
+Let's explore how we would make a very simple Matrix client, with only the ability to perform an initial sync, and to get member lists and the timeline for rooms of our choice.
+
+This article will explore the <a href="https://matrix.org/docs/spec/client_server/latest.html">Matrix Client-Server API</a>, making use of the <a href="https://github.com/matrix-org/matrix-js-sdk/">matrix-js-sdk</a>. Later articles may discuss making the underlying calls. Specifically we will cover:
+<ul>
+ 	<li>login</li>
+ 	<li>simple syncing</li>
+ 	<li>listening for timeline events</li>
+ 	<li>access the <code class="highlighter-rouge">MatrixInMemoryStore</code></li>
+ 	<li>sending messages to rooms</li>
+ 	<li>how to respond to specific messages, as a bot would</li>
+</ul>
+We'll use Node.js as our environment, though the <a href="https://github.com/matrix-org/matrix-js-sdk/">matrix-js-sdk</a> can also be used directly in the browser.
+
+Before we start, make sure you have Node.js and NPM installed: follow instructions at <a href="https://nodejs.org/">nodejs.org</a> for your platform. Then create a new directory to work in:
+<pre><code class="language-unix">mkdir my-first-matrix-client
+cd my-first-matrix-client
+</code></pre>
+<h2 id="lets-write-javascript">Let's write JavaScript</h2>
+Once you're ready, the first thing to do is install the <a href="https://github.com/matrix-org/matrix-js-sdk/">matrix-js-sdk</a> from NPM:
+<pre><code class="language-unix">npm install matrix-js-sdk
+</code></pre>
+We include the SDK in our source exactly as expected:
+<div class="language-javascript highlighter-rouge">
+<div class="highlight" style="background: #fff;">
+<pre class="highlight" style="background: #fff;"><code><span class="k" style="font-weight: bold;">import</span> <span class="nx">sdk</span> <span class="k" style="font-weight: bold;">from</span> <span class="s1" style="color: #d14;">'matrix-js-sdk'</span><span class="p">;</span>
+</code></pre>
+</div>
+</div>
+<h2 id="login-with-an-access-token">Login with an access token</h2>
+Instantiate a new client object and use an <code class="highlighter-rouge">access token</code> to login:
+<div class="language-javascript highlighter-rouge">
+<div class="highlight" style="background: #fff;">
+<pre class="highlight" style="background: #fff;"><code><span class="kd" style="font-weight: bold;">const</span> <span class="nx">client</span> <span class="o" style="font-weight: bold;">=</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">createClient</span><span class="p">({</span>
+    <span class="na" style="color: #008080;">baseUrl</span><span class="p">:</span> <span class="s2" style="color: #d14;">"https://matrix.org"</span><span class="p">,</span>
+    <span class="na" style="color: #008080;">accessToken</span><span class="p">:</span> <span class="s2" style="color: #d14;">"....MDAxM2lkZW50aWZpZXIga2V5CjAwMTBjaWQgZ2Vu...."</span><span class="p">,</span>
+    <span class="na" style="color: #008080;">userId</span><span class="p">:</span> <span class="s2" style="color: #d14;">"@USERID:matrix.org"</span>
+<span class="p">});</span>
+<span class="c1" style="color: #998; font-style: italic;">// note that we use the full MXID for the userId value</span>
+</code></pre>
+</div>
+</div>
+<small>(<a href="http://matrix-org.github.io/matrix-js-sdk/0.11.1/global.html#createClient">jsdoc for <code class="highlighter-rouge">createClient</code></a>)</small>
+
+If you are logged into Riot, you can find an <code class="highlighter-rouge">access token</code> for the logged-in user on the Settings page.
+
+If the homeserver you're logging in to supports logging in with a password, you can also retrieve an <code class="highlighter-rouge">access token</code> programmatically using the API. To do this, create a new <code class="highlighter-rouge">client</code> with no authentication parameters, then call <code class="highlighter-rouge">client.login()</code> with <code class="highlighter-rouge">"m.login.password"</code>:
+<div class="language-javascript highlighter-rouge">
+<div class="highlight" style="background: #fff;">
+<pre class="highlight" style="background: #fff;"><code><span class="kd" style="font-weight: bold;">const</span> <span class="nx">client</span> <span class="o" style="font-weight: bold;">=</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">createClient</span><span class="p">(</span><span class="s2" style="color: #d14;">"https://matrix.org"</span><span class="p">);</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">login</span><span class="p">(</span><span class="s2" style="color: #d14;">"m.login.password"</span><span class="p">,</span> <span class="p">{</span><span class="s2" style="color: #d14;">"user"</span><span class="p">:</span> <span class="s2" style="color: #d14;">"USERID"</span><span class="p">,</span> <span class="s2" style="color: #d14;">"password"</span><span class="p">:</span> <span class="s2" style="color: #d14;">"hunter2"</span><span class="p">}).</span><span class="nx">then</span><span class="p">((</span><span class="nx">response</span><span class="p">)</span> <span class="o" style="font-weight: bold;">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">access_token</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+</div>
+</div>
+In any case, once logged in either with a password or an access token, the client can get the current access token via:
+<div class="language-javascript highlighter-rouge">
+<div class="highlight" style="background: #fff;">
+<pre class="highlight" style="background: #fff;"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">client</span><span class="p">.</span><span class="nx">getAccessToken</span><span class="p">());</span>
+</code></pre>
+</div>
+</div>
+<strong>Note:</strong> it is essential to keep this access token safe, as it allows complete access to your Matrix account!
+<h2 id="sync-and-listen">Sync and Listen</h2>
+Next we start the client, this sets up the connection to the server and allows us to begin syncing:
+<div class="language-javascript highlighter-rouge">
+<div class="highlight" style="background: #fff;">
+<pre class="highlight" style="background: #fff;"><code><span class="nx">client</span><span class="p">.</span><span class="nx">startClient</span><span class="p">();</span>
+</code></pre>
+</div>
+</div>
+Perform a first sync, and listen for the response, to get the latest state from the homeserver:
+<div class="language-javascript highlighter-rouge">
+<div class="highlight" style="background: #fff;">
+<pre class="highlight" style="background: #fff;"><code><span class="nx">client</span><span class="p">.</span><span class="nx">once</span><span class="p">(</span><span class="s1" style="color: #d14;">'sync'</span><span class="p">,</span> <span class="kd" style="font-weight: bold;">function</span><span class="p">(</span><span class="nx">state</span><span class="p">,</span> <span class="nx">prevState</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">state</span><span class="p">);</span> <span class="c1" style="color: #998; font-style: italic;">// state will be 'PREPARED' when the client is ready to use</span>
+<span class="p">});</span>
+</code></pre>
+</div>
+</div>
+Once the sync is complete, we can add listeners for events. We could listen to ALL incoming events, but that would be a lot of traffic, and too much for our simple example. If you want to listen to all events, you can add a listen as follows:
+<div class="language-javascript highlighter-rouge">
+<div class="highlight" style="background: #fff;">
+<pre class="highlight" style="background: #fff;"><code><span class="nx">client</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2" style="color: #d14;">"event"</span><span class="p">,</span> <span class="kd" style="font-weight: bold;">function</span><span class="p">(</span><span class="nx">event</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">getType</span><span class="p">());</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">event</span><span class="p">);</span>
+<span class="p">})</span>
+</code></pre>
+</div>
+</div>
+Instead, let's just listen to events happening on the timeline of rooms for which our user is a member:
+<div class="language-javascript highlighter-rouge">
+<div class="highlight" style="background: #fff;">
+<pre class="highlight" style="background: #fff;"><code><span class="nx">client</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2" style="color: #d14;">"Room.timeline"</span><span class="p">,</span> <span class="kd" style="font-weight: bold;">function</span><span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="nx">room</span><span class="p">,</span> <span class="nx">toStartOfTimeline</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">event</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+</div>
+</div>
+<h2 id="access-the-store">Access the Store</h2>
+When we created a new client with <code class="highlighter-rouge">sdk.createClient()</code>, an instance of the default store, <code class="highlighter-rouge">MatrixInMemoryStore</code> was created and enabled. When we sync, or instruct otherwise our client to fetch data, the data is automatically added to the store.
+
+To access the store, we use accessor methods. For example, to get a list of rooms in which our user is joined:
+<div class="language-javascript highlighter-rouge">
+<div class="highlight" style="background: #fff;">
+<pre class="highlight" style="background: #fff;"><code><span class="c1" style="color: #998; font-style: italic;">// client.client.getRooms() returns an array of room objects</span>
+<span class="kd" style="font-weight: bold;">var</span> <span class="nx">rooms</span> <span class="o" style="font-weight: bold;">=</span> <span class="nx">client</span><span class="p">.</span><span class="nx">getRooms</span><span class="p">();</span>
+<span class="nx">rooms</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">room</span> <span class="o" style="font-weight: bold;">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">room</span><span class="p">.</span><span class="nx">roomId</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+</div>
+</div>
+<small>(<a href="http://matrix-org.github.io/matrix-js-sdk/0.11.1/module-client-MatrixClient.html#getRooms">jsdoc for <code class="highlighter-rouge">client.getRooms</code></a>)</small>
+
+More usefully, we could get a list of members for each of these rooms:
+<div class="language-javascript highlighter-rouge">
+<div class="highlight" style="background: #fff;">
+<pre class="highlight" style="background: #fff;"><code><span class="kd" style="font-weight: bold;">var</span> <span class="nx">rooms</span> <span class="o" style="font-weight: bold;">=</span> <span class="nx">client</span><span class="p">.</span><span class="nx">getRooms</span><span class="p">();</span>
+<span class="nx">rooms</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">room</span> <span class="o" style="font-weight: bold;">=&gt;</span> <span class="p">{</span>
+    <span class="kd" style="font-weight: bold;">var</span> <span class="nx">members</span> <span class="o" style="font-weight: bold;">=</span> <span class="nx">room</span><span class="p">.</span><span class="nx">getJoinedMembers</span><span class="p">();</span>
+    <span class="nx">members</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">member</span> <span class="o" style="font-weight: bold;">=&gt;</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">member</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+</code></pre>
+</div>
+</div>
+For each room, we can inspect the timeline in the store:
+<div class="language-javascript highlighter-rouge">
+<div class="highlight" style="background: #fff;">
+<pre class="highlight" style="background: #fff;"><code><span class="kd" style="font-weight: bold;">var</span> <span class="nx">rooms</span> <span class="o" style="font-weight: bold;">=</span> <span class="nx">client</span><span class="p">.</span><span class="nx">getRooms</span><span class="p">();</span>
+<span class="nx">rooms</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">room</span> <span class="o" style="font-weight: bold;">=&gt;</span> <span class="p">{</span>
+    <span class="nx">room</span><span class="p">.</span><span class="nx">timeline</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">t</span> <span class="o" style="font-weight: bold;">=&gt;</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">t</span><span class="p">.</span><span class="nx">event</span><span class="p">.</span><span class="nx">content</span><span class="p">));</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+</code></pre>
+</div>
+</div>
+<h2 id="send-messages-to-rooms">Send messages to rooms</h2>
+To send a message, we create a content object, and specify a room to send to. In this case, I've taken the room ID of <code class="highlighter-rouge">#test:matrix.org</code>, and used it as an example:
+<div class="language-javascript highlighter-rouge">
+<div class="highlight" style="background: #fff;">
+<pre class="highlight" style="background: #fff;"><code><span class="kd" style="font-weight: bold;">var</span> <span class="nx">testRoomId</span> <span class="o" style="font-weight: bold;">=</span> <span class="s2" style="color: #d14;">"!jhpZBTbckszblMYjMK:matrix.org"</span><span class="p">;</span>
+ 
+<span class="kd" style="font-weight: bold;">var</span> <span class="nx">content</span> <span class="o" style="font-weight: bold;">=</span> <span class="p">{</span>
+    <span class="s2" style="color: #d14;">"body"</span><span class="p">:</span> <span class="s2" style="color: #d14;">"Hello World"</span><span class="p">,</span>
+    <span class="s2" style="color: #d14;">"msgtype"</span><span class="p">:</span> <span class="s2" style="color: #d14;">"m.text"</span>
+<span class="p">};</span>
+ 
+<span class="nx">client</span><span class="p">.</span><span class="nx">sendEvent</span><span class="p">(</span><span class="nx">testRoomId</span><span class="p">,</span> <span class="s2" style="color: #d14;">"m.room.message"</span><span class="p">,</span> <span class="nx">content</span><span class="p">,</span> <span class="s2" style="color: #d14;">""</span><span class="p">).</span><span class="nx">then</span><span class="p">((</span><span class="nx">res</span><span class="p">)</span> <span class="o" style="font-weight: bold;">=&gt;</span> <span class="p">{</span>
+   <span class="c1" style="color: #998; font-style: italic;">// message sent successfully</span>
+<span class="p">}).</span><span class="k" style="font-weight: bold;">catch</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span> <span class="o" style="font-weight: bold;">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+</div>
+<small>(<a href="http://matrix-org.github.io/matrix-js-sdk/0.11.1/module-client-MatrixClient.html#sendEvent">jsdoc for <code class="highlighter-rouge">client.sendEvent</code></a>)</small>
+
+Knowing this, we can put together message listening and message sending, to build a bot which just echos back any message starting with a "!":
+<div class="language-javascript highlighter-rouge">
+<div class="highlight" style="background: #fff;">
+<pre class="highlight" style="background: #fff;"><code><span class="kd" style="font-weight: bold;">var</span> <span class="nx">testRoomId</span> <span class="o" style="font-weight: bold;">=</span> <span class="s2" style="color: #d14;">"!jhpZBTbckszblMYjMK:matrix.org"</span><span class="p">;</span>
+ 
+<span class="nx">client</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2" style="color: #d14;">"Room.timeline"</span><span class="p">,</span> <span class="kd" style="font-weight: bold;">function</span><span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="nx">room</span><span class="p">,</span> <span class="nx">toStartOfTimeline</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1" style="color: #998; font-style: italic;">// we know we only want to respond to messages</span>
+    <span class="k" style="font-weight: bold;">if</span> <span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">getType</span><span class="p">()</span> <span class="o" style="font-weight: bold;">!==</span> <span class="s2" style="color: #d14;">"m.room.message"</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k" style="font-weight: bold;">return</span><span class="p">;</span>
+    <span class="p">}</span>
+ 
+    <span class="c1" style="color: #998; font-style: italic;">// we are only intested in messages from the test room, which start with "!"</span>
+    <span class="k" style="font-weight: bold;">if</span> <span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">getRoomId</span><span class="p">()</span> <span class="o" style="font-weight: bold;">===</span> <span class="nx">testRoomId</span> <span class="o" style="font-weight: bold;">&amp;&amp;</span> <span class="nx">event</span><span class="p">.</span><span class="nx">getContent</span><span class="p">().</span><span class="nx">body</span><span class="p">[</span><span class="mi" style="color: #099;">0</span><span class="p">]</span> <span class="o" style="font-weight: bold;">===</span> <span class="s1" style="color: #d14;">'!'</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">sendNotice</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">event</span><span class="p">.</span><span class="nx">content</span><span class="p">.</span><span class="nx">body</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+ 
+<span class="kd" style="font-weight: bold;">function</span> <span class="nx">sendNotice</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd" style="font-weight: bold;">var</span> <span class="nx">content</span> <span class="o" style="font-weight: bold;">=</span> <span class="p">{</span>
+        <span class="s2" style="color: #d14;">"body"</span><span class="p">:</span> <span class="nx">body</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="mi" style="color: #099;">1</span><span class="p">),</span>
+        <span class="s2" style="color: #d14;">"msgtype"</span><span class="p">:</span> <span class="s2" style="color: #d14;">"m.notice"</span>
+    <span class="p">};</span>
+    <span class="nx">client</span><span class="p">.</span><span class="nx">sendEvent</span><span class="p">(</span><span class="nx">testRoomId</span><span class="p">,</span> <span class="s2" style="color: #d14;">"m.room.message"</span><span class="p">,</span> <span class="nx">content</span><span class="p">,</span> <span class="s2" style="color: #d14;">""</span><span class="p">,</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="o" style="font-weight: bold;">=&gt;</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+</div>
+Take a look at the <code class="highlighter-rouge">msgtype</code> in the object above. In the previous example, we used "m.text" for this field, but now we're using "m.notice". Bots will often use "m.notice" to differentiate their messages. This allows the client to render notices differently, for example Riot, the most popular client, renders notices with a more pale text colour.
+<h2 id="further">Further</h2>
+There is much, much more to Matrix, the Client-Server API and the <a href="https://github.com/matrix-org/matrix-js-sdk/">matrix-js-sdk</a>, but this guide should give some understanding of simple usage. In subsequent guides we'll cover more detail and also explore projects you can build on top, such as IoT controls and chatbot interfaces. For now you can take a look at <a href="https://github.com/matrix-org/matrix-js-sdk/tree/master/examples">other examples in the matrix-js-sdk itself</a>, and also the <a href="https://matrix.org/docs/spec/client_server/latest.html">Matrix Client-Server API</a> which it implements.

@@ -1,0 +1,49 @@
+---
+date: '2016-07-08'
+title: Critical security vulnerability in Synapse 0.12 to 0.16.1 inclusive
+categories:
+  - General
+---
+
+We've been made aware of a critical security issue in Synapse present in versions 0.12 through 0.16.1 inclusive which can allow users' accounts to be accessed by other unauthorized users on the same server. The issue was reported at 14:40 UTC on 2016-07-07 by Patrik Oldsberg at Ericsson (many thanks Patrik for discovering the issue and swiftly informing us). The source of the issue was identified, and a patch was created and distributed to package maintainers at roughly 16:30 UTC the same day.
+
+We are not aware of any exploit in the wild, but it is critical for all synapse homeservers later than v0.12 to be upgraded immediately.
+
+The github repository, as well as major 3rd party packages, have been updated with patched versions.
+
+If an update is not available for your system you should manually apply the security patch that is included below. (This can be done by running <code>patch -p1 sec.patch</code> in the synapse source directory.)
+
+The git commit SHA of the fix is: 067596d341a661e008195f7f3a6887ade7cafa32. This is included in release v0.16.1-r1.
+
+Whilst Synapse (and Matrix) is still in beta, we nonetheless take such security issues seriously. In the coming days we will be reviewing how this vulnerability was introduced, and any steps that could have been taken to prevent the issue. We will also be auditing the remaining access control system to ensure there are no other existing issues. The full findings will be published when completed.
+
+We apologise for the inconvenience of this emergency upgrade.
+
+Thank you for your continued support,
+The Matrix Team
+
+&nbsp;
+
+<hr />
+
+&nbsp;
+
+Various upgrade instructions:
+<ul>
+ 	<li>If you installed via git: &nbsp; <code>git pull</code>.</li>
+ 	<li>If you installed via pip: &nbsp; <code>pip install https://github.com/matrix-org/synapse/tarball/master</code></li>
+ 	<li>If you installed via debian package: &nbsp; <code>apt-get update; apt-get install matrix-synapse</code></li>
+</ul>
+After upgrade you will need to restart synapse.
+
+Links to 3rd party packages:
+Arch: <a href="https://aur.archlinux.org/packages/matrix-synapse">https://aur.archlinux.org/packages/matrix-synapse</a>
+Fedora: <a href="https://obs.infoserver.lv/project/show/matrix-synapse">https://obs.infoserver.lv/project/show/matrix-synapse</a>
+
+&nbsp;
+
+The patch against v0.16.x is: <a href="https://matrix.org/blog/wp-content/uploads/2016/07/sec-0.16.patch_.txt">sec-0.16.patch</a>, <a href="https://matrix.org/blog/wp-content/uploads/2016/07/sec-0.16.patch_.signed.txt">sec-0.16.patch.signed</a>
+
+The patch against v0.14.x is: <a href="https://matrix.org/blog/wp-content/uploads/2016/07/sec-0.14.patch_.txt">sec-0.14.patch</a>, <a href="https://matrix.org/blog/wp-content/uploads/2016/07/sec-0.14.patch_.signed.txt">sec-0.14.patch.signed</a>
+
+Signed announcement: <a href="https://matrix.org/blog/wp-content/uploads/2016/07/fulldisclosure.signed.txt">fulldisclosure.signed</a>

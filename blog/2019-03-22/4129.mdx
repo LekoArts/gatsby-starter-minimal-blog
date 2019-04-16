@@ -1,0 +1,124 @@
+---
+date: '2019-03-22'
+title: This Week in Matrix 2019-03-22
+categories:
+  - General
+---
+
+<h2 id="matrixlivewithkitsune">Matrix Live with Kitsune</h2>
+I chatted with <a href="https://matrix.to/#/@kitsune:matrix.org">Kitsune</a>, maintainer of <a href="https://github.com/QMatrixClient/libqmatrixclient">libQMatrixClient</a>, <a href="https://github.com/QMatrixClient/Quaternion">Quaternion</a> and Spec Core Team member. We talked about the history and future of these projects, platform preferences, the importance of decentralisation and more.
+
+<iframe src="https://www.youtube.com/embed/h9uenfVToaw" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+<h2 id="synapseandtheroadto10">Synapse and the road to 1.0</h2>
+Neil, Synapse-dev wrangler #1:
+<blockquote>Huge thanks to everyone who has helped increase the number of ‘1.0 ready' synapse installs. If you don't know what this means, <a href="https://matrix.org/blog/2019/03/15/matrix-1-0-https-arewereadyyet-com/">see our blog</a>. <a href="https://arewereadyyet.com">https://arewereadyyet.com</a> reports &gt; 60% adoption on a per server basis, and high 90s on a per user basis. We are now really close to being able to ship a 1.0 release candidate and start the 2 week countdown before releasing 1.0 proper.
+
+This week we have focussed on performance, richvdh has been working on batching of outgoing read receipts and hawkowl shipped a much more performant implementation of user search. Erik has been putting the <a href="https://github.com/matrix-org/rust-synapse-compress-state">state compressor</a> through its paces, he saw one room compress down to 1% of its original size. Andrew has been focusing on ensuring spec compliance on various Synapse endpoints and is currently looking at some bugs in the federation tester.</blockquote>
+<h2 id="nixossynapsesetup">NixOS-Synapse setup</h2>
+<a href="https://matrix.to/#/@me:jonas-schuermann.name">Jonas Schürmann</a> shared his config for Synapse on NixOS:
+<blockquote>I open sourced my NixOS-Synapse setup: <a href="https://gitlab.com/MazeChaZer/nixops-servers/tree/master/matrix">https://gitlab.com/MazeChaZer/nixops-servers/tree/master/matrix</a></blockquote>
+<a href="https://matrix.to/#/#NixOS:matrix.org">#NixOS:matrix.org</a> for more.
+<h2 id="pattlelotsofprogressanddartsdkplanned">Pattle, lots of progress and Dart SDK planned</h2>
+Lots of news from <a href="https://git.pattle.im/pattle/android">Pattle</a>, the project aiming to create clients for multiple mobile platforms. All quotes below from <a href="https://matrix.to/#/@wilko:matrix.org">Wilko</a>.
+<blockquote>Pattle for Android now has an F-droid repository: <a class="linkified" href="https://fdroid.pattle.im/fdroid/repo?fingerprint=E91F63CA6AE04F8E7EA53E52242EAF8779559209B8A342F152F9E7265E3EA729" target="_blank" rel="noopener">https://fdroid.pattle.im/</a>
+
+It's the most up to date version straight from the pipeline, so not necessarily stable.</blockquote>
+<blockquote>You can now scroll up and load history</blockquote>
+<a href="https://matrix.org/blog/wp-content/uploads/2019/03/pattle-2019-03-22-1.png"><img class="alignnone size-full wp-image-4130" src="https://matrix.org/blog/wp-content/uploads/2019/03/pattle-2019-03-22-1.png" alt="" width="363" height="603" /></a>
+
+As part of the project, <a href="https://matrix.to/#/@wilko:matrix.org">Wilko</a> also announced the intention to create a Dart SDK:
+<blockquote>I'm currently working on a <a href="https://git.pattle.im/pattle/library/matrix-dart-sdk">Matrix SDK for Dart</a>, which will be used for the <a href="https://git.pattle.im/pattle/app">Pattle rewrite in Flutter</a>.
+The reason for this is outlined <a href="https://git.pattle.im/pattle/android#future">here</a>. To summarize: My goal for Pattle is to release for not only Android but also iOS and web, with a single code base. Other reasons include that Android native development is just bad, and the fact that I'm not too happy with the official Matrix Android SDK design and documentation.
+I will maintain and also add some features to the current version of Pattle, to try things out. The Flutter version will replace the native one once the features are in sync.</blockquote>
+<h2 id="riotios">Riot iOS</h2>
+<blockquote>We've released a hotfix release 0.8.4 on App Store that fixes following issues:
+<ul>
+ 	<li>Unable to open a file attachment of a room message.</li>
+ 	<li>Unable to share a file with whitespace in filename.</li>
+</ul>
+We are working on iOS 12 notifications features.</blockquote>
+<h2 id="riotandroid">Riot Android</h2>
+<blockquote>
+<ul>
+ 	<li>Improving new notification system</li>
+ 	<li>Implementing SAS verification</li>
+</ul>
+</blockquote>
+<h2 id="riotxandroid">RiotX (Android)</h2>
+<blockquote>
+<ul>
+ 	<li>Setup CI</li>
+ 	<li>Finishing Phase 0</li>
+</ul>
+</blockquote>
+<h2 id="dimensionstickerpacks">Dimension sticker packs</h2>
+<a href="https://github.com/turt2live">TravisR</a> has introduced sticker packs for <a href="https://dimension.t2bot.io/">Dimension</a>:
+<blockquote>Dimension now has beta support for custom sticker packs.
+
+To create a sticker pack:
+<ol>
+ 	<li>Start a conversation with @stickers:t2bot.io</li>
+ 	<li>Say <code>!stickers newpack</code> and follow the prompts.</li>
+ 	<li>Share the URL with your friends.</li>
+</ol>
+To add the sticker pack to your sticker picker:
+<ol>
+ 	<li>Make sure you're using Dimension as your integration manager.
+<ul>
+ 	<li>Not sure if you are? Click the 4 squares in the top right of the room in Riot - if the dialog is titled "Dimension", you're all set :)</li>
+ 	<li>If you aren't, check out <a href="https://dimension.t2bot.io">https://dimension.t2bot.io</a></li>
+</ul>
+</li>
+ 	<li>Click on the smiley face to the right of where you type messages then the Edit button in the top right.</li>
+ 	<li>Paste the URL of the sticker pack into the box and click "Add Stickerpack".</li>
+ 	<li>Start using your new stickers.</li>
+</ol>
+These instructions are also available at <a href="https://github.com/turt2live/matrix-dimension/blob/master/docs/custom_stickerpacks.md">https://github.com/turt2live/matrix-dimension/blob/master/docs/custom_stickerpacks.md</a> as is the admin/operator guide for running your own sticker bot (you're not stuck with using t2bot.io unless you want to be).
+
+Custom sticker packs are still beta while the proposals to share this with the wider Matrix ecosystem are still works in progress. This serves as a proof of concept to see how crazy of an idea it is to have stickerpacks-as-rooms (yes, they're just plain Matrix rooms under the hood) and what needs ironing out before moving ahead with the MSC.</blockquote>
+<h2 id="matrixnotificationprofilemanager">matrix-notification-profile-manager</h2>
+<a href="https://matrix.to/#/@brendan:abolivier.bzh">Brendan</a> has created a notification profile manager:
+<blockquote>Over the past few weeks, I grew a bit fed up of always having to turn on and off every notification rule each time I'm having a slight change in what I'm working on or depending on what mood I was in (e.g. want to focus only on work-related stuff and nothing else, don't want to hear about work at all, somewhere in the middle, etc.), so I built a <a href="https://github.com/babolivier/matrix-notification-profile-manager">notification profile manager for Matrix</a>. It's available both as a command line interface or a Go package in case people want to build on top of it.
+
+It allows one to take a snapshot of their current notifications settings and save that as a profile, so that this profile can be applied later. It also allows one to delete a profile or list the existing profiles (more features to be added as time goes by). In order to make the whole thing interoperable with other projects building on top of the Go package, it also uses the user's account data on the user's Matrix homeserver to store profiles.</blockquote>
+<h2 id="neov4iris">neo v4: iris</h2>
+<a href="https://matrix.to/#/@f0x:lain.haus">F0x</a> has recommenced development on the Matrix client Neo:
+<blockquote>After discussion following <a href="https://cyberia.social/@foks/101785513826000032">https://cyberia.social/@foks/101785513826000032</a> I've resumed development on Neo. Suggestions are very much welcomed on the pad and mastodon thread
+I'm implementing components one by one now, with just mocked events. Actual Matrix integration will come when the gui components are ready.
+
+Neo is now partly integrated with <code>matrix-js-sdk</code> because I grew tired of having to write my own mock events. There's a basic authentication flow, with 0 error handling, and parsing of <code>m.text</code> and <code>m.image</code> events</blockquote>
+<a href="https://matrix.org/blog/wp-content/uploads/2019/03/iris-1.png"><img class="alignnone size-large wp-image-4131" src="https://matrix.org/blog/wp-content/uploads/2019/03/iris-1-1024x576.png" alt="" width="1024" height="576" /></a>
+
+Check out <a href="https://git.lain.haus/f0x/iris">https://git.lain.haus/f0x/iris</a> for the source code and see a working version at <a href="https://neo.lain.haus/neo">https://neo.lain.haus/neo</a>
+
+f0x also said:
+<blockquote>it would be much appreciated to get some feedback on how I implemented matrix-js-sdk, had to do some weird stuff to make React update</blockquote>
+I'll take a look but would love anyone with more experience of the SDK to get in touch with the f-man.
+<h2 id="solarizsedwallpaper">solari[z|s]ed wallpaper</h2>
+<a href="https://matrix.to/#/@ma1uta:matrix.org">ma1uta</a> shared this awesome Matrix wallpaper, created by <a class="linkified" href="https://matrix.to/#/@kolonsky:092918.xyz" target="_blank" rel="noopener">@kolonsky:092918.xyz</a> via <a href="https://linux.pictures/projects/solarized-dark-wallpaper">https://linux.pictures/projects/solarized-dark-wallpaper</a>
+
+<a href="https://matrix.org/blog/wp-content/uploads/2019/03/matrix-solarized.png"><img class="alignnone size-large wp-image-4132" src="https://matrix.org/blog/wp-content/uploads/2019/03/matrix-solarized-1024x576.png" alt="" width="1024" height="576" /></a>
+<h2 id="mautrixtelegram050released">mautrix-telegram 0.5.0 released</h2>
+<a href="https://matrix.to/#/@tulir:maunium.net">tulir</a> is up again with his Telegram bridge:
+<blockquote><a href="https://github.com/tulir/mautrix-telegram">mautrix-telegram</a> 0.5.0 was released after I finally fixed the bug that was causing the bridge database to lock up. It turned out to be a single line of ORM usage that I had missed while converting everything to use SQLAlchemy Core.
+The full release notes are at <a href="https://github.com/tulir/mautrix-telegram/releases/tag/v0.5.0.">https://github.com/tulir/mautrix-telegram/releases/tag/v0.5.0.</a>
+I also released <a href="https://github.com/tulir/mautrix-telegram/releases/tag/v0.5.1">v0.5.1</a> to fix a bug that made the DBMS migration script not work and Python 3.5 compatibility. I wouldn't recommend using Python 3.5 though, I'm going to drop support for it some time after Debian 10 is released</blockquote>
+<h2 id="shevskimentionsmatrixonbbcradio4">Shevski mentions Matrix on BBC Radio 4</h2>
+Shevski from the <a href="https://redecentralize.org/">#redecentralize</a> organisation was interviewed on Radio 4, and mentioned Matrix:
+<blockquote class="twitter-tweet" data-lang="en">
+<p dir="ltr" lang="en">Yesterday on <a href="https://twitter.com/BBCRadio4?ref_src=twsrc%5Etfw">@BBCRadio4</a> I talked about the problems of centralisation, how to regulate big tech, personal data stores and <a href="https://twitter.com/redecentralize?ref_src=twsrc%5Etfw">@redecentralize</a>! You can listen online here: <a href="https://t.co/xGHK812lYa">https://t.co/xGHK812lYa</a> with <a href="https://twitter.com/hashtag/Web30?src=hash&amp;ref_src=twsrc%5Etfw">#Web30</a> section starting 1:50 mins in ? (I'm from 7mins ish) <a href="https://twitter.com/hashtag/redecentralize?src=hash&amp;ref_src=twsrc%5Etfw">#redecentralize</a> <a href="https://t.co/m0dazBH7Dk">pic.twitter.com/m0dazBH7Dk</a></p>
+— Irina (Ira) Bolychevsky (@shevski) <a href="https://twitter.com/shevski/status/1109056592396382208?ref_src=twsrc%5Etfw">March 22, 2019</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<h2 id="extras">Extras</h2>
+<a href="https://github.com/DanilaFe/Scylla">Scylla</a> has been receiving regular updates, no release to report but the project keeps going. <a href="https://matrix.to/#/#scylla:riot.danilafe.com">#scylla:riot.danilafe.com</a>
+
+This React Native client is not announced so <a href="https://github.com/limvot/bubbles">don't look at it</a>
+
+My pal Doug shared his frustration with the broader state of the chat ecosystem after <a href="https://www.theatlantic.com/technology/archive/2019/03/hottest-chat-app-teens-google-docs/584857/">reading that teens now use Google Docs for their chat needs</a> (and not the chat feature, the document itself!)
+<blockquote><span class="mx_MTextBody mx_EventTile_content"><span class="mx_EventTile_body markdown-body" dir="auto">I love that you've got Amazon with their Alexa messaging, Apple in their own bubble with iMessage, Facebook doing chat 3-ways and Google trying 50 ways to do chat. And that's before you even get into things like Slack, Discord, Telegram, Riot, Line, WeChat etc etc. And then the current hot way to chat is in a document...</span></span>
+I mean, <strong>how much money is being invested in trying to create the perfect chat solution?</strong></blockquote>
+For the record, we were chatting over Matrix…
+<h2 id="thatsalliknow">That's all I know</h2>
+That's the news, if you have something to say, or something to add, then you should go to <a href="https://matrix.to/#/#TWIM:matrix.org">#twim:matrix.org</a> and share it. If you have other projects to discuss, come share them. If you'd prefer to come quietly, my door is always open: <a href="https://matrix.to/#/@benpa:matrix.org">@benpa:matrix.org</a>.
+
+See you here next week, and on Matrix!

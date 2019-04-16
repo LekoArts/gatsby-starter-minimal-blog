@@ -1,0 +1,115 @@
+---
+date: '2018-10-27'
+title: This Week in Matrix 2018-10-26
+categories:
+  - General
+---
+
+We have a LOT of updates this week, so let's dive straight in!
+<h2 id="matrixdockeransibledeploy">matrix-docker-ansible-deploy</h2>
+We've covered the growth of this project several times in TWIM, but I wanted to give a little more attention to the work <a href="https://matrix.to/#/@slavi:devture.com">Slavi</a> has been doing with <a href="https://github.com/spantaleev/matrix-docker-ansible-deploy">matrix-docker-ansible-deploy</a>. Synapse is a large Python project with many configurable options, and many optional components, so installing it has sometimes been a challenge. I have seen many reports that using Anisble and Docker, and in particular using these playbooks from <a href="https://matrix.to/#/@slavi:devture.com">Slavi</a>, is a more sane way to install Synapse. The tools get a lot of attention and updates. This week, Slavi reports:
+<blockquote><a href="https://github.com/spantaleev/matrix-docker-ansible-deploy">matrix-docker-ansible-deploy</a> now has a <a href="https://github.com/spantaleev/matrix-docker-ansible-deploy/blob/master/docs/maintenance-checking-services.md">self-check command</a> that can help diagnose various configuration problems with the setup (DNS records being misconfigured, firewall ports not being open, etc).</blockquote>
+For support and more info, come join the associated room: <a href="https://matrix.to/#/#matrix-docker-ansible-deploy:devture.com">#matrix-docker-ansible-deploy:devture.com</a>
+
+<em>Late breaking news</em> from <a href="https://matrix.to/#/@slavi:devture.com">Slavi</a>:
+<blockquote>One more <a href="https://github.com/spantaleev/matrix-docker-ansible-deploy">matrix-docker-ansible-deploy</a> update: the playbook can now <a href="https://github.com/spantaleev/matrix-docker-ansible-deploy/blob/master/docs/configuring-playbook-bridge-mautrix-whatsapp.md">set up Whatsapp-bridging</a> via <a href="https://github.com/tulir/mautrix-whatsapp">mautrix-whatsapp</a>. Thanks to <a href="https://github.com/izissise">@izissise</a>!</blockquote>
+<h2 id="dimension">Dimension</h2>
+Dimension is an integration manager for Matrix. It's written and maintained by <a href="https://github.com/turt2live">TravisR</a>, and allows you to an a pre-defined selection of widgets, bots and bridges to improve your self-hosted Matrix experience. Check out: <a href="https://dimension.t2bot.io/">https://dimension.t2bot.io/</a>. This week, TravisR reports:
+<blockquote>Dimension has received quite a lot of updates over the last week. Here's what's hot off the press:
+<ul>
+ 	<li>4 new bridges can be self-hosted and managed in Dimension: Telegram, Webhooks, Slack, and Gitter.</li>
+ 	<li>3 new widgets are available: Grafana, TradingView, and Spotify.</li>
+ 	<li>Add your own custom bots for people to add to their rooms.</li>
+ 	<li>A dark theme has been added and is automatically applied if you use the dark theme in Riot.</li>
+ 	<li>The overall UI has been updated to be slightly more modern and less bright orange.</li>
+ 	<li>Various bug fixes and improvements (is it even possible to have a changelog without this?)</li>
+</ul>
+As per usual, if you find any bugs or have ideas for things to add to Dimension feel free to come by <a href="https://matrix.to/#/#dimension:t2bot.io">#dimension:t2bot.io</a></blockquote>
+<h2 id="mautrixtelegram">mautrix-telegram</h2>
+<a href="https://matrix.to/#/@tulir:maunium.net">tulir</a> has been working on <a href="https://github.com/tulir/mautrix-telegram">mautrix-telegram</a>, and has made some massive performance improvements:
+<blockquote><a href="https://github.com/tulir/mautrix-telegram">mautrix-telegram</a> now uses the non-ORM part of SQLAlchemy for database tables that are used often. That change made the CPU usage on the t2bot.io instance drop from ~100% to ~7%</blockquote>
+We have graphs to illustrate the improvements:
+
+<a href="https://matrix.org/blog/wp-content/uploads/2018/10/mautrix-telegram1.png"><img class="alignnone size-full wp-image-3683" src="https://matrix.org/blog/wp-content/uploads/2018/10/mautrix-telegram1.png" alt="" width="471" height="174" /></a>
+
+<a href="https://matrix.org/blog/wp-content/uploads/2018/10/mautrix-telegram2.png"><img class="alignnone size-full wp-image-3682" src="https://matrix.org/blog/wp-content/uploads/2018/10/mautrix-telegram2.png" alt="" width="474" height="174" /></a>
+
+<a href="https://github.com/turt2live">TravisR</a>, who hosts the bridge on <a href="https://t2bot.io/telegram">t2bot.io</a>, reports that the bridge is now effectively instantaneous!
+<blockquote>The bottleneck has returned to being synapse instead of the bridge</blockquote>
+<h2 id="discordbridge030rc1">Discord Bridge 0.3.0-rc1</h2>
+A tonne of work has happened on the <a href="https://github.com/Half-Shot/matrix-appservice-discord">Discord Bridge</a>, and it has all been brought together in <a href="https://github.com/Half-Shot/matrix-appservice-discord/releases/tag/0.3.0-rc1">0.3.0-rc1</a>.
+
+From the release notes, this is just a subset of the features:
+<ul>
+ 	<li><a href="https://github.com/Half-Shot/matrix-appservice-discord/pull/251">#251</a> Support for Postgresql and a newer SQLite3 backend!</li>
+ 	<li><a href="https://github.com/Half-Shot/matrix-appservice-discord/pull/182">#182</a> Replace npmlog with winston, for logging to files and better logging overall.</li>
+ 	<li><a href="https://github.com/Half-Shot/matrix-appservice-discord/pull/221">#221</a> Add support for <code>m.sticker</code>.</li>
+ 	<li><a href="https://github.com/Half-Shot/matrix-appservice-discord/pull/210">#210</a> Discord-side moderation of matrix users.</li>
+ 	<li><a href="https://github.com/Half-Shot/matrix-appservice-discord/pull/259">#259</a> <a href="https://user-images.githubusercontent.com/2072976/47538909-984adc80-d8c5-11e8-9c82-4fef2c57ffec.png">Show Matrix replies as Discord embeds</a>.</li>
+ 	<li><a href="https://github.com/Half-Shot/matrix-appservice-discord/pull/164">#164</a> Bot will now mention name, topic and membership changes on Discord.</li>
+ 	<li><a href="https://github.com/Half-Shot/matrix-appservice-discord/pull/175">#175</a> Add special discord keys onto m.room.member for ghosts</li>
+</ul>
+Go check out the full release notes if you're interested in the Bridge as there are many more changes. <a href="https://matrix.to/#/@Half-Shot:half-shot.uk">Half-Shot</a> also noted:
+<blockquote>Shoutout to our new member of the team, <a href="https://github.com/Sorunome">@Sorunome</a> who did a lot of the review work behind the scenes for this release. Also, thank you to everyone who submitted a PR or an issue!</blockquote>
+<h2 id="slackbridge020released">Slack Bridge 0.2.0 released!</h2>
+We covered progress on the Slack Bridge previously, but <a href="https://matrix.to/#/@Half-Shot:half-shot.uk">Half-Shot</a> has now declared it ready for 0.2.0 final! The bridge is reportedly running and very stable - go try it out now!
+
+<a href="https://github.com/matrix-org/matrix-appservice-slack/releases/tag/0.2.0">https://github.com/matrix-org/matrix-appservice-slack/releases/tag/0.2.0</a>
+<h2 id="spectral">Spectral</h2>
+We just missed out on this update from <a href="https://gitlab.com/b0/spectral">Spectral</a> last week. <a href="https://matrix.to/#/@bhat:encom.eu.org">Black Hat</a> says:
+<blockquote>Spectral now provides an AppImage along with Flatpak build. Also, thanks to the notification codes from nheko, Spectral can show icons in notifications, and now enters corresponding room when clicking on the notification. It also gains several UI/UX improvements.
+P.s. I have resubmitted Spectral to Flathub.</blockquote>
+<h2 id="faqbot">FAQBot</h2>
+<a href="https://github.com/Matrixcoffee">Coffee</a> featuring two weeks in a row in TWIM:
+<blockquote><a href="https://gitlab.com/Matrixcoffee/FAQBot">FAQBot</a> has been set free at last! Find its code at https://gitlab.com/Matrixcoffee/FAQBot, and its room at <a href="https://matrix.to/#/#faqbot:matrix.org">#faqbot:matrix.org</a>.</blockquote>
+FAQBot sits in various public rooms and answers common Matrix questions. Very useful for demonstrating the product to newcomers!
+<blockquote>Also, if anyone wants to help write answers for FAQBot, <a href="https://gitlab.com/Matrixcoffee/matrix-knowledge-base">https://gitlab.com/Matrixcoffee/matrix-knowledge-base</a> is the place.</blockquote>
+Strongly encourage people to go take a look at the knowledge base and see what can be improved.
+<h2 id="newcommunities">New communities</h2>
+<a href="https://matrix.to/#/@swedneck:swedneck.xyz">swedneck</a> has created a new gaming community on Matrix:
+<blockquote>we just bridged the linux-gaming community from discord to matrix, with a matrix community and individually bridged rooms/channels and all
+main room is <a href="https://riot.im/develop/#/room/#general_linuxgaming:matrix.org">#general_linuxgaming:matrix.org</a>
+community is <a href="https://matrix.to/#/+linux-gaming:matrix.org">+linux-gaming:matrix.org</a>
+i've set up an instance of matrix-appservice-discord, which is bridging some select rooms from the linux-gaming discord server to <a href="https://matrix.to/#/+linux-gaming:matrix.org">+linux-gaming:matrix.org</a>
+
+The Linux Gaming community has gotten a proper matrix community (+linux-gaming:matrix.org) with a fair few rooms in it, all of which are bridged to a discord channel via my matrix-appservice-discord instance.
+
+<a href="https://matrix.to/#/#prismo:matrix.org">#prismo:matrix.org</a> and <a href="https://matrix.to/#/#anfora:matrix.org">#anfora:matrix.org</a> have also been bridged to discord.</blockquote>
+<h2 id="matrixforansiblenotifications">Matrix for Ansible notifications</h2>
+If you are using ansible, <a href="https://matrix.to/#/@jan.christian:gruenhage.xyz">jcgruenhage</a> has a useful addition that will allow you to get notifications from matrix:
+<blockquote>After over a month of waiting, the matrix notification module has been merged on to ansible devel which will be released as ansible 2.8 early next year. Src: <a href="https://github.com/ansible/ansible/pull/45823">https://github.com/ansible/ansible/pull/45823</a></blockquote>
+<h2 id="karmapluginformaubot">Karma plugin for maubot</h2>
+<a href="https://matrix.to/#/@tulir:maunium.net">tulir</a> is wasting no time taking advantage of <a href="https://github.com/maubot/maubot">maubot</a> Python rewrite:
+<blockquote>I made a <a href="https://github.com/maubot/karma">karma plugin</a> for <a href="https://github.com/maubot/maubot">maubot</a>. It's a bit like the karma plugin ivar has, but you give karma by up/downvoting messages instead of arbitrary names.</blockquote>
+Additionally, there will soon be a maubot management API:
+<blockquote>I've started working on a management API and interface for maubot now, so soon it should be possible to use maubot without setting up the database manually.</blockquote>
+Room for maubot: <a href="https://matrix.to/#/#maubot:maunium.net">#maubot:maunium.net</a>
+<h2 id="mxisdv120beta3">mxisd v1.2.0-beta.3</h2>
+<a href="https://matrix.to/#/@max:kamax.io">Max</a>:
+<blockquote><a href="https://github.com/kamax-matrix/mxisd/releases/tag/v1.2.0-beta.3">mxisd v1.2.0-beta.3</a> is out with the start of a brand new Identity store based on arbitrary executable, to connect to anything and everything. Authentication is implemented at the moment (see <a href="https://github.com/kamax-matrix/mxisd/blob/v1.2.0-beta.3/docs/stores/exec.md">doc</a>). Feedback is very welcome to improve as much as possible for v1.2.0</blockquote>
+<h2 id="msc1695messageedits">MSC1695 Message Edits</h2>
+Discussion of message editing, in particular for how message edits from Bridges are handled has progressed. Nothing is final yet so check out <a href="https://github.com/matrix-org/matrix-doc/pull/1695">https://github.com/matrix-org/matrix-doc/pull/1695</a> for the latest.
+<h2 id="quaterniontranslationsgermanandpolishnowavailable">Quaternion translations: German and Polish now available</h2>
+Last week we had an update from <a href="https://matrix.to/#/@kitsune:matrix.org">kitsune</a> to say that there was a new <a href="https://lokalise.co/public/730769035bbc328c31e863.62506391/">Lokalise project</a> to allow <a href="https://github.com/QMatrixClient/Quaternion">Quaternion</a> translations. This week, we learn that the first translations are now available:
+<blockquote>First couple of translations - German and Polish - have made it to the released <a href="https://github.com/QMatrixClient/Quaternion">Quaternion</a> 0.0.9.3 - thanks to krombel and krkk for their contributions! Swedish and Russian translations are in the works.</blockquote>
+<h2 id="fluffychat">Fluffychat</h2>
+We anticipated it last week, but <a href="https://metalhead.club/@krille/100963253183527964">here it is</a>:
+<blockquote>The first stable release of the #matrix messenger #fluffychat is out now. ? Get it from: <a href="https://www.fluffy.chat">https://www.fluffy.chat</a>
+Thanks to all who have helped me. Thanks to regionetz for hosting the ubports.chat homeserver, thanks to @matrix for the awesome work, thanks to @Ubports for this awesome platform and to fabiyamada, advocatux, wayneoutthere, lionelb, Diogo, mithgarthsormr, mark, and all the awesome people from the community!!
+With your help, Ubuntu Touch is still alive and has got a new stable messenger!</blockquote>
+<h2 id="informonewbotforspecchanges">Informo: new bot for spec changes</h2>
+<strong>Informo</strong> is an ambitious project hoping to be a "decentralised news network, making information accessible". The project lives at <a href="https://github.com/Informo">https://github.com/Informo</a>, but for now you can join <a href="https://matrix.to/#/#discuss:weu.informo.network">#discuss:weu.informo.network</a> to get their latest news.
+
+This week, <a href="https://matrix.to/#/@vabd:weu.informo.network">vabd</a> reports:
+<blockquote>We made a Matrix bot that shouts about updates to change submissions to Informo's specifications. It basically processes all changes made to the list of labels for each issue and PR of a GitHub repository's, and generates a notice message that it sends to the configured room(s). We made it because we wanted the people that are interested in Informo to know in real time about any change made to the state of proposals, along with the calls for public reviews. We just set it up in <a href="https://matrix.to/#/#discuss:weu.informo.network">#discuss:weu.informo.network</a>, and published its source code along with a built binary here: <a href="https://github.com/Informo/specs-bot">https://github.com/Informo/specs-bot</a>
+It might also be worth noticing that, although we designed it to shout about updates to Informo's specifications proposals, we also made it compatible with other projects, e.g. the Matrix specs</blockquote>
+<h2 id="pushtotalkfunctionalitywithjitsionriot">Push-to-talk functionality with Jitsi on Riot</h2>
+<a href="https://matrix.to/#/@andrewm:amorgan.xyz">anoa</a> has been making improvements to Video Calling on Riot:
+<blockquote>I've been working on global push-to-talk functionality with Jitsi on Riot. I've got toggle on/off functionality working, but still trying for walkie-talkie mode. To do so, I need to get this library working with Riot: <a href="https://github.com/WilixLead/iohook">https://github.com/WilixLead/iohook</a>
+If anyone has experience with native Node modules and/or Electron, please hit me up! <a href="https://matrix.to/#/@andrewm:amorgan.xyz">@andrewm:amorgan.xyz</a></blockquote>
+<h2 id="greetingsfrommozfest">Greetings from Mozfest</h2>
+<a href="https://mozillafestival.org">Mozfest</a> is a tech-focused event happening this weekend in London. Neil and I have been along tonight and we've been chatting to a lot of people about Matrix, decentralisation and all those things we love! Check out our very short and sweet video below!
+
+<iframe src="https://www.youtube.com/embed/ZqfTYwDz9HM" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+
+This is the start of Season Three of Matrix Live. Matrix Live seasons are variable in length, based on the data available so far. From this season, Matrix Live with change the format slightly, based on feedback. The videos will try to be a bit more interesting, varied, and deep. With this video being the start of a new season, it was meant to be more substantive with us talking to Mozfest-ites, but I lost track of time, so this shorter but still energetic video will hopefully convey the idea.

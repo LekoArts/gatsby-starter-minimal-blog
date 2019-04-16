@@ -1,0 +1,147 @@
+---
+date: '2018-08-24'
+title: This Week in Matrix 2018-08-24
+categories:
+  - General
+---
+
+<h2 id="synapse0333">Synapse 0.33.3</h2>
+Big week for <a href="https://github.com/matrix-org/synapse/">Synapse</a>: v0.33.3 was released this week. You'll find preparation for support for Lazy Loading and Room Versioning, lots of bugfixes, and a great contribution from <a href="https://github.com/vojeroen">vojeroen</a>: support for sending SNI over federation for vhosted servers. <a href="https://github.com/matrix-org/synapse/releases/tag/v0.33.3">More complete change log here</a>, features below:
+<ul>
+ 	<li>Add support for the SNI extension to federation TLS connections. Thanks to @vojeroen! (<a href="https://github.com/matrix-org/synapse/issues/3439">#3439</a>)</li>
+ 	<li>Add /_media/r0/config (<a href="https://github.com/matrix-org/synapse/issues/3184">#3184</a>)</li>
+ 	<li>speed up /members API and add <code>at</code> and <code>membership</code> params as per MSC1227 (<a href="https://github.com/matrix-org/synapse/issues/3568">#3568</a>)</li>
+ 	<li>implement <code>summary</code> block in /sync response as per MSC688 (<a href="https://github.com/matrix-org/synapse/issues/3574">#3574</a>)</li>
+ 	<li>Add lazy-loading support to /messages as per MSC1227 (<a href="https://github.com/matrix-org/synapse/issues/3589">#3589</a>)</li>
+ 	<li>Add ability to limit number of monthly active users on the server (<a href="https://github.com/matrix-org/synapse/issues/3633">#3633</a>)</li>
+ 	<li>Support more federation endpoints on workers (<a href="https://github.com/matrix-org/synapse/issues/3653">#3653</a>)</li>
+ 	<li>Basic support for room versioning (<a href="https://github.com/matrix-org/synapse/issues/3654">#3654</a>)</li>
+ 	<li>Ability to disable client/server Synapse via conf toggle (<a href="https://github.com/matrix-org/synapse/issues/3655">#3655</a>)</li>
+ 	<li>Ability to whitelist specific threepids against monthly active user limiting (<a href="https://github.com/matrix-org/synapse/issues/3662">#3662</a>)</li>
+ 	<li>Add some metrics for the appservice and federation event sending loops (<a href="https://github.com/matrix-org/synapse/issues/3664">#3664</a>)</li>
+ 	<li>Where server is disabled, block ability for locked out users to read new messages (<a href="https://github.com/matrix-org/synapse/issues/3670">#3670</a>)</li>
+ 	<li>set admin uri via config, to be used in error messages where the user should contact the administrator (<a href="https://github.com/matrix-org/synapse/issues/3687">#3687</a>)</li>
+ 	<li>Synapse's presence functionality can now be disabled with the "use_presence" configuration option. (<a href="https://github.com/matrix-org/synapse/issues/3694">#3694</a>)</li>
+ 	<li>For resource limit blocked users, prevent writing into rooms (<a href="https://github.com/matrix-org/synapse/issues/3708">#3708</a>)</li>
+</ul>
+<a href="https://github.com/ananace/">Ananace</a> has upgraded his <a href="https://github.com/ananace/matrix-synapse">K8s-optimized Synapse image to 0.33.3</a>
+<h2 id="spec">Spec</h2>
+<ul>
+ 	<li>A large chunk of e2e has landed in the spec, largely thanks to <a href="https://matrix.to/#/@Zil0:matrix.org">Zil0</a>'s work. There are still some things left, but the main bits related to sending encrypted messages is in there. Attachments and key sharing are being reviewed today</li>
+ 	<li><a href="https://github.com/turt2live">TravisR</a> progressed on Push, Application Services, and Client-Server APIs.</li>
+ 	<li>To follow along with progress, the best place to look is the <a href="https://github.com/matrix-org/matrix-doc/projects/1">August 2018 r0 tracker</a>.</li>
+</ul>
+<h2 id="e2e">E2E</h2>
+Key backups are being worked on, and we've had some new thoughts on key verification.
+<h2 id="rumatrixorg">ru-matrix.org</h2>
+Well are you?
+
+<a href="https://matrix.to/#/@murz:ru-matrix.org">Alexey</a> and <a href="https://matrix.to/#/@ma1uta:matrix.org">ma1uta</a> have a new Russian-language community wiki available at <a href="https://ru-matrix.org">https://ru-matrix.org</a>. This:
+<blockquote>accumulates Russian translates of Matrix FAQ and manuals, and other info about Matrix in Russian. Also we starts a public Matrix Synapse server for Russian users with free open registration
+
+Russian Matrix users: feel free to add and complement articles in our wiki to make Matrix more friendly for Russian users.</blockquote>
+<h2 id="clientnews">Client News</h2>
+<h3 id="seaglass">Seaglass</h3>
+<a href="https://matrix.to/#/@neilalexander:matrix.org">neilalexander</a> has been on a roll the last few weeks working on <a href="https://github.com/neilalexander/seaglass">Seaglass</a>, the macOS-native client:
+<blockquote>Seaglass now has support for creating, joining and leaving rooms, and accepting/rejecting room invites, redacting messages, improvements to the room settings pages, timestamps, some visual tweaks, lots of bug fixes, early support for detecting failed message sends, scrolling improvements</blockquote>
+<a href="https://matrix.org/blog/wp-content/uploads/2018/08/seaglass-create-room.png"><img class="alignnone size-large wp-image-3496" src="https://matrix.org/blog/wp-content/uploads/2018/08/seaglass-create-room-1024x627.png" alt="" width="1024" height="627" /></a>
+<h3 id="matrique">Matrique</h3>
+<a href="http://matrix.to/#/@bhat:encom.eu.org">Black Hat</a> continues work on <a href="https://gitlab.com/b0/matrique-go">Matrique</a>, a glossy Qt client:
+<blockquote>Typing notification and desktop notification of Matrique are working, plus other improvements</blockquote>
+See the <a href="https://gitlab.com/b0/matrique/compare/200…218">latest commits here</a>.
+<h3 id="riotweb">Riot Web</h3>
+Lazy Loading (LL) is available on develop behind the LABS flag, and is being polished. It will probably not make it to next release, but it's progressing!
+<h3 id="riotmobile">Riot Mobile</h3>
+New releases are imminent for both Android and iOS:
+<ul>
+ 	<li>iOS: bug fixes and Lazy Loading in settings</li>
+ 	<li>Android: bug fixes, better management of permission requests at startup</li>
+</ul>
+<h2 id="sharedsecretauthandmatrixcorporeal">Shared Secret Auth and Matrix Corporal</h2>
+<a href="https://matrix.to/#/@slavi:devture.com">Slavi</a> has been working on several operations tools for Synapse. Firstly <strong><a href="https://github.com/devture/matrix-synapse-shared-secret-auth">Shared Secret Auth</a></strong> password provider module for Matrix Synapse.
+<blockquote>It allows external systems (which know the shared secret) to easily obtain access tokens for any user hosted on the homeserver. This is incredibly useful for all sorts of automation (no more pre-generated access tokens or plain-text passwords).</blockquote>
+With this tool, you can pass a mxid, and get back an access_token for that user. With this, you can do whatever actions would normally be done with a token. For example, you for a new starter at a company, you could join a set of rooms known to be needed by new starters.
+
+Support room for Shared Secret Auth: <a href="https://matrix.to/#/#matrix-synapse-shared-secret-auth:devture.com">#matrix-synapse-shared-secret-auth:devture.com</a>
+
+Next, he has released <a href="https://github.com/devture/matrix-corporal">Matrix Corporal</a>, reconciliator and gateway for a managed Matrix server:
+<blockquote>It's a way to take control of Matrix (Synapse) in a corporate (or other such) environment.
+Based on a configuration policy (generated by an external system, like your intranet), it can auto-create and auto-disable users, keep their profile and authentication details to date, auto-join/leave users to communities and rooms, etc.
+It's also meant to sit in front of the Matrix Synapse Client API, inspecting and allowing/denying requests, in accordance with the configuration policy (preventing people from leaving certain rooms/communities, preventing them from messing around with their profile details, etc.)</blockquote>
+Support room for Matrix Corporal: <a href="https://matrix.to/#/#matrix-corporal:devture.com">#matrix-corporal:devture.com</a>
+
+Note that Slavi also maintains <a href="https://github.com/spantaleev/matrix-docker-ansible-deploy">matrix-docker-ansible-deploy</a>, which can deploy these projects along with Synapse itself.
+<h2 id="bots">Bots</h2>
+<h3 id="twimbot">twimbot</h3>
+I was extremely young when I first read and understood Larry Wall's explanation about the <a href="http://wiki.c2.com/?LazinessImpatienceHubris">virtue of laziness</a>, but I did not expect it to lead here. <a href="https://matrix.to/#/@cadair:cadair.com">Cadair</a> has created (I think inspired by an idea from <a href="https://github.com/turt2live">TravisR</a>), a "<a href="https://github.com/Cadair/skill-twim">twimbot</a>". This bot works in conjunction with <a href="https://opsdroid.github.io/">opsdroid</a> and the <a href="https://github.com/opsdroid/connector-matrix">opsdroid connector-matrix</a> - it works by storing selected messages from <a href="https://matrix.to/#/#TWIM:matrix.org">#twim:matrix.org</a> in room state. In this way, it either assists the author by making it easier to produce the blog post you're reading, or it coldly <a href="https://www.bbc.co.uk/news/business-45240758">replaces the author</a>, leading to his sacking and penury. To view updates currently held by the bot, join <a href="https://matrix.to/#/#twim_updates:cadair.com">#twim_updates:cadair.com</a>.
+<h3 id="hashtagbot">Hashtag bot</h3>
+When he's not working away on the Matrix Spec, <a href="https://github.com/turt2live">TravisR</a> continues to work on less [essential|sane] Matrix projects. This week we have <a href="https://matrix.to/#/@hashtag:t2bot.io">@hashtag:t2bot.io</a>, a bot that converts #hashtags to Matrix groups.
+<blockquote>Why? Because why not. Source available on github: <a href="https://github.com/turt2live/matrix-hashtag-bot">https://github.com/turt2live/matrix-hashtag-bot</a></blockquote>
+<h2 id="bridges">Bridges</h2>
+<h3 id="matrixappservicebridgeandmatrixappserviceirc">matrix-appservice-bridge and matrix-appservice-irc</h3>
+<a href="https://matrix.to/#/@Half-Shot:half-shot.uk">Half-Shot</a> will only be working full time with the Matrix Core team for another week (!!!), but until then he's going full-speed with bridge work. First <a href="https://github.com/matrix-org/matrix-appservice-irc">matrix-appservice-irc</a>:
+<blockquote>Just pushed out <a href="https://github.com/matrix-org/matrix-appservice-irc/blob/release-v0.11.0/CHANGELOG.md">matrix-appservice-irc 0.11.0-rc3</a> which contains a lot of nice things. The full changelog is there, hoping to get some of this tested and running on the matrix.org servers soon, but initial testing looks good :)</blockquote>
+Having worked so much on IRC bridging the last few months, <a href="https://matrix.to/#/@Half-Shot:half-shot.uk">Half-Shot</a> has this week managed to make improvements to <a href="https://github.com/matrix-org/matrix-appservice-bridge">matrix-appservice-bridge</a>:
+<blockquote>Released matrix-appservice-bridge 1.6.0 which contains mostly things I was writing for the irc bridge and factored out instead. There's a couple of goodies like automatic caching of profiles/events, and getEvent as a way to fetch events from the homeserver without fiddling with context.</blockquote>
+Full changelog: <a href="https://github.com/matrix-org/matrix-appservice-bridge/blob/1.6.0/CHANGES.md">https://github.com/matrix-org/matrix-appservice-bridge/blob/1.6.0/CHANGES.md</a>
+<blockquote>Some <code>Intent</code> operations now cache requests that would otherwise fall through
+to the homeserver which can be expensive. This is configurable for <code>Intent</code>s
+via the <code>opts.caching.ttl</code> and <code>size</code> options.
+AgeCounters now allow you to set your own time period buckets.
+Added a new function <code>Intent.getEvent</code> which will fetch events
+from the homeserver without any context information, which should
+be quick.
+<code>MembershipCache</code> is now exposed to let folks read and write to the cache
+while also letting the bridge access it.
+
+<code>a</code> release: Fix issue where <code>roomState</code> would fail.
+<code>b</code> release: Fix issue where we were calling this.intent <em>inside</em> intent like fools!
+<code>c</code> release: Fix issue where some stole js-sdk code was not checked thoroughly.</blockquote>
+<h3 id="whatsapp">WhatsApp</h3>
+<a href="https://matrix.to/#/@tulir:maunium.net">tulir</a> announces that <a href="https://github.com/tulir/mautrix-whatsapp">mautrix-whatsapp</a> "is now somewhat usable for basic chatting".
+<blockquote>It uses the <a href="https://github.com/Rhymen/go-whatsapp">go-whatsapp</a> library to talk with the WhatsApp Web API. Using the web API means that you'll still need WhatsApp on your phone connected to the internet, but it also means you won't get banned for using the bridge.
+The bridge is still very alpha, but basic message bridging and some advanced features already work. There's a <a href="https://github.com/tulir/mautrix-whatsapp/blob/master/ROADMAP.md">features &amp; roadmap</a> document about that.</blockquote>
+To come chat about the WhatsApp bridge: <a href="https://matrix.to/#/#whatsapp:maunium.net">#whatsapp:maunium.net</a>.
+<h3 id="mxtoot">mxtoot</h3>
+<a href="https://github.com/ma1uta/mxtoot">mxtoot</a> is a Matrix-Mastodon bot from <a href="https://matrix.to/#/@ma1uta:matrix.org">ma1uta</a>, creator of <a href="https://gitlab.com/ma1uta/jeon">Jeon</a> and the ecosystem around it.
+
+There were two releases last week:
+<blockquote>0.4.6 with additional commands (follow, unfollow, mute, unmute, block, unblock users, show followers and followings of the specified user) and a little bugfix.</blockquote>
+<a href="https://github.com/ma1uta/mxtoot/releases/tag/0.4.7">0.4.7 is out now</a>, which increases the length of messages to 4000 characters.
+<h2 id="gsocisfinished">GSOC is finished!</h2>
+<a href="https://summerofcode.withgoogle.com/projects/?sp-search=matrix">GSOC 2018</a> has been valuable for everyone involved!
+<ul>
+ 	<li>Thank you zil0 for all your work on the <a href="https://github.com/matrix-org/matrix-python-sdk">Matrix Python SDK</a>, E2E and and spec work.</li>
+ 	<li>Thank you APWhiteHat: lots of work on dendrite, including a bunch of stuff on federation, as well as typing notifications!</li>
+ 	<li>and thank you to <a href="https://matrix.to/#/@cadair:cadair.com">Cadair</a> for helping to organising it!</li>
+</ul>
+<h2 id="theconstructusingasynchronousdiskio">The Construct using asynchronous disk IO</h2>
+Jason writes:
+<blockquote>the Construct has advanced to fully asynchronous disk IO in a single-threaded environment.
+RocksDB is a highly configurable and customizable database with a very large callback surface to support many different environments, which is good to connect it with something like AIO.
+Normally RocksDB gets its performance from concurrent standard POSIX system calls (blocking IO) with multiple threads. The callback surface and its internals are not specifically suited for deviating from the pthread model. However I hacked RocksDB and tricked it into believing that my userspace contexts, which mimic the <code>std::thread/pthread</code> interface, are threads.
+<a href="https://github.com/jevolk/charybdis/blob/ac3b45604a8e7c6e4a8d3b3d84d62bfbc1070c46/ircd/db.cc#L4336">This is an example of a RocksDB callback to read from a file</a>, it expects this callback to return immediately (i.e as soon as the kernel returns from a blocking read(2).) Except, where I call <code>fs::read()</code> that is actually a stack-suspension which makes a request to linux AIO where the stack resumes after AIO has called back with the data (see: <a href="https://github.com/jevolk/charybdis/blob/master/ircd/aio.cc">https://github.com/jevolk/charybdis/blob/master/ircd/aio.cc</a>)
+No modifications to the internals of RocksDB were necessary. The Construct is being developed here: <a href="https://github.com/jevolk/charybdis">https://github.com/jevolk/charybdis</a>.</blockquote>
+<h2 id="communityguidesindex">Community Guides Index</h2>
+Some weeks ago I asked for suggestions for content to add to a "Community Guides Index". There was not a wave of feedback, but we have enough collected content to be able to share a <a href="https://matrix.org/docs/guides/guides-index.html">first pass of this Index</a>. Check out the content there, and please please <a href="https://matrix.to/#/@benpa:matrix.org">contact me</a> if you have articles, videos or anything else you'd like to see included. Of course, if you'd like to <em>produce</em> some content and have it included, that would be great too! Ideas for missing articles:
+<ul>
+ 	<li>any content in a language other than English</li>
+ 	<li>DevOps, how to use k8s or ansible to install Synapse</li>
+ 	<li>how to use the Application Services API to make a bot</li>
+</ul>
+<h2 id="oggcamp2018">OggCamp 2018</h2>
+OggCamp last weekend was great - massive thank you to <a href="https://jon.sprig.gs/blog/">Jon</a> for organising and running the show - we love your work!
+
+Presentations from Ben and Half-Shot seemed to go down well, we all chatted with Open Source fans and generally flew the flag for Matrix.
+<h2 id="newrooms">New Rooms</h2>
+<ul>
+ 	<li><a href="https://matrix.to/#/@tulir:maunium.net">tulir</a> has enough projects that he has created <a href="https://matrix.to/#/#:maunium.net">#:maunium.net</a>, for any project of his that doesn't have it's own room</li>
+ 	<li>Support room for Shared Secret Auth: <a href="https://matrix.to/#/#matrix-synapse-shared-secret-auth:devture.com">#matrix-synapse-shared-secret-auth:devture.com</a></li>
+ 	<li>Support room for Matrix Corporal: <a href="https://matrix.to/#/#matrix-corporal:devture.com">#matrix-corporal:devture.com</a></li>
+ 	<li>If you prefer the cold output of a machine, <a href="https://matrix.to/#/#twim_updates:cadair.com">#twim_updates:cadair.com</a> shows you the updates as they're posted in <a href="https://matrix.to/#/#TWIM:matrix.org">#twim:matrix.org</a>.</li>
+ 	<li>WhatsApp bridge: <a href="https://matrix.to/#/#whatsapp:maunium.net">#whatsapp:maunium.net</a></li>
+</ul>
+<h2 id="solong">So long…</h2>
+Hope you had a good week, hope you enjoyed reading this post! Amandine is back after some needed vacation time, and has this week's Matrix Live below.
+
+<iframe src="https://www.youtube.com/embed/svM5E4RTQuI" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe>

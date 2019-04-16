@@ -1,0 +1,129 @@
+---
+date: '2018-09-15'
+title: This Week in Matrix 2018-09-14
+categories:
+  - General
+---
+
+<h2>Dimension</h2>
+<div class="mx_EventTile_line"><span class="mx_MTextBody mx_EventTile_content"><span class="mx_EventTile_body" dir="auto"><strong>Update</strong> (this got lost in the original post; sorry Travis!): <a href="https://dimension.t2bot.io/">Dimension</a> received a security update - if you run your own Dimension instance it is strongly recommended you update right away. Telegram bridge support in Dimension is underway, with more updates expected for next week in Matrix.</span></span></div>
+<h2 id="clients">Clients</h2>
+<h3 id="fluffychat">Fluffychat</h3>
+It's been some months since we checked in with <a href="https://github.com/ChristianPauly/fluffychat">FluffyChat</a>. If you're a Ubuntu Touch user, or have a device running it, you should see the progress that has been made recently on this Matrix client. Collected changelog 0.5.0 to latest (0.5.4):
+<ul>
+ 	<li>Search chats</li>
+ 	<li>Chat avatars</li>
+ 	<li>Search users in chats</li>
+ 	<li>Security &amp; Privacy settings:</li>
+</ul>
+<ol>
+ 	<li>Disable typing notifications</li>
+ 	<li>Auto-accept invitations</li>
+</ol>
+<ul>
+ 	<li>New message status:</li>
+</ul>
+<ol>
+ 	<li>Sending: Activity indicator</li>
+ 	<li>Sent: Little cloud</li>
+ 	<li>Received: Tick</li>
+ 	<li>Seen by someone: Usericon</li>
+</ol>
+<ul>
+ 	<li>Display stickers</li>
+ 	<li>Minor UI improvements</li>
+ 	<li>FluffyChat now automatically opens the link to the matrix.org consens</li>
+ 	<li>Updated translations</li>
+</ul>
+<a href="https://matrix.org/blog/wp-content/uploads/2018/09/2018-09-14-fluffychat.png"><img class="alignnone size-large wp-image-3560" src="https://matrix.org/blog/wp-content/uploads/2018/09/2018-09-14-fluffychat-576x1024.png" alt="" width="576" height="1024" /></a>
+<h3 id="seaglass">Seaglass</h3>
+<a href="https://matrix.to/#/@neilalexander:matrix.org">Neil</a> has been keeping up the pace with <a href="https://github.com/neilalexander/seaglass">Seaglass</a> development:
+<blockquote>Seaglass has had a substantial rewrite to the room cache to help improve reliability and reduce crashes, better thumbnail behaviour on inline images, various tiny visual tweaks, in-window blending, support for encryption key sharing requests for E2E rooms.
+
+Rendering performance has been massively increased (if you ignore the occasional bug). Resizing the window shouldn't be so slow anymore and a lot of avatar image operations are no longer repeated unnecessarily
+
+Other than that this week has mostly featured lots and lots of bug fixes, hopefully lots of crashes fixed.</blockquote>
+Screenshot below shows the new E2E UI:
+
+<a href="https://matrix.org/blog/wp-content/uploads/2018/09/2018-09-14-seaglass-e2e-ui.png"><img class="alignnone size-large wp-image-3561" src="https://matrix.org/blog/wp-content/uploads/2018/09/2018-09-14-seaglass-e2e-ui-1024x627.png" alt="" width="1024" height="627" /></a>
+<h3 id="quaternion">Quaternion</h3>
+When not escaping typhoons, <a href="https://matrix.to/#/@kitsune:matrix.org">kitsune</a> has found some time to continue work on Quaternion:
+<blockquote><a href="https://github.com/QMatrixClient/Quaternion">Quaternion</a>'s master branch is alive again - it's been prone to crashes in the last two weeks, now it shouldn't. Feel free to try the new room list organised by tag!</blockquote>
+<h3 id="simplematrix">SimpleMatrix</h3>
+<a href="https://matrix.to/#/@MTRNord:matrix.ffslfl.net">MTRNord</a> has been working on SimpleMatrix:
+<blockquote><a href="https://gitlab.com/Nordgedanken/SimpleMatrix">SimpleMatrix</a> now supports Basic messages sending (with Commonmark) and basic receiving of messages.</blockquote>
+<h3 id="minivector">miniVector</h3>
+<a href="https://matrix.to/#/@bubuiic:matrix.org">Marcus</a> has re-packaged miniVector for F-Droid:
+<blockquote>There's now a second matrix client available in F-Droid: <a href="https://f-droid.org/packages/com.lavadip.miniVector/">https://f-droid.org/packages/com.lavadip.miniVector/</a>
+
+This is a fork of Riot Android done by hrjet, f-droid release done by me. It's removing mostly jitsi group call functionality and some other smaller stuff. In doing so it manages to require far less permissions and is also only 12 MB in size instead of riots 20 MB.</blockquote>
+<h3 id="matrique">Matrique</h3>
+<a href="http://matrix.to/#/@bhat:encom.eu.org">Black Hat</a>:
+<blockquote>Matrique gained alpha support for multiple accounts</blockquote>
+This is thanks to leaning on libqmatrixclient's native multiple account support!
+
+<a href="https://matrix.org/blog/wp-content/uploads/2018/09/2018-09-14-matrique-multiple-accounts.png"><img class="alignnone size-full wp-image-3562" src="https://matrix.org/blog/wp-content/uploads/2018/09/2018-09-14-matrique-multiple-accounts.png" alt="" width="960" height="674" /></a>
+<h3 id="riotweb0164released">Riot Web 0.16.4 released</h3>
+This is pretty much a maintenance release - fixing the DM avatar regression that crept in with 0.16.3, adding better support for warning users when their client hasn't yet synced with the server, and the final bits of work needed before we can turn on membership Lazy Loading in the upcoming Riot 0.17.
+
+Full changelogs as always are split over the three projects which make up Riot/Web:
+<ul>
+ 	<li><a href="https://github.com/vector-im/riot-web/blob/master/CHANGELOG.md#changes-in-0164-2018-09-10">https://github.com/vector-im/riot-web/blob/master/CHANGELOG.md#changes-in-0164-2018-09-10</a></li>
+ 	<li><a href="https://github.com/matrix-org/matrix-react-sdk/blob/master/CHANGELOG.md#changes-in-0134-2018-09-10">https://github.com/matrix-org/matrix-react-sdk/blob/master/CHANGELOG.md#changes-in-0134-2018-09-10</a></li>
+ 	<li><a href="https://github.com/matrix-org/matrix-js-sdk/blob/master/CHANGELOG.md#changes-in-0110-rc1-2018-09-07">https://github.com/matrix-org/matrix-js-sdk/blob/master/CHANGELOG.md#changes-in-0110-rc1-2018-09-07</a></li>
+</ul>
+<h2 id="sdksandlibraries">SDKs and Libraries</h2>
+<h3 id="libqmatrixclientecosystem">libQMatrixClient ecosystem</h3>
+As you may know, <a href="https://gitlab.com/b0/matrique-go">Matrique</a>, led by <a href="http://matrix.to/#/@bhat:encom.eu.org">Black Hat</a>, and <a href="https://github.com/QMatrixClient/Quaternion">Quaternion</a>, led by <a href="https://matrix.to/#/@kitsune:matrix.org">kitsune</a>, are both projects build using <a href="https://github.com/QMatrixClient/libqmatrixclient">libQMatrixClient</a>, a Qt5 library from <a href="https://matrix.to/#/@kitsune:matrix.org">kitsune</a> designed for writing Matrix clients. While <a href="https://matrix.to/#/@kitsune:matrix.org">kitsune</a> has been working on the library for some time, <a href="http://matrix.to/#/@bhat:encom.eu.org">Black Hat</a> has also now
+started making contributions:
+<blockquote>libQMatrixClient now has a pkg-config file to further ease clients building on Linux systems, as well as more convenient API to track read markers if all users, not just of the local one.</blockquote>
+<h3 id="matrixjssdkv0110released"><a href="https://github.com/matrix-org/matrix-js-sdk">matrix-js-sdk</a> v0.11.0 released</h3>
+<a href="https://github.com/matrix-org/matrix-js-sdk/releases">This release contains</a> support for lazy loading room members, and also some breaking changes relating to <code>startClient()</code>.
+<blockquote>
+<ul>
+ 	<li>Support for lazy loading members. This should improve performance for users who joined big rooms a lot. Pass to <code>lazyLoadMembers = true</code> option when calling <code>startClient</code>.</li>
+ 	<li><code>MatrixClient::startClient</code> now returns a Promise. No method should be called on the client before that promise resolves. Before this method didn't return anything.</li>
+ 	<li>A new <code>CATCHUP</code> sync state, emitted by <code>MatrixClient#"sync"</code> and returned by <code>MatrixClient::getSyncState()</code>, when doing initial sync after the <code>ERROR</code> state. See <code>MatrixClient</code> documentation for details.</li>
+ 	<li><code>RoomState::maySendEvent('m.room.message', userId)</code> &amp; <code>RoomState::maySendMessage(userId)</code> do not check the membership of the user anymore, only the power level. To check if the syncing user is allowed to write in a room, use <code>Room::maySendMessage()</code> as <code>RoomState</code> is not always aware of the syncing user's membership anymore, in case lazy loading of members is enabled.</li>
+</ul>
+</blockquote>
+<h2 id="synapse0334released">Synapse</h2>
+Synapse 0.33.4 <a href="https://matrix.org/blog/2018/09/11/synapse-0-33-4-released/">was released</a>, with a whole host of bug fixes, some enhancements to resource usage management and a bunch of internal changes in readiness for room member state lazy loading and our ongoing port to Python 3.
+
+Meanwhile, Python 3 support for monolithic (non-worker) Synapses has finally landed on the develop branch, thanks to massive work from hawkowl and notafile - if you want to help us test and flush out any remaining byte/utf8 style errors, please create a virtualenv for python 3.6 or 3.5 (twisted doesn't support 3.7 yet) and point the develop branch of Synapse at it, tail the logs for ERRORs and report them via <a href="https://github.com/matrix-org/synapse/issues">Github</a> if/when you see them.  In practice it seems pretty stable though, and noticeably reduces RAM and speeds things up thanks to improved GC and general performance work in Python.
+
+We've also discovered that <a href="http://jemalloc.net/">jemalloc</a> works *very* well at improving RAM usage on Python 2 under Linux (we haven't tried it on Python 3 yet) by providing a more fragmentation-resistent malloc implementation; if you are having problems with your Synapse RAM spiking up we recommend giving it a go.  All of the Matrix.org server is using it now.
+
+Also, lots of ops work this week; Erik has prototyped a <a href="https://github.com/erikjohnston/rust-synapse-compress-state">new storage strategy for state groups</a> which shrinks storage requirements by 10x, we'll be applying this shortly to Matrix.org otherwise we're going to run out of disk space.  There was also a regression on Synapse develop on federation, where outbound requests would get stuck and never retry - this impacted the matrix.org server badly over the course of the week, but as of Friday night we have a <a href="https://github.com/matrix-org/synapse/pull/3875/files">workaround</a> in place.  We're not aware of it affecting anyone other than the matrix.org deployment (and we haven't got to the root cause yet).
+<h2 id="constructhomeserverprogress">Construct homeserver progress</h2>
+This week:
+<blockquote>Added notification counts which show up in Riot now, and expanded support for g++-7 and 8 instead of just g++-6. Construct repository is found at: <a href="https://github.com/matrix-construct/construct">https://github.com/matrix-construct/construct</a>.</blockquote>
+<h2 id="ircconnectiontracker">IRC Connection Tracker</h2>
+<a href="https://matrix.to/#/@Half-Shot:half-shot.uk">Half-Shot</a> is continuing to work on the project to split out IRC connection management from the IRC bridge, letting the bridge be restarted without interrupting IRC connections!
+
+The project is going quite well, and is going to be used on matrix.org once production ready which will really speed up upgrades and give us near zero downtime indifferent to the size of the bridge.
+
+At the moment the project has the ability to spin up and maintain connections, however the connections are not supporting IRC fully yet as there are bits to do on the parsing and maintaining state side. There is also work on a top-like tool to visualise and control the service outside of the bridge so we can quickly handle any oddities if they come up. Finally, it allows you to hot reload the configuration without dropping existing connections!
+
+On the work done to support this on matrix-appservice-bridge, there is basic support for stating connections on the bridge but it's in early stages at the moment.
+<h2 id="matrixdev">Spec</h2>
+Travis has been tidying up loose bits on the Matrix spec this week:
+<ul>
+ 	<li>experimenting with splitting out the "Room" specific bits of the spec into a <a href="https://github.com/matrix-org/matrix-doc/pull/1669">dedicated section</a> rather than being split between the CS and SS APIs;</li>
+ 	<li>trying to pin down a <a href="https://github.com/matrix-org/matrix-doc/pull/1607">formal grammar for room aliases</a></li>
+ 	<li>...and <a href="https://github.com/matrix-org/matrix-doc/pull/1598">identifiers in general</a>.</li>
+</ul>
+In practice, finalising the S2S API is now blocked on proving the implementation on Synapse; work on this will resume next week and then we'll document the end result and ship the r0 at last.  Timings are going to be completely determined by available manpower and what level of ops distractions we face (c.f. the Synapse section above...).  Whilst we're waiting for the final S2S details to get hashed out, Travis is going to be helping on Riot dev, to try to stop <a href="https://twitter.com/amarendra/status/1040782285807603714">stuff like this</a>, as there's no point in having the platonic ideal of a perfect spec if actual users are unable to benefit from it.
+<h2>#matrix-dev</h2>
+<a href="https://matrix.to/#/#matrix-dev:matrix.org">#matrix-dev:matrix.org</a> was reborn as a new room a couple of weeks ago to flush out old corrupted events, but maybe not everyone knows. Come join <a href="https://matrix.to/#/#matrix-dev:matrix.org">#matrix-dev:matrix.org</a>, it's a starting point for all developers looking to build on the platform.  We're also rebuilding #test:matrix.org and #riot:matrix.org, although once we ship the new state resolution
+<h2>A sneak peek at Modular...</h2>
+&nbsp;
+
+<a href="https://modular.im"><img class="aligncenter wp-image-3567 size-medium" src="https://matrix.org/blog/wp-content/uploads/2018/09/Screenshot-2018-09-15-at-11.11.00-1-300x49.png" alt="" width="300" height="49" /></a>
+
+&nbsp;
+
+Finally, there's been a massive amount of work on the <a href="https://vector.im">New Vector</a> side of things to soft-launch <a href="https://modular.im">Modular</a> - a paid hosting platform for Matrix servers (and, in future, paid integrations).  At this point we're looking for early adopters who want a dedicated Riot+Synapse for communities or companies of 50 or more users - but don't want to have to run it themselves.  Modular takes the homeserver hosting we've already been providing for <a href="https://chat.status.im">Status</a>, <a href="https://tadhack.riot.im">TADHack</a> and others, and turns it into a mass-market product.  The pricing for early adopters is over 5x cheaper than Slack, so if you've been dying to have a reliable, fast and expertly maintained homeserver without any of the headaches of admining one yourself, please head over to <a href="https://modular.im">https://modular.im</a> and give it a whirl and let us know how it goes!  This is also a great way to support Matrix development in general, as money from Modular will directly keep the core Matrix team funded to work on Matrix.  Once we're happy with the soft-launch and have incorporated any feedback we'll start yelling about it as loud as we can :)
+<h2>Matrix Live</h2>
+We've had a bit of an accidental hiatus on Matrix Live thanks to getting submerged all the different project endgames happening atm (spec releases, lazy loading, Modular, Riot redesign etc), and for the last few Fridays we've got to midnight and beyond with too much still on the todo list to justify recording a video.  But to avoid completely falling behind, here's a slightly exhausted Saturday morning update instead (warning: Matthew is not a morning person).
+<p style="text-align: center;"><iframe src="https://www.youtube.com/embed/7m5adJ2n_-0" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe></p>

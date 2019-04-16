@@ -1,0 +1,34 @@
+---
+date: '2016-11-22'
+title: Synapse 0.18.4
+categories:
+  - General
+---
+
+Uncharacteristically, we're actually remembering to announce a new release of Synapse!
+
+Major performance fixes on federation, as well as the changes required to support E2E encrypted attachments (yay!)
+
+Please install or upgrade from <a href="https://github.com/matrix-org/synapse">https://github.com/matrix-org/synapse</a> :)
+<div class="markdown-body">
+<h3></h3>
+<h3>Changes in synapse v0.18.4 (2016-11-22)</h3>
+Bug fixes:
+<ul>
+ 	<li>Add workaround for buggy clients that the fail to register (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/1632" data-url="https://github.com/matrix-org/synapse/issues/1632" data-id="190371942" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#1632</a>)</li>
+</ul>
+<h3>Changes in synapse v0.18.4-rc1 (2016-11-14)</h3>
+Changes:
+<ul>
+ 	<li>Various database efficiency improvements (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/1188" data-url="https://github.com/matrix-org/synapse/issues/1188" data-id="186341262" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#1188</a>, <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/1192" data-url="https://github.com/matrix-org/synapse/issues/1192" data-id="187084488" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#1192</a>)</li>
+ 	<li>Update default config to blacklist more internal IPs, thanks to Euan Kemp <a class="user-mention" href="https://github.com/euank">@euank</a> (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/1198" data-url="https://github.com/matrix-org/synapse/issues/1198" data-id="187605325" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#1198</a>)</li>
+ 	<li>Allow specifying duration in minutes in config, thanks to Daniel Dent <a class="user-mention" href="https://github.com/DanielDent">@DanielDent</a> (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/1625" data-url="https://github.com/matrix-org/synapse/issues/1625" data-id="188899917" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#1625</a>)</li>
+</ul>
+Bug fixes:
+<ul>
+ 	<li>Fix media repo to set CORs headers on responses (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/1190" data-url="https://github.com/matrix-org/synapse/issues/1190" data-id="186776121" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#1190</a>)</li>
+ 	<li>Fix registration to not error on non-ascii passwords (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/1191" data-url="https://github.com/matrix-org/synapse/issues/1191" data-id="187025542" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#1191</a>)</li>
+ 	<li>Fix create event code to limit the number of prev_events (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/1615" data-url="https://github.com/matrix-org/synapse/issues/1615" data-id="187962678" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#1615</a>)</li>
+ 	<li>Fix bug in transaction ID deduplication (PR <a class="issue-link js-issue-link" href="https://github.com/matrix-org/synapse/pull/1624" data-url="https://github.com/matrix-org/synapse/issues/1624" data-id="188782596" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#1624</a>)</li>
+</ul>
+</div>

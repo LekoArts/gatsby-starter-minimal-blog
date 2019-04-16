@@ -1,0 +1,84 @@
+---
+date: '2018-12-28'
+title: This Week in Matrix 2018-12-28
+categories:
+  - General
+---
+
+<h2 id="welcometothelasttwimoftheyear">Welcome to the last TWIM of the year</h2>
+It's the 28th of December as I write this, and I hope you had a good year. Long as it is, I recommend reading <a href="https://matrix.org/blog/2018/12/25/the-2018-matrix-holiday-special/">Matthew's write-up of the year</a>, as it covers a lot of ground!
+
+Many of the core team have been out of the office this week, but there are still plenty of updates to share from the Matrix ecosystem!
+<h2 id="mxisdv122">mxisd v1.2.2</h2>
+<a href="https://matrix.to/#/@max:kamax.io">Max</a> released mxisd v1.2.2:
+<blockquote><a href="https://github.com/kamax-matrix/mxisd">mxisd</a> had a Holiday-special release: <a href="https://github.com/kamax-matrix/mxisd/releases/tag/v1.2.2">v1.2.2</a> before v1.3.0.
+
+This release introduces two new big features:
+<ul>
+ 	<li>Username login rewriting via 3PID to allow advanced flows, like bypassing the synapse restriction of having numerical usernames for non-guest users</li>
+ 	<li>Support for multiple Base DNs for LDAP backends</li>
+</ul>
+Work has started on v1.3.0 so this is definitely the last release before a non-backward compatible release.</blockquote>
+<h2 id="scylla">Scylla</h2>
+<a href="https://matrix.to/#/@daniel:riot.danilafe.com">VaNilLa</a> has started a new client, a web app build in Elm:
+<blockquote>Hi all! I am working on a Matrix client in Elm, and I was recommended to share it here: <a href="https://github.com/DanilaFe/Scylla">Scylla</a></blockquote>
+<h2 id="komadesktop">koma-desktop</h2>
+<a href="https://matrix.to/#/@druig:matrix.org">druig</a>:
+<blockquote><a href="https://github.com/koma-im/koma-desktop">koma-desktop</a> is updated to JavaFx 11 and installation is simplified. Dependencies, including native modules can be packaged into one single file, which only needs to be downloaded and run. Java Runtime 11 is the only runtime dependency. Now it's just cross-compilation that needs to be set up before packaged releases can be provided for Mac, Windows, and Linux users.</blockquote>
+<h2 id="prometheusalertmanagerbotformatrix">Prometheus Alertmanager bot for Matrix</h2>
+<a href="https://matrix.to/#/@jaywink:feneas.org">Jason Robinson</a>:
+<blockquote>I started work on a Prometheus Alertmanager bot for Matrix. The basic idea is that Alertmanager can send webhook alert events to the bot which will then send the formatted events to configured rooms based on the alert receiver. It works, but is still early work in progress. See code and info here: <a href="https://git.feneas.org/jaywink/matrix-alertmanager">https://git.feneas.org/jaywink/matrix-alertmanager</a>.</blockquote>
+Also mirrored on GitHub: <a href="https://github.com/jaywink/matrix-alertmanager">https://github.com/jaywink/matrix-alertmanager</a>
+<h2 id="qmatrixclient">QMatrixClient</h2>
+<a href="https://matrix.to/#/@kitsune:matrix.org">kitsune</a>:
+<blockquote>This week <a href="https://github.com/QMatrixClient">QMatrixClient</a> project gained some improvements in macOS support (thanks to Matthew and <a href="https://matrix.to/#/@aaron:raim.ist">Aaron Raimist</a>!); but most of <a href="https://matrix.to/#/@kitsune:matrix.org">Kitsune</a>'s time (aside from dayjob) has been spent on attachments uploading in <a href="https://github.com/QMatrixClient/Quaternion">Quaternion</a>. This required improvement in support of uploading in the library. These changes have now landed in the master branches.</blockquote>
+<h2 id="fractal40">Fractal 4.0</h2>
+<a href="@afranke:matrix.org">Alexandre Franke</a>:
+<blockquote>As expected the Fractal team released 4.0 and is already hard at work on the next micro version. We recommend <a href="https://flathub.org/apps/details/org.gnome.Fractal">getting it from Flathub</a> like we usually do.</blockquote>
+From the release notes:
+<blockquote>New features:
+<ul>
+ 	<li>Enhanced history view with adaptive layout, day divider</li>
+ 	<li>Reorganised headerbar, app menu merged with user menu</li>
+ 	<li>Larger display of emoji-only messages</li>
+ 	<li>Some performance improvements</li>
+ 	<li>Opening a room jumps to first unread message</li>
+</ul>
+Bugfixes:
+<ul>
+ 	<li>More reliable notifications</li>
+ 	<li>Fixed display bug for avatars</li>
+</ul>
+Under the hood:
+<ul>
+ 	<li>Large code refactor</li>
+ 	<li>Logging infrastructure</li>
+ 	<li>Continuous integration</li>
+ 	<li>More informative build output</li>
+</ul>
+</blockquote>
+<h2 id="maubot">maubot</h2>
+<a href="https://matrix.to/#/@tulir:maunium.net">tulir</a> working on <a href="https://github.com/maubot/maubot">maubot</a>:
+<blockquote>The new command handling system in maubot is ready. The new system should be much nicer to use when developing plugins.
+
+Previously <a href="https://github.com/maubot/maubot">maubot</a> had a system that was designed after the improved bot support spec proposal, but it wasn't very nice or pythonic. If/when the proposal or something similar goes through, I'll probably add support for it in the new command handling system.
+
+Next I'll make some developer docs so that other people could actually make their own plugins.
+
+The code is at <a href="https://github.com/maubot/maubot">https://github.com/maubot/maubot</a> and you can ask about maubot in <a href="https://matrix.to/#/#maubot:maunium.net">#maubot:maunium.net</a>.</blockquote>
+<h2 id="matrixclientelnewfeatures">matrix-client.el new features</h2>
+<a href="https://matrix.to/#/@alphapapa:matrix.org">alphapapa</a>:
+<blockquote>Emacs makes it so easy to integrate things. Now you can send <code>org-mode</code> syntax messages with the <code>/org</code> command in <a href="https://github.com/jgkamat/matrix-client-el">matrix-client.el</a>.
+
+Tab-completion of usernames and IDs was added to matrix-client.el.</blockquote>
+<h2 id="matrixtogithubapp">matrix-to GitHub app</h2>
+<a href="https://matrix.to/#/@x:riot.ovh">t3chguy</a> has come out of hiding to announce:
+<blockquote><a href="https://github.com/apps/matrix-to">https://github.com/apps/matrix-to</a> is a Github App which makes use of their shiny and new Content Attachments API/Webhook. When a <code>matrix.to</code> or <code>view.matrix.org</code> URL is used this app is activated. It adds a little snippet with the Room Title and Topic (if the room is peekable from matrix.org). In future it'll work for event permalinks, but currently there is no support for peeking context/event in Matrix API.
+
+Example can be seen at <a href="https://github.com/matrix-org/matrix.to/issues/52#issuecomment-449878490">https://github.com/matrix-org/matrix.to/issues/52#issuecomment-449878490</a>. Idea courtesy of <a href="https://github.com/turt2live">TravisR</a>.</blockquote>
+<h2 id="seeyounextyear">See you next year</h2>
+So there you have it.
+
+I'm at 35c3 with some known characters from the Matrix world (as well as 15,000 others.) If you're here too, come visit us in our assembly, and also make sure to come to Dijkstra tomorrow to watch me present a look back at on the last year: <a href="https://fahrplan.events.ccc.de/congress/2018/Fahrplan/events/9400.html">https://fahrplan.events.ccc.de/congress/2018/Fahrplan/events/9400.html</a>. We have recorded a message for Matrix Live from 35c3, but will post tomorrow with some more footage from the event.
+
+Otherwise, see you next year Matrix fan!

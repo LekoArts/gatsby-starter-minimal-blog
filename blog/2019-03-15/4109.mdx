@@ -1,0 +1,29 @@
+---
+date: '2019-03-15'
+title: Matrix 1.0  - Are We Ready Yet?
+categories:
+  - General
+---
+
+<span style="font-weight: 400;">TL;DR </span>
+<ul>
+ 	<li style="font-weight: 400;"><span style="font-weight: 400;">If you run a Synapse ensure that your federation certificates are valid </span><a href="https://matrix.org/federationtester/"><span style="font-weight: 400;">here</span></a><span style="font-weight: 400;">. </span></li>
+ 	<li style="font-weight: 400;"><span style="font-weight: 400;">If they are not valid check out the </span><a href="https://github.com/matrix-org/synapse/blob/master/docs/MSC1711_certificates_FAQ.md"><span style="font-weight: 400;">FAQ</span></a><span style="font-weight: 400;">.</span></li>
+ 	<li style="font-weight: 400;"><span style="font-weight: 400;">Follow along with progress at </span><a href="https://arewereadyyet.com"><span style="font-weight: 400;">https://arewereadyyet.com</span></a></li>
+ 	<li style="font-weight: 400;"><span style="font-weight: 400;">Tell all your admin friends.</span></li>
+</ul>
+<span style="font-weight: 400;">Folks, as you know we are now very close to achieving Matrix 1.0 and finally being in a position to shed our ‘beta' tag. It has been a long time coming and speaks to the huge effort from hundreds of people over the past 5 years.</span>
+
+<span style="font-weight: 400;">A critical step towards this goal is the release of Synapse 1.0. We want to ship Synapse 1.0 as soon as possible but can't do so without your help! </span>
+
+<span style="font-weight: 400;">We'd like to introduce</span><a href="http://arewereadyyet.com/"><span style="font-weight: 400;"> AreWeReadyYet.com</span></a><span style="font-weight: 400;"> - a quick and easy way for everyone to track the progress and check if their federation is ready for Matrix 1.0!!</span>
+<p style="text-align: center;"><a href="https://www.arewereadyyet.com/"><img class="alignnone wp-image-4110 size-medium" src="https://matrix.org/blog/wp-content/uploads/2019/03/Screenshot-2019-03-15-at-10.05.19-300x214.png" alt="Are we ready yet?" width="300" height="214" /></a></p>
+<span style="font-weight: 400;">Synapse 1.0 is good news for anyone running a Synapse installation - it contains critical bug fixes, security patches, a new room algorithm version and dramatically improved user and room search. However, as part of the security work it also </span><b>contains a breaking change from previous Synapse versions. From 1.0 onwards it will necessary to ensure a valid TLS certificate on the federation API. Self signed certificates will no longer be accepted</b><span style="font-weight: 400;">. </span><a href="https://github.com/matrix-org/synapse/blob/master/docs/MSC1711_certificates_FAQ.md#it-used-to-work-just-fine-why-are-you-breaking-everything"><span style="font-weight: 400;">Why would we do such a thing?</span></a>
+
+<span style="font-weight: 400;">In anticipation for this, everyone currently running a homeserver must ensure that they have checked their federation certificate (check yours </span><a href="https://matrix.org/federationtester/"><span style="font-weight: 400;">here</span></a><span style="font-weight: 400;">). Failure to do so will mean being unable to federate with any Matrix 1.0 compliant server. If your server fails the check, our </span><a href="https://github.com/matrix-org/synapse/blob/master/docs/MSC1711_certificates_FAQ.md"><span style="font-weight: 400;">FAQ</span></a><span style="font-weight: 400;"> has all the details on what you need to do. </span>
+
+<span style="font-weight: 400;">This post is a call to arms to try and get as many admins to upgrade their certificates as possible. We are tracking adoption at </span><a href="https://arewereadyyet.com"><span style="font-weight: 400;">https://arewereadyyet.com</span></a><span style="font-weight: 400;"> - currently this sits at about 55% - we need this figure to be higher before we can pull the lever.  </span>
+
+<span style="font-weight: 400;">So what are you waiting for? Check that your server has valid certs - then tell all your admin pals to do the same. </span><b>Friends don't let friends miss out on Synapse 1.0, send them to</b><a href="http://arewereadyyet.com/"><b> arewereadyyet.com</b></a><b> (or tweet </b><a href="https://twitter.com/intent/tweet?text=Are%20you%20running%20a%20Matrix%20server%3F%20Are%20you%20ready%20for%20Matrix%201.0%3F%20Find%20out%20at%20https%3A%2F%2Farewereadyyet.com!"><b>here</b></a><b> to remind them!)</b><span style="font-weight: 400;"> We really need the community to help us here because at some point soon, we will need to pull the lever and release.</span>
+
+<span style="font-weight: 400;">Once we make more progress on adoption, we will announce an official release date and finally get Synapse out of beta!</span>

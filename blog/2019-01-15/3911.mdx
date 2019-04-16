@@ -1,0 +1,32 @@
+---
+date: '2019-01-15'
+title: >-
+  Further details on Critical Security Update in Synapse affecting all versions
+  prior to 0.34.1 (CVE-2019-5885)
+categories:
+  - General
+---
+
+<span style="font-weight: 400;">On <a href="https://matrix.org/blog/2019/01/10/critical-security-update-synapse-0-34-0-1-synapse-0-34-1-1/">Thursday Jan 10th we released a Critical Security Update (Synapse 0.34.0.1/0.34.1.1)</a>, which fixes a serious security bug in Synapse 0.34.0 and earlier.  Many deployments have now upgraded to 0.34.0.1 or 0.34.1.1, and we now consider it appropriate to disclose more information about the issue, to provide context and </span><b>encourage the remaining affected servers to upgrade as soon as possible</b><span style="font-weight: 400;">.</span>
+
+<span style="font-weight: 400;">In Synapse 0.11 (Nov 2015) we added a configuration parameter called “macaroon_secret_key” which relates to our use of </span><a href="https://ai.google/research/pubs/pub41892"><span style="font-weight: 400;">macaroons</span></a><span style="font-weight: 400;"> in authentication. Macaroons are authentication tokens which must be signed by the server which generates them, to prevent them being forged by attackers. “macaroon_secret_key” defines the key which is used for this signature, and it must therefore be kept secret to preserve the security of the server.</span>
+
+<span style="font-weight: 400;">If the option is not set, Synapse will attempt to derive a secret key from other secrets specified in the configuration file. However, in all versions of Synapse up to and including 0.34.0, this process was faulty and a predictable value was used instead.</span>
+
+<b>So if, your homeserver.yaml does not contain a macaroon_secret_key, you need to upgrade to 0.34.1.1 or 0.34.0.1 or Debian 0.34.0-3~bpo9+2 immediately to prevent the risk of account hijacking.</b>
+
+<span style="font-weight: 400;">The vulnerability affects any Synapse installation which does not have a macaroon_secret_key setting. </span><b>For example, the Debian and Ubuntu packages from Matrix.org, Debian and Ubuntu include a configuration file without an explicit macaroon_secret_key and must upgrade. </b><span style="font-weight: 400;">Anyone who hasn't updated their config since Nov 2015 or who grandfathered their config from the Debian/Ubuntu packages will likely also be affected.</span>
+
+<span style="font-weight: 400;">We are not aware of this vulnerability being exploited in the wild, but if you are running an affected server it may still be wise to check your synapse's </span><span style="font-weight: 400;">user_ips</span><span style="font-weight: 400;"> database table for any unexpected access to your server's accounts. You could also check your accounts' device lists (shown under Settings in Riot) for unexpected devices, although this is not as reliable as an attacker could cover their tracks to remove unexpected devices.</span>
+
+<span style="font-weight: 400;">We'll publish a full post-mortem of the issue once we are confident that most affected servers have been upgraded.</span>
+
+<span style="font-weight: 400;">We'd like to apologise for the inconvenience caused by this - especially to folks who upgraded since Friday who were in practice not affected.  Due to the nature of the issue we wanted to minimise details about the issue until people had a chance to upgrade. We also did not follow a planned disclosure procedure because Synapse 0.34.1 already unintentionally disclosed the existence of the bug by fixing it (causing the logout bug for affected users which led us to pull the original Synapse 0.34.1 release).</span>
+
+<span style="font-weight: 400;">On the plus side, we are approaching the end of beta for Synapse, and going forwards hope to see much better stability and security across the board.</span>
+
+<span style="font-weight: 400;">Thanks again for your patience,</span>
+
+<span style="font-weight: 400;">The Matrix.org Team</span>
+
+&nbsp;

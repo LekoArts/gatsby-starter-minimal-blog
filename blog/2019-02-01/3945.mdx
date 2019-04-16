@@ -1,0 +1,140 @@
+---
+date: '2019-02-01'
+title: This Week in Matrix 2019-02-01
+categories:
+  - General
+---
+
+<h2 id="mscspecupdates">MSC (spec) updates</h2>
+r0, the first stable release of the Server-Server (Federation) Specification is extremely close! We of course will make a big splash and let you know when this comes!
+
+Even apart from that, let's take a look at the MSCs (Matrix Spec Changes) that are currently in progress.
+<h3 id="approvedmscs">Approved MSCs</h3>
+<ul>
+ 	<li><a href="https://github.com/matrix-org/matrix-doc/issues/1339">[MSC 1339]: Proposal to add a GET method to read account data</a></li>
+ 	<li><a href="https://github.com/matrix-org/matrix-doc/issues/1229">[MSC 1229]: Mitigating abuse of the event depth parameter over federation</a></li>
+ 	<li><a href="https://github.com/matrix-org/matrix-doc/pull/1779">[MSC 1779]: MSC1779: Proposal for Open Governance for Matrix.org (v2)</a></li>
+ 	<li><a href="https://github.com/matrix-org/matrix-doc/issues/1354">[MSC 1354]: Widget API extension: Always-on-screen</a></li>
+</ul>
+<h3 id="finalcommentperiod">Final Comment Period</h3>
+<ul>
+ 	<li><a href="https://github.com/matrix-org/matrix-doc/pull/1831">[MSC 1831]: MSC1831: Change the order of .well-known and SRV discovery techniques</a></li>
+ 	<li><a href="https://github.com/matrix-org/matrix-doc/pull/1819">[MSC 1819]: MSC:1819 Remove Presence Lists</a></li>
+</ul>
+<h3 id="inprogressmscs">In Progress MSCs</h3>
+<ul>
+ 	<li><a href="https://github.com/matrix-org/matrix-doc/pull/1538">[MSC 1538]: MSC1219: storing megolm keys serverside</a></li>
+ 	<li><a href="https://github.com/matrix-org/matrix-doc/pull/1796">[MSC 1796]: MSC1796: improved e2e notifications</a></li>
+ 	<li><a href="https://github.com/matrix-org/matrix-doc/pull/1797">[MSC 1797]: MSC1797: Proposal for more granular profile error codes</a></li>
+ 	<li><a href="https://github.com/matrix-org/matrix-doc/pull/1544">[MSC 1544]: [WIP] MSC1543: Key verification using QR codes</a></li>
+ 	<li><a href="https://github.com/matrix-org/matrix-doc/pull/1768">[MSC 1768]: [WIP] MSC1768: Proposal to authenticate with public keys</a></li>
+ 	<li><a href="https://github.com/matrix-org/matrix-doc/pull/1769">[MSC 1769]: WIPish: MSC1769: Extensible profiles as rooms</a></li>
+ 	<li><a href="https://github.com/matrix-org/matrix-doc/pull/1802">[MSC 1802]: MSC1802: Standardised federation response formats</a></li>
+ 	<li><a href="https://github.com/matrix-org/matrix-doc/pull/1767">[MSC 1767]: MSC1767: Extensible event types &amp; fallback in Matrix (v2)</a></li>
+ 	<li><a href="https://github.com/matrix-org/matrix-doc/pull/1772">[MSC 1772]: WIPish: MSC1772: Groups as rooms (v2)</a></li>
+ 	<li><a href="https://github.com/matrix-org/matrix-doc/pull/1776">[MSC 1776]: [WIPish] MSC1776: Implementing peeking via /sync</a></li>
+ 	<li><a href="https://github.com/matrix-org/matrix-doc/pull/1777">[MSC 1777]: [WIPish] MSC1777: peeking over federation</a></li>
+ 	<li><a href="https://github.com/matrix-org/matrix-doc/pull/1780">[MSC 1780]: [WIP] MSC1780: Add DIDs and DID names as admin accounts to HS</a></li>
+ 	<li><a href="https://github.com/matrix-org/matrix-doc/pull/1781">[MSC 1781]: [WIP] MSC1781: Proposal for associations for DIDs and DID names</a></li>
+ 	<li><a href="https://github.com/matrix-org/matrix-doc/pull/1607">[MSC 1607]: MSC1608: Proposal for room alias grammar</a></li>
+</ul>
+<h2 id="synapse">Synapse</h2>
+Neil and the team have been working frantically on getting a new Synapse release out this week:
+<blockquote>This week has been all about gearing up for v0.99.0 and if you would like to help us test it, our latest release candidate lives <a href="https://github.com/matrix-org/synapse/releases/tag/v0.99.0rc4">here</a>
+We've taken the decision to bump up to v0.99.0 because it is very much a precursor to v1.0. When v1.0 lands it will contain a breaking change that means all homeservers will need a valid certificate for their server to server endpoint, self signing will no longer be possible.
+v0.99.0 contains support to help you do this, but once it lands all admins will need to upgrade, failure to do so will mean losing the ability to federate with &gt; v1.0 servers.
+We'll have detailed docs ready to go alongside the full v0.99.0 release, and we plan to leave at least 1 month between v0.99.0 and v1.0, but for now please be aware that the change is coming.
+
+Huge thanks to Rich, Erik, Hawkowl and Anoa for all their work in getting us to rc stage.</blockquote>
+<h2 id="nheko_reborn">nheko_reborn</h2>
+If you haven't already heard, then I envy that you get to learn about it now: there is a credible new project which forks <a href="https://github.com/mujx/nheko">nheko</a> and seeks to maintain and continue the project.
+
+<strong><a href="https://github.com/Nheko-Reborn/nheko">Nheko-Reborn</a></strong> is a new project headed by <a href="https://matrix.to/#/@red_sky:ocean.joedonofry.com">red_sky</a>, who told me:
+<blockquote>I think I'm getting pretty close to having another release ready. Need to clean up some things here and there and get the CI packages uploading correctly
+It'd be good to have more community engagement</blockquote>
+Come chat about the project in <a href="https://matrix.to/#/#nheko-reborn:matrix.org">#nheko-reborn:matrix.org</a>.
+<h2 id="riotios">Riot iOS</h2>
+<ul>
+ 	<li>New app icons</li>
+ 	<li>Most of e2ee keys backup screens are done. We are only missing the sign out warning which invited the user to back up their keys before logging out</li>
+ 	<li>A Beta release is on its way to TestFlight</li>
+</ul>
+<h2 id="riotandroid">Riot Android</h2>
+<ul>
+ 	<li>Finishing e2ee keys backup screen</li>
+ 	<li>Integrate new app icons, and splash</li>
+ 	<li>Release in Beta</li>
+ 	<li>Riotx: improvement in room list, read marker management</li>
+</ul>
+<h2 id="journal">journal</h2>
+<a href="https://github.com/lukebarnard1/">lukebarnard</a> has continued work on <a href="https://github.com/lukebarnard1/journal">journal</a>, a matrix-backed blog engine:
+<blockquote>I've posted another blog on <a href="https://github.com/lukebarnard1/journal">journal</a> about the next steps for the project, including my thoughts on verifying blog content.
+
+<a href="https://journal.lukebarnard.co.uk/journal/26-jan-2019">https://journal.lukebarnard.co.uk/journal/26-jan-2019</a>
+
+I'm planning to start work on the component that will scrape blog content from a matrix room. This will most likely involve a dedicated bot that syncs new journal blog events, verifies the blog signature and then writes the blog content to a file on the blog server.
+
+I'll probably ramble about the details of that at some point.</blockquote>
+<h2 id="fedtester">fed-tester</h2>
+<a href="https://matrix.to/#/@f0x:lain.haus">f0x</a> made a bunch of updates to his federation testing GUI:
+<blockquote>The fed-tester frontend has received an overhaul. It's dark now, is more responsive, and will show the new <a href="https://github.com/matrix-org/matrix-federation-tester/pull/14/">ValidCertificates</a>, and Information fields. Found errors and warnings are now shown at the top, instead of having to traverse the table yourself. Hosted at <a href="https://neo.lain.haus/fed-tester">https://neo.lain.haus/fed-tester</a> with code at <a href="https://git.lain.haus/f0x/fed-tester">https://git.lain.haus/f0x/fed-tester</a> Room for both the frontend and backend is <a href="https://matrix.to/#/#fed-tester:lain.haus">#fed-tester:lain.haus</a></blockquote>
+<h2><a href="https://matrix.org/blog/wp-content/uploads/2019/02/fed-tester.png"><img class="alignnone size-large wp-image-3946" src="https://matrix.org/blog/wp-content/uploads/2019/02/fed-tester-1024x526.png" alt="" width="1024" height="526" /></a></h2>
+<h2 id="matrixdockeransibledeploy">matrix-docker-ansible-deploy</h2>
+<a href="https://matrix.to/#/@slavi:devture.com">Slavi</a> had two big updates for <a href="https://github.com/spantaleev/matrix-docker-ansible-deploy">matrix-docker-ansible-deploy</a> this week, improved security and IRC bridging:
+<blockquote><a href="https://github.com/spantaleev/matrix-docker-ansible-deploy">matrix-docker-ansible-deploy</a> now has much-improved security. All services now run in containers with a non-root user from the very beginning, without capabilities and with a read-only filesystem. To learn more, see the <a href="https://github.com/spantaleev/matrix-docker-ansible-deploy/blob/3f5b1ad1a5149a28713fa8b4fc0e53e04fefa349/CHANGELOG.md#2019-01-29">relevant changelog entry</a>.
+Thanks to a contribution by <a href="https://github.com/Plailect">Devon Maloney (@Plailect)</a>, <a href="https://github.com/spantaleev/matrix-docker-ansible-deploy">matrix-docker-ansible-deploy</a> now has IRC bridging support via <a href="https://github.com/TeDomum/matrix-appservice-irc">matrix-appservice-irc</a>. To learn more, see the <a href="https://github.com/spantaleev/matrix-docker-ansible-deploy/blob/cd332d9b4e9c2323cbc0a028eaecf1d1391a85e0/docs/configuring-playbook-bridge-appservice-irc.md">Setting up Appservice IRC</a> documentation page.</blockquote>
+<h2 id="neo">neo</h2>
+<a href="https://matrix.to/#/@f0x:lain.haus">f0x</a> again, now with an update on neo:
+<blockquote>Not too much work on Neo this week, but there's some smooth animations for the roomlist now <a href="https://f.0x52.eu/media/_cfcf1a510c2b4d198edacfbdd952cf0buntitled.mp4">video, with music</a>, which is surprisingly complicated in css
+<a href="https://git.lain.haus/f0x/iris">https://git.lain.haus/f0x/iris</a></blockquote>
+<h2 id="libaqueousmatrixsdkindart">libaqueous - Matrix SDK in Dart</h2>
+<a href="https://matrix.to/#/@bhat:encom.eu.org">Black Hat</a> is working on a Matrix SDK in Dart:
+<blockquote>libaqueous (the Matrix SDK in Dart) is progressing nicely. A reference implementation is also planned.
+The repo is at <a href="https://gitlab.com/b0/libaqueous">https://gitlab.com/b0/libaqueous</a>, and I also set up a room at <a href="https://matrix.to/#/#libaqueous:encom.eu.org">#libaqueous:encom.eu.org</a></blockquote>
+<h2 id="ma1utasmatrixprojectsjeonjmsdkmatrixjabberjavabridge">ma1uta's Matrix projects: Jeon, JMSDK, matrix-jabber-java-bridge</h2>
+<a href="https://matrix.to/#/@ma1uta:matrix.org">ma1uta</a> has been working on his ecosystem of Matrix tooling:
+<blockquote>Not much changes in <a href="https://gitlab.com/ma1uta/jeon">jeon</a>, <a href="https://github.com/ma1uta/jmsdk">jmsdk</a> and matrix-jabber-java-bridge (mjjb).
+<ul>
+ 	<li>Jeon: improved mxid with a new validation, support of the 11 java. And preparing the new release.</li>
+ 	<li>Jmsdk: fixed few bugs.</li>
+</ul>
+</blockquote>
+<h3 id="matrixjabberjavabridgehttpsgithubcomma1utamatrixjabberjavabridge"><a href="https://github.com/ma1uta/matrix-jabber-java-bridge/">matrix-jabber-java-bridge</a></h3>
+<blockquote>The bridge is being re-written. I excluded the jabber server (still need to setup SRV records) and implementing the xmpp s2s api in the bridge.
+Done:
+<ul>
+ 	<li>rfc6120 in s2s part;</li>
+ 	<li>almost server dialback (XEP-0220);</li>
+</ul>
+Remaining:
+<ul>
+ 	<li>MUC (XEP-0045);</li>
+ 	<li>stabilize.</li>
+</ul>
+New version will allow:
+<ul>
+ 	<li>1:1 conversations between matrix and jabber users;</li>
+ 	<li>group chats by double-puppet mapping rooms to conferences;</li>
+ 	<li>additionally xmpp users can join directly to rooms via double-puppet bots.</li>
+</ul>
+Also I started breaking the bridge to modules. And the next module will be ActivityPub S2S module which allows communicate matrix servers with other fedivers.</blockquote>
+<h2 id="mxisd">mxisd</h2>
+<a href="https://matrix.to/#/@max:kamax.io">Max</a> reports that:
+<blockquote><a href="https://github.com/kamax-matrix/mxisd">mxisd</a> <a href="https://github.com/kamax-matrix/mxisd/releases/tag/v1.3.0-alpha.3">v1.3.0-alpha.3</a> is out! This one works further towards protecting your privacy and we strongly recommend it if you already are using an alpha release. We have written our stance on privacy with how it affects mxisd <a href="https://github.com/kamax-matrix/mxisd/wiki/mxisd-and-your-privacy">here</a>.
+
+We also consider this release to be as stable as v1.2.2. Feel free to upgrade following the <a href="https://github.com/kamax-matrix/mxisd/wiki/Upgrade-Notes#v130">Upgrade notes</a> and benefits from all the v1.3.0 work so far, especially the massive improvements on resources usage.</blockquote>
+<h2 id="purismworkingonfractalintegration">Purism working on Fractal integration</h2>
+<blockquote class="twitter-tweet" data-lang="en">
+<p dir="ltr" lang="en">update on <a href="https://twitter.com/gnome?ref_src=twsrc%5Etfw">@gnome</a> <a href="https://twitter.com/matrixdotorg?ref_src=twsrc%5Etfw">@matrixdotorg</a> client for <a href="https://twitter.com/hashtag/PureOS?src=hash&amp;ref_src=twsrc%5Etfw">#PureOS</a>: "I am pleased to announce that over the next week I will be working to make Fractal's UI adaptive for the Librem 5's launch. This contract began last week, and I already have some results to show off." <a href="https://t.co/iX47u1Bdb1">https://t.co/iX47u1Bdb1</a> <a href="https://t.co/Hnr7ZVpYd1">pic.twitter.com/Hnr7ZVpYd1</a></p>
+— Purism (@Puri_sm) <a href="https://twitter.com/Puri_sm/status/1090686095111712768?ref_src=twsrc%5Etfw">January 30, 2019</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+Definitely take a look at the <a href="https://blogs.gnome.org/christopherdavis/2019/01/30/adaptive-fractal-contract/">linked blog post</a> for more.
+<h2 id="whatelseisthere">What else is there?</h2>
+What there mainly is is <strong>FOSDEM</strong>. A lot of Matrix-folk are currently near me as I write this, sat in a hotel bar in sunny Brussels. Matrix live is not available today, but will incorporate some of the event, which kicks of tomorrow.
+
+If you will be attending, come <code>/join</code> us at the Matrix table, where there will be stickers and t-shirts and merriment, and definitely come and attend the talks:
+<ul>
+ 	<li><strong>Matrix in the French State</strong> <a href="https://fosdem.org/2019/schedule/event/matrix_french_state/">14:00 Saturday in Janson</a> (Communications Track)</li>
+ 	<li><strong>Breaking the 100 bits per second barrier with Matrix</strong> <a href="https://fosdem.org/2019/schedule/event/matrix/">10:40 Sunday in H.1309 (Van Rijn)</a> (Real Time Communications (RTC) devroom)</li>
+</ul>

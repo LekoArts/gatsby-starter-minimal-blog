@@ -1,0 +1,126 @@
+---
+date: '2019-03-15'
+title: This Week in Matrix 2019-03-15
+categories:
+  - General
+---
+
+<h2 id="matrixlives3e17helloryan">Matrix Live S3E17: Hello Ryan</h2>
+This week you're stuck with me, but I'm chatting to Ryan, who works on Riot web. Having previously worked at Mozilla, Ryan has a LOT of interesting things to say about Firefox, the browser market, the importance of decentralisation, Matrix being GREAT, and more.
+
+<iframe src="https://www.youtube.com/embed/2LiaUmNdT0s" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+<h2 id="arewereadyyetcom">arewereadyyet.com: Matrix 1.0-ready Federation</h2>
+<a href="https://arewereadyyet.com">https://arewereadyyet.com</a> is not just an amazing domain we somehow managed to buy, it's also the first place to look for progress towards full Matrix 1.0 readiness. Read more details at <a href="https://matrix.org/blog/2019/03/15/matrix-1-0-https-arewereadyyet-com/">https://matrix.org/blog/2019/03/15/matrix-1-0-https-arewereadyyet-com/</a>.
+<h2 id="spec">Spec</h2>
+<blockquote>Lots of activity but most notably MSC 1915 (a blocker for Matrix 1.0) is making progress. <a href="https://github.com/matrix-org/matrix-doc/pull/1915">https://github.com/matrix-org/matrix-doc/pull/1915</a></blockquote>
+<h2 id="synapse10">Synapse . . . 1.0?</h2>
+<blockquote>It's all about 1.0 for the Synapse gang this week. This means performance improvements across the board in the form of read receipt batching, user directory (room directory coming soon!) and rate limiting on log in and registration APIs.
+
+Brendan shipped the low bandwidth CoAP proxy we demo'd at FOSDEM
+
+As well as a bunch of spec implementation projects to ensure that Synapse (and Sydent) are ready for Synapse 1.0.</blockquote>
+<h2 id="synapseworkersprojects">Synapse workers projects</h2>
+Turn-of-phrase of the week from <a href="https://matrix.to/#/@Half-Shot:half-shot.uk">Half-Shot</a> ("make it more performant and less crashy"):
+<blockquote><a href="https://github.com/turt2live/synapse-netcore-workers">synapse-netcore-workers</a> is progressing as strongly as ever. This week has mainly been supporting a couple of users trying to use the fed sender, and also trying to make it more performant and less crashy. I've been using it solidly for two weeks now, and by and large it's been working nicely :)</blockquote>
+<a href="https://matrix.to/#/@bhat:encom.eu.org">Black Hat</a> has been working on <a href="https://gitlab.com/b0/cortex/">Cortex</a>, a similar project in Rust:
+<blockquote>Support for replication protocol in <a href="https://gitlab.com/b0/cortex/">Cortex</a> is mostly complete. A federation sender worker implementation is being worked on. If anyone is interested or wants to contribute, please go to <a href="https://matrix.to/#/#cortex:encom.eu.org">#cortex:encom.eu.org</a></blockquote>
+<h2 id="construct">Construct</h2>
+<blockquote>Lots of progress this week. I'd like to give a special thanks to Yan Minari for another great week of testing, bugfixes and feature requests.
+<ul>
+ 	<li>We implemented features related to room directory lists, reporting content, ignoring users, VoIP turnServer, prev_content in state events.</li>
+ 	<li>Improving SSL: allowing configurable lists of ciphers, and sending/receiving SNI.</li>
+ 	<li>At the lower level: adding support for Linux AIO features that are present in newer kernels, giving a nice performance boost.</li>
+</ul>
+</blockquote>
+For more Construct news watch the <a href="https://github.com/matrix-construct/construct/">repo</a> or join <a href="https://matrix.to/#/#zemos-test:matrix.org">#zemos-test:matrix.org</a>
+<h2 id="newclientforandroidpattle">New Client for Android: Pattle</h2>
+<a href="https://matrix.to/#/@wilko:matrix.org">Wilko</a> announced <a href="https://git.pattle.im/pattle/android">Pattle</a>, a Matrix client for Android:
+<blockquote>Hey all, I've been working on my Matrix Android app, Pattle! The goal of Pattle is to be an easy to use app for Matrix, with it's design inspired by popular apps such as WhatsApp and Telegram. <a href="https://git.pattle.im/pattle/android">Development happens here</a>, and contributions are encouraged! The app is not currently suited for daily use, but some functionality is there, such as registering, logging in and viewing chats.
+Currently it's an Android only app using the official Matrix Android SDK, but the plan is to support iOS and web too, in the future.
+There's also a sort of <a href="https://docs.pattle.im/design/philosophy/">design document</a> available, stating how Pattle differs from standard Matrix apps and what it's goals are. The intent of the design document is to make development easier later on for other platforms</blockquote>
+<a href="https://matrix.org/blog/wp-content/uploads/2019/03/pattle.png"><img class="alignnone size-large wp-image-4119" src="https://matrix.org/blog/wp-content/uploads/2019/03/pattle-1024x561.png" alt="" width="1024" height="561" /></a>
+<ul>
+ 	<li>Get APKs to test: <a href="https://git.pattle.im/pattle/android/-/jobs">https://git.pattle.im/pattle/android/-/jobs</a></li>
+ 	<li>and join the development room: <a href="https://matrix.to/#/#pattle:matrix.org">#pattle:matrix.org</a></li>
+</ul>
+<h2 id="quaternion0094beta2available">Quaternion 0.0.9.4 beta 2 available</h2>
+<a href="https://matrix.to/#/@kitsune:matrix.org">kitsune</a>:
+<blockquote><a href="https://github.com/QMatrixClient/Quaternion">Quaternion</a> 0.0.9.4 beta 2 (too many numbers? That too shall pass) is out, with bugfixes and translation updates. Notably, Quaternion won't crash on upgraded rooms in some cases, and won't cry in <a href="https://matrix.to/#/#gsoc:matrix.org">#gsoc:matrix.org</a> and other v3 rooms. Translators are still strongly encouraged to push forward - due to all the features and fixes, there are many untranslated strings across the board! Also, some bugfixes are <a href="https://github.com/QMatrixClient/Quaternion/projects/2#column-4040192">still in order</a> before we can call the release RC, and some of them are really easy - so if you'd like to contribute, it's a great time to start!</blockquote>
+<h2 id="riotweb">Riot Web</h2>
+<blockquote>
+<ul>
+ 	<li>Preparing for 1.0.4 release with lots of small polish fixes</li>
+ 	<li>Planning our roadmap for the next few quarters</li>
+</ul>
+</blockquote>
+<h2 id="riotios">Riot iOS</h2>
+<blockquote>iOS released 2 times. Last release was to fix an issue with invalid scalar token.
+Review of one PR from the community for iOS10 notifications.
+Started implementing device verification with emoji.</blockquote>
+<h2 id="riotandroid">Riot Android</h2>
+<blockquote>We've released v0.8.25 on Thursday, containing refresh of invalid scalar token, and some bugfixes. Links on m.notice messages are now clickable again.
+Started implementing device verification with emoji.</blockquote>
+<h2 id="riotxandroid">RiotX (Android)</h2>
+<blockquote>
+<ul>
+ 	<li>We started to setup build tools and CI configuration.</li>
+ 	<li>The timeline scroll issues are addressed.</li>
+</ul>
+</blockquote>
+<h2 id="fluffychat11released">FluffyChat 11 released</h2>
+Ubuntu Touch fans rejoiced this week as a new version of <a href="https://github.com/ChristianPauly/fluffychat">FluffyChat</a> was made available: <a href="https://open-store.io/app/fluffychat.christianpauly">https://open-store.io/app/fluffychat.christianpauly</a>
+<blockquote>
+<ul>
+ 	<li>Improved stability and performance</li>
+ 	<li>New translations - thanks to all translators</li>
+ 	<li>Design improvements to make FluffyChat look more like a common Ubuntu Touch app</li>
+ 	<li>Better tablet support</li>
+ 	<li>Lots of Bugfixes which caused a critical error</li>
+ 	<li>Fixed the automatic scrolling up to the last seen message</li>
+ 	<li>Fixed disabling account</li>
+</ul>
+</blockquote>
+<h2 id="minivectorv0825">miniVector v0.8.25</h2>
+<a href="https://github.com/LiMium/mini-vector-android">miniVector</a> is a minified Android Matrix client derived from Riot Android. v0.8.25 keeps it up to date with Riot Android.
+<h2 id="matrixrubysdk">Matrix Ruby SDK</h2>
+<a href="https://github.com/ananace/">Ananace</a> is returning his attention to the <a href="https://github.com/ananace/ruby-matrix-sdk">Matrix Ruby SDK</a>:
+<blockquote>I just realized that I haven't had lazy loading activated by default in the Ruby SDK, despite having had lazy loading code in place since ages back, so now that's going to be the default value going forward.</blockquote>
+Further:
+<blockquote>I started hacking - just a couple of hours or so ago - on a notification sender for The Foreman, a server orchestration system. So it can forward notifications to Matrix. <a href="https://github.com/ananace/foreman_notification_send">https://github.com/ananace/foreman_notification_send</a></blockquote>
+If you're using, or considering using, The Foreman for orchestration this may be very useful.
+
+<a href="https://matrix.org/blog/wp-content/uploads/2019/03/foreman.png"><img class="alignnone size-full wp-image-4120" src="https://matrix.org/blog/wp-content/uploads/2019/03/foreman.png" alt="" width="491" height="288" /></a>
+<h2 id="maubot">maubot</h2>
+<a href="https://matrix.to/#/@tulir:maunium.net">tulir</a>:
+<blockquote><a href="https://github.com/maubot/maubot">maubot</a> plugins can now add their own endpoints to the main maubot webserver. The pingstat plugin I announced last week uses this feature for the leaderboard widget: <a href="https://maubot.xyz/_matrix/maubot/plugin/pingstat/stats?room_id=!MbRaSiMIRhhxDtJENL:maunium.net">https://maubot.xyz/_matrix/maubot/plugin/pingstat/stats?room_id=!MbRaSiMIRhhxDtJENL:maunium.net</a></blockquote>
+<h2 id="matrixappservicebridge180matrixappserviceirc0120rc1roomupgradesandmore">matrix-appservice-bridge 1.8.0, matrix-appservice-irc 0.12.0-rc1: room upgrades and more</h2>
+<a href="https://matrix.to/#/@Half-Shot:half-shot.uk">Half-Shot</a>:
+<blockquote><a href="https://github.com/matrix-org/matrix-appservice-bridge">matrix-appservice-bridge</a> got a 1.8.0 release last night, featuring automatic handling of room upgrades for all your room upgrade needs. Providing your bridge uses the RoomStore as designed, it's literally a few lines to enable :). <a href="https://github.com/matrix-org/matrix-appservice-bridge/blob/master/CHANGES.md">Changelog here</a>
+
+What is this? A <a href="https://github.com/matrix-org/matrix-appservice-irc">matrix-appservice-irc</a> release? No, it's a release <em>candidate</em>. Announcing that 0.12.0-rc1 is <a href="https://github.com/matrix-org/matrix-appservice-irc/blob/release-v0.12.0/CHANGELOG.md">now out and about</a> for folks to play with. More IRC updates to come in the future :)</blockquote>
+<h2 id="mautrixwhatsapp">mautrix-whatsapp</h2>
+<a href="https://matrix.to/#/@tulir:maunium.net">tulir</a>:
+<blockquote><a href="https://github.com/tulir/mautrix-whatsapp">mautrix-whatsapp</a> now has support for postgres databases thanks to a <a href="https://github.com/tulir/mautrix-whatsapp/pull/43">pull request</a> by <a href="https://github.com/Rennerdo30">@Rennerdo30</a></blockquote>
+<h2 id="mautrixtelegram">mautrix-telegram</h2>
+<a href="https://matrix.to/#/@tulir:maunium.net">tulir</a>:
+<blockquote><a href="https://github.com/tulir/mautrix-telegram">mautrix-telegram</a> got a <a href="https://github.com/tulir/mautrix-telegram/pull/290">pull request</a> with a pytest setup and a few unit tests by <a href="https://github.com/V02460">@V02460</a>. I haven't merged that one yet, but will soon.</blockquote>
+<h2 id="matrixdockeransibledeploysupportsdimension">matrix-docker-ansible-deploy supports Dimension</h2>
+This is really neat, and a shout-out that these playbooks are my preferred way to install Synapse and other components. <a href="https://matrix.to/#/@slavi:devture.com">Slavi</a>:
+<blockquote>Thanks to <a href="https://github.com/NullIsNot0">NullIsNot0</a>, <a href="https://github.com/spantaleev/matrix-docker-ansible-deploy">matrix-docker-ansible-deploy</a> can now (optionally) <a href="https://github.com/spantaleev/matrix-docker-ansible-deploy/blob/master/CHANGELOG.md#dimension-integration-manager-support">install</a> the <a href="https://dimension.t2bot.io/">Dimension</a> Integration Manager.
+The playbook can now also assist with <a href="https://github.com/spantaleev/matrix-docker-ansible-deploy/blob/master/CHANGELOG.md#matrix-nginx-proxy-support-for-serving-the-base-domain">serving the base domain</a> from the Matrix server, thus making it easier for some folks to set up well-known Server-Delegation.</blockquote>
+<h2 id="selfhostingguidefornixos">Self-hosting guide for NixOS</h2>
+<a href="https://matrix.to/#/@florianjacob:matrix.org">Florian</a>:
+<blockquote>I wrote a <a href="https://github.com/NixOS/nixpkgs/pull/57699">Matrix self-hosting guide</a> for the <a href="https://nixos.org/">NixOS</a> operating system: Check its progress and give it a test if you're a fellow NixOS user!</blockquote>
+<h2 id="banhammernewbotforapplyingabanpolicy">banhammer: new bot for applying a ban policy</h2>
+<a href="https://matrix.to/#/@jan.christian:gruenhage.xyz">jcgruenhage</a> reports that:
+<blockquote>I wrote a small bot that takes a kick/ban policy from room state from all rooms it's a member of and tries to enact that policy. In practice that means it applies a regex to all MXIDs and tries to kick/ban them based on that. It's been a request of <a href="https://github.com/turt2live">TravisR</a> , source code is available at <a href="https://gitlab.com/jcgruenhage/banhammer">https://gitlab.com/jcgruenhage/banhammer</a>, documentation is still lacking but will hopefully soon be added</blockquote>
+<h2 id="matrixwugsupportfornavajoscript">matrix-wug support for Navajo script</h2>
+Continuing his theme of Native American languages, <a href="https://matrix.to/#/@dandellion:dodsorf.as">Dandellion</a> added Navajo script to <a href="https://github.com/dali99/matrix-wug">matrix-wug</a>.
+<h2 id="freedomboxtutorialsettingupachatserverwithmatrixandriot">FreedomBox Tutorial: Setting Up a Chat Server with Matrix and Riot</h2>
+It's been possible for some time to set up a Matrix server with FreedomBox, and they just recently released a video tutorial showing the process.
+
+<iframe src="https://www.youtube.com/embed/37uoEbVsbNQ" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+<h2 id="aroundtheinternets">Around the Internets</h2>
+There were a <a href="https://www.theregister.co.uk/2019/03/14/facebook_server_configuration/">whole lot</a> of <a href="https://www.theguardian.com/technology/2019/mar/13/googles-gmail-and-drive-suffer-global-outages">outages</a> for the <a href="https://www.wsj.com/articles/facebook-and-instagram-suffer-lengthy-outages-11552539752">big names</a> this week - good time to think about self-hosting?
+<h2 id="thatsalliknow">That's all I know</h2>
+So that's all I have to say! I hope you enjoyed this edition of This Week in Matrix, and whether you did or you didn't, I'd love too hear from you in <a href="https://matrix.to/#/#TWIM:matrix.org">#twim:matrix.org</a>. If you have Matrix news to share, that's the place to come and do so!

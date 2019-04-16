@@ -1,0 +1,71 @@
+---
+date: '2018-12-14'
+title: This Week in Matrix 2018-12-14
+categories:
+  - General
+---
+
+<h2 id="fractalhackfest">Fractal Hackfest</h2>
+Developers and creators of <a href="https://wiki.gnome.org/Apps/Fractal">Fractal</a>, the GNOME Matrix client, have been holding a <a href="https://wiki.gnome.org/Hackfests/FractalDecember2018">Hackfest this week in Seville</a>. Matthew and I caught up with them on video for Matrix Live this week, and discussed the product improvements they've been making and their plans for the next release (due next week!)
+
+<iframe src="https://www.youtube.com/embed/SgyLHi8zZXQ" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+<h2 id="matrixspec">Matrix Spec</h2>
+<ul>
+ 	<li><strong><a href="https://github.com/matrix-org/matrix-doc/issues/1466">MSC1466</a></strong> merged. <a href="https://github.com/matrix-org/matrix-doc/blob/erikj/soft_logout/proposals/1466-soft-logout.md">MSC1466 from Erik describes</a> "Soft Remote Logout", which avoids loss of encryption keys in circumstances of remote logout.</li>
+ 	<li><strong><a href="https://github.com/matrix-org/matrix-doc/pull/1730">MSC1730</a></strong> entered FCP (<em>final comment period</em>, the last step before being merged.) <a href="https://github.com/matrix-org/matrix-doc/blob/rav/proposal/cs_api_in_login/proposals/1730-cs-api-in-login-response.md">read the proposal</a></li>
+</ul>
+<h2 id="thisweekinruma">This Week in Ruma</h2>
+We don't often get to feature news from <a href="https://github.com/ruma/ruma">Ruma</a>, but this week there is an updated <a href="https://www.ruma.io/news/this-week-in-ruma-2018-12-09/">This Week in Ruma</a>.
+<blockquote>Ruma is not dead, however, and small improvements have continued over the last year. The Matrix spec has advanced quite a bit and many of the blocking issues for Ruma have been resolved. Rust's maturity is another story. async/await is still under development and this is the most significant blocking issue to progress on Ruma.</blockquote>
+<h2 id="maubotnewtooling">maubot new tooling</h2>
+<a href="https://matrix.to/#/@tulir:maunium.net">tulir</a> has been working on tooling for <a href="https://github.com/maubot/maubot">maubot</a>:
+<blockquote>maubot got a command-line tool for building plugins and managing maubot instances. I also added some server-side stuff for easy registration of accounts in the management interface using synapse shared secrets, but the UI for that isn't ready.
+Also, I'm planning on adding some kind of small Matrix client in the management interface for manually managing the added bot clients. That might lead to a separate library that could be used in other projects or embedded in websites.</blockquote>
+<h2 id="mxisdv121releasedupdatingrecommended">mxisd v1.2.1 released, updating recommended</h2>
+<a href="https://matrix.to/#/@max:kamax.io">Max</a> with a new release of <a href="https://github.com/kamax-matrix/mxisd">mxisd</a>:
+<blockquote><a href="https://github.com/kamax-matrix/mxisd">mxisd</a> hits <a href="https://github.com/kamax-matrix/mxisd/releases/tag/v1.2.1">v1.2.1</a> with a new maintenance release, fixing bugs and regressions from v1.2.0. Updating to v1.2.1 is strongly encouraged as v1.3.x will contain breaking changes and will not be a straight-forward update like v1.x has been until now.</blockquote>
+<h2 id="clients">Clients</h2>
+<h3 id="lazyloadinglandsinqmatrixclient">Lazy-loading lands in QMatrixClient</h3>
+<a href="https://matrix.to/#/@kitsune:matrix.org">kitsune</a> has reported that lazy-loading, a Matrix feature that entails only loading room member details as needed, is now in <a href="https://github.com/QMatrixClient/libqmatrixclient">libQMatrixClient</a> master.
+<blockquote>reference implementation in Quaternion will follow up</blockquote>
+<a href="https://matrix.to/#/@bhat:encom.eu.org">Black Hat</a> has been testing the feature in <a href="https://gitlab.com/b0/spectral">Spectral</a>, which uses the library, and says there is a 30%-50% reduction in RAM usage at startup.
+<h3 id="riotwebprogressonexperimentalandv0178released">Riot Web progress on <code>/experimental</code> and v0.17.8 released</h3>
+Bruno has been working on <a href="https://riot.im/experimental"><code>/experimental</code></a>, and I recommend taking a look at the progress there! The next version of Riot Web is closer than ever.
+<blockquote>Improved read markers now available on /experimental, needs further tweaking though. Brought back community UX on redesign, other small improvements.</blockquote>
+<a href="https://github.com/vector-im/riot-web/releases">v0.17.8 was released</a> with several bugfixes and improvements.
+<h3 id="riotios">Riot iOS</h3>
+Release made with these notes:
+<blockquote>This new version supports the consent of matrix servers terms of service (including GDPR) in the registration flow.
+It also contains fixes for the "Empty room" bug, the registration issue on iOS 10, etc.</blockquote>
+Get more information:
+<ul>
+ 	<li><a href="https://github.com/vector-im/riot-ios/releases/tag/v0.7.8">https://github.com/vector-im/riot-ios/releases/tag/v0.7.8</a></li>
+ 	<li><a href="https://github.com/matrix-org/matrix-ios-sdk/releases/tag/v0.12.0">https://github.com/matrix-org/matrix-ios-sdk/releases/tag/v0.12.0</a></li>
+ 	<li><a href="https://github.com/matrix-org/matrix-ios-kit/releases/tag/v0.9.1">https://github.com/matrix-org/matrix-ios-kit/releases/tag/v0.9.1</a></li>
+</ul>
+<h3 id="riotandroid">Riot Android</h3>
+Release made:
+<blockquote>This new version supports the consent of matrix servers terms of service (including GDPR) in the registration flow.
+Many bugfixes
+SDK contains KeyBackup</blockquote>
+Get more information:
+<ul>
+ 	<li><a href="https://github.com/vector-im/riot-android/releases/tag/v0.8.20">https://github.com/vector-im/riot-android/releases/tag/v0.8.20</a></li>
+ 	<li><a href="https://github.com/matrix-org/matrix-android-sdk/releases/tag/v0.9.14">https://github.com/matrix-org/matrix-android-sdk/releases/tag/v0.9.14</a></li>
+</ul>
+<h2 id="servers">Servers</h2>
+<h3 id="synapse">Synapse</h3>
+A lot of focus on getting debian packages ready for python 3 - this is a blocker for our official python 3 release 0.34.0. Aside from that, finalising some outstanding state resolution behaviour (<a href="https://github.com/matrix-org/matrix-doc/pull/1693">https://github.com/matrix-org/matrix-doc/pull/1693</a>) and dusting off event ids as hashes (<a href="https://github.com/matrix-org/matrix-doc/issues/1127">https://github.com/matrix-org/matrix-doc/issues/1127</a>.)
+<h3 id="dendrite">Dendrite</h3>
+<a href="https://matrix.to/#/@brendan:abolivier.bzh">Brendan</a>:
+<blockquote>My internal audit of Dendrite is continuing, drawing a more and more precise picture of what's left to fix and implement. I aim to have it over by the end of the year, or the very early days of 2019 at the latest. Folks can track its progress through <a href="https://cloud.abolivier.bzh/index.php/s/qXi2KFjCQk2c6eG">https://cloud.abolivier.bzh/index.php/s/qXi2KFjCQk2c6eG</a></blockquote>
+<h3 id="modularimnowhasextralargeinstancesavailable">modular.im now has <strong>Extra-Large</strong> instances available</h3>
+Due to demand, <a href="https://www.modular.im/">modular.im Hosted Homeservers</a> now has Extra-Large instances available. If you need to service 1,000+ users on a Matrix homeserver, this is the product for you!
+
+<a href="https://matrix.org/blog/wp-content/uploads/2018/12/modular-extra-large.png"><img class="alignnone size-full wp-image-3808" src="https://matrix.org/blog/wp-content/uploads/2018/12/modular-extra-large.png" alt="" width="833" height="515" /></a>
+<h3 id="linuxgaminglifehomeserveristhenumberonematrixhomeserverfocusedonlinuxgaming">linuxgaming.life homeserver is the number one Matrix homeserver focused on Linux gaming</h3>
+<a href="https://matrix.to/#/@swedneck:swedneck.xyz">swedneck</a> has continues his work on <a href="https://linuxgaming.life">linuxgaming.life</a>:
+<blockquote>I've added some bots, health monitoring, and dimension integration manager to linuxgaming.life, and made the website dark.</blockquote>
+The homeserver is open for new registrations.
+<h2 id="thatsalliknow">That's all I know!</h2>
+If you'd like see your Matrix-related project featured in this blog post, come chat to us in <a href="https://matrix.to/#/#TWIM:matrix.org">#twim:matrix.org</a>, and we'll see you next week!

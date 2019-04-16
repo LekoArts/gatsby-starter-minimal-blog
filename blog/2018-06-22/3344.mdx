@@ -1,0 +1,85 @@
+---
+date: '2018-06-22'
+title: This Week In Matrix 2018-06-22
+categories:
+  - General
+---
+
+<em>[Ben is away today, so this week's edition is compiled again by Matthew]</em>
+<h3>libQMatrixClient 0.3.0.2 and Quaternion 0.0.9.2</h3>
+kitsune writes:
+<blockquote><a href="https://github.com/QMatrixClient/libqmatrixclient">libQMatrixClient</a> 0.3.0.2 has been released - no new features, just small fixes including one for an unlucky typo preventing 0.3.0.1 from generating .cpp files with GTAD.
+
+<a href="https://github.com/QMatrixClient/Quaternion">Quaternion</a> 0.0.9.2 is out, another step towards 0.1. Aside from bugfixes and using the latest libQMatrixClient, it features an entirely new timeline layout similar to that of Riot (the old one is still around too). Also, you can now change some settings through the menu rather than by editing a configuration file or registry - including switching timeline layouts on the fly!</blockquote>
+<h3><a href="https://matrix.org/blog/wp-content/uploads/2018/06/Screen-Shot-2018-06-22-at-23.18.28.png"><img class="aligncenter size-large wp-image-3348" src="https://matrix.org/blog/wp-content/uploads/2018/06/Screen-Shot-2018-06-22-at-23.18.28-1024x563.png" alt="" width="1024" height="563" /></a></h3>
+<h3>Loading Artist sticker packs!</h3>
+TravisR says:
+<blockquote>The Official Loading Artist sticker pack got added to <a href="http://dimension.t2bot.io/">Dimension</a> ?</blockquote>
+<a href="https://matrix.org/blog/wp-content/uploads/2018/06/Screen-Shot-2018-06-22-at-22.34.43.png"><img class="aligncenter wp-image-3347 size-medium" src="https://matrix.org/blog/wp-content/uploads/2018/06/Screen-Shot-2018-06-22-at-22.34.43-275x300.png" alt="" width="275" height="300" /></a>
+
+It also got added to Modular (aka Scalar), the default integration manager for Riot :)
+<h3>releasetracker</h3>
+Ananace writes:
+<blockquote>Decided to actually start pushing code I've been slowly prodding at for the last while, ever since starting the Ruby Matrix SDK in fact. Working on a Sibbell like system that tracks new releases on GitHub projects, posting them into a specified Matrix room.
+
+The <a href="https://github.com/ananace/matrix-releasetracker">release tracker</a> now tracks both full releases and just regular tags, though only one or the other at the moment.
+
+Spun up a proper room for the release tracker, in case people want to help development / feel like using hosted alpha-level software more than running it themselves. <a class="" title="#releasetracker:kittenface.studio" href="https://riot.im/develop/#/room/#releasetracker:kittenface.studio" data-reactroot="">#releasetracker:kittenface.studio</a></blockquote>
+<a href="https://matrix.org/blog/wp-content/uploads/2018/06/releasetracker.png"><img class="aligncenter size-large wp-image-3346" src="https://matrix.org/blog/wp-content/uploads/2018/06/releasetracker-779x1024.png" alt="" width="779" height="1024" /></a>
+<h3>jeon and jmsdk updates</h3>
+ma1uta writes about his <a href="https://github.com/ma1uta/jeon">jeon</a> Java HS, <a href="https://github.com/ma1uta/jmsdk">jmsdk</a> and Matrix <a href="https://ma1uta.github.io/matrix-api.html">spec work</a>:
+<blockquote><span class="mx_EventTile_body markdown-body" dir="auto">I reorganized my projects and extracted the sdk from the api. So, today I have one project for the api (<a class="linkified" href="https://github.com/ma1uta/jeon" target="_blank" rel="noopener">https://github.com/ma1uta/jeon</a>), another for the sdk (<a class="linkified" href="https://github.com/ma1uta/jmsdk" target="_blank" rel="noopener">https://github.com/ma1uta/jmsdk</a>) but last is very early and non-usable.
+Also I covered the code with the swagger-annotation and now I can generate the swagger schema from the code. There is an example: <a class="linkified" href="https://github.com/ma1uta/jeon/blob/master/client-api/generated/swagger-ui/swagger.json" target="_blank" rel="noopener">https://github.com/ma1uta/jeon/blob/master/client-api/generated/swagger-ui/swagger.json</a>
+And there is an example of the spec was generated from swagger: <a class="linkified" href="https://ma1uta.github.io/matrix-api.html" target="_blank" rel="noopener">https://ma1uta.github.io/matrix-api.html</a> (plain and without sorting or grouping, I'll maybe fix it).
+Everyone can ask me in the <a class="" title="#jeon:matrix.org" href="https://riot.im/develop/#/room/#jeon:matrix.org" data-reactroot="">#jeon:matrix.org</a> (matrix api) or <a class="" title="#mxtoot:matrix.org" href="https://riot.im/develop/#/room/#mxtoot:matrix.org" data-reactroot="">#mxtoot:matrix.org</a> (matrix-mastodon bridge).
+Then I want to cover the remaining api (appservice, push, identity but not federation because it isn't completed yet), write sdk (client, bot). And publish api and sdk on the maven central repository.</span></blockquote>
+<h3>CI/CD for Plasma!</h3>
+Nico gives updates on <a href="https://gitlab.com/beerfactory.org/plasma/">Plasma</a>, the new Scala/Akka homeserver:
+<blockquote>I've setup <a href="https://gitlab.com/beerfactory.org/plasma/pipelines" target="_blank" rel="noopener">CI/CD</a> for plasma HS. Now every time a push occur on the repo, the pipeline builds and deploys a plasma HS instance on a test server.
+This test instance is reachable at <a class="linkified" href="http://matrix.beerfactory.org:9000/" target="_blank" rel="noopener">http://matrix.beerfactory.org:9000</a>. For now it is very modest and can only reply to a few C2S endpoints like <a href="http://matrix.beerfactory.org:9000/_matrix/client/versions" target="_blank" rel="noopener"><code>GET /_matrix/client/versions</code></a>. <code>POST /_matrix/client/r0/login</code> and <code>POST /_matrix/client/r0/register</code> are also available for testing registration and login flow. <code>POST /_matrix/client/r0/createRoom</code> is also available with the <code>TEST_TOKEN</code> auth token value, but it's only a mock.
+I'm now working on implementing the concept of room servers: each room will be managed by a dedicated room server (an <a href="https://doc.akka.io/docs/akka/current/actors.html" target="_blank" rel="noopener">actor</a>), so they get fault tolerance and scalability by default (through <a href="https://doc.akka.io/docs/akka/current/common/cluster.html" target="_blank" rel="noopener">akka clustering</a>).
+There's also a dedicated room for this project : <a class="" title="#plasma:beerfactory.org" href="https://riot.im/develop/#/room/#plasma:beerfactory.org" data-reactroot="">#plasma:beerfactory.org</a></blockquote>
+<h3>matrix-python-sdk 0.3.2</h3>
+&amp;Adam says:
+<blockquote>v0.3.2 of matrix-python-sdk released. See <a href="https://github.com/matrix-org/matrix-python-sdk/releases/tag/v0.3.2" target="_blank" rel="noopener">the github release</a> for list of changes. (v0.3.0 and v0.3.1 are substantially the same with small formatting errors). There are a lot of hugely annoying bugs fixed in this one, so upgrading soon is recommended.</blockquote>
+There's also been a lot of work on adding E2E to the python-sdk from Zil0 and his GSoC project!
+<h3>gomatrixclient</h3>
+Black Hat writes:
+<blockquote>I am currently writing a high-level API on top of gomatrix. As gomatrix is suitable for bots but not for clients, I decided to write a layer above it.
+(The motivation is to provide a backend for Matrique)
+It will have similar API as libqmatrixclient, but in Golang.
+It is currently under heavy development, and API breaking changes are frequent.
+Sources are available in Gitlab: <a href="https://gitlab.com/b0/gomatrixclient">https://gitlab.com/b0/gomatrixclient
+</a>P.s. It is a library for writing clients in Golang. But it also provides useful APIs for basic functions, e.g. getting avatars.</blockquote>
+<h3>Fractal 3.29.1</h3>
+Tobias says: New <a href="https://gitlab.gnome.org/World/fractal">Fractal release</a> 3.29.1, which includes a Eisha's new image viewer [implemented as part of GSoC]!
+
+It looks like this (screenshot being a screenshot of, uh, last week's screenshot, for maximum fractalception...)
+
+<a href="https://matrix.org/blog/wp-content/uploads/2018/06/fractal-screenie.png"><img class="aligncenter size-large wp-image-3345" src="https://matrix.org/blog/wp-content/uploads/2018/06/fractal-screenie-1024x721.png" alt="" width="1024" height="721" /></a>
+<h3>Terraform Provider</h3>
+TravisR writes:
+<blockquote>I've been working on a Terraform provider for matrix. It is still a work in progress, however I plan to have the basics completed in the coming days. The provider gives you the opportunity to create users, rooms, and other objects on your homeserver, making your homeserver part of your infrastructure. This could be useful for people who want to set up a monitoring room, or for setting up default rooms on a homeserver instance. In particular, this provider will be used by the monitor bot (see last week's post) to set up the test homeservers for seeing how the bot scales with increased server counts. Source and information available on Github: <a class="linkified" href="https://github.com/turt2live/terraform-provider-matrix" target="_blank" rel="noopener">https://github.com/turt2live/terraform-provider-matrix</a></blockquote>
+<h3>mxtoot 0.4.3</h3>
+<blockquote>ma1uta says:
+
+<span class="mx_EventTile_body markdown-body" dir="auto">I've fixed a few bugs and added some new commands (show status by id and show n-last statuses), and now </span><a href="https://gitlab.com/ma1uta/mxtoot">mxtoot 0.4.3</a> (Matrix-Mastodon bridge) can send public, private, unlisted and direct messages.
+There are 4 features left to go:
+<ul>
+ 	<li>show, add and remove follows;</li>
+ 	<li>show threads;</li>
+ 	<li>show notification, public and federated lines (and optionally merge them with the home timeline);</li>
+ 	<li>show account info by id.</li>
+</ul>
+Also I think to implement a bridge Matrix-ActivityPub as S2S. For example, a room - is a ActivityPub's actor. Room participants is a bot corresponds to actors you follow to. Room timeline is a Inbox+Outbox. Reactions is a likes/favorites. Pinning message is a boost. Replies will be very useful.</blockquote>
+<h3>mautrix-telegram now puppets via user-specific relay bots!</h3>
+tulir sneaks in at the last minute with:
+<blockquote><a href="https://github.com/tulir/mautrix-telegram">mautrix-telegram</a> now supports logging in with your own bot. It means that you can look almost like a real user and even use direct messages without logging in with your real Telegram account!</blockquote>
+<h3>And finally...</h3>
+On the core team it's been an irregular week; as mentioned in last TWIM we spent most of it in workshops working through spec issues as part of the mission to finally get to an 'r0' stable release of the spec across all APIs - not just the Client/Server API.  The majority of this was spent making up for lost time on the S2S API, analysing its various holes and designing solutions to them.  Things are looking promising - we're keeping the work under wraps though given the potential for abuse, although we should see more gaps being fixed in the coming days.  Meanwhile we're aiming to get the r0 stable release out by the end of August.  We also unblocked a few longstanding MSCs (<a href="https://github.com/matrix-org/matrix-doc/issues/433">.well-known</a> URIs and <a href="https://github.com/matrix-org/matrix-doc/issues/1232">media limits</a>), although in the end the S2S stuff took priority.  On the client side we did a lot of design sessions on Riot/Mobile (working out how the new app design should work on Mobile - watch this space for details!) and also how to speed up app launch (the concept of Hybrid Sync; somewhere between an initial sync and an incremental sync - basically an initial sync which can be interrupted in order to let the user use the app whilst the initial sync is still ongoing) - we'll write up the notes and publish these asap.
+
+We also announced the <a href="https://matrix.org/blog/2018/06/20/towards-open-governance-for-matrix-org/">Open Governance</a> work which we've been doing in order to extend control of the Matrix spec to properly include the wider Matrix community - the plan is to get the Matrix.org Foundation legal entity set up roughly around the same time as the r0 release of the spec in August, and formally decouple control of the Matrix spec from New Vector (the company we set up last year to hire the core team).
+
+We'd also like to welcome mujx (developer of nheko) and kitsune (developer of Quaternion and libQMatrixClient) to the new core team as we start trialling the new governance structure (which mainly amounts at this point to getting review approvals on spec proposals and changes from the relevant domain experts on the new team).  This brings us to a full complement for the team: Erik (servers), richvdh (servers, crypto &amp; clients), Dave (clients &amp; push/identity) and uhoreg (crypto, general) from the current core team; and Anoa (servers, AS API), TravisR (integrations, AS API; acting with Dimension hat on), mujx &amp; kitsune from the community.
+
+Otherwise, spec work has taken priority over writing software, with the exception of: APwhitehat doing as much federation work in Dendrite as part of GSoC as the current unstable state of the API allows; Michael (t3chguy) has been blitzing through P1 Riot/Web issues.  Next week should be back on the normal (if not better!) trajectory however.  No Matrix Live this week however, as we're all exhausted.

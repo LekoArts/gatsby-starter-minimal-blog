@@ -1,0 +1,127 @@
+---
+date: '2018-09-21'
+title: This Week in Matrix 2018-09-21
+categories:
+  - General
+---
+
+<h2 id="nheko060released">Nheko 0.6.0 released!</h2>
+Get <a href="https://github.com/mujx/nheko/releases/v0.6.0">latest stable releases from GitHub</a>.
+<h3 id="features">Features</h3>
+<ul>
+ 	<li>Support for sending &amp; receiving markdown formatted messages.</li>
+ 	<li>Import/Export of megolm session keys. (Incompatible with Riot)</li>
+ 	<li>macOS: The native emoji picker can be used.</li>
+ 	<li>Context menu option to show the raw text message of an event.</li>
+ 	<li>Rooms with unread messages are marked in the room list.</li>
+ 	<li>Clicking on a user pill link will open the user profile.</li>
+</ul>
+<h2 id="specproposalse2ecrosssigningandbidirectionalkeyverification">Spec Proposals: E2E Cross-signing and bi-directional key verification</h2>
+<a href="https://matrix.to/#/@uhoreg:matrix.org">uhoreg</a> has written up a new <a href="https://github.com/matrix-org/matrix-doc/pull/1681">work-in-progress proposal for E2E cross-signing</a>.
+<blockquote>Also, although it wasn't this week, I don't think that we have previously announced the proposal for bi-directional key verification using QR codes: <a href="https://github.com/matrix-org/matrix-doc/pull/1544">https://github.com/matrix-org/matrix-doc/pull/1544</a></blockquote>
+<h2 id="jeon">Jeon</h2>
+Massive update from <a href="https://matrix.to/#/@ma1uta:matrix.org">ma1uta</a> about his <a href="https://gitlab.com/ma1uta/jeon">Jeon</a> project! This update brings Jeon into line with the most recent updates to the Client-Server, Application Service, Push and Identity APIs.
+
+In ma1uta's words:
+<blockquote>Jeon is a set of the java interfaces and classes which describes the Matrix API.
+<ul>
+ 	<li>client-api: r0.4.0-1 corresponds to the r0.4.0 C2S API.</li>
+ 	<li>application-api: r0.1.0-1 corresponse to the r0.1.0 AS API,</li>
+ 	<li>push-api: r0.1.0-1 corresponds to the r0.1.0 PUSH API,</li>
+ 	<li>identity-api: r0.1.0-1 corresponds to the r0.1.0 IS API.</li>
+ 	<li>All artefacts available from the Maven Central Repository.</li>
+</ul>
+Major changes:
+<ul>
+ 	<li>Full support for the corresponding Matrix api.</li>
+ 	<li>Changed version for displaying the Matrix api version.</li>
+ 	<li>Added support to the asynchronous responses.</li>
+</ul>
+Also updated the swagger schemas generated from the code:
+<ul>
+ 	<li><a href="https://ma1uta.github.io/swagger/c2s.json">https://ma1uta.github.io/swagger/c2s.json</a> - C2S API</li>
+ 	<li><a href="https://ma1uta.github.io/swagger/as.json">https://ma1uta.github.io/swagger/as.json</a> - AS API</li>
+ 	<li><a href="https://ma1uta.github.io/swagger/push.json">https://ma1uta.github.io/swagger/push.json</a> - PUSH API</li>
+ 	<li><a href="https://ma1uta.github.io/swagger/id.json">https://ma1uta.github.io/swagger/id.json</a> - IS API</li>
+</ul>
+And the first hotfix: application-api r0.1.0-2 with fixed url (/transactions has been changes to the _matrix/app/v1/transactions). And this release will break all AS because synapse sends transactions to the old url.</blockquote>
+Join <a href="https://matrix.to/#/#jeon:matrix.org">#jeon:matrix.org</a> to discuss the progress of this product more.
+<h2 id="voipsignallingsupporthaslandedinlibqmatrixclient">VoIP signalling support has landed in libQMatrixClient</h2>
+Exciting times for <a href="https://github.com/QMatrixClient/libqmatrixclient">libQMatrixClient</a>!! Thanks <a href="https://matrix.to/#/@kitsune:matrix.org">kitsune</a>, developer of libQMatrixClient and <a href="https://github.com/QMatrixClient/Quaternion">Quaternion</a>:
+<blockquote>After some pretty long time of being in a PR/fork, VoIP signalling support has landed in libQMatrixClient! Many thanks to mariogrip (the founder of UBports) for the initial code and to delijati (a developer behind <a href="https://github.com/uMatriks/uMatriks">uMatriks</a>) for getting it to work with the most recent library.
+The actual VoIP stack does not come included, client developers have to take whatever WebRTC implementation is available for their platform and glue the pieces together. However, as the example of uMatriks shows, this now becomes relatively easy if your platform is on good terms with WebRTC (like UBports). I look forward to further work with UBports community on keeping this platform a first-class Matrix citizen.</blockquote>
+Go chat in <a href="https://matrix.to/#/#quaternion:matrix.org">#quaternion:matrix.org</a> to see the ways libQMatrixClient is developing.
+<h2 id="matriqueisnowspectral">Matrique is now Spectral</h2>
+After intense discussion, there is a new name for Matrique: <strong>Spectral</strong>. The repo now sites at <a href="https://gitlab.com/b0/spectral">https://gitlab.com/b0/spectral</a>, there is a new room at <a href="https://matrix.to/#/#spectral:encom.eu.org">#spectral:encom.eu.org</a>, and a new logo:
+
+<img src="spectral.logo.png" alt="" /><a href="https://matrix.org/blog/wp-content/uploads/2018/09/spectral.logo_.png"><img class="alignnone size-full wp-image-3580" src="https://matrix.org/blog/wp-content/uploads/2018/09/spectral.logo_.png" alt="" width="128" height="128" /></a>
+<h2 id="fluffychatfeaturedinopenstore">FluffyChat featured in OpenStore</h2>
+<a href="https://github.com/ChristianPauly/fluffychat">FluffyChat</a> is getting some love from OpenStore, the official Ubuntu Touch app store: this week it was the featured app.
+
+<img src="fluffychat-openstore.png" alt="" /><a href="https://matrix.org/blog/wp-content/uploads/2018/09/fluffychat-openstore.png"><img class="alignnone size-full wp-image-3579" src="https://matrix.org/blog/wp-content/uploads/2018/09/fluffychat-openstore.png" alt="" width="540" height="960" /></a>
+<h2 id="matrixcorporal">Matrix Corporal</h2>
+<a href="https://matrix.to/#/@slavi:devture.com">@slavi:devture.com</a>, creator of <a href="https://github.com/devture/matrix-corporal">Matrix Corporal</a> (a Matrix server configuration tool - "Kubernetes for Matrix"):
+<blockquote><a href="https://github.com/devture/matrix-corporal">Matrix Corporal</a> has received <a href="https://github.com/devture/matrix-corporal/blob/2c65b573261cc19c3a0a1cb10168257b953200e8/CHANGELOG.md">some updates</a> over the past few weeks since its initial release: a couple of additional HTTP APIs for retrieving/destroying user access tokens; more consistency with the Matrix Client-Server specification when it comes to error responses; faster reconciliation for user accounts that are joined to many/large rooms.</blockquote>
+<h2 id="matrixdockeransibledeploy">matrix-docker-ansible-deploy</h2>
+Another project from <a href="https://matrix.to/#/@slavi:devture.com">@slavi:devture.com</a>, for those who prefer their DevOps ansible-flavoured:
+<blockquote><a href="https://github.com/spantaleev/matrix-docker-ansible-deploy">matrix-docker-ansible-deploy</a> now also helps you <a href="https://github.com/spantaleev/matrix-docker-ansible-deploy/blob/master/docs/configuring-well-known.md">set up service discovery</a> as per the <a href="https://matrix.org/docs/spec/client_server/r0.4.0.html#server-discovery">.well-known Matrix specification</a>.</blockquote>
+<h2 id="jcgansibleprformatrixnotifications">jcg ansible PR for matrix notifications</h2>
+jcg has an <a href="https://github.com/ansible/ansible/pull/45823">upstream PR to have matrix notifications in ansible</a>. Combined with Slavi's <a href="https://github.com/spantaleev/matrix-docker-ansible-deploy">matrix-docker-ansible-deploy</a> above, you can get Matrix notifications about issues with your Matrix deployment…
+<h2 id="seaglasse2eselfupdate">Seaglass E2E + self-update</h2>
+<a href="https://matrix.to/#/@neilalexander:matrix.org">neilalexander</a>:
+<blockquote><a href="https://github.com/neilalexander/seaglass">Seaglass</a> end-to-end encryption support is now complete, including device verification and blacklisting, key sharing requests, key import and export (which should be compatible with Riot) and re-requesting keys</blockquote>
+This is really exciting news for macOS matrix users!
+<blockquote>I'm also working on auto-updating Seaglass with <a href="https://matrix.to/#/@aaron:raim.ist">Aaron Raimist</a>'s help in addition to finishing E2E support :-)</blockquote>
+:-) is right!
+<h2 id="ma1utajmsdk">ma1uta jmsdk</h2>
+<a href="https://matrix.to/#/@ma1uta:matrix.org">ma1uta</a> must have been in a work-on-Matrix mode this week, because he has also updated <a href="https://github.com/ma1uta/jmsdk">jmsdk</a>:
+<blockquote>I have released a new version of the java client (<a href="https://github.com/ma1uta/jmsdk/tree/master/client-sdk">https://github.com/ma1uta/jmsdk/tree/master/client-sdk</a>). The new client works is asynchronous mode, each method doesn't block the thread and return the CompletableFuture (promise in java). Then you can block thread to get the response or build a asynchronous promises chain.</blockquote>
+Finally:
+
+ma1uta is also looking forward to the release of Java 11:
+<blockquote>with the Curve25519 key agreement (http://openjdk.java.net/jeps/324) and will try make a pure java implementation of the olm/megolm. Just for fun. :)</blockquote>
+<h2 id="synapsepurge">synapse-purge</h2>
+<a href="@maze:strahlungsfrei.de">Maze</a>, seeing that his synapse database was already at several gigabytes, decided to produce a tool to shrink it:
+<blockquote>The <a href="https://github.com/djmaze/synapse-purge/">synapse-purge</a> tool allows homeserver admins to free disk space by purging old room events from the synapse database. It is an alternative for <em>synpurge</em> which <a href="https://github.com/djmaze/synapse-purge/issues/27">currently does not work correctly</a>.
+
+Configuration is minimalistic at the moment. Meaning it purges all remote rooms on the server with a globally configured preservation period.</blockquote>
+<h2 id="synapse">synapse</h2>
+<a href="https://matrix.to/#/@andrew:shadura.me">andrewsh</a>: <a href="https://github.com/matrix-org/synapse/releases/tag/v0.33.4">0.33.4</a> uploaded to Debian's stretch-backports, pending approval.
+
+<a href="https://github.com/matrix-org/synapse/releases/tag/v0.33.5rc1">0.33.5rc1</a> is now available, with the big news being the inclusion of support for Python 3.5 and 3.6! Hawkowl's Py3 has merged for monoliths and is working pretty well, looking like 2-3x RAM improvement. Please help us test!
+
+Erik's state compressor tool is pretty much finished, we've been starting to run it on things and it reduces disk usage for the state group table by at least 10x.
+
+The only catch is that it's quite DB heavy whilst it runs, so we haven't run it on Matrix.org yet.
+<h2 id="fractal">Fractal</h2>
+<a href="@afranke:matrix.org">Alexandre Franke</a> and the <a href="https://wiki.gnome.org/Apps/Fractal">Fractal</a> team:
+<blockquote>refactoring of the history and other parts is going on in the master branch of <a href="https://wiki.gnome.org/Apps/Fractal">Fractal</a>. We also cleaned up build and dependency related bits.</blockquote>
+<h2 id="maubotandsedbot">maubot and sedbot</h2>
+<a href="https://matrix.to/#/@tulir:maunium.net">tulir</a>:
+<blockquote>I made some updates to <a href="https://github.com/maubot/maubot">maubot</a> and fixed most of the <a href="https://github.com/maubot/sed">sedbot</a> (S. Edbot) issues people had reported.</blockquote>
+tulir used maubot to create a <a href="https://github.com/maubot/factorial">factorial bot</a>:
+
+<img src="factorialbot.png" alt="" /><a href="https://matrix.org/blog/wp-content/uploads/2018/09/factorialbot.png"><img class="alignnone size-full wp-image-3578" src="https://matrix.org/blog/wp-content/uploads/2018/09/factorialbot.png" alt="" width="244" height="149" /></a>
+<blockquote>I might also make some useful bots soon</blockquote>
+And so it was - late breaking news that maubot has been used to develop a Dictionary-definition-bot! Not available for public use yet but it proves that the project is useful!
+<h2 id="riotweb">Riot Web</h2>
+Lazy Loading remains the focus, we're getting closer with more bugs solved this week! To enable Lazy Loading room members and get speed and memory benefits in Riot, use the <a href="https://riot.im/develop/">develop branch</a> and enable "Lazy Loading" under "Labs" in the settings.
+
+Lots of final bug hunting for lazy loading - this is taking longer than you might expect because we're doing end-to-end CI everywhere.
+
+Lots of work on E2E, Dave has been working on:
+<blockquote>UI for e2e key backup that's waiting for some lower level bits
+and hopefully our e2e core code is moving from asm.js to webassembly making it, by current estimations, significantly faster.</blockquote>
+Redesign work continuing as well - Bruno has been working on it this week, Jouni the designer will visit next week to continue the process.
+
+Nad has joined us to help with design bandwidth and is working on the onboarding flows for the redesign as well as fixing all the UX issues in Communities!
+<h2 id="riotmobilemobilesdks">Riot Mobile + Mobile SDKs</h2>
+Lots of work on Lazy Loading - to be released along with Riot Web.
+<h2 id="bridges">Bridges</h2>
+<a href="https://matrix.to/#/@Half-Shot:half-shot.uk">Half-Shot</a> is joining us to work part-time on bridges going forwards - this is great news, especially for his connection-based IRC bridging antics as well as catching up on the PR and maintenance backlog for the IRC bridge and Slack bridge.
+<h2 id="modular">Modular</h2>
+<a href="https://modular.im/">Modular</a> (Hosted Homeservers) has first customers; if you want to give it a go please let us know!
+<h2 id="finally">Finally</h2>
+Thanks for reading, take a look at Matrix Live below!
+
+<iframe src="https://www.youtube.com/embed/pusCGlJaZxU" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe>

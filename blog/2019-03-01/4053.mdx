@@ -1,0 +1,126 @@
+---
+date: '2019-03-01'
+title: This Week in Matrix 2019-03-01
+categories:
+  - General
+---
+
+No Ben this week, <em>apparently</em> he is allowed to go on holiday from time to time. Also no Matrix Live because we are terrible people - bring back Ben, that's what I say.
+<h2>Quaternion</h2>
+<a href="https://matrix.to/#/@kitsune:matrix.org" rel="nofollow">kitsune</a>:
+<blockquote><a href="https://github.com/QMatrixClient/Quaternion">Quaternion</a> (master branch, and upcoming v0.0.9.4) can now open rooms by their aliases or ids upon pressing Ctrl+O, as long as those rooms are already in your room list (opening arbitrary public rooms will come in later versions). You can even paste matrix.to URIs for users (will open direct chat) and rooms in the same dialog. Navigation to known rooms inside Quaternion also works.
+
+libQMatrixClient 0.5 is out - with members lazy-loading, room versions and upgrades and much more: <a class="linkified" href="https://github.com/QMatrixClient/libqmatrixclient/releases/tag/0.5.0" target="_blank" rel="noopener">https://github.com/QMatrixClient/libqmatrixclient/releases/tag/0.5.0</a></blockquote>
+Which is, err, pretty amazing actually. As far as I know this is the <span class="mx_EventTile_body" dir="auto">only independent SDK supporting lazy loading and room upgrades. Congratulations.</span>
+<h2>weechat-matrix</h2>
+<a href="https://matrix.to/#/@poljar:matrix.org">Poljar</a> has been hard at work on <a href="https://matrix.org/docs/projects/client/weechat.html">weechat-matrix</a>
+
+Matthew reports:-
+<blockquote>weechat-matrix's e2e support is really impressive (via matrix-nio and python-olm). It can only read rather than send right now, but otherwise looks to be massively on the right track. It even does fingerprint-based verification!</blockquote>
+<a href="https://github.com/benparsons/matrix-notes/blob/master/twim/weechat-matrix.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/benparsons/matrix-notes/raw/master/twim/weechat-matrix.png" alt="" /></a>
+<h2>Synapse</h2>
+We shipped <a href="https://github.com/matrix-org/synapse/releases/tag/v0.99.2">0.99.2</a> this week, it's a point release containing all the usual bug fixes and perf improvements. We have also been taking a look at our docs and trying to improve where we can.
+
+Hawkowl has spent some time improving CI so that we don't get queued up for hours waiting for builds (woo).
+
+Admins - your weekly reminder that if you've not already done so, <strong>you must ensure the TLS certificate on your federation endpoints is no longer self signed</strong> - <a href="https://github.com/matrix-org/synapse/blob/v0.99.2/docs/MSC1711_certificates_FAQ.md">see our handy guide for all the details</a>.
+<h2>matrix-puppet-bridge</h2>
+<a href="https://matrix.to/#/@root:thomasprofitt.com" rel="nofollow">tom</a>:
+<blockquote><a href="https://github.com/matrix-hacks/matrix-puppet-bridge/releases">matrix-puppet-bridge v1.17.0</a> has been released!
+
+This release:
+<ul>
+ 	<li>Handles m.notice messages sent from Matrix as text, instead of ignoring them (thanks go to <a href="https://matrix.to/#/@cdknight1:matrix.org" rel="nofollow">https://matrix.to/#/@cdknight1:matrix.org</a> !)</li>
+ 	<li>Sets rooms invite-only when they're touched, instead of relying on others not knowing the room ID (thanks to <a href="https://matrix.to/#/@AndrewJDR:matrix.org" rel="nofollow">https://matrix.to/#/@AndrewJDR:matrix.org</a> , from all of us who federate on the homeservers we use to bridge!)</li>
+</ul>
+Matrix rooms representing remote rooms being joinable by anyone who knows the room ID (which is generated, at least in part, from the remote room ID in all the matrix-puppet-bridge applications) was a big deficiency, and it's finally resolved. It wasn't known whether or not we could do this, and have our ghost users still be able to join the rooms (they need to be invited instead of just joining themselves), until it was attempted and tested in a few of the bridge applications.
+
+Because it <em>is</em> a big deal, new minor versions of <a href="https://github.com/matrix-hacks/matrix-puppet-slack/releases">matrix-puppet-slack</a>, <a href="https://github.com/matrix-hacks/matrix-puppet-facebook/releases">matrix-puppet-facebook</a>, <a href="https://github.com/matrix-hacks/matrix-puppet-hangouts/releases">matrix-puppet-hangouts</a>, <a href="https://github.com/matrix-hacks/matrix-puppet-signal">matrix-puppet-signal</a>, <a href="https://github.com/matrix-hacks/matrix-puppet-imessage">matrix-puppet-imessage</a> and <a href="https://github.com/matrix-hacks/matrix-puppet-groupme/releases/tag/v1.1.0">matrix-puppet-groupme</a>, bumping the matrix-puppet-bridge version to 1.17.0, have been released.</blockquote>
+<h2>Riot iOS</h2>
+<blockquote>
+<ul>
+ 	<li style="font-weight: 400;"><span style="font-weight: 400;">Support .well-known data from login response</span></li>
+ 	<li style="font-weight: 400;"><span style="font-weight: 400;">Create right permalinks for room v3</span></li>
+ 	<li style="font-weight: 400;"><span style="font-weight: 400;">Fix builder to Xcode 10.1 in order to still be able to release</span></li>
+ 	<li style="font-weight: 400;"><span style="font-weight: 400;">Update swift version. Add swiftLint</span></li>
+</ul>
+</blockquote>
+<h2><a id="user-content-matrix-media-repo" class="anchor" href="https://github.com/benparsons/matrix-notes/blob/master/twim/twim-2019-03-01.md#matrix-media-repo" aria-hidden="true"></a>matrix-media-repo</h2>
+<a href="https://github.com/turt2live">TravisR</a> reports that:
+<blockquote><a href="https://github.com/turt2live/matrix-media-repo">matrix-media-repo</a> has alpha-quality support for s3 (and s3-like services) on the travis/s3 branch. Intrepid testers are encouraged to give it a shot, and report bugs. Caution: may upload your cat.</blockquote>
+<h2><a id="user-content-scylla" class="anchor" href="https://github.com/benparsons/matrix-notes/blob/master/twim/twim-2019-03-01.md#scylla" aria-hidden="true"></a>Scylla</h2>
+It's been a little while since we saw any news about <a href="https://github.com/DanilaFe/Scylla">Scylla</a>, a web-based client written in Elm. <a href="https://matrix.to/#/@daniel:riot.danilafe.com" rel="nofollow">VaNilLa</a> said:
+<blockquote>Scylla, the Elm-based Matrix client, has received a few improvements. Included in this update:
+<ul>
+ 	<li>Files that are uploaded now keep their original name (as opposed to being called File)</li>
+ 	<li>Sent messages are displayed right away, instead of when they are delivered to the server</li>
+ 	<li>Usernames are only shown once per several consecutive messages, to avoid clutter Some CSS changes have been made to keep the interface looking clean</li>
+</ul>
+Almost forgot! You can find <a href="https://github.com/DanilaFe/Scylla">Scylla's source code here</a> and a <a href="http://scylla.danilafe.com/" rel="nofollow">live instance here</a>!</blockquote>
+<a href="https://github.com/benparsons/matrix-notes/blob/master/twim/Scylla.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/benparsons/matrix-notes/raw/master/twim/Scylla.png" alt="" /></a>
+<h2>Riot Android</h2>
+<blockquote>
+<ul>
+ 	<li style="font-weight: 400;"><span style="font-weight: 400;">Implementation of .well-known support (SDK and Riot)</span></li>
+ 	<li style="font-weight: 400;"><span style="font-weight: 400;">Minor change on some colors of the themes (link, home badges)</span></li>
+ 	<li style="font-weight: 400;"><span style="font-weight: 400;">Many issue will be fixed regarding linkification</span></li>
+ 	<li style="font-weight: 400;"><span style="font-weight: 400;">KeysBackup: improvement on recovery process: importing keys step is 8 times faster, and user get more feedback during the process which can take several seconds</span></li>
+ 	<li style="font-weight: 400;"><span style="font-weight: 400;">We will prepare a new release for the beginning of next week.</span></li>
+ 	<li style="font-weight: 400;"><span style="font-weight: 400;">PlayStore new descriptions have been updated for the following languages: Bulgarian, German, English (US), French, Hungarian, Russian and Chinese (Taiwan).</span></li>
+</ul>
+</blockquote>
+<h3><span style="font-weight: 400;">RiotX (Android)</span></h3>
+<blockquote>
+<ul>
+ 	<li style="font-weight: 400;"><span style="font-weight: 400;">Timeline:</span>
+<ul>
+ 	<li style="font-weight: 400;"><span style="font-weight: 400;">HTML formatting </span></li>
+ 	<li style="font-weight: 400;"><span style="font-weight: 400;">Implementation of pills (need optimization)</span></li>
+</ul>
+</li>
+ 	<li style="font-weight: 400;"><span style="font-weight: 400;">Many Github issues have been created to track parity with the Riot Android</span></li>
+</ul>
+</blockquote>
+<h2><a id="user-content-riotic-new-fork-with-updates" class="anchor" href="https://github.com/benparsons/matrix-notes/blob/master/twim/twim-2019-03-01.md#riotic-new-fork-with-updates" aria-hidden="true"></a>Riotic: new fork with updates</h2>
+<a href="https://matrix.to/#/@aaron:raim.ist" rel="nofollow">Aaron Raimist</a> has made some updates to Riotic, which was a good chance for me to revisit it. It works nicely and is a great alternative to the Electron version of Riot. I also like being able to use <a href="https://riot.im/develop" rel="nofollow">https://riot.im/develop</a> as an app.
+<blockquote>I've slightly tweaked Joakim Ahlen's Riot wrapper for macOS, riotic, which uses the native WKWebView instead of Electron. I updated the app to be sandboxed so it has very limited access to your system. I also updated the interface to follow macOS conventions and updated it to use the latest version of Swift.
+
+riotic does have some limitations though. Riot doesn't support VoIP on Safari so riotic can't support VoIP either and WKWebView doesn't support notifications as far as I can tell. Right now it uses a really old Riot icon, maybe I'll ask about using one of these community made icons <a href="https://github.com/vector-im/riot-web/pull/4474">https://github.com/vector-im/riot-web/pull/4474</a>.
+
+It does have some advantages over the official Riot Electron app though. The app is only ~12 MB compared to Riot which is ~180 MB, it also uses significantly less RAM. riotic also allows you to pick what Riot URL to use so you can run /develop as a desktop app.
+
+You can download riotic from <a href="https://github.com/aaronraimist/riotic/releases/tag/v1.1">https://github.com/aaronraimist/riotic/releases/tag/v1.1</a>.</blockquote>
+<a href="https://github.com/benparsons/matrix-notes/blob/master/twim/riotic1.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/benparsons/matrix-notes/raw/master/twim/riotic1.png" alt="" /></a><a href="https://github.com/benparsons/matrix-notes/blob/master/twim/riotic2.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/benparsons/matrix-notes/raw/master/twim/riotic2.png" alt="" /></a> <a href="https://github.com/benparsons/matrix-notes/blob/master/twim/riotic3.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/benparsons/matrix-notes/raw/master/twim/riotic3.png" alt="" /></a>
+<h2><a id="user-content-synapse-netcore-workers" class="anchor" href="https://github.com/benparsons/matrix-notes/blob/master/twim/twim-2019-03-01.md#synapse-netcore-workers" aria-hidden="true"></a>synapse-netcore-workers</h2>
+<a href="https://matrix.to/#/@Half-Shot:half-shot.uk" rel="nofollow">Half-Shot</a> has been working on <a href="https://github.com/turt2live/synapse-netcore-workers">synapse-netcore-workers</a>:
+<blockquote>The synapse-netcore-worker project has continued to evolve. You can now federate with other servers using the federation sender implementation. It supports everything except device lists at the moment, so it supports PDUs/EDUs and can just be connected up to one of your existing synapse instances. It's not been battletested enough yet to be put in production (hence no dockerfile), but it's very fast.
+Oh and for those of you who don't know, "synapse-netcore-worker" is Travis's .NET implementation of synapse workers, the room can be found at <a href="https://matrix.to/#/#synapse-netcore-workers:t2bot.io" rel="nofollow">#synapse-netcore-workers:t2bot.io</a>.</blockquote>
+If you're as uninitiated as I was three days ago, this project is a replacable worker component for Synapse, which just happens to be written in .NET.
+
+But wait, there's more! <a href="https://matrix.to/#/@Half-Shot:half-shot.uk" rel="nofollow">Half-Shot</a> continues with
+<blockquote>To give an update to the earlier exploits of synapse-netcore-worker's federation sender, we've still got a few more things to iron out before we can suggest people use it actively. The hit list of remaining things to fix is in <a class="linkified" href="https://github.com/turt2live/synapse-netcore-workers/pull/5" target="_blank" rel="noopener">https://github.com/turt2live/synapse-netcore-workers/pull/5</a></blockquote>
+<h2>Mautrix Whatsapp</h2>
+That <a href="https://matrix.to/#/@benpa:matrix.org">Ben</a> guy eh? When he's not swanning off on holiday and having fun, he's writing super groovy guides to getting whatsapp bridging up and running. You don't even need a real device. <a href="https://matrix.org/docs/guides/whatsapp-bridging-mautrix-whatsapp">Check it out.</a>
+<h2>Ruby SDK</h2>
+<a class="mx_Pill mx_UserPill" title="@ace:kittenface.studio" data-reactroot=""><img class="mx_BaseAvatar mx_BaseAvatar_image" title="@ace:kittenface.studio" src="https://matrix.org/_matrix/media/v1/thumbnail/kittenface.studio/fClzyKoJrPjBdSsoVYGglwqL?width=16&amp;height=16&amp;method=crop" alt="" width="16" height="16" />Ananace</a> <a href="https://riot.im/develop/#/room/!FPUfgzXYWTKgIrwKxW:matrix.org/$1551425699164vABlc:kittenface.studio" rel="noopener">reports that</a>:
+<blockquote>Just merged the protocol split branch I've been working on for the Ruby SDK, including a first PoC for an application service base. Not tested in any actual use as of yet, but expect Things TM in the next release.</blockquote>
+<h2>Koma</h2>
+<a class="mx_Pill mx_UserPill" title="@uforia:matrix.org" data-reactroot=""><img class="mx_BaseAvatar mx_BaseAvatar_image" title="@uforia:matrix.org" src="https://matrix.org/_matrix/media/v1/thumbnail/matrix.org/xGfKScyNXPYixLMhSHvCmbMO?width=16&amp;height=16&amp;method=crop" alt="" width="16" height="16" />yuforia</a> <a href="https://riot.im/develop/#/room/!FPUfgzXYWTKgIrwKxW:matrix.org/$1551429515692845yIsqv:matrix.org" rel="noopener">reports that</a>:
+<blockquote>in project <a href="https://github.com/koma-im" target="_blank" rel="noopener">koma</a>, a new bot <a href="https://github.com/koma-im/kotlin-matrix-userbots/tree/master/picsay" target="_blank" rel="noopener">picsay</a> is created. It like the classic easter-egg program <a href="https://en.wikipedia.org/wiki/Cowsay" target="_blank" rel="noopener">cowsay</a>, but it uses actual photos instead of ASCII art. It configured to use any image just by editing a json file. So you can run your own version for fun.</blockquote>
+<h2>TChap</h2>
+<a class="mx_Pill mx_UserPill" title="@willem:canarymod.net" data-reactroot=""><img class="mx_BaseAvatar mx_BaseAvatar_image" title="@willem:canarymod.net" src="https://matrix.org/_matrix/media/v1/thumbnail/canarymod.net/akHJjhNnICOsiLXyfsZEDafc?width=16&amp;height=16&amp;method=crop" alt="" width="16" height="16" />Willem</a> <a href="https://riot.im/develop/#/room/!FPUfgzXYWTKgIrwKxW:matrix.org/$15514524981180LAEMP:canarymod.net" rel="noopener">reports that</a>:
+<blockquote>I took some time to hack on Tchap again. This time I disabled virus scanning of thumbnails and downloads in Tchap to be able to see avatars. I also wrote a non-scanning virus scanner API implementation to be able to see files, pictures and videos that are sent. The updated Tchap can be found at <a class="linkified" href="https://github.com/14mRh4X0r/tchap-android" target="_blank" rel="noopener">https://github.com/14mRh4X0r/tchap-android</a>, the virus scanner API implementation at <a class="linkified" href="https://git.snt.utwente.nl/14mRh4X0r/tchap-media-scanner" target="_blank" rel="noopener">https://git.snt.utwente.nl/14mRh4X0r/tchap-media-scanner</a>.</blockquote>
+<a href="https://matrix.org/blog/wp-content/uploads/2019/03/tchap1.png"><img class="alignnone size-medium wp-image-4054" src="https://matrix.org/blog/wp-content/uploads/2019/03/tchap1-169x300.png" alt="" width="169" height="300" /></a> <a href="https://matrix.org/blog/wp-content/uploads/2019/03/tchap2.png"><img class="alignnone size-medium wp-image-4055" src="https://matrix.org/blog/wp-content/uploads/2019/03/tchap2-169x300.png" alt="" width="169" height="300" /></a> <a href="https://matrix.org/blog/wp-content/uploads/2019/03/tchap3.png"><img class="alignnone size-medium wp-image-4056" src="https://matrix.org/blog/wp-content/uploads/2019/03/tchap3-142x300.png" alt="" width="142" height="300" /></a><a href="https://matrix.org/blog/wp-content/uploads/2019/03/tchap4.png"><img class="alignnone size-medium wp-image-4060" src="https://matrix.org/blog/wp-content/uploads/2019/03/tchap4-142x300.png" alt="" width="142" height="300" /></a>
+<h2>Debian</h2>
+<a class="mx_Pill mx_UserPill" title="@andrewsh:matrix.org" data-reactroot=""><img class="mx_BaseAvatar mx_BaseAvatar_image" title="@andrewsh:matrix.org" src="https://matrix.org/_matrix/media/v1/thumbnail/matrix.org/cVzxyvcpMBfoZIliFwYeLXRq?width=16&amp;height=16&amp;method=crop" alt="" width="16" height="16" />andrewsh</a> <a href="https://riot.im/develop/#/room/!FPUfgzXYWTKgIrwKxW:matrix.org/$1551441089734874fDpOO:matrix.org" rel="noopener">reports that</a>:
+<blockquote>Unless things get seriously on fire in the coming months, Debian buster will have Synapse 0.99.2 plus something newer in backports</blockquote>
+<h2>Matrix WUG</h2>
+<a href="https://matrix.to/#/@dandellion:dodsorf.as">Dandellion's</a> <a href="https://github.com/Dali99/matrix-wug">Wug</a> now supports Inuktitut Syllabics and Iñupiatun Orthography. In the bot's own words.
+<blockquote>Hi I can help you translate X-SAMPA, Z-SAMPA to IPA, and transcribe into proto-indo european notation! Use (x/z/p) together with either / or [] as delimeters x/"hEloU/ z[or` 5aIk DIz] p/mreghnom/
+
+I also can transcribe to Inuktitut Syllabics like this: i[tusaumaqattautijjutinik aulattijiit]. Find my source at <a class="linkified" href="https://github.com/Dali99/matrix-wug" target="_blank" rel="noopener">https://github.com/Dali99/matrix-wug</a></blockquote>
+<h2><a id="user-content-new-rooms" class="anchor" href="https://github.com/benparsons/matrix-notes/blob/master/twim/twim-2019-03-01.md#new-rooms" aria-hidden="true"></a>New Rooms</h2>
+<a href="https://matrix.to/#/@aaron:raim.ist" rel="nofollow">Aaron Raimist</a> has created a new room for Formula 1 fans:
+<blockquote>Now that the Formula 1 season is getting underway it's probably a good time to announce <a href="https://matrix.to/#/@CIA:matrix.org">@CIA:matrix.org</a>'s new(ish) room: <a href="https://matrix.to/#/#f1:matrix.org" rel="nofollow">#f1:matrix.org</a> When this blog post is released there will be 16 days left before the first race of the 2019 season
+There was previously a Formula 1 room but it was merged with Snoonet's IRC channel which tends to be extremely busy. This is a matrix only room.</blockquote>
+That's it folks, your normal Ben orientated programming will continue next week. Bring back Ben, bring back Ben.

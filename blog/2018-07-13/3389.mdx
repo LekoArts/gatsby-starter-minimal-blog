@@ -1,0 +1,91 @@
+---
+date: '2018-07-13'
+title: This Week in Matrix 2018-07-13
+categories:
+  - General
+---
+
+Welcome to TWIM for Friday the 13th! Nothing too scary, but lots of client updates and news.
+<h2 id="quaternion">Quaternion</h2>
+<a href="https://matrix.to/#/@kitsune:matrix.org">kitsune</a>:
+<blockquote><a href="https://github.com/QMatrixClient/Quaternion">Quaternion</a> has gained a new <code>/html</code> command that allows one to send raw HTML. Note that an actually displayed HTML subset entirely depends on the receiving client; no HTML validation or sanitation is done; a plaintext version is automatically created by stripping all the HTML tags.</blockquote>
+<h2 id="neo">neo</h2>
+<a href="https://matrix.to/#/@f0x:lain.haus">f0x</a> is working on <a href="https://github.com/f0x52/neo">Neo</a> again:
+<blockquote>added emotes, working localecho and <code>/rainbow</code></blockquote>
+<p><font color="#ff5500">r</font><font color="#ffaa00">a</font><font color="#ffff00">i</font><font color="#aaff00">n</font><font color="#55ff00">b</font><font color="#00ff00">o</font><font color="#00ff55">w</font><font color="#00ffaa">s</font><font color="#00ffff"> </font><font color="#00aaff">:</font><font color="#0055ff">D</font></p>
+<h2 id="matrixlogger">matrix-logger</h2>
+A useful tool from <a href="https://matrix.to/#/@CromFr:matrix.org">CromFr</a> for anyone who wants to archive logs of rooms.
+<blockquote>I wrote a small matrix "client" for logging messages in joined rooms, and store them in a format very similar to Weechat logs.
+<a href="https://gitlab.com/CromFr/matrix-logger/tree/master">Source code (Rust)</a> <a href="https://gitlab.com/CromFr/matrix-logger/tags">Binary release (x86_64 windows &amp; linux)</a>
+Please open issues if encounter any bug or need specific features.\\nAlso I'm new to rust, so any review / advices would be appreciated :)</blockquote>
+<h2 id="matriqueclientprogress">Matrique client progress</h2>
+<a href="http://matrix.to/#/@bhat:encom.eu.org">Black Hat</a> has been working on <a href="https://gitlab.com/b0/matrique-go">Matrique</a>, and it's looking really good! Screenshot below.
+<blockquote>Matrique now has support for sending/receiving messages (plaintext, markdown, HTML, rainbow), emotes and notices. It also supports receiving images, videos, files and states. I am still working on file receiving functions.</blockquote>
+<a href="https://matrix.org/blog/wp-content/uploads/2018/07/matrique-client.png"><img class="alignnone size-full wp-image-3397" src="https://matrix.org/blog/wp-content/uploads/2018/07/matrique-client.png" alt="" width="960" height="674" /></a>
+
+I love that all clients include rainbow messages.
+<h2 id="fluffychatforubuntutouch">fluffychat for Ubuntu Touch</h2>
+New to me, <a href="https://github.com/ChristianPauly/fluffychat">fluffychat</a> is a "Simple Matrix Messenger for <a href="https://ubports.com">Ubuntu Touch</a>". The design philosophy for this app is focused on simplicity, and the hope is for it to complement <a href="https://github.com/uMatriks/uMatriks">uMatriks</a>, another Ubuntu Touch client.
+<blockquote>Why are you not just contributing to uMatriks?
+uMatriks is great and it's superb, that someone has created a Matrix Client for Ubuntu Touch. But sometimes you have a so detailed vision of a user interface, which you want to implement, that you can not just contribute to an existing project. However, I would like to work with the uMatriks developers together. We could use the same push gateway for example.</blockquote>
+<a href="https://matrix.org/blog/wp-content/uploads/2018/07/fluffychat-client.png"><img class="alignnone size-large wp-image-3395" src="https://matrix.org/blog/wp-content/uploads/2018/07/fluffychat-client-576x1024.png" alt="" width="576" height="1024" /></a>
+<h2 id="riotweb">Riot/Web</h2>
+<ul>
+ 	<li>Welcomed Bruno onto the Riot/Web team! (and said farewell to Luke)</li>
+ 	<li>Lots of bug blitzing</li>
+ 	<li>Riot 0.16 due next week, with Jitsi-everywhere (at last) and Slate for composer.</li>
+ 	<li>We now have an end-to-end test harness (via puppeteer!) at last - being applied at first to fix onboarding bugs.</li>
+ 	<li>Lazy loading members in progress</li>
+</ul>
+<h2 id="riotmobile">Riot/Mobile</h2>
+<ul>
+ 	<li>Major perf work ongoing</li>
+ 	<li>Decoupling members from state…</li>
+ 	<li>…and then lazyloading members.</li>
+</ul>
+<h2 id="synapse0322available">Synapse 0.32.2 available</h2>
+<a href="https://github.com/matrix-org/synapse/releases/tag/v0.32.2">v0.32.2</a> is now available, which includes the <code>m.room.server_acl</code> security feature discussed in a <a href="https://matrix.org/blog/2018/07/06/security-update-synapse-0-32-0/">previous blog post</a>.
+<ul>
+ 	<li>If you're not running 0.32, please upgrade!!</li>
+ 	<li>Python 3 progresses!</li>
+ 	<li>Quite a lot of ops work to keep matrix.org alive. Status page coming soon! (We promise!!)</li>
+ 	<li>Looking at metrics and quotas for better experiences on limited-resource homeservers.</li>
+</ul>
+<h2 id="spec">Spec</h2>
+<ul>
+ 	<li>State res fix</li>
+ 	<li>Version bump</li>
+ 	<li>Lots of omission PRs landing</li>
+ 	<li><a href="https://github.com/turt2live">TravisR</a> S2S work</li>
+ 	<li>Work on both IS &amp; AS API too</li>
+ 	<li><a href="https://matrix.to/#/@uhoreg:matrix.org">Uhoreg</a> work - .well-known, and 3pid logins</li>
+ 	<li>Some internal discussions about improving the proposal process; particularly having a 5 day 'final comment period' similar to Rust's. Once we've got alignment within the core spec team we'll MSC it.</li>
+</ul>
+<h2 id="dendrite">Dendrite</h2>
+<ul>
+ 	<li><a href="https://matrix.to/#/@andrewm:amorgan.xyz">Anoa</a> &amp; <a href="@apwhitehat:matrix.org">APwhitehat</a> continue to blitz onwards on AS and federation</li>
+ 	<li>thirdparty protocol support for application services in the works.</li>
+ 	<li>continued progress on getting the AS query APIs supported. PR for /alias still being reviewed, PR for /users happened this week and now being reviewed</li>
+ 	<li>Timestamp massaging for application services ready and in review</li>
+ 	<li>APWhiteHat did a good chunk on federation, now migrating to supporting the various EDUs, starting with m.typing events.</li>
+ 	<li>…running out of low hanging fruit…</li>
+</ul>
+<h2 id="as">AS</h2>
+<ul>
+ 	<li><a href="https://github.com/matrix-org/matrix-appservice-irc">matrix-appservice-irc</a> 0.9.1 is here with perf improvements!</li>
+ 	<li>Lots of work on trying to make it start up sooner</li>
+</ul>
+<h2 id="e2e">E2E</h2>
+<ul>
+ 	<li>UISI stats</li>
+ 	<li>Device list syncing</li>
+ 	<li>Encrypted backup</li>
+</ul>
+<h2 id="debianpackages">Debian Packages</h2>
+<a href="https://matrix.to/#/@andrew:shadura.me">andrewsh</a> has packaged <a href="https://packages.debian.org/search?keywords=matrix-synapse">synapse 0.32.2 for Debian</a>
+
+<a href="https://matrix.to/#/@uhoreg:matrix.org">uhoreg</a> has packaged <a href="https://packages.debian.org/search?keywords=quaternion">quaternion 0.0.9.2 for Debian</a>
+<h2 id="thatsallfolks">That's all folks</h2>
+Watch Matrix Live below, and see you next week!
+
+<iframe src="https://www.youtube.com/embed/X1aGj3DFuWI" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe>

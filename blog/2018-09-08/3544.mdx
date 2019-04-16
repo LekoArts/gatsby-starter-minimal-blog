@@ -1,0 +1,77 @@
+---
+date: '2018-09-08'
+title: This Week In Matrix 2018-09-07
+categories:
+  - General
+---
+
+<hr />
+
+Hi all,
+
+Ben's away today, so this TWIM is brought to you mainly in association with Cadair's TWIMbot!
+<h2><a id="user-content-xmpp" class="anchor" href="https://github.com/benparsons/matrix-notes/blob/master/twim/twim-2018-09-07.md#xmpp" aria-hidden="true"></a>Spec Activity</h2>
+Since <a href="https://matrix.org/blog/2018/09/03/matrix-spec-update-august-2018/">last week's sprint to get the new spec releases</a> out, focus on the core team has shifted exclusively to the remaining stuff needed to cut the first stable release for the Server-Server API.  In practice this means fleshing out the MSCs in flight and implementing them - work has progressed on both improving auth rules, switching event IDs to be hashes and others.  Whilst implementing this in Synapse we're also doing a complete audit and overhaul of the current federation code, hence the <a href="https://matrix.org/blog/2018/09/06/critical-security-update-synapse-0-33-3-1/">0.33.3.1</a> security release this week.
+
+Meanwhile, in the community, ma1uta reports:
+<blockquote><span class="mx_MTextBody mx_EventTile_content"><span class="mx_EventTile_body markdown-body" dir="auto">I am working on the <a href="https://github.com/ma1uta/jeon">jeon</a> (java matrix api) to update it to the latest stable release. Also I changed versions of api to form <code>rX.Y.Z-N</code> where <code>rX.Y.Z</code> is a API version and <code>N</code> is a library version whithin API. So, I have prepared Push API (r0.1.0-1), Identity API (r0.1.0-1) and Appservice API (r0.1.0-1) for the first release and current updating the C2S API to the r0.4.0 version.</span></span></blockquote>
+<h2>XMPP Bridging</h2>
+Are you in the market for a Matrix-XMPP bridge? When I say "market", I mean it because this week we have <em>two </em>announcements for bridging to XMPP! You can choose whether you'd prefer your bridge to be implemented as a puppet, or a bot.
+
+Ma1uta has a new version of <a href="https://github.com/ma1uta/matrix-jabber-java-bridge">his Matrix-Xmpp bridge</a>:
+<blockquote>It is a double-puppet bridge which can connects the Matrix and XMPP ecosystems. Just invite the <code>@_xmpp_master:ru-matrix.org</code> and tell him: <code>@_xmpp_master: connect test@conference.jabber.org</code> to connect current room with the specified conference.
+You can ask about this bridge in the <a href="https://matrix.to/#/#matrix-jabber-java-bridge:ru-matrix.org">#matrix-jabber-java-bridge:ru-matrix.org</a> room.
+Currently supports only conferences and only <code>m.text</code> messages. 1:1 conversations and other message types will be later.</blockquote>
+maze appeared this week and announced <a href="https://github.com/djmaze/mxbridge">MxBridge</a>, a new Matrix-XMPP bridge:
+<blockquote>It works as a bot, so it is non-puppeting. Rooms can be mapped dynamically by the bot administrator(s). There is no support for 1-1 chats (yet). MxBridge is written as a multi-process application in Elixir and it should scale quite well (but don't tie me down on it ;)). <a href="https://github.com/djmaze/mxbridge">https://github.com/djmaze/mxbridge</a></blockquote>
+<h2>Seaglass</h2>
+Neil powers onwards with <a href="https://github.com/neilalexander/seaglass">Seaglass</a>, with updates this week including:
+<ul>
+ 	<li>Displaying stickers</li>
+ 	<li>Lazy-loading room history on startup to help with performance</li>
+ 	<li>Scrollback support (both forwards and backwards)</li>
+ 	<li>Support for Matthew's Account (aka retries on initial sync for those of us with massive initial syncs, and general perf improvements to nicely support &gt;2000 rooms)</li>
+ 	<li>Better avatar support &amp; cosmetics on macOS Mojave</li>
+ 	<li>Encryption verification support, device blacklisting and message information</li>
+ 	<li>Ability to turn encryption on in rooms</li>
+ 	<li>Responding to encryption being turned on in rooms</li>
+ 	<li>Paranoid mode for encryption (only send to verified devices)</li>
+ 	<li>Invitation support (both in UI and /invite)</li>
+</ul>
+<a href="https://matrix.org/blog/wp-content/uploads/2018/09/seaglass.jpg"><img class="aligncenter wp-image-3547" src="https://matrix.org/blog/wp-content/uploads/2018/09/seaglass-1024x681.jpg" alt="" width="826" height="550" /></a>
+<h2>Matrique</h2>
+Blackhat announces that <a href="https://gitlab.com/b0/matrique">Matrique's</a> new design is almost done, along with GNU/Linux, MacOS and Windows nightly build!
+<h2><a href="https://matrix.org/blog/wp-content/uploads/2018/09/matrique.png"><img class="aligncenter size-full wp-image-3546" src="https://matrix.org/blog/wp-content/uploads/2018/09/matrique.png" alt="" width="960" height="674" /></a></h2>
+<h2>Fractal</h2>
+Alexandre Franke says:
+<blockquote>Fractal 3.30 got release alongside the rest of GNOME. It includes a bunch of new and updated translations, and redacted messages are now hidden.</blockquote>
+Meanwhile, hidden in this screenshot, uhoreg noted that E2E plans are progressing...
+
+<a href="https://matrix.org/blog/wp-content/uploads/2018/09/fractal.png"><img class="aligncenter size-full wp-image-3548" src="https://matrix.org/blog/wp-content/uploads/2018/09/fractal.png" alt="" width="831" height="210" /></a>
+<h2>Riot</h2>
+Bruno has been hacking away on Riot/Web squashing the remaining Lazy Loading Members defects and various related optimisations and fixes. We also released Riot/Web 0.16.3 as a fairly minor point release (which unfortunately has a regression with DM avatars, which is fixed in 0.16.4, for which a first RC was cut a few hours ago and should be released on Monday).  Meanwhile the first cut of Lazy Loading also got implemented on Android as well. Both are hidden behind labs flags, but we're almost at a point where we can turn it on now!  Otherwise, the Riot team has got sucked into working on commercial Matrix stuff, for better or worse (all shall be revealed shortly though!)
+<h2><a id="user-content-home-servers" class="anchor" href="https://github.com/benparsons/matrix-notes/blob/master/twim/twim-2018-09-07.md#home-servers" aria-hidden="true"></a>Construct</h2>
+Jason has been working heavily on Construct, and has new test users.  Construct is able to federate with Synapse and the rest of the Matrix ecosystem.  mujx has created a docker for Construct which streamlines its deployment.
+<blockquote>Construct development is still occurring here <a href="https://github.com/jevolk/charybdis">https://github.com/jevolk/charybdis</a> but we are now significantly closer to pushing the first release to <a href="https://github.com/matrix-construct">https://github.com/matrix-construct</a>. Also feel free to stop by in <a href="https://matrix.to/#/#test:zemos.net" rel="nofollow">#test:zemos.net</a> / <a href="https://matrix.to/#/#zemos-test:matrix.org" rel="nofollow">#zemos-test:matrix.org</a> as well -- a room hosted by Construct, of course.
+
+tulir has now deployed using the standalone install instructions on a very small LXC VM using ZFS. Unfortunately ZFS does not support O_DIRECT (direct disk IO) which is how Construct achieves maximum performance using concurrent reads. This is not a problem though when using an SSD or for personal deployments. I'll be posting more about how Construct hacked RocksDB to use direct IO, which can get the most out of your hardware with multiple requests in-flight (even with an SSD).</blockquote>
+<h2>Synapse</h2>
+Work was split this week into spec/security work, with the critical update for <a href="https://matrix.org/blog/2018/09/06/critical-security-update-synapse-0-33-3-1/">0.33.3.1</a> - if you haven't upgraded, please do so immediately.
+
+Otherwise, Hawkowl has been on a mission to finish the Python 3 port, which is now almost merged.  Testers should probably wait until it fully merges to the develop branch and we'll yell about it then, but impatient adrenaline enthusiasts may want to check out the hawkowl/py3-3 branch (although it may explode in your face, mangle your DB and format your cat, and probably misses lots of recent important PRs like the 0.33.3.1 stuff).  However, i've been running a variant on some servers for the last few days without problems - and it seems (placebo effect notwithstanding) incredibly snappy...
+
+Meanwhile, the Lazy Loaded Member implementation got sped up by 2-3x, which makes /sync roughly 2-3x faster than it would be without Lazy Loading.  This hasn't merged yet, but was the main final blocker behind Lazy Loading going live!
+<h2>matrix-docker-ansible-deploy</h2>
+Slavi reports:
+<blockquote><a href="https://github.com/spantaleev/matrix-docker-ansible-deploy" target="_blank" rel="noopener">matrix-docker-ansible-deploy</a> now supports bridging to <a href="https://telegram.org/" target="_blank" rel="noopener">Telegram</a> by installing <a class="mx_UserPill" title="@tulir:maunium.net" data-reactroot="">tulir</a>'s <a href="https://github.com/tulir/mautrix-telegram" target="_blank" rel="noopener">mautrix-telegram</a> bridge. This feature is contributed by <a href="https://github.com/izissise" target="_blank" rel="noopener">@izissise.</a>
+
+In addition, Matrix Synapse is now more configurable from the playbook, with support for enabling stats-reporting, event cache size configurability, password peppering.</blockquote>
+<h2><a id="user-content-matrix-python-sdk-needs-a-maintainer" class="anchor" href="https://github.com/benparsons/matrix-notes/blob/master/twim/twim-2018-09-07.md#matrix-python-sdk-needs-a-maintainer" aria-hidden="true"></a>Matrix Python SDK needs a maintainer</h2>
+We should say a huge <strong>Thank You</strong> to &amp;Adam for his work leading the Python SDK over the previous months! Unfortunately due to a busy home life (best of luck for the second child!) he has decided to step down as lead maintainer. Anyone interested in this project should head to <a href="https://github.com/matrix-org/matrix-python-sdk/issues/279">https://github.com/matrix-org/matrix-python-sdk/issues/279</a>, and also come and chat in <a href="https://matrix.to/#/#matrix-python-sdk:matrix.org">#matrix-python-sdk:matrix.org.</a>
+<h2>MatrixToyBots!</h2>
+<a href="https://matrix.to/#/@Coffee:matrix.org">Coffee</a> <a href="https://matrix.to/#/!FPUfgzXYWTKgIrwKxW:matrix.org/$1536260231366792ZSvnG:matrix.org">reports that</a>:
+<blockquote>A new bot appears! Are you a pedantic academic who likes to correct others' misuse of Latin-derived plurals? This task can now be automated for you by means of <a href="https://gitlab.com/Matrixcoffee/MatrixToyBots">SingularBot</a>! Also for people who just like to have some fun. Free PongBot and SmileBot included.</blockquote>
+<h2><a id="user-content-kitsune-on-hokkaido-island" class="anchor" href="https://github.com/benparsons/matrix-notes/blob/master/twim/twim-2018-09-07.md#kitsune-on-hokkaido-island" aria-hidden="true"></a>kitsune on Hokkaido island</h2>
+<blockquote>I ended up being on Hokkaido island right when a major earthquake struck it; so no activity on Matrix from me in the nearest couple of days. Also, donations to <a href="https://globalgiving.org/projects/hokkaido-earthquake-response/" rel="nofollow">GlobalGiving for the disaster relief are welcome</a> because people are really struggling here (abusing the communication channel, sorry).</blockquote>
+<h2>Matrix Live</h2>
+...has got delayed again; sorry - we're rather overloaded atm. We'll catch up as soon as we can.

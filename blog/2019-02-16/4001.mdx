@@ -1,0 +1,160 @@
+---
+date: '2019-02-16'
+title: This Week in Matrix 2019-02-15
+categories:
+  - General
+---
+
+<h2 id="matrixlivesynapseroadmapandsynapse09911">Matrix Live, Synapse roadmap and Synapse 0.99.1.1</h2>
+As you may have seen, Matrix Live this week features Neil and Matthew <a href="https://matrix.org/blog/2019/02/15/publishing-the-backend-roadmap/">discussing the newly announced backend roadmap</a>.
+
+<iframe src="https://www.youtube.com/embed/LfyQ6cNGbLk" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+
+We also have <a href="https://github.com/matrix-org/synapse/releases/tag/v0.99.1.1">Synapse v0.99.1.1</a> available, as the race to Synapse v1.0 gets closer and closer and closer!
+
+Brendan also said, regarding low-bandwidth:
+<blockquote>Some of the week has been spent finalising the components used in <a href="https://video.fosdem.org/2019/H.1309/matrix.webm">the low-bandwidth demo we did at FOSDEM</a>. This required polishing some internal developments, which are now almost ready to be published to the wide world! This should happen in the next few days so stay tuned :)</blockquote>
+<h2 id="riot100andhotfix101">Riot 1.0.0, and hotfix 1.0.1</h2>
+If you're following Matrix much at all, you will surely have seen it by now: Riot, the most popular client, has <a href="https://medium.com/@RiotChat/the-big-1-0-68fa7c6050be">announced the v1.0 milestone</a>. I won't reiterate the features and improvements here, but do check out the blog post, or just head over to <a href="https://riot.im/app">https://riot.im/app</a> and see for yourself!
+
+Particularly exciting is the new encryption verification process, involving sharing a list of emojis out-of-band:
+<blockquote class="twitter-tweet" data-lang="en">
+<p dir="ltr" lang="en">thank you <a href="https://twitter.com/matrixdotorg?ref_src=twsrc%5Etfw">@matrixdotorg</a> <a href="https://twitter.com/RiotChat?ref_src=twsrc%5Etfw">@RiotChat</a> - with the new update the office is full of people yelling names of emoji at each other</p>
+— Russell Currey (@russelldotcc) <a href="https://twitter.com/russelldotcc/status/1096266096926109696?ref_src=twsrc%5Etfw">February 15, 2019</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<h2 id="mscsupdateprovidedbymscbot">MSCs update provided by MSCBot</h2>
+<h3 id="inprogressmscs">In Progress MSCs</h3>
+<ul>
+ 	<li><a href="https://github.com/matrix-org/matrix-doc/pull/1888">MSC 1888: Proposal to send EDUs to appservices</a></li>
+ 	<li><a href="https://github.com/matrix-org/matrix-doc/pull/1884">MSC 1884: Proposal to replace slashes in event IDs</a></li>
+</ul>
+Work has continued on trying to resolve <a href="https://github.com/matrix-org/matrix-doc/pull/1194">MSC1194</a>.
+<h2 id="riotios">Riot iOS</h2>
+<blockquote>
+<ul>
+ 	<li>Last iteration on key backup UX</li>
+ 	<li>Finish reskin</li>
+ 	<li>Support Room v3 events ids</li>
+ 	<li>Key import (manual or backup restore) has been optimised. It is now 30x &gt; quicker</li>
+ 	<li>An RC candidate will be available over the weekend</li>
+</ul>
+</blockquote>
+Scheduling, holidaying and illness means no update from Riot Andorid this week.
+<h2 id="artificialintelligencechatbottutorial">Artificial Intelligence Chat Bot tutorial</h2>
+I like this short series on creating a Chat Bot using <a href="https://github.com/minimaxir/textgenrnn">textgenrnn</a>:
+<ul>
+ 	<li><a href="https://www.youtube.com/watch?v=O-wLKnB6JvU">https://www.youtube.com/watch?v=O-wLKnB6JvU</a> for getting started with the library,</li>
+ 	<li>and <a href="https://www.youtube.com/watch?v=hRVVn-8CzXE">https://www.youtube.com/watch?v=hRVVn-8CzXE</a> to see the Matrix integration!</li>
+</ul>
+<h2 id="newishpythonsdkmatrixnio">New(ish!) Python SDK: matrix-nio</h2>
+Since we haven't featured their work here at all I wanted to give some space to <a href="https://github.com/poljar">poljar</a>. They've been working on a <a href="https://github.com/poljar/weechat-matrix">Weechat-Matrix protocol script</a>, but as part of this project they created a new Matrix client library, <a href="https://github.com/poljar/matrix-nio">matrix-nio</a>, "designed according to <a href="http://sans-io.readthedocs.io/">sans I/O</a> principles".
+
+As if this wasn't enough! <a href="https://github.com/poljar/python-olm">python-olm</a> is a library providing Python bindings for Olm (enabling E2E encryption for Matrix.)
+<h2 id="fluffychatv11preview">FluffyChat v11 preview</h2>
+<a href="https://github.com/ChristianPauly/fluffychat">FluffyChat</a> is a pure QML Matrix client, designed to be used on smartphones running Ubuntu Touch. <a href="https://matrix.to/#/@krille:chat.regionetz.net">Krille</a>, the author is working on:
+<blockquote>boring refactoring stuff :-( at the moment to prepare everything for e2e encryption work</blockquote>
+. . .which seems to me not boring at all - we can expect, in the next few months, another Matrix Client with E2EE support, and on mobile!
+
+In my role as editor of this particular blog post, I enjoy certain luxuries that others might envy. For example, today, I tried a new preview build of FluffyChat. This I installed on my barely-repaired OnePlus One running Ubuntu Touch 16.04.
+
+<iframe src="https://www.youtube.com/embed/OMQf-afRZEU" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+<h2 id="fractal">Fractal</h2>
+<a href="https://matrix.to/#/@brainblasted:disroot.org">Chris from Fractal</a>:
+<blockquote>Over the past week, <a href="https://wiki.gnome.org/Apps/Fractal">Fractal</a> has adapted its main view and room settings views for mobile phones, and implemented long-press for right-clicks on messages for touch devices. It's also received some changes in the backend to use the serde_derive Rust crate instead of parsing JSON by hand.</blockquote>
+<h2 id="matrixtagmanager">matrix-tag-manager</h2>
+To celebrate tags being available again in riot-web, TravisR has created <a href="https://github.com/turt2live/matrix-tag-manager">matrix-tag-manager</a>:
+<blockquote>If you're a power user which uses room tagging to organize your rooms, I've made a web UI for you: <a href="https://tags.t2bot.io/">https://tags.t2bot.io/</a></blockquote>
+<h2 id="mxisdv130released">mxisd v1.3.0 released</h2>
+<a href="https://matrix.to/#/@max:kamax.io">Max</a>:
+<blockquote><a href="https://github.com/kamax-matrix/mxisd">mxisd</a> <a href="https://github.com/kamax-matrix/mxisd/releases/tag/v1.3.0">v1.3.0</a> is out! This release brings the massive performance improvements, bug fixes and enchancements. This release also marks the two years anniversary of the project. Thank you to all our users for your undying support!</blockquote>
+<h2 id="edimcodernewroom">EdimCoder new room</h2>
+krixano reports that:
+<blockquote>I made a room for my ed-inspired modern line editor called <a href="https://edimcoder.handmade.network/">EdimCoder</a>. Come check it out at <a href="https://matrix.to/#/#edimcoder:amorgan.xyz">#edimcoder:amorgan.xyz</a>!</blockquote>
+<h2 id="avecho">avecho</h2>
+<a href="https://matrix.to/#/@uforia:matrix.org">yuforia</a> reports that:
+<blockquote>a new bot <a href="https://github.com/koma-im/kotlin-matrix-userbots">avecho</a> is created using the <a href="https://github.com/koma-im/koma-library">koma-library</a>. It's a simple bot that echos text messages prefixed with avecho, but renders it into an image and include the sender's avatar.</blockquote>
+<a href="https://matrix.org/blog/wp-content/uploads/2019/02/Screenshot-2019-02-15-at-17.19.01.png"><img class="alignnone size-full wp-image-4002" src="https://matrix.org/blog/wp-content/uploads/2019/02/Screenshot-2019-02-15-at-17.19.01.png" alt="" width="978" height="384" /></a>
+<h2 id="ananacesk8sdockerimage">Ananace's k8s docker image</h2>
+<a href="https://github.com/ananace/">Ananace</a> reports that:
+<blockquote>Pushed 0.99.1.1 for the <a href="https://github.com/ananace/matrix-synapse">K8s optimized docker image</a>, going to stop building Python 2 images after 1.0.</blockquote>
+<h2 id="halfshotsnetsdk">Half-Shot's .NET SDK</h2>
+<a href="https://matrix.to/#/@Half-Shot:half-shot.uk">Half-Shot</a> reports that:
+<blockquote>More improvements to <a href="https://github.com/Half-Shot/matrix-dotnet-sdk">the .NET sdk</a>, to make it stable in this 0.4.0 world. To that end, I've written a room archiver app (for moving "old" rooms into a archive tag without removing them) and a simple caching project for bridges <a href="https://github.com/Half-Shot/matrix-cache">https://github.com/Half-Shot/matrix-cache</a>. Progress as always can be followed in <a href="https://matrix.to/#/#dotnet:half-shot.uk">#dotnet:half-shot.uk</a></blockquote>
+<h2 id="mautrixtelegramnowat050rc2">mautrix-telegram now at 0.5.0rc2</h2>
+<a href="https://matrix.to/#/@tulir:maunium.net">tulir</a> has been working on the venerable Matrix&lt;-&gt;Telegram bridge, <a href="https://github.com/tulir/mautrix-telegram">mautrix-telegram</a>:
+<blockquote><a href="https://github.com/tulir/mautrix-telegram">mautrix-telegram</a> got a bunch of changes and a release candidate.\\nMain changes this week:
+<ul>
+ 	<li>Added Matrix room upgrade handling</li>
+ 	<li>Fixed bugs</li>
+ 	<li>Added new admin commands and config options</li>
+ 	<li>Added new bugs to fix later</li>
+ 	<li>Stopped using the ORM part of SQLAlchemy</li>
+</ul>
+</blockquote>
+Get release notes for <a href="https://github.com/tulir/mautrix-telegram/releases/tag/v0.5.0-rc1">v0.5.0-rc1</a> and <a href="https://github.com/tulir/mautrix-telegram/releases/tag/v0.5.0-rc2">v0.5.0-rc2</a>.
+<h2 id="qmatrixclientprojectlibqmatrixclientandquaternion">QMatrixClient project: libQMatrixClient and Quaternion</h2>
+<a href="https://matrix.to/#/@kitsune:matrix.org">kitsune</a> finds time to work on QMatrixClient!
+<blockquote>QMatrixClient project has been busy merging PRs from contributors (close to tray and middle-click in room list and user list, to mention a couple) and streamlining the translation process before the upcoming releases of <a href="https://github.com/QMatrixClient/libqmatrixclient">libQMatrixClient</a> 0.5 and <a href="https://github.com/QMatrixClient/Quaternion">Quaternion</a> 0.0.9.4. At the same time the feature branch to support room versions and room upgrades is at an advanced stage; expect the features to land in master next week.</blockquote>
+<h2 id="matrixarchivekeyring">matrix-archive-keyring</h2>
+<a href="https://matrix.to/#/@lindalap:matrix.org">Linda</a> has been working on new Debian package called <code>matrix-archive-keyring</code>:
+<blockquote>I've paused porting Synapse to OpenBSD this week, while I attempt to both fix and <em>revert</em> some security issues caused by <code>sudo apt-key add</code> for Matrix.org and Riot.im packages for Debian-based GNU/Linux distribution users.
+
+<a href="https://github.com/matrix-org/synapse/pull/4609">matrix-org/synapse PR #4609</a> was my first attempt to fix the problem, however I fell short this time in ease-of-use and my implementation had other issues. (Read: The <code>repo-key.asc</code> downloaded from Matrix.org Debian repository should go to <code>/usr/share/keyrings</code>, and must not be added by <code>apt-key add</code> or added to <code>/etc/apt/trusted.gpg.d</code> directly. I attempted the latter with my first PR; but that would've allowed the Matrix.org signing key to also be used to verify packages from Debian's main repositories. Yikes!)
+
+As my second attempt, I'm now creating a new Debian package called <code>matrix-archive-keyring</code>. There's multiple things this package intends to do:
+<ul>
+ 	<li>A post-install script to remove any previously added Matrix.org package signing keys from <code>/etc/apt/trusted.gpg</code>. (This is the file <code>apt-key add</code> most commonly uses, and the most commonly found bad advice on the Internet.)</li>
+ 	<li>Convert <code>repo-key.asc</code> to a de-armorized <code>.gpg</code> format, understood better by apt(8). (Essentially, <code>gpg --dearmor</code>.)</li>
+ 	<li>Install the converted <code>.gpg</code> key to <code>/usr/share/keyrings</code>.</li>
+ 	<li>Make sure <code>apt(8)</code> uses the newly added key for Matrix.org repository only?</li>
+ 	<li>Deliver any updates to <code>repo-key.asc</code> directly to you via <code>apt upgrade</code>. Your operating system might then also do it automatically for you if <code>unattended-upgrades(8)</code> is installed on your system. ?</li>
+ 	<li>Make sure everything goes away when this keyring package is uninstalled. No more <code>sudo sh -c 'apt-key del C35EB17E1EAE708E6603A9B3AD0592FE47F0DF61; rm /etc/apt/sources.list.d/matrix-org.list</code> to get rid of the repository.</li>
+</ul>
+I have one more interesting enhancement to disclose.
+
+We can ask you with <code>debconf</code> if you want to install <code>deb https://matrix.org/packages/debian $(lsb_release -cs) main</code> to <code>/etc/apt/sources.list.d/matrix-org.list</code> while you're installing the new keyring with <code>apt install matrix-archive-keyring</code>.
+
+You'll most likely notice the difference in install instructions, as a result of this package. Before and after:
+<pre><code># Before
+sudo apt install -y lsb-release curl apt-transport-https
+echo "deb https://matrix.org/packages/debian `lsb_release -cs` main" |
+    sudo tee /etc/apt/sources.list.d/matrix-org.list
+curl "https://matrix.org/packages/debian/repo-key.asc" |
+    sudo apt-key add -
+sudo apt update
+sudo apt install matrix-synapse-py3
+</code></pre>
+<pre><code># After
+sudo apt install matrix-archive-keyring
+sudo sh -c 'apt update &amp;&amp; apt install matrix-synapse-py3
+</code></pre>
+If you are a Debian or Ubuntu user and Synapse homeserver operator using Matrix.org repositories, I'll be towncrying when this package becomes available as much as I can. All you should need to do then is <code>apt install matrix-archive-keyring</code> and it should patch the security holes in your operating system if you've formerly installed packages from Matrix.org or Riot.im! (The command may change a bit, because next Debian operating system release "Buster" has entered soft-freeze just today (2019-02-12) and not accepting new packages into that release.)
+
+PS: I'm at <a href="https://matrix.to/#/#debian-matrix:matrix.org">#debian-matrix:matrix.org</a>, please come talk to us if Debian packaging interests you!</blockquote>
+&nbsp;
+<blockquote>For the eager early testers not afraid of building from source, <code>matrix-archive-keyring</code> version <code>2015.12.09+debian0.10</code> is available for early testing (attached).
+<pre><code># Something like this!
+sudo apt install devscripts
+tar -xfvJ matrix-archive-keyring_2015.12.09+debian0.10.tar.xz
+cd matrix-archive-keyring_2015.12.09+debian0.10
+debuild -us -uc
+sudo dpkg -i dpkg -i ../matrix-archive-keyring_2015.12.09+debian0.10_all
+</code></pre>
+Please follow <a href="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=922155">Debian Bug#922155</a> for updates. Debian binary packages will be available later sometime this/next week from Debian's <code>unstable</code> distribution (<code>contrib</code>), if all goes well and there are no remaining Debian policy violations or serious bugs.
+
+See also:
+<ul>
+ 	<li><a href="https://github.com/vector-im/riot-web/issues/6470">vector-im/riot-web issue #6470</a>: [website] change instructions for adding .deb repository key</li>
+ 	<li><a href="https://wiki.debian.org/DebianRepository/UseThirdParty">DebianRepository/UseThirdParty</a> at Debian Wiki",</li>
+</ul>
+</blockquote>
+<a href="https://matrix.org/blog/wp-content/uploads/2019/02/keyring-1.png"><img class="alignnone size-full wp-image-4007" src="https://matrix.org/blog/wp-content/uploads/2019/02/keyring-1.png" alt="" width="804" height="508" /></a> <a href="https://matrix.org/blog/wp-content/uploads/2019/02/keyring-2.png"><img class="alignnone size-full wp-image-4008" src="https://matrix.org/blog/wp-content/uploads/2019/02/keyring-2.png" alt="" width="804" height="508" /></a>
+<h2 id="gridepo">Gridepo</h2>
+<a href="https://matrix.to/#/@max:kamax.io">Max</a> again:
+<blockquote><a href="https://gitlab.com/kamax-io/grid/gridepo">Gridepo</a>, as a Matrix Homeserver, is gaining basic support for Matrix Client API. We have basic login, room creationg, message sending and sync working! A little screen recording of the progress can be viewed <a href="https://kamax.io/_matrix/media/v1/download/kamax.io/EOMDDlNERTqalHvADhokyItG">here</a> for live action with Riot. As a reminder, Gridepo is a clean rewrite of <a href="https://github.com/kamax-io/mxhsd">mxhsd</a>.
+
+This is not usable yet outside of a dev environment but we should have a first usable version with federation in a couple of weeks!</blockquote>
+<h2 id="mentionbotspage">Mention Bots page</h2>
+We have a new location for listing bots: <a href="https://matrix.org/docs/projects/bots">https://matrix.org/docs/projects/bots</a>, message <a href="https://matrix.to/#/@benpa:matrix.org">benpa</a> with any you think should be included!
+<h2 id="thatsalliknow">That's all I know</h2>
+That's all we have for now, but come join us in <a href="https://matrix.to/#/#TWIM:matrix.org">#twim:matrix.org</a> to share your project and share the fun, and I'll see you back here next week.

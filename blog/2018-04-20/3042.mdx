@@ -1,0 +1,153 @@
+---
+date: '2018-04-20'
+title: This Week In Matrix - 2018-04-20
+categories:
+  - General
+---
+
+<h1>Matrix Ecosystem Updates</h1>
+<h4>Drupal matrix_api module</h4>
+Updated the Drupal matrix_api module to pass the auth token as a header instead of as a GET param... the GET param was leaking the token if there was an http exception thrown.
+
+(<a href="https://matrix.to/#/@john:matrix.freelock.com">John</a>) - <a href="https://cgit.drupalcode.org/matrix_api">https://cgit.drupalcode.org/matrix_api</a>
+<h4>mxisd</h4>
+v1.0.0 has been released and is now stable, making it the first community Identity server and first open federation one.
+
+(<a href="https://matrix.to/#/@max:kamax.io">Max</a>) - <a href="https://github.com/kamax-io/mxisd">https://github.com/kamax-io/mxisd</a>
+<h4>nheko</h4>
+0.3.x of nheko was released! There is progress towards e2e encryption in mujx/mtxclient. Once this encryption is working there, it can eventually be included in nheko.
+
+(<a href="https://matrix.to/#/@mujx:matrix.org">mujx</a>) - <a href="https://github.com/mujx/nheko">https://github.com/mujx/nheko</a>
+<h4>Fractal</h4>
+Fractal 0.1.26 was released this week, which includes an animated scroll to bottom animation, fixed MacOS compilation, and bug fixes. Since then markdown support and many other commits have been spotted...
+
+<a href="https://gitlab.gnome.org/World/fractal/">https://gitlab.gnome.org/World/fractal/</a>
+<h4>libqmatrixclient</h4>
+kitsune released 0.2 of libqmatrixclient a couple of weeks ago, which he says is "the first one more or less functional and stable"!
+
+Highlights include redactions support, files transfer (both ways), rooms creation, account data (tags, direct chat flags). Also there are a few things making libqmatrixclient clients stand out compared to, e.g., Riot: one can set per-room names/avatars, and also the best estimate for the number of unread messages can be taken from the library and shown in the client application."
+
+(<a href="https://matrix.to/#/@kitsune:matrix.org">kitsune</a>) - <a href="https://github.com/QMatrixClient/libqmatrixclient">https://github.com/QMatrixClient/libqmatrixclient</a>
+<h4>matrix-monitor-bot</h4>
+<a href="https://matrix.to/#/#monitorbot:t2bot.io">#monitorbot:t2bot.io</a> is a bot to measure latency between homeservers (as perceived by users).
+
+It's able to report metrics to Prometheus and has it's own built-in dashboard (see <a href="https://lag.t2bot.io/">https://lag.t2bot.io/</a> for some horrendous times). In the coming weeks it'll become more production-ready, however in the meantime if people are looking to help iron out the scalability issues, please run an instance on your homeserver.
+
+(<a href="https://github.com/turt2live/">TravisR</a>) - <a href="https://github.com/turt2live/matrix-monitor-bot">https://github.com/turt2live/matrix-monitor-bot</a>
+<h4>uMatriks</h4>
+thrrgilag wrote on behalf of uMatriks, to say that v0.10 was published to the openstore this last week which now includes unread counts for rooms. Those not already familiar, uMatriks is a native matrix client being developed for Ubuntu Touch.
+
+<a href="https://github.com/uMatriks/uMatriks">https://github.com/uMatriks/uMatriks</a>
+<h4>Construct</h4>
+There looks to be lots of activity on Construct (jzk's fork of the charybdis ircd which adds in a C++ homeserver implementation) based on the commit log at <a href="https://github.com/jevolk/charybdis">https://github.com/jevolk/charybdis</a>. jzk's work there has been highlighting some of synapse's nastier problems (e.g. thundering presence bugs), and it looks like the federation support is progressing steadily, including handling EDUs (presence &amp; typing data).
+(<a href="https://matrix.to/#/@jason:zemos.net">jzk</a>) - <a href="https://github.com/jevolk/charybdis">https://github.com/jevolk/charybdis</a>
+<h4>matrix-puppet-maxs</h4>
+tyler shared his "horrifying" project, for people that want to use Matrix to send an SMS via an XMPP bridge to their Android phone, in order to provide SMS and call notifications inside Riot.
+
+(<a href="https://matrix.to/#/@tyler:tylerfreedman.com">tyler</a>) - <a href="https://github.com/tfreedman/matrix-puppet-maxs">https://github.com/tfreedman/matrix-puppet-maxs</a>
+<h4>matrix-register-bot</h4>
+krombel built a bot to have a two step registration to synapse, check it out:
+
+(<a href="https://matrix.to/#/@krombel:msg-net.de">krombel</a>) - <a href="https://github.com/krombel/matrix-register-bot">https://github.com/krombel/matrix-register-bot</a>
+<h4>picard</h4>
+Cadair reported that he and SolarDrew have written a bot to bridge a whole slack team into a matrix community. It basically handles all the room admin for you including:
+<ul>
+ 	<li>Invite the slack bot to the channel</li>
+ 	<li>Creating matrix rooms</li>
+ 	<li>Setting users as admins</li>
+ 	<li>Setting room name and room avatar and as publically joinable</li>
+ 	<li>Setting up the link with the slack AS</li>
+ 	<li>Creating and adding rooms to the community</li>
+ 	<li>Inviting all members of the communtiy to the rooms</li>
+</ul>
+It does these things on a 1 min cron, to pick up new channels as they are created on the slack side.
+
+(<a href="https://matrix.to/#/@cadair:cadair.com">Cadair</a>) - <a href="https://github.com/SolarDrew/skill-picard">https://github.com/SolarDrew/skill-picard</a>
+<h4>opsdroid connector</h4>
+Cadair also mentioned that picard uses the opsdroid connector for matrix, also written by himself and SolarDrew, and has had recent updates.
+
+(<a href="https://matrix.to/#/@cadair:cadair.com">Cadair</a>) - <a href="https://github.com/opsdroid/connector-matrix">https://github.com/opsdroid/connector-matrix</a>
+<h4>matrix-python-sdk</h4>
+Release v0.2.0 of the python sdk. Highlights from this release are a workaround for <a href="https://github.com/matrix-org/synapse/issues/3054">https://github.com/matrix-org/synapse/issues/3054</a> and use of connection pooling via a requests session.
+
+(<a href="https://matrix.to/#/@adam:thebeckmeyers.xyz">&amp;Adam</a>) - <a href="https://github.com/matrix-org/matrix-python-sdk">https://github.com/matrix-org/matrix-python-sdk</a>
+<h4>matrix-twitch-bridge</h4>
+MTRNord is at the early stages of working on a twitch bridge for Matrix, written in golang.
+
+(<a href="https://matrix.to/#/@MTRNord:matrix.ffslfl.net">MTRNord</a>) - <a href="https://github.com/Nordgedanken/matrix-twitch-bridge">https://github.com/Nordgedanken/matrix-twitch-bridge</a>
+<h4>IdleRPG</h4>
+remaeus wrote in to say "we (+rpg:verse.im) just launched an initial build of #idlerpg:verse.im (now also available at #idlerpg:matrix.org) — an automated RPG that rewards you for staying online (via the presence API). It's an initial test case for prototyping out a bot framework called "doorman" with multi-service support, but focused on Matrix as we are using it as a "backbone" for our p2p app framework."
+
+(<a href="https://matrix.to/#/@remaeus:verse.im">remaeus</a>) - <a href="https://github.com/FabricLabs/doorman">https://github.com/FabricLabs/doorman</a>
+<h4>URI protocol scheme</h4>
+kitsune started working on a design proposal for the Matrix URI scheme, with the ultimate goal to have the scheme passed through IANA so that we're no worse than IPFS and others. The document is here (alpha quality but comments are already welcome): <a href="https://docs.google.com/document/d/18A3ZRgGR-GLlPXF_VIHxywWiX1vpMvNfAU6JCnNMVuQ/edit">https://docs.google.com/document/d/18A3ZRgGR-GLlPXF_VIHxywWiX1vpMvNfAU6JCnNMVuQ/edit</a>
+
+There is also a spec proposal room: <a>#uri-scheme-proposal:matrix.org</a>.
+
+(<a href="https://matrix.to/#/@kitsune:matrix.org">kitsune</a>)
+<h4>Riot/Web</h4>
+<ul>
+ 	<li>The Great Relayering landed - almost all of Riot/Web's code is now gathered together in one sensible place (matrix-react-sdk). No more duplicate PRs or CSS &amp; JS living in different repos!</li>
+ 	<li>Folks with open PRs against the riot-web repository will need to reopen them against matrix-react-sdk (or more likely, merge them into their existing equivalents on matrix-react-sdk)</li>
+ 	<li>Michael (t3chguy's) Replies work has almost landed and is looking fantastic!</li>
+ 	<li>Next up: improving test coverage slightly; fixing regressions in 0.14; and a few other minor bits and bobs before we land 0.15.</li>
+</ul>
+<h4 id="riotmobile">Riot/Mobile</h4>
+<ul>
+ 	<li>New releases on the horizon for both iOS &amp; Android</li>
+ 	<li>Welcomed Benoit to the Android team, acting as lead android dev!</li>
+ 	<li>Finalising all new UX for configuring push notification permissions…</li>
+ 	<li>Final touches for Sticker viewing (including animated stickers!)</li>
+ 	<li>Fix embarrasing crash on iOS on certain shapes of Riot/Web URLs...</li>
+ 	<li>Supporting French Government Matrix activity</li>
+</ul>
+<h4 id="synapse">Synapse</h4>
+<ul>
+ 	<li>Operational firefighting continues: stopping malformed events from impacting federation; investigating thundering herds of presence EDUs; trying to keep Freenode joins from lagging;</li>
+ 	<li>Meanwhile, Erik has been working hard on the problem of Incremental State Resolution (the big algorithmic win which could massively improve HS performance, especially for Synapse); this is looking promising and has ended up taking the form of a formal mathematical proof that the proposed algorithm works: <a href="https://matrix.org/_matrix/media/v1/download/jki.re/hSmkLkFGVUnrXjtYcjsCUsyS">https://matrix.org/_matrix/media/v1/download/jki.re/hSmkLkFGVUnrXjtYcjsCUsyS</a> (aka <a href="https://github.com/matrix-org/synapse/pull/3122">https://github.com/matrix-org/synapse/pull/3122</a>) is where that's happening! Warning: contains maths.</li>
+ 	<li>...and also wrote a Rust testjig for state resolution to help reason about it: <a href="https://github.com/erikjohnston/rust-matrix-state">https://github.com/erikjohnston/rust-matrix-state</a></li>
+ 	<li>Official Ansible playbook repository dev is progressing on the develop branch at <a href="https://github.com/matrix-org/matrix-ansible">https://github.com/matrix-org/matrix-ansible</a> thanks to massive work from Michael K. We'll blog properly about this when ready for use in earnest.</li>
+ 	<li>Dave has been doing an interesting experiment in syncing user profile data from HSes into ISes (useful for folks running a private federation with its own IS who want to use the IS as a global user directory); almost complete - we'll see how this goes.</li>
+ 	<li>GDPR work is in progress. We're seeing how far we can push the envelope on improving privacy, including a very interesting thought experiment on pseudonyimsing MXIDs to provide 'perfect' right-to-erasure. vdH is on the case. Warning: this may well require a major federation protocol bump if we go through with it.</li>
+ 	<li>More Python3 port PRs are landing from NotAFile - thanks! They're getting slightly lost behind everything above.</li>
+</ul>
+<h4 id="dendrite">Dendrite</h4>
+<ul>
+ 	<li>Still stuck behind Synapse work.</li>
+ 	<li>Barring disasters we have at least 2 new folks starting fulltime in the core team (both synapse &amp; dendrite) to help backend progress at the end of May however!</li>
+ 	<li>Lots of PRs coming in from APWhitehat though - thanks!!</li>
+</ul>
+<h4 id="spec">Spec</h4>
+<ul>
+ 	<li>uhoreg has been looking at the .well-known URI proposal again</li>
+ 	<li>Spec work on the core team is currently stuck behind Riot/Web and Synapse work, sadly, on the basis that burning implementation problems are more visible and harming to the project than burning spec problems.</li>
+</ul>
+<h4></h4>
+<h1>Matrix in the News</h1>
+<a href="https://www.tomshardware.com/news/france-alternative-whatsapp-telegram-spying-concerns,36898.html">Tom's Hardware</a> provided a great article on about Matrix in the French Government.
+
+Next INpact produced two articles, <a href="https://www.nextinpact.com/news/106463-la-france-travaille-a-messagerie-detat-chiffree-pour-cet-ete.htm">one from last week</a> introducing a project from the French government to use an open messaging platform, then a follow up <a href="https://www.nextinpact.com/news/106467-a-decouverte-riot-outil-libre-derriere-future-messagerie-letat-francais.htm">provided an extremely thorough story</a> covering Riot &amp; Matrix following the announcement of the French Government encrypted messaging project. (Article is in French, but will Google Translate nicely!)
+
+Huge thank you to <a href="http://matrix.to/#/@nouts:matrix.org">nouts</a> who produced a great intro to Riot and Matrix! <a href="https://d.tube/#!/v/nouts/loovdeow">Check it out!</a> (Note that is also in French.)
+
+&nbsp;
+<h1>New Rooms roundup</h1>
+<ul>
+ 	<li>Announcing room for all pastafarians out there... <a href="https://matrix.to/#/#fsm:disroot.org">#fsm:disroot.org</a></li>
+ 	<li>FIA Formula 1 discussion room <a href="https://matrix.to/#/#formula1:disroot.org">#formula1:disroot.org</a></li>
+ 	<li>Room for Warsaw (Poland) residents (and others) <a href="https://matrix.to/#/#warsaw:disroot.org">#warsaw:disroot.org</a></li>
+ 	<li><a href="https://matrix.to/#/#monitorbot:t2bot.io">#monitorbot:t2bot.io</a> is the room for TravisR's matrix-monitor-bot</li>
+ 	<li><a href="https://matrix.to/#/#thisweekinmatrix:matrix.org">#thisweekinmatrix:matrix.org</a> so <i>meta</i></li>
+</ul>
+<h1>And Finally...</h1>
+Check out Matrix Live, now available at <a class="linkified" href="https://youtu.be/EstVaVUWkdw" rel="noopener">https://youtu.be/EstVaVUWkdw</a>
+
+<iframe src="https://www.youtube.com/embed/EstVaVUWkdw" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+
+Thanks for reading the very first This Week in Matrix! There will be another post next week, so if you'd like to be included join us in <a class="linkified" href="https://matrix.to/#/#twim:matrix.org" rel="noopener">#twim:matrix.org</a>. See you next week!
+
+<style>
+.et_post_meta_wrapper img {
+display:none;
+}
+</style>

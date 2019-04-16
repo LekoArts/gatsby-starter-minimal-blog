@@ -1,0 +1,116 @@
+---
+date: '2018-05-25'
+title: This Week in Matrix 2018-05-25
+categories:
+  - General
+---
+
+<h1 id="gdpr">GDPR</h1>
+<b>HAPPY GDPR DAY EVERYONE!!!!1!</b>
+<ul>
+ 	<li style="font-weight: 400;"><span style="font-weight: 400;">Our long-awaited new <a href="https://matrix.org/docs/guides/privacy_notice.html">privacy policy</a> &amp; <a href="https://matrix.org/docs/guides/terms_and_conditions.html">term &amp; conditions</a> for the matrix.org server are here - Phase 1 is complete!</span></li>
+ 	<li style="font-weight: 400;"><span style="font-weight: 400;">Folks are already accepting the new policies - thanks.</span></li>
+ 	<li style="font-weight: 400;"><span style="font-weight: 400;">We're going to start requiring acceptance to access the matrix.org server on Tuesday (May 29th).</span></li>
+ 	<li style="font-weight: 400;"><span style="font-weight: 400;">We're already receiving our first GDPR requests… :|</span></li>
+ 	<li style="font-weight: 400;"><span style="font-weight: 400;">Erasure and Right-to-be-forgotten work (Phase 2) is next up so we can action the requests in a timely manner.</span></li>
+ 	<li style="font-weight: 400;"><span style="font-weight: 400;">It looks like we will go ahead on removing MXIDs on events as a Phase 3 (although for now we do warn people that this is effectively a technical limitation of Matrix, albeit one that we're working on).</span></li>
+</ul>
+<h1 id="clientupdates">Client Updates</h1>
+<h2 id="mtxcliente2eprogress">mtxclient E2E progress</h2>
+Big E2E progress from <a href="https://matrix.to/#/@mujx:matrix.org">mujx</a>, developer of the <a href="https://github.com/mujx/nheko">nheko</a> client on his project <a href="https://github.com/mujx/mtxclient">mtxclient</a>. <a href="https://github.com/mujx/mtxclient/commit/7e522df71c804cbc04f38007c3958ebbb56815d3">As of this week</a>, mxtclient is able to decrypt group events. When writing (that is, sending encrypted messages) is complete, the idea is to migrate this work back to nheko, though mujx points out this library could be used in any client.
+<h2 id="fractal">Fractal</h2>
+Back to work after the <a href="https://wiki.gnome.org/Hackfests/Fractal2018">Hackfest</a>, <a href="https://wiki.gnome.org/Apps/Fractal">Fractal</a> have <a href="https://gitlab.gnome.org/World/fractal/commit/7a26544df04e7bf42cf41bbf8cb95821873963c4">released version 0.1.30</a>, featuring:
+<ul>
+ 	<li>Translations support</li>
+ 	<li>Number of members in the room in the members button</li>
+ 	<li>File storage configuration support</li>
+ 	<li>Gold and Silver tags for admins and moderatos</li>
+</ul>
+<a href="https://medium.com/we-distribute/fractal-is-a-new-messaging-app-for-the-gnome-desktop-powered-by-matrix-a4f219cb1095">Some coverage</a> of the <a href="https://wiki.gnome.org/Apps/Fractal">Fractal</a> design thinking from last week, nothing new but a decent signal boost.
+<h2 id="gomuks">gomuks</h2>
+<a href="http://localhost:3001/@tulir:maunium.net">tulir</a> came in with some late breaking news about <a href="https://github.com/tulir/gomuks">gomuks</a>, the terminal client written in go. New features:
+<ul>
+ 	<li>A fancy quick room switcher by <a href="https://matrix.to/#/@Evidlo:matrix.org">Evidlo</a></li>
+ 	<li>A few basic UI options (hide user/room lists)</li>
+ 	<li>Plaintext view to be able to click long links and such</li>
+ 	<li>Fixed some bugs</li>
+</ul>
+<h2><span style="font-weight: 400;">Riot/Web</span></h2>
+<ul>
+ 	<li style="font-weight: 400;"><span style="font-weight: 400;">GDPR-capable release! 0.15.4 out today</span></li>
+ 	<li style="font-weight: 400;"><span style="font-weight: 400;">Various bugfixes and performance regressions.</span></li>
+</ul>
+<h2><span style="font-weight: 400;">Riot/Mobile</span></h2>
+<ul>
+ 	<li style="font-weight: 400;"><span style="font-weight: 400;">GDPR-capable releases!</span></li>
+ 	<li style="font-weight: 400;"><span style="font-weight: 400;">Sticker sending is ready modulo some CSS bugs; we'll get it pushed shortly.</span></li>
+</ul>
+<h1 id="bridging">Bridging</h1>
+<h2 id="johnspriggsbridgingvideo">JonTheNiceGuy bridging video</h2>
+<a href="https://matrix.to/#/@JonTheNiceGuy:matrix.org">JonTheNiceGuy</a> produced a helpful video describing how to use bridges for IRC, Slack and Telegram, showing the difference between the different bridges. I found this to be really clear and well-paced for following the many practical details of bridging. Watch here: <a href="https://www.youtube.com/watch?v=ZNEzgYRLj8g">https://www.youtube.com/watch?v=ZNEzgYRLj8g</a>
+<h2 id="discordbridge">Discord bridge</h2>
+<a href="https://matrix.to/#/@andrewm:amorgan.xyz">anoa</a> and <a href="https://matrix.to/#/@Half-Shot:half-shot.uk">half-shot</a> have been working on the <a href="https://github.com/Half-Shot/matrix-appservice-discord">matrix-appservice-discord</a> bridge:
+<blockquote>"finished edit passing between Discord and Matrix, as well as support for discord's custom emojis (though UX is a bit manual until <a href="https://github.com/matrix-org/matrix-doc/issues/1256">TravisR's proposal</a> goes through ?)"</blockquote>
+<h2 id="matrixpuppetfacebook1to1fixerfrombrendan">matrix-puppet-facebook-1to1-fixer from Brendan</h2>
+<a href="https://brendan.abolivier.bzh/">Brendan</a> shared a project he's been working on this week: <a href="https://github.com/babolivier/matrix-puppet-facebook-1to1-fixer">matrix-puppet-facebook-1to1-fixer</a>. This project fixes a UI issue Brendan had with the <a href="https://github.com/matrix-hacks/matrix-puppet-facebook">Facebook Messenger Bridge</a>, namely that activity in 1:1 rooms was not clear enough.
+<blockquote>This small tool will take the local part of the room ID created by the Matrix&lt;&gt;Facebook Messenger bot once the friend has joined it, identify th friend, and grab their avatar and display name to set the room's.</blockquote>
+<h2 id="mautrixtelegram">mautrix-telegram</h2>
+Lots of progress on <a href="https://github.com/tulir/mautrix-telegram">mautrix-telegram</a> this lately including v0.2.0 RC. As reported by <a href="http://localhost:3001/@tulir:maunium.net">tulir</a>:
+<ul>
+ 	<li>A dockerfile by <a href="https://matrix.to/#/@jan.christian:gruenhage.xyz">jcgruenhage</a></li>
+ 	<li>Option to whitelist/blacklist automatic bridging of specific chats</li>
+ 	<li>Fixed many bugs</li>
+</ul>
+<h2 id="matrixappservicesms">matrix-appservice-sms</h2>
+<a href="https://matrix.to/#/@eta:theta.eu.org">eta</a> has been working on <a href="https://github.com/eeeeeta/matrix-appservice-sms/">matrix-appservice-sms</a> this week:
+<blockquote>I have managed to do the first phase of a massive refactor that makes it way more reliable (temporarily store SMS in the database before delivery)
+
+this makes it more resilient to synapse hiccups, as well as general failures</blockquote>
+<h1 id="otherprojects">Other Projects</h1>
+<h2 id="matrixboardfrombetz">matrixboard, from betz</h2>
+<a href="https://matrix.to/#/@betz:hackerspaces.be">betz</a> runs the <a href="https://hackerspaces.be/">https://hackerspaces.be/</a> matrix server and has this week, inbetween repairing his Synapse install, been working on a project called <a href="https://github.com/betz/matrixboard">matrixboard</a>. This tool is used to output the last five messages from a given room to displayed as HTML, the idea being to display output from a specific room as a website widget. You can see an example using <a href="https://matrix.to/#/#matrix-dev:matrix.org">#matrix-dev</a> <a href="http://matrix.hackerspaces.be:1337/!XqBunHwQIXUiqCaoxq:matrix.org?color=green">here</a>.
+<h2 id="opsdroidroomstateconnector">opsdroid room state connector</h2>
+<a href="https://matrix.to/#/@SolarDrew:matrix.org">SolarDrew</a> implemented a <a href="https://github.com/SolarDrew/database-matrix">database module</a>for <a href="https://opsdroid.github.io/">opsdroid</a> to allow Matrix room state to be used to persist chat bot memory. (Suggestion apparently came from <a href="https://matrix.to/#/@cadair:cadair.com">Cadair</a>, the human not <a href="https://en.wikipedia.org/wiki/Cadair_Idris">the place</a>.)
+
+The idea of using the room state to encapsulate bot data per-room was well received, discussion in <a href="https://matrix.to/#/#TWIM:matrix.org">#TWIM:matrix.org</a> suggests this is an estabilished practice for some developers.
+<h2 id="matrixpythonsdk">matrix-python-sdk</h2>
+No general GSOC round-up this week, <a href="https://matrix.to/#/@adam:thebeckmeyers.xyz">&amp;Adam</a> shared the news that GSOC-student <a href="https://matrix.to/#/@Zil0:matrix.org">Zil0</a>'s first PR towards E2E in <a href="https://github.com/matrix-org/matrix-python-sdk">matrix-python-sdk</a> landed on master. These PRs are working from efforts previously contributed by <a href="https://github.com/pik">pik</a>.
+<h2 id="ruma">Ruma</h2>
+Work continues in the Ruma space. This week saw the release of
+<ul>
+ 	<li><a href="https://github.com/ruma/ruma-events">ruma-events</a> <a href="https://github.com/ruma/ruma-events/releases/tag/0.10.0">0.10.0</a>: ruma-events contains Serializable Rust types for the events in the Matrix specification. 0.10.0 sees a major update with code provided by <a href="https://matrix.to/#/@mujx:matrix.org">mujx</a>, and contains many breaking changes.</li>
+ 	<li><a href="https://github.com/ruma/ruma-api-macros">ruma-api-macros</a> <a href="https://github.com/ruma/ruma-api-macros/releases/tag/0.2.2">0.2.2</a>, and <a href="https://github.com/ruma/ruma-client-api">ruma-client-api</a>] is also updated to use the new macro.</li>
+</ul>
+<h2 id="f0xaccountmigrationhelper">f0x account migration helper</h2>
+<a href="https://matrix.to/#/@f0x:lain.haus">f0x</a> has started work on a tool to help migrate accounts - including across homeservers. Right now he's working on the GUI, but check out progress at <a href="https://github.com/f0x52/matrix-migrate">https://github.com/f0x52/matrix-migrate</a>.
+<h2 id="dsntravellerbyflorian">DSN Traveller by Florian</h2>
+<a href="https://matrix.to/#/@florianjacob:matrix.org">Florian</a> reports:
+<blockquote>As part of my master's thesis, I wrote the DSN Traveller bot, which is crawling the matrix federation to measure the shape and size of the matrix network, and how distributed it currently is. The bot is already in a smaller number of rooms for testing, and will join the remaining rooms over the next days. All details at <a href="https://dsn-traveller.dsn.scc.kit.edu/">https://dsn-traveller.dsn.scc.kit.edu/</a>, room at <a href="https://matrix.to/#/#dsn-traveller:dsn-traveller.dsn.scc.kit.edu">#dsn-traveller:dsn-traveller.dsn.scc.kit.edu</a>.</blockquote>
+<h2><span style="font-weight: 400;">Synapse</span></h2>
+<ul>
+ 	<li style="font-weight: 400;"><span style="font-weight: 400;">GDPR policy management is welcomed in by Synapse 0.30</span></li>
+ 	<li style="font-weight: 400;"><span style="font-weight: 400;">Means we get server notices too!</span></li>
+ 	<li style="font-weight: 400;"><span style="font-weight: 400;">Explosion of Python 3 activity from <a href="https://matrix.to/#/@notafile:matrix.org">notafile</a> &amp; Amber (hawkowl)</span></li>
+ 	<li><a href="https://matrix.to/#/@andrew:shadura.me">andrewsh</a> has prepared a Debian package for the 0.30 release.</li>
+</ul>
+<h2><span style="font-weight: 400;">Dendrite</span></h2>
+<ul>
+ 	<li style="font-weight: 400;"><span style="font-weight: 400;"><a href="https://matrix.to/#/@andrewm:amorgan.xyz">Anoa</a> is on the case, having joined the core team on Monday - Dendrite is already sending events to ASes!  Meanwhile APwhitehat is hacking away on his GSoC projects!</span></li>
+</ul>
+<h1 id="specroundup">Spec</h1>
+The <a href="https://matrix.org/docs/spec/proposals">Matrix Spec Change Proposals</a> list is populated, popular, and under discussion at <a href="https://matrix.to/#/#matrix-spec:matrix.org">#matrix-spec:matrix.org</a>. There are multiple issues ready to review, for example: <a href="https://github.com/turt2live">TravisR</a> is calling for attention on <a href="https://github.com/matrix-org/matrix-doc/issues/1256">MSC1256</a>: "Custom emoji and sticker packs in matrix".
+<h1 id="newrooms">New Rooms</h1>
+<ul>
+ 	<li><a href="https://matrix.to/#/@notafile:matrix.org">notafile</a> alerted us to <a href="https://matrix.to/#/#synapse-py3:matrix.org">#synapse-py3:matrix.org</a> a room for discussions specific to the python3 work on synapse.</li>
+ 	<li><a href="https://matrix.to/#/#dsn-traveller:dsn-traveller.dsn.scc.kit.edu">#dsn-traveller:dsn-traveller.dsn.scc.kit.edu</a> to discuss the DSN Traveller, as mentioned above.</li>
+ 	<li><a href="https://matrix.to/#/@brainblasted:disroot.org">brainblasted</a> introduced <a href="https://matrix.to/#/#book-talk:disroot.org">#book-talk:disroot.org</a>, "For discussing literature, meaning, and if the movie lives up to the book"</li>
+ 	<li><a href="https://matrix.to/#/@CromFr:matrix.org">CromFr</a> shared <a href="https://matrix.to/#/#lebistrot:matrix.org">#lebistrot:matrix.org</a>, "a french room for talking about everything or nothing. Venez dire bonjour!"</li>
+</ul>
+<h1 id="gsoc">GSOC</h1>
+Last week I promised an update on the state of the various GSOC projects in the Matrix Ecosystem. There is activity happening but other than what's been discussed above we'll wait a week or two for more detailed updates.
+<h1 id="seeyousoon">See you soon</h1>
+As always, if you have things to say, projects to advertise, or anything else, ping <a href="https://matrix.to/#/@benpa:matrix.org">me</a> or visit <a href="https://matrix.to/#/#TWIM:matrix.org">#TWIM:matrix.org</a>. I'm keen to get everyone included and keep this community enthused about all the work going on in the Matrix ecosystem.
+
+Check out this week's Matrix Live:
+
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/mpE97ikU8Sg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>

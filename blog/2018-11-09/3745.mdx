@@ -1,0 +1,75 @@
+---
+date: '2018-11-09'
+title: This Week in Matrix 2018-11-09
+categories:
+  - General
+---
+
+<h2 id="matrixlive">Matrix Live</h2>
+We continue the new format for Matrix Live season 3 by chatting with <a href="https://matrix.to/#/@ganfra:matrix.org">Francois</a> from New Vector, to get a sneak preview of the work he's doing on a new version of <a href="https://github.com/matrix-org/matrix-android-sdk">matrix-android-sdk</a>, and how that will impact Riot:
+
+<iframe src="https://www.youtube.com/embed/z6XXDQMPgro" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+<h2 id="dendriteandbrendan">Dendrite and Brendan</h2>
+Welcome to <a href="https://matrix.to/#/@brendan:abolivier.bzh">Brendan</a>, who has started working on Dendrite as his new day job at New Vector:
+<blockquote>There's been some progress on Dendrite (?), with a couple of bug getting fixed along with some progress in the implementation of Matrix endpoints, such as the <code>/backfill</code> federation one (documented <a href="https://matrix.org/docs/spec/server_server/unstable.html#get-matrix-federation-v1-backfill-roomid">here</a>), which has already been merged, and the <code>/messages</code> one from the client-server API (documented <a href="https://matrix.org/docs/spec/client_server/r0.4.0.html#get-matrix-client-r0-rooms-roomid-messages">here</a>) for which a pull request <a href="https://github.com/matrix-org/dendrite/pull/591">has been opened</a> and is currently under review.</blockquote>
+<h2 id="pythonmatrixclientasyncapi">Python Matrix Client async API</h2>
+<a href="https://matrix.to/#/@cadair:cadair.com">Cadair</a>:
+
+I have pushed my asyncio wrapper of the Python matrix client api class to pypi, so I can use it in a few different projects while the PR to the Python SDK is in an unmerged state. It exposes all the methods on the MatrixHttpApi class as awaitables. <a href="https://github.com/Cadair/matrix_api_async">https://github.com/Cadair/matrix_api_async</a> and <a href="https://pypi.org/project/matrix-api-async/">https://pypi.org/project/matrix-api-async/</a>
+
+These improvements will, in time, be merged back into the main <a href="https://github.com/matrix-org/matrix-python-sdk">Python SDK</a>.
+<h2 id="discordbridge030released">Discord bridge 0.3.0 released</h2>
+<a href="https://matrix.to/#/@Half-Shot:half-shot.uk">Half-Shot</a> is working on so many bridges that these days he just casually mentions a huge release like <a href="https://github.com/Half-Shot/matrix-appservice-discord/releases/tag/v0.3.0">Discord bridge v0.3.0</a>. Some of the many many new features:
+<ul>
+ 	<li><a href="https://github.com/Half-Shot/matrix-appservice-discord/pull/251">#251</a> Support for Postgresql and a newer SQLite3 backend!</li>
+ 	<li><a href="https://github.com/Half-Shot/matrix-appservice-discord/pull/182">#182</a> Replace npmlog with winston, for logging to files and better logging overall.</li>
+ 	<li><a href="https://github.com/Half-Shot/matrix-appservice-discord/pull/221">#221</a> Add support for m.sticker.</li>
+ 	<li><a href="https://github.com/Half-Shot/matrix-appservice-discord/pull/210">#210</a> Discord-side moderation of matrix users.</li>
+ 	<li><a href="https://github.com/Half-Shot/matrix-appservice-discord/pull/259">#259</a> Show Matrix replies as Discord embeds.</li>
+ 	<li><a href="https://github.com/Half-Shot/matrix-appservice-discord/pull/164">#164</a> Bot will now mention name, topic and membership changes on Discord.</li>
+ 	<li><a href="https://github.com/Half-Shot/matrix-appservice-discord/pull/175">#175</a> Add special discord keys onto m.room.member for ghosts</li>
+ 	<li><a href="https://github.com/Half-Shot/matrix-appservice-discord/pull/179">#179</a> Add rooms to the directory when bridged.</li>
+ 	<li><a href="https://github.com/Half-Shot/matrix-appservice-discord/pull/220">#220</a> Messages are now deleted by a users puppet rather than the bot.</li>
+</ul>
+There are many more features and bugfixes on <a href="https://github.com/Half-Shot/matrix-appservice-discord/releases/tag/v0.3.0">the release notes</a>. Also:
+<blockquote>Shoutout to our new member of the team, <a href="https://matrix.to/#/@sorunome:sorunome.de">Sorunome</a> who did a lot of the review work behind the scenes for this release. Also, thank you to everyone who submitted a PR or an issue!</blockquote>
+<h2 id="matrixpuppetslackv180released">matrix-puppet-slack v1.8.0 released</h2>
+<a href="https://matrix.to/#/@root:thomasprofitt.com">tom</a> came out of the wild to tell us about <a href="https://github.com/matrix-hacks/matrix-puppet-slack">matrix-puppet-slack</a>:
+<blockquote>TWIM (but actually over the last few weeks), thanks to the efforts of <a href="https://github.com/d3m3vilurr">a new contributor</a>, <a href="https://github.com/matrix-hacks/matrix-puppet-slack">matrix-puppet-slack</a> v1.7.0 and v1.8.0 have been released, fixing a number of old and new issues and adding support for new types of Slack events, including bidirectional @-mentions, Slack-to-Matrix typing notifications, fixing Slack-to-Matrix image/file uploads with comments, and more!
+The <a href="https://github.com/matrix-hacks/matrix-puppet-bridge/">matrix-puppet-bridge</a> projects have gotten relatively quiet over the past year or so, but there's still plenty of bridges with plenty of features to implement and plenty of bugs to fix (and, even more importantly, bugs to <em>report</em>!) for any would-be-contributors who'd like to use a trusted Matrix homeserver as their double-puppetting Slack/iMessage/Facebook/GroupMe/iChat/Skype/Hangouts/Signal/Tox client from which to brag to their friends on the other platforms about how great Matrix is.</blockquote>
+The room for collaborating on matrix-puppet-bridge bridges is: <a href="https://matrix.to/#/#matrix-puppet-bridge:matrix.org">#matrix-puppet-bridge:matrix.org</a>
+<h2 id="maubotmanagementuiprogress">maubot management UI progress</h2>
+<a href="https://matrix.to/#/@tulir:maunium.net">tulir</a> has been making big progress on his <a href="https://github.com/maubot/maubot">maubot</a> management UI:
+<blockquote>The maubot management UI has progressed well, but isn't quite ready yet. I think it should be usable by Next Week in Matrix.
+It can be used to set up and configure a maubot instance and plugins. Once it's ready, it should be possible to do everything except installing maubot itself through the UI: installing and updating plugins, adding matrix clients, configuring plugin instances, viewing logs, etc.</blockquote>
+<a href="https://matrix.org/blog/wp-content/uploads/2018/11/maubot-manager.png"><img class="alignnone size-large wp-image-3747" src="https://matrix.org/blog/wp-content/uploads/2018/11/maubot-manager-1024x717.png" alt="" width="1024" height="717" /></a>
+<h2 id="hkbotisanantiabusebot">HK Bot is an anti-abuse bot</h2>
+<a href="https://github.com/Matrixcoffee">Coffee</a> continues his streak of TWIM mentions by bringing a new bot to combat abuse:
+<blockquote><a href="https://gitlab.com/Matrixcoffee/HKBot">HK Bot</a> is an anti-abuse bot for public <a href="https://matrix.org">Matrix</a> chatrooms.
+This is a bot that really shouldn't exist, but since some people just like to make others' lives more difficult, here we are.
+The purpose of this bot is twofold. It can automatically oversee rooms and respond to abuse, based on programmable pattern rules, providing a stop-gap measure in case no human moderators are nearby. It can also automate some tedious tasks via its command interface, the primary one being the complete redaction of all of an abuser's messages.
+HK Bot is still under construction and contains dangerous features. Use with caution.</blockquote>
+<h2 id="xsampatoipabot">X-SAMPA to IPA bot</h2>
+<a href="https://matrix.to/#/@dandellion:dodsorf.as">Dandellion</a> "made an <a href="https://en.wikipedia.org/wiki/X-SAMPA">X-SAMPA</a> to IPA bot based on matrix-bot-sdk and discord's conniebot". This bot essentially lets you use ASCII characters to get an output in IPA. The advantage of this is that you can much more easily type and transmit pronunciation (because you don't need to find the characters).
+<blockquote>I'll just have to make it a bit more configurable, but then I'll throw the source up
+When making constructed languages and talking about linguistics, it's nice to get an easilly readable IPA representation of a word, but it's really hard to write IPA, which is why x-sampa exists as a way to input IPA with a normal keyboard!</blockquote>
+<h2 id="informo">Informo</h2>
+<a href="https://matrix.to/#/@vabd:weu.informo.network">vabd</a>, the unknown organiser of Informo provided an update about the spec:
+<blockquote>A handful of SCS (Specs Changes Submissions) to the <a href="https://specs.informo.network">Informo specifications</a> have been happening over the last week and a half, with some of them still open to public review for at least a few days before being merged into the specs. The list of SCS open to review can be found <a href="https://github.com/Informo/specs/pulls?utf8=%E2%9C%93&amp;q=is%3Aopen+is%3Apr+label%3Atype%3Abehaviour+label%3Ascsp%3Areview">here</a>, and people can track new SCS and status changes to existing ones through our <a href="https://github.com/Informo/specs-bot">specs bot</a> that's living in <a href="https://matrix.to/#/#discuss:weu.informo.network">#discuss:weu.informo.network</a> ?</blockquote>
+<h2 id="fractal">Fractal</h2>
+<a href="https://matrix.to/#/@iamjsparber:matrix.org">Julian Sparber</a> has been working on message rendering in <a href="https://wiki.gnome.org/Apps/Fractal">Fractal</a>:
+<blockquote>I increased message rendering performance in the room history. Also the history doesn't move it's position anymore when older messages are loaded, which results in a much better experience. All the changes are in master, but we didn't make a new release.</blockquote>
+<h2 id="videointrotomatrixandriotinfrench">Video intro to Matrix and Riot in French</h2>
+<a href="https://matrix.to/#/@nouts:matrix.org">Nouts</a>:
+<blockquote>I have made a video about Riot which could fit in the Guides on matrix.org. It's for beginners, in French. It's 6 months old, but I just uploaded it on youtube. Also it's <a href="https://video.taboulisme.com/videos/watch/8375099e-b748-453d-8557-c5218bd872d7">available on peertube</a>.</blockquote>
+<iframe src="https://www.youtube.com/embed/TUgQ7Qh754w" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+<h2 id="morethingsthisweek">More Things This Week</h2>
+<a href="https://matrix.to/#/@ma1uta:matrix.org">ma1uta</a> introduces a new client built on JavaFX: no code yet, but it's built on the previous <a href="https://github.com/ma1uta">Java Matrix</a> work he's been doing. "It will be cross-platform (linux,windows,osx I hope) client with supports of the multi accounts."
+
+<a href="https://matrix.to/#/@Half-Shot:half-shot.uk">Half-Shot</a> also continued work on bridging via libpurple: "I've nearly got group chats working, with invites (and hopefully people joining and leaving them showing up properly) as well as user's having profiles."
+
+Work continues on <a href="https://github.com/koma-im/koma/">Koma</a>:
+<blockquote>Since the last TWIM update, koma is updated to kotlin 1.3, experimental coroutines are replaced with stable ones. The changes are being tested and should be merged soon. A new contributor has joined, so expect development to speed up a bit.</blockquote>
+<a href="https://gitlab.com/b0/spectral">Spectral</a>, a Matrix client built using <a href="https://github.com/QMatrixClient/libqmatrixclient">libqmatrixclient</a>, runs great on macOS. I'm excited because I get to play with another client! <a href="https://bintray.com/encombhat/Spectral/Spectral#files">Find .dmgs on bintray</a>.
+<h2 id="fin">FIN</h2>
+You made it, right to the end! Nice going! Come back here next week to find out what's been happening, or even better, come join us in <a href="https://matrix.to/#/#TWIM:matrix.org">#twim:matrix.org</a> and tell us what YOU'VE been working on!

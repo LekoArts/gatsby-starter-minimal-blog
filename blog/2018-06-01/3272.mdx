@@ -1,0 +1,80 @@
+---
+date: '2018-06-01'
+title: This Week in Matrix 2018-06-01
+categories:
+  - General
+---
+
+<h1 id="gdpr">GDPR</h1>
+It's over. It's once again safe to check your email, and we <a href="https://twitter.com/marcusjdl/status/1000027860558581760">got</a> <a href="https://twitter.com/JasonLeeParsons/status/999957139228643328">some</a> <a href="https://twitter.com/rianjohnson/status/999730569641525248">fairly</a> <a href="https://twitter.com/mocent0/status/999385880287744001">good</a> <a href="https://twitter.com/cszabla/status/1001619286090280960">jokes</a> out of the experience.
+<h1 id="projects">Projects</h1>
+<h2 id="synapse">Synapse</h2>
+<a href="https://twitter.com/hawkieowl">hawkowl</a> is technically new to the Matrix Core team but is already integrated and storming the codebase like an old pro. She and <a href="https://matrix.to/#/@notafile:matrix.org">notafile</a> have been ramping up on work to the make the Synapse codebase work with Python 3.
+<h2 id="matrixdockeransibledeploycannowsetupyourhomeserverusingtheofficialmatrixsynapsedockerimage">matrix-docker-ansible-deploy can now set up your homeserver using the official Matrix Synapse Docker image</h2>
+<a href="https://matrix.to/#/@slavi:devture.com">@slavi:devture.com</a> sent great news: <a href="https://github.com/spantaleev/matrix-docker-ansible-deploy">matrix-docker-ansible-deploy</a> can now set up your homeserver using the official <a href="https://hub.docker.com/r/matrixdotorg/synapse/">Matrix Synapse Docker</a> image. In his words:
+<blockquote>Using this Ansible playbook is probably the easiest way to set up a fully-functioning Matrix homeserver on your own machine. The setup includes Matrix Synapse and some related services required to actually make it useful (automatically-managed HTTPS; STUN/TURN server for audio/video calls; Postgres database for Synapse; optionally riot-web; optionally Amazon S3 storage support)</blockquote>
+<h2 id="matrixregistration">matrix-registration</h2>
+Helpfully named <a href="https://matrix.to/#/@zeratax:dmnd.sh">Zeratax?utf8=✓</a> has released <a href="https://github.com/ZerataX/matrix-registration">matrix-registration</a>, an application which allows you to "easily create tokens to invite users on your homeserver without the need to open up public registration". There is a public demo here: <a href="https://zeratax.github.io/matrix-registration/demo.html">https://zeratax.github.io/matrix-registration/demo.html</a>
+
+Says <a href="https://matrix.to/#/@zeratax:dmnd.sh">Zeratax</a>:
+<blockquote>my personal problem was:
+i didn't want to open up registration for everyone
+i didn't want to register every account manually and have to worry about seeing passwords etc
+now i can just share a link, e.g:
+https://zeratax.github.io/matrix-registration/demo.html?token=JargonGingerYankee
+
+and my friends can register.
+
+these token can be restricted as one time usable only or by an expiration date.</blockquote>
+<h2 id="dendriteactivity">dendrite activity!</h2>
+<a href="https://matrix.to/#/@andrewm:amorgan.xyz">anoa</a> writes about progress on <a href="https://github.com/matrix-org/dendrite">dendrite</a>:
+<blockquote>Last week dendrite was filtering events from user's into seperate queues for each application service to eventually be given. Sending these events requires batching them up into transactions and then sending them to an HTTP endpoint on the application service. I'm happy to report that from today, that functionality is now implemented, along with graceful handling of both server and application service downtime.</blockquote>
+<h2 id="fractal">Fractal</h2>
+<a href="https://matrix.to/#/@afranke:matrix.org">Alexandre Franke</a> from <a href="https://wiki.gnome.org/Apps/Fractal">Fractal</a> reports:
+<blockquote>Fractal got the beginning of a revamped directory (from one of our GSoC interns), as well as misc bugfixes and performance improvements. It has also been added to <a href="https://l10n.gnome.org/">Damned lies</a>, the GNOME platform for translations.</blockquote>
+<h2 id="neo006">neo 0.06</h2>
+<a href="https://github.com/f0x52/neo">neo</a> <a href="https://github.com/f0x52/neo/releases/tag/0.06">v0.06</a> is out now, release notes:
+<blockquote>Beautiful new file upload dialog, with previews, captions and the option to cancel. Making 1on1 chat look a bit nicer.
+
+added:
+file upload dialog
+room canonical alias fallback for name
+1on1 room now shows avatar+name of partner
+
+changed:
+getting room name/image in initialSync instead of on render, still not optimal
+better image/video scaling
+better local echo
+various bugfixes</blockquote>
+<h1 id="articlesandblogposts">Articles and blog posts</h1>
+<h2 id="riotjouniblogpost">Riot Jouni blog post</h2>
+<a href="http://riot.im/">Riot</a> is undergoing a visual redesign, thanks to <a href="http://helminen.co/">Jouni Helminen</a>. Take a look at <a href="https://medium.com/@RiotChat/a-sneak-peek-at-a-whole-new-riot-im-1114df653782">the redesign work on the Riot blog</a>. The changes are not radical, but will help standardise and modernise the Riot interface. Early feedback I've seen has been mostly positive.
+<h2 id="julianonfractalwork">Julian on Fractal work</h2>
+<a href="https://matrix.to/#/@iamjsparber:matrix.org">Julian</a> is a <a href="https://summerofcode.withgoogle.com/projects/?sp-search=matrix">GSOC 2018</a> student working on <a href="https://wiki.gnome.org/Apps/Fractal">Fractal</a>. He's been working to improve the user account setting panel, and has made progress <a href="https://blogs.gnome.org/jsparber/2018/05/28/fractal-gsoc-progress/">as described here</a>.
+<blockquote>The user can now change the following settings: Avatar, display name, add and remove email addresses and phone numbers. Also, they can see the homeserver and their own MXID.
+We will probably make some more small changes on the way to make the UX as good as we possibly can.</blockquote>
+<h2 id="fedoramagazinementionoffractal">Fedora Magazine mention of Fractal</h2>
+<a href="https://wiki.gnome.org/Apps/Fractal">Fractal</a> was <a href="https://fedoramagazine.org/fractal-gnome-matrix-chat-client/">featured in Fedora Magazine</a> this week, just a little introduction. I notice the article barely introduces matrix: not sure if that's an oversight or a belief that the audience will already know it!
+<h1 id="newriotthemefrommtrnordblueshine">New Riot theme from MTRNord: blueshine</h1>
+<a href="https://matrix.to/#/@MTRNord:matrix.ffslfl.net">MTRNord</a> has started work on "a secondary Dark Riot Theme named blueshine". Lots of <a href="https://github.com/vector-im/riot-web/pull/6816">screenshots are available on the PR</a>, and take a look below too. If you'd like to try it out, <a href="https://github.com/turt2live">TravisR</a> has hosted a <a href="https://t2bot.io/blueshine/">Riot instance with the theme included here</a>.
+
+<img src="https://user-images.githubusercontent.com/1374914/40676029-c5103182-6379-11e8-9008-c12d894b67db.png" alt="blueshine riot theme" />
+<h1 id="specproposals">Spec Proposals</h1>
+Still posting about spec proposals. To get involved in the spec development process, take a look at the <a href="https://matrix.org/docs/spec/proposals">Matrix Spec Change Proposals</a> page to find out what's happening, read the proposals, then talk about it in <a href="https://matrix.to/#/#matrix-spec:matrix.org">#matrix-spec:matrix.org</a>. One proposal looking for attention and a good place to start:
+<h2 id="interactivekeyverificationspecproposalfromuhoreg">Interactive Key Verification: Spec proposal from uhoreg</h2>
+Long-time contributor <a href="https://matrix.to/#/@uhoreg:matrix.org">uhoreg</a> joined the matrix.org core team this week, and is requesting feedback on a spec proposal relating to <a href="https://docs.google.com/document/d/1SXmyjyNqClJ5bTHtwvp8tT1Db4pjlGVxfPQNdlQILqU/">Interative Key Verification</a>. Reminder that the <a href="https://matrix.org/docs/spec/proposals">list of spec proposals is tracked here</a>, and to join the discussion in <a href="https://matrix.to/#/#matrix-spec:matrix.org">#matrix-spec:matrix.org</a>.
+<h1 id="nhekopackaging">nheko packaging</h1>
+<h2 id="nhekosusepackaging">nheko openSUSE packaging</h2>
+It's now possible to install <a href="https://github.com/mujx/nheko">nheko</a> as a <a href="https://software.opensuse.org/package/nheko"> openSUSE package</a> - great to see that there is enough demand for a community package to appear.
+<h2 id="nheko0421packagenowindebian">nheko 0.4.2-1 package now in Debian</h2>
+<a href="https://matrix.to/#/@uhoreg:matrix.org">uhoreg</a> provided Debian and Ubuntu packages for <a href="https://github.com/mujx/nheko">nheko</a> 0.4.2-1: <a href="https://packages.qa.debian.org/n/nheko/news/20180530T135401Z.html">https://packages.qa.debian.org/n/nheko/news/20180530T135401Z.html</a>.
+<h1 id="newroomsalsoroomswhichhappentobenewtobenpa">New Rooms, also rooms which happen to be new to benpa</h1>
+<ul>
+ 	<li>Not at all new, but check out <a href="https://matrix.to/#/#riot-themes:matrix.ffslfl.net">#riot-themes:matrix.ffslfl.net</a> for discussions on the blueshine theme mentioned above.</li>
+ 	<li><a href="https://matrix.to/#/#matrix-docker-ansible-deploy:devture.com">#matrix-docker-ansible-deploy:devture.com</a> - support for those installing their own Matrix homeserver (and related services) with Docker and Ansible, using <a href="https://github.com/spantaleev/matrix-docker-ansible-deploy">matrix-docker-ansible-deploy</a></li>
+ 	<li><a href="https://matrix.to/#/@SolarDrew:matrix.org">SolarDrew</a>'s D&amp;D bot development chat: <a href="https://matrix.to/#/#chatrpg-dev:matrix.org">#chatrpg-dev:matrix.org</a></li>
+</ul>
+<h1 id="thatsaboutallfornow">That's about all for now…</h1>
+… and that's plenty for the week! Take a look at Matrix Live below, and join us in <a href="https://matrix.to/#/#TWIM:matrix.org">#twim:matrix.org</a> if you have something which should be included.
+
+<iframe src="https://www.youtube.com/embed/8MVMrLsbznk" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe>

@@ -1,0 +1,24 @@
+---
+date: '2018-02-09'
+title: 'Security update: Riot/Web 0.13.5 released - fixing XSS vulnerability'
+categories:
+  - General
+---
+
+Hi all,
+
+Heads up that we made an emergency release of Riot/Web 0.13.5 a few hours ago to fix a XSS vulnerability found and reported by walle303 - many thanks for disclosing it responsibly.
+
+<strong>Please upgrade to Riot/Web 0.13.5 asap. If you're using <a href="https://riot.im/app">riot.im/app</a> or <a href="https://riot.im/develop">riot.im/develop</a> this simply means hitting Refresh; otherwise please upgrade your Riot deployment as soon as possible. </strong><a href="https://pkgs.alpinelinux.org/packages?name=riot-web&amp;branch=edge">Alpine</a>, <a href="https://riot.im/desktop">Debian</a> and <a href="https://github.com/taw00/riot-rpm">Fedora/RPM</a> packages are already updated - huge thanks to the maintainers for the fast turnaround.
+
+The issue lies in the relatively obscure external_url feature, which lets bridges specify a URL for bridged events, letting Riot/Web users link through to the 'original' event (e.g. a twitter URL on a bridged tweet).  The option is hidden in a context menu and labelled "Source URL", and is only visible on events which have the external_url field set.  Unfortunately Riot/Web didn't sanitise the URL correctly, allowing a malicious URL to be injected - and this has been the case since the feature landed in Riot 0.9.0 (Nov 2016).
+
+If you're not able to upgrade to Riot/Web 0.13.5 for some reason, then please do not click on the 'Source URL' feature on the event context menu:
+
+<a href="https://matrix.org/blog/wp-content/uploads/2018/02/xss.png"><img class="aligncenter size-large wp-image-3001" src="https://matrix.org/blog/wp-content/uploads/2018/02/xss-1024x352.png" alt="" width="1024" height="352" /></a>
+
+Apologies for the inconvenience,
+
+thanks,
+
+Matthew

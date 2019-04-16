@@ -1,0 +1,40 @@
+---
+date: '2014-11-20'
+title: Synapse enters beta with the release of v0.5.0!
+categories:
+  - General
+---
+
+We're really excited to release the biggest update yet to Synapse (the python/twisted reference Matrix homeserver implementation) - version 0.5.0 is out!
+
+This effectively concludes our alpha testing phase - Synapse's security model is now feature complete and we are now cautiously encouraging people to run their own Synapse installation on the 'net; federate up; and help us squash all and any bugs as we get beta testing.
+
+Synapse 0.5.0 has huge database schema changes from previous versions as we have landed both the event-signing and federation-authorisation branches and so added full cryptographic signing of all matrix events and unified the client-server and server-server model of events/PDUs.  As a result, migrating history is Hard - we recommend a clean start if possible; if not, come talk to us in #matrix:matrix.org.  UPGRADE.rst has the details.
+
+The full changelog is as per below - please upgrade your homeserver or install a new one if you're new here and join Matrix and help us create a robust open distributed messaging fabric for the web!
+
+<pre>
+Changes in synapse 0.5.0 (2014-11-19)
+=====================================
+This release includes changes to the federation protocol and client-server API
+that is not backwards compatible.
+
+This release also changes the internal database schemas and so requires servers to
+drop their current history. See UPGRADES.rst for details.
+
+Homeserver:
+ * Add authentication and authorization to the federation protocol. Events are
+   now signed by their originating homeservers.
+ * Implement the new authorization model for rooms.
+ * Split out web client into a seperate repository: matrix-angular-sdk.
+ * Change the structure of PDUs.
+ * Fix bug where user could not join rooms via an alias containing 4-byte
+   UTF-8 characters.
+ * Merge concept of PDUs and Events internally.
+ * Improve logging by adding request ids to log lines.
+ * Implement a very basic room initial sync API.
+ * Implement the new invite/join federation APIs.
+
+Webclient:
+ * The webclient has been moved to a seperate repository.
+</pre>

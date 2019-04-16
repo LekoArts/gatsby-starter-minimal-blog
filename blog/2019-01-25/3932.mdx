@@ -1,0 +1,126 @@
+---
+date: '2019-01-25'
+title: This Week in Matrix 2019-01-25
+categories:
+  - General
+---
+
+<h2 id="matrixlives03e12modularim">Matrix Live S03E12 - Modular.im</h2>
+<iframe src="https://www.youtube.com/embed/Z7bz4fAJyVE" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+
+This week I chatted to Rick about the release of <a href="https://www.modular.im/">Modular</a>, Hosted Homeservers and more. We're pleased to be able to announce the availablity of a <a href="https://www.modular.im/hipchat">HipChat migration tool</a> to get people into Matrix.
+<h2 id="latestmscupdatesfromanoasmscbot">Latest MSC updates (from anoa's MSC bot)</h2>
+<h3 id="approvedmscs">Approved MSCs</h3>
+<ul>
+ 	<li><a href="https://github.com/matrix-org/matrix-doc/issues/1339">[MSC 1339]: Proposal to add a GET method to read account data</a></li>
+ 	<li><a href="https://github.com/matrix-org/matrix-doc/issues/1229">[MSC 1229]: Mitigating abuse of the event depth parameter over federation</a></li>
+ 	<li><a href="https://github.com/matrix-org/matrix-doc/pull/1779">[MSC 1779]: MSC1779: Proposal for Open Governance for Matrix.org (v2)</a></li>
+ 	<li><a href="https://github.com/matrix-org/matrix-doc/issues/1354">[MSC 1354]: Widget API extension: Always-on-screen</a></li>
+</ul>
+<h3 id="finalcommentperiod">Final Comment Period</h3>
+<ul>
+ 	<li><a href="https://github.com/matrix-org/matrix-doc/pull/1813">[MSC 1813]: MSC 1813 - Federation Make Membership Room Version</a></li>
+ 	<li><a href="https://github.com/matrix-org/matrix-doc/pull/1659">[MSC 1659]: MSC 1659 Proposal: Change Event IDs to Hashes</a></li>
+</ul>
+<h3 id="inprogressmscs">In Progress MSCs</h3>
+<ul>
+ 	<li><a href="https://github.com/matrix-org/matrix-doc/pull/1544">[MSC 1544]: [WIP] MSC1543: Key verification using QR codes</a></li>
+ 	<li><a href="https://github.com/matrix-org/matrix-doc/pull/1538">[MSC 1538]: MSC1219: storing megolm keys serverside</a></li>
+ 	<li><a href="https://github.com/matrix-org/matrix-doc/pull/1796">[MSC 1796]: MSC1796: improved e2e notifications</a></li>
+ 	<li><a href="https://github.com/matrix-org/matrix-doc/pull/1797">[MSC 1797]: MSC1797: Proposal for more granular profile error codes</a></li>
+ 	<li><a href="https://github.com/matrix-org/matrix-doc/pull/1767">[MSC 1767]: MSC1767: Extensible event types &amp; fallback in Matrix (v2)</a></li>
+ 	<li><a href="https://github.com/matrix-org/matrix-doc/pull/1768">[MSC 1768]: [WIP] MSC1768: Proposal to authenticate with public keys</a></li>
+ 	<li><a href="https://github.com/matrix-org/matrix-doc/pull/1769">[MSC 1769]: WIPish: MSC1769: Extensible profiles as rooms</a></li>
+ 	<li><a href="https://github.com/matrix-org/matrix-doc/pull/1802">[MSC 1802]: MSC1802: Standardised federation response formats</a></li>
+ 	<li><a href="https://github.com/matrix-org/matrix-doc/pull/1607">[MSC 1607]: MSC1608: Proposal for room alias grammar</a></li>
+ 	<li><a href="https://github.com/matrix-org/matrix-doc/pull/1772">[MSC 1772]: WIPish: MSC1772: Groups as rooms (v2)</a></li>
+ 	<li><a href="https://github.com/matrix-org/matrix-doc/pull/1776">[MSC 1776]: [WIPish] MSC1776: Implementing peeking via /sync</a></li>
+ 	<li><a href="https://github.com/matrix-org/matrix-doc/pull/1777">[MSC 1777]: [WIPish] MSC1777: peeking over federation</a></li>
+</ul>
+<h2 id="synapse">Synapse</h2>
+<ul>
+ 	<li>Working furiously towards an r0 spec release. Event ids as hashes (MSC 1659) and S2S API certificates (MSC 1659 ) are very close now - see <a href="https://github.com/orgs/matrix-org/projects/8">https://github.com/orgs/matrix-org/projects/8</a> to track our progress.</li>
+ 	<li>Since <a href="https://github.com/matrix-org/matrix-doc/pull/1711">MSC1711</a> is a breaking change, we will initially ship our next release (v0.35.0) with ACME support to make it easy to provision and renew certificates. The give everyone a month to upgrade and install a cert before we ship Synapse v1.0 which will require that servers have certificates in order to federate. Don't worry, there will be plenty of details on the steps necessary for admins when v0.35.0 lands - watch this space.</li>
+ 	<li>Finally a raft of db performance improvements, room version upgrade bug fixes, as well taking a look at room directory and user directory efficiency.</li>
+</ul>
+<h2 id="matrixpuppetslack">matrix-puppet-slack</h2>
+<a href="https://matrix.to/#/@root:thomasprofitt.com">tom</a> reports that:
+<blockquote><a href="https://github.com/matrix-hacks/matrix-puppet-slack">matrix-puppet-slack</a> version 1.10.1 has been released, thanks again to <a href="https://github.com/matrix-hacks/matrix-puppet-slack/commits?author=twouters">@twouters</a>
+<ul>
+ 	<li>The bridge could not create new Matrix rooms on versions of Synapse after a certain change, because it did not reserve the room alias prefix it used. That's been fixed, but anyone currently running matrix-puppet-slack will need to edit their slack_registration.yaml and restart Synapse. See <a href="https://github.com/matrix-hacks/matrix-puppet-slack/releases/tag/1.10.1">the Release</a> for instructions on doing so.</li>
+ 	<li>The bridge will no longer send "Edit: " events when Slack sends it a "message_changed" message, if the message text has not actually changed (Slack sends these events for URL previews, for example, but this just causes duplicate bridged messages). This fix has been a long time coming.</li>
+</ul>
+</blockquote>
+<h2 id="matrixcorporal">matrix-corporal</h2>
+<a href="https://matrix.to/#/@slavi:devture.com">Slavi</a> reports that:
+<blockquote><a href="https://github.com/devture/matrix-corporal">matrix-corporal</a> <a href="https://github.com/devture/matrix-corporal/releases/tag/1.3.0">1.3.0</a> was released.
+It uses a new Matrix API for fetching account data (Synapse &gt;0.34.1 is required), so it performs reconciliation quicker than before.</blockquote>
+From the notes:
+<blockquote>Reconciliation is now much faster, due to the way we retrieve account data from the Matrix server (no longer doing <code>/sync</code>).
+From now on, the minimum requirement for running matrix-corporal is Synapse v0.34.1, as it's the first Synapse release which contains the new API we require (<code>GET /user/{user_id}/account_data/{account_dataType}</code>).</blockquote>
+<h2 id="journal">journal</h2>
+<a href="https://github.com/lukebarnard1/">lukebarnard</a> disappeared from our screens <a href="https://matrix.org/blog/2018/06/29/this-week-in-matrix-2018-06-29/#andso">some time ago</a>, but he's back with this news on <a href="https://github.com/lukebarnard1/journal">journal</a>:
+<blockquote>I have an update on <a href="https://github.com/lukebarnard1/journal">journal</a> (finally). I've pushed the redesign branch that I've been working on. It contains the web view component of the new architecture and can be used as a generic blog-hosting site (I'll be doing this personally). Feel free to check it out here: <a href="https://journal.lukebarnard.co.uk/journal/1-jan-2019">https://journal.lukebarnard.co.uk/journal/1-jan-2019</a></blockquote>
+<h2 id="riotweb">Riot-web</h2>
+<ul>
+ 	<li>Redesign</li>
+ 	<li>Typing notifications don't make timeline jump anymore</li>
+ 	<li>Jump to bottom button is overlay now, so we can finally hide the room status bar again most of the time</li>
+ 	<li>Working on room sublist resizing</li>
+ 	<li>Work on authentication flow</li>
+ 	<li>Work on settings</li>
+</ul>
+<h2 id="riotandroidandios">Riot Android and iOS</h2>
+<ul>
+ 	<li>Reskin of Riot is nearly finished. Last known issues have been fixed.</li>
+ 	<li>Keys backup screen development well underway! We're working to fit everything nicely on mobile platforms - there are some UX/UI specificities to consider.</li>
+ 	<li>Riotx (new version of riot for Android, built using the upcoming kotlin SDK): more and more event types supported in timeline.</li>
+</ul>
+<h2 id="quaternion">Quaternion</h2>
+<a href="https://matrix.to/#/@kitsune:matrix.org">kitsune</a> reports that:
+<blockquote>the macOS build for <a href="https://github.com/QMatrixClient/Quaternion">Quaternion</a> 0.0.9.3 turned out to be not complete and fails if the user doesn't have Qt installed. Thanks to <a href="https://matrix.to/#/@aaron:raim.ist">Aaron Raimist</a> the build has been now includes a snapshot of Qt 5.11 - if you tried and failed to run the .dmg from <a href="https://github.com/QMatrixClient/Quaternion/releases">https://github.com/QMatrixClient/Quaternion/releases</a>, you can try to use it again.</blockquote>
+Thanks also to Aaron for helping populate homebrew with Matrix goodness. Mac users may be interested to know that <a href="https://github.com/neilalexander/seaglass">Seaglass</a> and <a href="https://gitlab.com/b0/spectral">Spectral</a> are both available in homebrew now.
+<h2 id="neoclient">Neo client</h2>
+<a href="https://matrix.to/#/@f0x:lain.haus">f0x</a> reports that:
+<blockquote><a href="https://git.lain.haus/f0x/iris">Neo</a> is still in the GUI component design stage (the best stage to get involved with feedback!). I have implemented the jdenticon library for avatars, autoscrolling when there are new events, and I've added the Rust code of conduct. <a href="https://git.lain.haus/f0x/iris">https://git.lain.haus/f0x/iris</a>
+General vision for this project is to first get as much gui done as possible, before diving in the backend. This will be split into a separate module, with the gui component being as protocol-agnostic as possible, to allow different backend modules for XMPP or IRC as well.</blockquote>
+<a href="https://matrix.org/blog/wp-content/uploads/2019/01/neo-2019-01-25.png"><img class="alignnone size-large wp-image-3933" src="https://matrix.org/blog/wp-content/uploads/2019/01/neo-2019-01-25-1024x586.png" alt="" width="1024" height="586" /></a>
+<h2 id="fractalclient">Fractal client</h2>
+Backend refactoring by <a href="https://matrix.to/#/@iamjsparber:matrix.org">Julian Sparber</a> and <a href="https://matrix.to/#/@aledomu:matrix.org">Alejandro Domínguez</a>. They also got progressed with tag handling, spell checking and lazy loading.
+<h2 id="matrixjsbotsdk">matrix-js-bot-sdk</h2>
+<a href="https://github.com/turt2live">TravisR</a> reports that:
+<blockquote>the <a href="https://github.com/turt2live/matrix-js-bot-sdk">matrix-js-bot-sdk</a> has received a bunch of updates currently residing on the develop branch. Changes include unit tests covering most of the library, appservice support improvements, handling of room version upgrades, and a bunch of bug fixes.</blockquote>
+<a href="https://github.com/turt2live/matrix-js-bot-sdk">matrix-js-bot-sdk</a> was recently updated to have support for Application Services, and is a lighter alternative to the <a href="https://github.com/matrix-org/matrix-js-sdk">matrix-js-sdk</a>.
+<h2 id="clmatrix">cl-matrix</h2>
+<a href="https://matrix.to/#/@gnu_ponut:matrix.org">Gnuxie</a> reports that:
+<blockquote>I've been working on <a href="https://gitlab.com/Gnuxie/cl-matrix">cl-matrix</a> and I think now it might be in a good condition to talk about it.
+<a href="https://gitlab.com/Gnuxie/cl-matrix">cl-matrix</a> is a WIP client library written in common lisp, most of the API endpoints have been covered using macros that allow you to copy straight from the spec, here is an example using the send event endpoint:
+<pre><code class="lisp language-lisp">(define-matrix-endpoint room-send-event (:put)
+  ("rooms" room-id "send" event-type txn-id))
+</code></pre>
+this will expand into a function with the signature:
+<pre><code class="lisp language-lisp">(PUT-ROOM-SEND-EVENT AUTHENTICATION ROOM-ID EVENT-TYPE TXN-ID CONTENT &amp;KEY PARAMETERS)
+</code></pre>
+it also has some basic events defined using <a href="http://shinmera.github.io/deeds/">deeds</a> that can be issued using the sync endpoint.</blockquote>
+<h2 id="informo">Informo</h2>
+The unknown individual from <a href="https://github.com/Informo">Informo</a>, <a href="https://matrix.to/#/@vabd:weu.informo.network">vabd</a> told us:
+<blockquote>Not much news this week in <a href="https://github.com/Informo">Informo</a> land, though we have a <a href="https://github.com/Informo/specs/pulls?q=is%3Apr+is%3Aopen+label%3Ascsp%3Areview">few specs proposals that are still open for public review</a>, including <a href="https://github.com/Informo/specs/pull/19">SCS #19</a> (<a href="https://github.com/Informo/specs/blob/vabd/intro/content/introduction/_index.md">rendered version here</a>) which rewrites the specs website's introduction to make it more newcomer-friendly and feature a brief introduction on what Informo is about.
+People who either never had a look at the project, or got fed up trying to because of the difficulty to easily understand what we're building, we'd love to read your opinion on this! ?</blockquote>
+This is much, much appreciated. For those interested but confused, please take a look.
+<h2 id="matrixautoinvite">matrix-autoinvite</h2>
+<a href="https://matrix.to/#/@CromFr:matrix.org">CromFr</a> (Thibaut CHARLES) reports that:
+<blockquote><a href="https://gitlab.com/CromFr/matrix-autoinvite">matrix-autoinvite</a> is a very basic service that synchronizes joined rooms between users from different servers, by inviting missing users to the room.
+I'm using it to invite <code>@CromFr:matrix.org</code> to each Facebook Messenger rooms on my personal homeserver (that has very limited resources) hosting the matrix-puppet-facebook bridge. This way I can chat with people on facebook from a matrix.org account :)</blockquote>
+Some relevant news from today: <em><a href="https://www.nytimes.com/2019/01/25/technology/facebook-instagram-whatsapp-messenger.html">Zuckerberg Plans to Integrate WhatsApp, Instagram and Facebook Messenger</a></em>
+<h2 id="matrixregisterbot">matrix-register-bot</h2>
+<a href="https://matrix.to/#/@krombel:msg-net.de">krombel</a> reports that:
+<blockquote>A long time ago I started writing <a href="https://github.com/krombel/matrix-register-bot">matrix-register-bot</a>. Now as there is a new requestor of it I finally implemented the <a href="https://github.com/krombel/matrix-register-bot/milestone/1?closed=1">planned features</a> and released <a href="https://github.com/krombel/matrix-register-bot/releases/tag/0.1-rc1">0.1-rc1</a>
+Feel free to test it and ask questions or provide feedback in <a href="https://matrix.to/#/#matrix-register-bot:msg-net.de">#matrix-register-bot:msg-net.de</a></blockquote>
+<h2 id="otherthoughts">Other thoughts</h2>
+Did you know about <strong><a href="https://status.matrix.org/">status.matrix.org</a></strong>? This handy site lets you know about the status of the matrix.org homeserver. That URL again: <strong><a href="https://status.matrix.org/">status.matrix.org</a></strong>.
+
+<a href="https://linux.conf.au/">linux.conf.au</a> is happening right now in Christchurch, New Zealand <em>(editor's note: is this right? .au or .nz?)</em>, and they've been <a href="https://www.jerrykan.com/lca_chat_stats/2019/">partly using Matrix for their comms</a>.
+
+FOSDEM is in a week! Come chat in <a href="https://matrix.to/#/#matrix-fosdem:matrix.org">#matrix-fosdem:matrix.org</a>. Be there and be square. I'll be there with Matrix swag so <a href="https://matrix.to/#/@benpa:matrix.org">ping me</a> if you'll be attending.
+<h2 id="whenwilliseeyouagain">When will I see you… again?</h2>
+I might adjust the schedule a little next week since it's FOSDEM (see above), but as always, stay tuned into <a href="https://matrix.to/#/#TWIM:matrix.org">#twim:matrix.org</a> for all the biggest news!

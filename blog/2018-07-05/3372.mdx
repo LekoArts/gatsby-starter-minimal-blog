@@ -1,0 +1,67 @@
+---
+date: '2018-07-05'
+title: This Week in Matrix 2018-07-05
+categories:
+  - General
+---
+
+<h2 id="matrixsynapsefordockerandk8s">matrix-synapse for Docker and k8s</h2>
+<a href="https://github.com/ananace/">Ananace</a> has been working on configuration files for Synapse:
+<blockquote>So now the K8s stuff has configuration examples for Synapse + Riot + mxisd + coturn, all runnable on your very own Kubernetes cluster - though with some manual tinkering required at the moment.
+I've updated the Kubernetes configuration examples to include everything you need for a full Matrix stack; Synapse + Riot + mxisd - using the built-in K8s ingress
+And + coturn of course, not to forget</blockquote>
+Take a look: <a href="https://github.com/ananace/matrix-synapse">https://github.com/ananace/matrix-synapse</a>
+<h2 id="mautrixtelegramisnowtheprimarytelegrambridgeont2botio">mautrix-telegram is now the primary Telegram bridge on t2bot.io</h2>
+<a href="https://github.com/turt2live">TravisR</a>:
+<blockquote><a href="https://t2bot.io">t2bot.io</a> is now running <a href="https://github.com/tulir/mautrix-telegram">mautrix-telegram</a> as the primary Telegram bridge. Feel free to join the other 10k users on the bridge and bridge your own Telegram group to your room: <a href="https://t2bot.io/telegram/">https://t2bot.io/telegram/</a>.</blockquote>
+We should give a big shout of thanks to <a href="@tulir:maunium.net">tulir</a> for his consistent and continued work on mautrix-telegram.
+<h2 id="dockerimagesforthematrixspec">Docker images for the matrix spec</h2>
+<a href="https://matrix.to/#/@uhoreg:matrix.org">uhoreg</a> has released dockerfiles to build the spec docs into html. This is going to be useful for watching the spec development accelerate over the summer.
+<blockquote>For Docker fans: I've created a couple of Docker images (<a href="https://hub.docker.com/r/uhoreg/matrix-doc-build/">https://hub.docker.com/r/uhoreg/matrix-doc-build/</a> and <a href="https://hub.docker.com/r/uhoreg/matrix-doc-watch/">https://hub.docker.com/r/uhoreg/matrix-doc-watch/</a> ) for building the Matrix spec HTML.</blockquote>
+<h2 id="debianpackaging">Debian packaging</h2>
+<a href="https://matrix.to/#/@andrew:shadura.me">andrewsh</a>:
+<blockquote>I'm packaging Circle IRC/Matrix client for Debian and backporting synapse to stable.</blockquote>
+<h2 id="googlesummerofcode">Google Summer of Code</h2>
+The second evaluation for <a href="https://summerofcode.withgoogle.com/projects/?sp-search=matrix">GSOC 2018</a> is nearly here, so we have some updates from the student participants:
+<h2 id="apwhitehatisworkingondendrite"><a href="@apwhitehat:matrix.org">apwhitehat</a> is working on <a href="https://github.com/matrix-org/dendrite">Dendrite</a></h2>
+<blockquote>Dendrite updates for TWIM (before GSoC 2nd eval):
+This month we've got most of the federation APIs working on Dendrite. These are:
+<ul>
+ 	<li>State APIs <a href="https://github.com/matrix-org/dendrite/pull/486">#486</a></li>
+ 	<li>Get missing events API <a href="https://github.com/matrix-org/dendrite/pull/516">#516</a></li>
+ 	<li>Query user devices <a href="https://github.com/matrix-org/dendrite/pull/498">#498</a></li>
+</ul>
+We still need to figure out pagination for backfill API.
+
+On applications services, we've got a lot of APIs working, thanks to <a href="https://matrix.to/#/@andrewm:amorgan.xyz">anoa</a>. Authentication now acknowledges App services, though lot of other stuff is under review. I am eagerly waiting for it to land.</blockquote>
+On the same topic, <a href="https://matrix.to/#/@andrewm:amorgan.xyz">anoa</a> says:
+<blockquote>We've had a PR from fadeAce/dirichlet_zby for the server-side implementation of end-to-end encryption support in <a href="https://github.com/matrix-org/dendrite">Dendrite</a>. Will be looking forward to seeing that land as well.</blockquote>
+There is an explanation of the endpoints required for this <a href="https://matrix.org/docs/spec/client_server/r0.3.0.html#end-to-end-encryption">in the CS API docs</a>.
+<h2 id="zil0isworkingone2einthepythonsdk">Zil0 is working on E2E in the Python SDK</h2>
+Sounds like <a href="https://matrix.to/#/@Zil0:matrix.org">Zil0</a> has been going great guns on the <a href="https://github.com/matrix-org/matrix-python-sdk">matrix-python-sdk</a>:
+<blockquote>Encryption in matrix-python-sdk should now work fairly well.
+The biggest parts to write were device tracking and key persistence. All the PRs are now opened, and the code is fully tested and documented.
+It is possible to try out the implementation before it lands by refering to instructions written here.
+Also a special thanks to <a href="https://github.com/poljar">poljar</a> for some great work on new Olm bindings, which allowed the project not to get stuck with packaging issues.
+Further work include encrypted attachments, device verification and key sharing.</blockquote>
+<h2 id="komakotlinclient">koma, kotlin client</h2>
+Last week I mistakenly referred to <a href="https://github.com/koma-im/koma/">Koma</a> as being written in Rust, then Java. This was all incorrect, though being written in Kotlin, Koma does run on the JVM and use JavaFx.
+
+<a href="https://matrix.to/#/@sideboat:matrix.org">sideboat</a>:
+<blockquote>This week in <a href="https://github.com/koma-im/koma/">koma</a>, we are improving the room info window used for viewing and editing the name, icon, and aliases of a room. In the upcoming release, user power levels will be taken into account, so that editing options will only be shown when the user has enough power.</blockquote>
+<a href="https://matrix.org/blog/wp-content/uploads/2018/07/koma-room-info.png"><img class="alignnone size-full wp-image-3373" src="https://matrix.org/blog/wp-content/uploads/2018/07/koma-room-info.png" alt="" width="293" height="353" /></a>
+<h2 id="synapse">Synapse</h2>
+Neil says:
+<blockquote>We've just cut the next release candidate for Synapse: 0.32.0rc1.
+The upcoming release focuses almost entirely on security; fixing federation bugs and adding new features for countering abuse.</blockquote>
+<h2 id="riot">Riot</h2>
+This week we welcome Bruno to the Riot team, he's off and away working on getting integration tests set up.
+
+Otherwise:
+<ul>
+ 	<li>More work on the Jitsi integration</li>
+ 	<li>More work troubleshooting E2E failures</li>
+ 	<li><a href="https://github.com/vector-im/riot-web/releases/tag/v0.15.6">v0.15.6</a> and <a href="https://github.com/vector-im/riot-web/releases/tag/v0.15.7-rc.1">v0.15.7-rc.1</a> now available</li>
+</ul>
+<h2 id="selfreference">Self-reference</h2>
+This week was only six days long, but to make up for it we'll have a bumper eight day edition next time! Come join us in <a href="https://matrix.to/#/#TWIM:matrix.org">#TWIM:matrix.org</a> and share what you've made.

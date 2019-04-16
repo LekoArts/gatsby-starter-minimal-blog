@@ -1,0 +1,125 @@
+---
+date: '2019-04-05'
+title: This Week in Matrix 2019-04-05
+categories:
+  - General
+---
+
+<h2 id="matrixlives3e20fluffychatcreatorkrilleonmatrixubuntutouchandmatrixforhealthcare">Matrix Live S3E20 FluffyChat creator Krille on Matrix, Ubuntu Touch and Matrix-for-Healthcare</h2>
+<iframe src="https://www.youtube.com/embed/mLgLwLcq9Ys" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+<h2 id="synapsetheroadto10">Synapse, the road to 1.0</h2>
+Neil, <a href="https://github.com/matrix-org/synapse/">Synapse</a> overlord:
+<blockquote>Last week we carried on with Synapse 1.0 work, in particular <a href="https://github.com/matrix-org/synapse/issues/4364">server key signing validity</a>, a config option to <a href="https://github.com/matrix-org/synapse/pull/4967">verify federation certificates</a> to support MSC1711 and support for <a href="https://github.com/matrix-org/synapse/pull/4982">3PID unbinding APIs</a> (MSC1915). Outside of that we've been thinking about how to improve room upgrades for private rooms and landed the preparatory work for a refactor of the room directory.
+
+Coming up next, we'll continue to bash out 1.0 blockers, Hawkowl has started work on optimising for small hosted homeservers, and anoa will be working on the new super fast room directory. Finally Erik has started work on aggregations support so clients will be able to offer things like edits and reactions ?
+
+<a href="https://www.arewereadyyet.com/">https://www.arewereadyyet.com/</a> is now just shy of 64%, keep going.</blockquote>
+<h2 id="dendrite">Dendrite</h2>
+<blockquote><a href="https://github.com/matrix-org/sytest/pull/541">Dockerfile for sytest</a> running against Dendrite approved. Close to being able to run Dendrite against sytest. Also using sytest's new test white/blacklist functionality to include a list of tests that Dendrite is known to pass in the repo. When people make new PRs that allow Dendrite to pass new tests, they can also append the names of the tests to the testfile to help automatically track Dendrite's improving progress. Look forward to seeing further progress post Synapse 1.0.</blockquote>
+<h2 id="libqmatrixclient051released">libQMatrixClient 0.5.1 released,</h2>
+<a href="https://matrix.to/#/@kitsune:matrix.org">kitsune</a>:
+<blockquote><a href="https://github.com/QMatrixClient/libqmatrixclient">libQMatrixClient</a> 0.5.1 is out! This is a minor release with bugfixes and small improvements, a base for Quaternion 0.0.9.4, RC of which is coming this weekend. <a href="https://github.com/QMatrixClient/libqmatrixclient/releases/tag/0.5.1">Full release notes here</a></blockquote>
+and to follow up:
+<blockquote><a href="https://github.com/QMatrixClient/Quaternion">Quaternion</a> 0.0.9.4 Release Candidate is available for all those who don't need a "release" seal of approval to use applications. Get out, grab it, report bugs that could still sneak in: <a href="https://github.com/QMatrixClient/Quaternion/releases/tag/0.0.9.4-rc">https://github.com/QMatrixClient/Quaternion/releases/tag/0.0.9.4-rc</a>. A separate call out to translators - it's a great moment to teach Quaternion a few more phrases in your language!</blockquote>
+<h2 id="netcoresynchrotron">.NET Core Synchrotron</h2>
+<a href="https://matrix.to/#/@Half-Shot:half-shot.uk">Half-Shot</a>:
+<blockquote>This weekend I took a brief pause from doing matrix work, and then went back into it by finishing the feature set for the <a href="https://github.com/turt2live/synapse-netcore-workers/pull/48">.NET Core Synchrotron</a>. It's "feature complete" meaning all specced features of sync are in this branch, excluding legacy endpoints. There are a few bugs logged against it and it's really only useful as a super early test, while I fix some of the p1 bugs.
+
+The federation sender continues to be reliable and stable, and we are prepping for the release of synapse 0.99.3 which made a few changes to the replication stream. For more info, please see <a href="https://github.com/turt2live/synapse-netcore-workers">https://github.com/turt2live/synapse-netcore-workers</a></blockquote>
+<h2 id="pattlehasnowmovedtoflutter">Pattle has now moved to Flutter</h2>
+<a href="https://matrix.to/#/@wilko:matrix.org">Wilko</a> has officially discontinued the previous version of Pattle, and is focused on their Flutter SDK and new version of Pattle based on it:
+<blockquote>After some silence here but a lot of development, Pattle has now moved to Flutter. The new app is available in the same F-droid repository, you can just update. Note that you will have to log in again. If there are issues with updating, try removing the old app and installing the new one.
+
+Also note that this version is still very basic and does not have all features of the old Pattle unfortunately. The reason that I chose to already replace it on the repo is that the old app will not receive updates anymore.
+
+The current features are logging in and an overview of all chats. What <em>is</em> new is that data is now stored locally, so you won't have to do an initial sync everytime you open the app (which was the case with old app). What's also new is that I've decided to use more red, because.. I like red.
+
+There is still a lot to do! Please notifiy me of anything that you think is missing, even though some things may be obvious (sorting chats based on date, chat avatars), some may not be as obvious to me!
+
+If you'd like to contribute, the new repo is <a href="https://git.pattle.im/pattle/app">here</a>. Note that many contributions will probably start at the SDK level. Pattle uses my own Dart SDK, which you can find <a href="https://git.pattle.im/pattle/library/matrix-dart-sdk">here</a>.
+
+There is at the moment a very specific bug in Flutter, where on Android 7.1 with release builds, the app crashes when building a list widget. If you use Android 7.1 (like me) and you crash after logging in, that's the reason. It seems I can't do anything about it, sorry.</blockquote>
+<a href="https://matrix.org/blog/wp-content/uploads/2019/04/pattle-2019-04-05a.png"><img class="alignnone size-large wp-image-4175" src="https://matrix.org/blog/wp-content/uploads/2019/04/pattle-2019-04-05a-581x1024.png" alt="" width="581" height="1024" /></a>
+<h2 id="libaqueousmatrixdartsdkandaqueousclient">libaqueous (Matrix Dart SDK) and Aqueous client</h2>
+<a href="https://matrix.to/#/@bhat:encom.eu.org">Black Hat</a> is continuing work on <a href="https://gitlab.com/b0/libaqueous">libaqueous</a>, a Matrix Dart SDK.
+<blockquote>Aqueous now comes with room categories and history messages support.
+Also, a lot of code refactoring is going on to change the backend store from plain json file to sqlite, which should improve the performance a lot.
+The room is at <a href="https://matrix.to/#/#libaqueous:encom.eu.org">#libaqueous:encom.eu.org</a></blockquote>
+<a href="https://matrix.org/blog/wp-content/uploads/2019/04/aqueous.png"><img class="alignnone size-large wp-image-4176" src="https://matrix.org/blog/wp-content/uploads/2019/04/aqueous-1024x715.png" alt="" width="1024" height="715" /></a>
+<h2 id="riotweb">Riot Web</h2>
+<blockquote>
+<ul>
+ 	<li>Working towards bringing breadcrumbs out of labs</li>
+ 	<li>Adding image preview to file upload UX</li>
+ 	<li>Stability fixes for timeline</li>
+ 	<li>Defending against issues introduced when using Riot Web on a machine which is running out of disk space</li>
+</ul>
+</blockquote>
+<h2 id="riotios">Riot iOS</h2>
+<blockquote>
+<ul>
+ 	<li>Grouped notifications are coming! We have added some logs to track why the notification setting is sometimes disables (#2348).</li>
+ 	<li>SAS device verification is still in progress but it should be released next week.</li>
+</ul>
+</blockquote>
+<h2 id="riotandroid">Riot Android</h2>
+<blockquote>
+<ul>
+ 	<li>Three releases this week, to fix several bugs with the new EventStreamServiceX, and to fix issue with the Jitsi conference call (Riot.im 0.8.29). FDroid users should receive the upgrade soon.</li>
+ 	<li>Users are happy with the new notifications!</li>
+ 	<li>Valere is still working on SAS, we are reaching the end :).</li>
+</ul>
+</blockquote>
+<h2 id="riotxandroid">RiotX (Android)</h2>
+<blockquote>
+<ul>
+ 	<li>It's now possible to signout from RiotX.</li>
+ 	<li>The whole setting screen has been imported from Riot, as well as the Themes and some other small features (launcher icon, etc.).</li>
+ 	<li>Benoit is working on room creation, sdk side, and François is working on image upload.</li>
+ 	<li>We should start to integrate new design from Nad next week.</li>
+</ul>
+</blockquote>
+<h2 id="continuumjavafxdesktopclient">continuum (JavaFX desktop client)</h2>
+<a href="https://matrix.to/#/@uforia:matrix.org">yuforia</a> has continued work on their client:
+<blockquote>in <a href="https://github.com/koma-im/continuum-desktop">continuum</a>, moving storage of messages from plain text files to a database, simplifying code and improving performance</blockquote>
+<h2 id="neo">neo</h2>
+<a href="https://matrix.to/#/@f0x:lain.haus">f0x</a>:
+<blockquote>Neo now has <code>.well-known</code> implemented for login :D
+video showcasing the different outcomes:</blockquote>
+<video controls="controls" width="640" height="150">
+<source src="https://lain.haus/_matrix/media/v1/download/lain.haus/kbCZrSZJhGFYlSZzIIaFPwAH" />
+Find the video here: https://lain.haus/_matrix/media/v1/download/lain.haus/kbCZrSZJhGFYlSZzIIaFPwAH
+</video>
+<h2 id="synapsek8simages">Synapse K8s images</h2>
+<a href="https://github.com/ananace/">Ananace</a> has updated his <a href="https://github.com/ananace/matrix-synapse">k8s images for Synapse</a> 0.99.3, and has been continuing work on other parts of the project:
+<blockquote>I'll be writing a Helm chart for 1.0 as well, just haven't had time to do so yet.
+I need to update all the references to TLS as well, as that's supposed to be left to kube-lego or cert-manager for a modern install</blockquote>
+<h2 id="federationtester">Federation Tester</h2>
+<a href="https://matrix.to/#/@brendan:abolivier.bzh">Brendan</a> and <a href="https://matrix.to/#/@andrewm:amorgan.xyz">anoa</a> have been working on the <a href="https://matrix.org/federationtester">Federation Tester</a>:
+<blockquote>Following up on last week's effort, a number of issues on the <a href="https://matrix.org/federationtester">Matrix federation tester</a>, both on the backend and the frontend side, have been fixed, including fixing certificate validity checks, not following CNAME records in SRV records, fixing display of the SRV lookup in the UI, preventing some crashes, and a few more.
+
+All outstanding issues on both the federation tester's backend and its frontend that could have preventing people to test efficiently how their server is performing in the context of Synapse's 1.0 release have now been fixed and deployed on <a href="https://matrix.org/federationtester/">https://matrix.org/federationtester/</a>.</blockquote>
+<h2 id="synapseandriotbounties">Synapse and Riot bounties</h2>
+<a href="https://matrix.to/#/@aaron:raim.ist">Aaron Raimist</a> reports:
+<blockquote>A few bounties have been added to Synapse and Riot recently to encourage community memebers to work on those projects. Although they aren't large enough to actually pay for development, I believe they can serve as a small push to help an already interested developer justify spending some time working on these projects.
+<ul>
+ 	<li><a href="https://github.com/vector-im/riot-web/issues/2349#issuecomment-466777377">$400 bounty on threading in Riot</a> thanks to GitHub user <a href="https://github.com/fallerOfFalls">@fallerOfFalls</a>, expires November 21, 2019</li>
+ 	<li><a href="https://github.com/matrix-org/synapse/issues/2181#issuecomment-479316364">$200 bounty to fixing stuck invites</a>, expires on January 1, 2020</li>
+ 	<li><a href="https://github.com/vector-im/riot-web/issues/8246#issuecomment-479318491">$200 bounty to fix Riot forgetting the name of rooms, AKA the "Aaron and 5246 others" bug</a>, expires on January 1, 2020</li>
+</ul>
+</blockquote>
+<h2 id="stillmore">Still more</h2>
+<a href="https://github.com/matrix-org/pantalaimon">pantalaimon</a> has been seen in the wild, even appearing to run on Android. We'll get a little closer to the project and see how it's going in a future edition.
+
+<a href="https://matrix.to/#/@TheJJ:matrix.org">jj</a> announced a new Python SDK for Matrix:
+<blockquote>new, alpha quality, matrix python client for asyncio and with support for e2e encryption: <a href="https://github.com/SFTtech/aiomatrix">https://github.com/SFTtech/aiomatrix</a>
+Polishing is needed but the basics do work already :)</blockquote>
+<a href="https://matrix.to/#/@lautre:calculate-linux.org">L'autre</a> from <a href="https://www.calculate-linux.org/">Calculate Linux</a> announced that the project is <a href="https://old.calculate-linux.org/blogs/en/730/show">now using Matrix for their communications</a>, you can find their rooms in their newly created community: <a href="https://matrix.to/#/+list:calculate-linux.org">+list:calculate-linux.org</a>.
+
+<del><a href="https://images.newrepublic.com/3ee5ecc7b7ba7fa0cd0f6920ede0db5ea121401e.png">George Lucas</a></del> <del><a href="https://en.wikipedia.org/wiki/Gy%C3%B6rgy_Luk%C3%A1cs">György Lukács</a></del> <a href="https://op-co.de/">Georg Lukas</a> <em>brutally skewered</em> Matrix with an April Fool's post suggesting that <a href="https://yaxim.org">yaxim</a>, an XMPP client for Android, <a href="https://yaxim.org/blog/2019/04/01/yaxim-enters-the-matrix/">will begin to support Matrix</a>.
+
+Matrix listed as <a href="https://genr.eu/wp/open-science-top-ten-tools-all-open-source/">one of the "Top Ten Tools" for Open Science practitioners</a>
+<blockquote>the whole point of Matrix is that its a protocol which many different suppliers can use so you can avoid nasty lock ins</blockquote>
+That is certainly an advantage!
+<h2 id="thatsalliknow">That's all I know</h2>
+See you next week, and be sure to stop by <a href="https://matrix.to/#/#TWIM:matrix.org">#twim:matrix.org</a> with your updates!

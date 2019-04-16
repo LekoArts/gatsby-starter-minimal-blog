@@ -1,0 +1,62 @@
+---
+date: '2018-07-20'
+title: This Week in Matrix 2018-07-20
+categories:
+  - General
+---
+
+<h2 id="specstatusandrequests">Spec Updates!</h2>
+First of all: we've just released the first draft of the proposal for our next generation State Resolution algorithm as <a href="https://github.com/matrix-org/matrix-doc/issues/1442">MSC1442</a> (State Resolution: Reloaded).  This is the result of a massive amount of work from Erik - if you are at all interested in the problems that <a href="https://github.com/matrix-org/synapse/issues/1953">state resets</a> have plagued us with, then you will want to <strong>read the proposal and please comment on it</strong>!
+
+The next step on State Resolution: Reloaded (once approved) is to be able to actually roll it out - and to this end, richvdh has proposed <a href="https://github.com/matrix-org/matrix-doc/issues/1425">MSC1425 (Room Versioning proposal)</a>. This was published at the beginning of the week but we haven't had any feedback yet - again, please read &amp; give feedback as the intention is to start working on this as soon as possible!  Matthew's also been updating the Lazy Loading proposal (<a href="https://github.com/matrix-org/matrix-doc/issues/1227">MSC1227</a>).
+
+Meanwhile, the Matrix Spec is now awash with activity, lots of work from <a href="https://github.com/turt2live">TravisR</a>, <a href="https://matrix.to/#/@cadair:cadair.com">Cadair</a> and others to accelerate progress. Take a look at the <a href="https://matrix.org/docs/spec/proposals">proposals list</a> to stay up to date, or straight to the <a href="https://github.com/matrix-org/matrix-doc">matrix-doc</a> repo and <a href="https://matrix.to/#/#matrix-spec:matrix.org">#matrix-spec:matrix.org</a> room to get the raw activity.
+
+Finally, discussions relating to the spec proposal process itself have attracted attention: <a href="https://github.com/matrix-org/matrix-doc/issues/1426">MSC1426</a> and <a href="https://github.com/matrix-org/matrix-doc/issues/1421">MSC1421</a>, and we're already trialling the new process (using Github PRs rather than Google Docs) in <a href="https://github.com/matrix-org/matrix-doc/issues/1442">MSC1442</a> (State Resolution: Reloaded) already.
+<h2 id="nheko05x">nheko 0.5.x</h2>
+<a href="https://github.com/mujx/nheko">nheko</a> 0.5.1 is out, and it's great! Get a version for your platform from <a href="https://bintray.com/mujx/matrix/nheko/">bintray.com</a>. I've been using it for the last week or so (on macOS) and found it very stable and usable. <a href="https://matrix.to/#/@mujx:matrix.org">mujx</a> commented that "highlights were encryption support &amp; desktop notifications on all platforms", but you can get much more thorough notes from the <a href="https://github.com/mujx/nheko/releases">release notes</a>.
+
+<a href="https://matrix.org/blog/wp-content/uploads/2018/07/nheko051.png"><img class="size-full wp-image-3413 aligncenter" src="https://matrix.org/blog/wp-content/uploads/2018/07/nheko051.png" alt="" width="946" height="659" /></a>
+<h2 id="plasma">Plasma</h2>
+It's been several weeks since we mentioned <a href="https://gitlab.com/beerfactory.org/plasma/">Plasma</a>, but work on the C2S parts of the spec implementation have been happening quietly behind the scenes. Project lead <a href="https://gitlab.com/beerfactory.org/">Nico</a> said recently:
+<blockquote>I've updated the CI test server with the latest snapshot version of plasma. <code>createRoom</code> and <code>invite</code> C2S endpoints are fully implemented and should work as expected.</blockquote>
+You can find the full list of implemented endpoints <a href="https://gitlab.com/beerfactory.org/plasma/blob/master/README.md">in the readme</a>, and also read the <a href="https://gitlab.com/beerfactory.org/plasma/blob/master/docs/architecture.md">architecture overview</a>.
+<h2 id="kitsuneliveonstage">kitsune, live on stage</h2>
+<a href="https://matrix.to/#/@kitsune:matrix.org">kitsune</a> presented an introduction to Matrix (for a technical audience) at the Tokyo Linux Users Group - you'll need to skip to 1h41m16s into the video.
+<p style="text-align: center;"><iframe width="1280" height="720" src="https://www.youtube.com/embed/Vq_v_C6HE84" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></p>
+
+<h2 id="gtadpullsindescriptionandsummaryfieldsfromtheapi">GTAD pulls in description and summary fields from the API</h2>
+<a href="https://matrix.to/#/@kitsune:matrix.org">kitsune</a> continues working on <a href="https://github.com/KitsuneRal/gtad">GTAD</a>, and this week has started automatically including docs in <a href="https://github.com/QMatrixClient/libqmatrixclient">libQMatrixClient</a>:
+<blockquote>GTAD is now aware of description and summary fields in API descriptions so you can use them with Javadoc/Doxygen. As a result, libQMatrixClient master branch now enjoys doc-comments throughout its CS API layer - the rest of the library builds in envy.</blockquote>
+<h2 id="mautrixtelegram">mautrix-telegram</h2>
+<a href="@tulir:maunium.net">tulir</a>:
+<blockquote><a href="https://github.com/tulir/mautrix-telegram">mautrix-telegram</a> now has a <a href="https://spec.maunium.net/mxtg-provisioning/">provisioning API</a>, meaning integration managers like <a href="https://dimension.t2bot.io/">Dimension</a> can make an auth/portal management interface for the bridge</blockquote>
+In an immediate response, <a href="https://github.com/turt2live">TravisR</a>, creator of <a href="https://dimension.t2bot.io/">Dimension</a> confirmed:
+<blockquote>Soon in matrix: Dimension will have support for that provisioning API</blockquote>
+<h2 id="simplematrix">SimpleMatrix</h2>
+<a href="https://matrix.to/#/@MTRNord:matrix.ffslfl.net">MTRNord</a> introduced us to <a href="https://git.nordgedanken.de/Nordgedanken/SimpleMatrix">SimpleMatrix</a>:
+<blockquote>SimpleMatrix is my approach on making an Android App that is more easy to use than the official one in Terms of UX and UI. Planned is also a Android Wear App within this App for mostly Notifications.</blockquote>
+SimpleMatrix is planning to use <a href="https://github.com/kamax-io/matrix-java-sdk">matrix-java-sdk</a>, but for now is a visual mockup, it doesn't currently connect to Matrix.
+
+Room: <a href="https://matrix.to/#/#SimpleMatrix:matrix.ffslfl.net">#SimpleMatrix:matrix.ffslfl.net</a>
+Git: <a href="https://git.nordgedanken.de/Nordgedanken/SimpleMatrix">https://git.nordgedanken.de/Nordgedanken/SimpleMatrix</a>
+
+<a href="https://matrix.org/blog/wp-content/uploads/2018/07/simplematrix.png"><img class="size-large wp-image-3414 aligncenter" src="https://matrix.org/blog/wp-content/uploads/2018/07/simplematrix-1024x576.png" alt="" width="1024" height="576" /></a>
+<h2 id="talesofhalfshotandhismanybridges">Tales of <a href="https://matrix.to/#/@Half-Shot:half-shot.uk">Half-Shot</a> and his many Bridges</h2>
+<h3 id="arrivalofthediscorddms">Arrival of the Discord DMs</h3>
+<blockquote>After lots of begging, frustration and eventually an offer of a free lunch (thanks <a href="https://matrix.to/#/@andrewm:amorgan.xyz">Anoa</a>): I give you Discord DMs.
+This first cut bridges over existing regular and group DMs to Matrix. In the future we will also allow you to create DMs from Matrix so that you can contact users without even logging into Discord. With thanks to the <a href="https://matrix.to/#/#discord:half-shot.uk">#discord:half-shot.uk</a> community for helping shape this feature!
+
+Currently this is in PR form but is very likely to make it into the 0.3 release of <a href="https://github.com/Half-Shot/matrix-appservice-discord">matrix-appservice-discord</a>.</blockquote>
+<h3 id="halfshotfixesthefooneticircbridge">Half-Shot fixes the Foonetic IRC bridge</h3>
+For those who (want to) use Foonetic IRC channels, <a href="https://matrix.to/#/@Half-Shot:half-shot.uk">Half-Shot</a> is here for you! Previously this bridge had been down due to invalid certificates, but this is now resolved.
+<h2>Synapse</h2>
+Synapse 0.33 landed on Thursday, boasting 2x speed-ups for /sync and (briefly) meaning that the matrix.org homeserver felt impressively snappy and fast!  Ironically traffic levels promptly grew again such that the synapse master process is now the bottleneck once more, but between incremental state res, python 3 and upcoming room-sharding work we should see the performance fixes continuing to come!  Meanwhile, lots of PRs in the queue for Synapse 0.34 - including Lazy Loading support as per (<a href="https://github.com/matrix-org/matrix-doc/issues/1227">MSC1227</a>), and a whole new set of stats functionality for tracking per-room and per-user stats.
+<h2>Riot</h2>
+Lots of activity in the build up to Riot/Web 0.16 - merging the new Slate rich text editor to /develop (try it now!), upgrading Jitsi and turning it on by default (at last!! - again, try it on /develop, although you'll have to enable it in Labs).  We'd be particularly interested in how Jitsi is behaving, as so far for us it's been unrecognisably improved over the previous deployment.
+
+Meanwhile, lots of work on Lazy Loading members on Riot/Web and Riot/iOS, and lots of stability perf work in general across mobile.
+<h2>State Resolution Special... Matrix Live!</h2>
+And finally, all you could ever want to hear about the new State Resolution algorithm on a special edition of Matrix Live, starring Erik &amp; Matthew!
+
+<iframe src="https://www.youtube.com/embed/f6ZdmPSUUBA" width="1280" height="720" frameborder="0" allowfullscreen="allowfullscreen"></iframe>

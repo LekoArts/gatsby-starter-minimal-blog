@@ -1,0 +1,67 @@
+---
+date: '2018-11-02'
+title: This Week in Matrix 2018-11-02
+categories:
+  - General
+---
+
+<h2 id="foundation">The Matrix.org Foundation</h2>
+This week, the first steps were taken in the creation of the Matrix Foundation! Read our <a href="https://matrix.org/blog/2018/10/29/introducing-the-matrix-org-foundation-part-1-of-2/">blog post from earlier this week</a> for more:
+<blockquote>in preparation for the upcoming Matrix 1.0 release, we've been moving ahead with the rest of the open governance plan – and we're happy to announce that as of a few hours ago, the <strong>initial incarnation of The Matrix.org Foundation exists!</strong>
+Watch this space over the coming weeks as we announce the Guardians and finish bootstrapping the Foundation into its final long-term form! Meanwhile, any questions: come ask in <a href="https://matrix.to/#/#matrix-spec-process:matrix.org">#matrix-spec-process:matrix.org</a></blockquote>
+<h2 id="hellomatrix">Hello Matrix</h2>
+Alex has managed the invaluable <a href="https://www.hello-matrix.net/public_servers.php">https://www.hello-matrix.net/public_servers.php</a> for some years, but in two weeks time will be making some changes to the page:
+<blockquote>Just wanted to let everyone know that changes are coming to the server list: I've put up a notice on the site that starting Nov 16th I will only show a curated list of servers I would recommend to join.
+This reduces the workload for me quite a bit and avoids me becoming some kind of arbiter on what encompasses the Matrix universe… I think it is also more useful for users who are looking for a server to join.
+And there is always <a href="https://matrixstats.org">matrixstats.org</a> for those who are looking for a more complete-ish list of known homeservers.</blockquote>
+However, if you have ideas on how to continue the project, or would like to step up and get involved in maintaining a list using data and tools from Hello Matrix, please <a href="https://matrix.to/#/@benpa:matrix.org">contact me</a>. Alex told me:
+<blockquote>if you find someone willing to take up the project of a more automated, self-service and complete list at a later date, I am more than willing to hand over all the stuff I currently have and might also lend a helping hand myself (if I have time then).</blockquote>
+<h2 id="maubotmanagementapi">maubot management API</h2>
+<a href="https://matrix.to/#/@tulir:maunium.net">tulir</a> has continued work on the revamped, now-Pythonic <a href="https://github.com/maubot/maubot">maubot</a>, and has added a management API:
+<blockquote>The <a href="https://github.com/maubot/maubot">maubot</a> management API I mentioned last week is now mostly ready. It should be possible to use it to set up a maubot instance and plugins without filling the database manually. There's no UI yet though, so it still means <code>curl</code>ing manually.
+The management API also supports the fancy plugin reloading stuff which was the &gt; reason I rewrote maubot in python: You can <code>POST</code> an updated plugin to the API and it'll install it without having to restart.
+I also made a bunch of plugins while working on the API that I used to test the API: a <a href="https://github.com/maubot/dice">dice rolling/calculator bot</a>, a <a href="https://github.com/maubot/media">bot that replies with the MXC URI of images you send it</a>, a <a href="https://github.com/maubot/echo">simple echo/ping bot</a> and an <a href="https://github.com/maubot/xkcd">xkcd bot</a>
+
+Next steps are making the management UI, a few more plugins and making setup and development instructions so that other people could run it and make plugins</blockquote>
+<h2 id="announcingthefractalhackfestinseville">Announcing the Fractal Hackfest in Seville</h2>
+<a href="https://matrix.to/#/@bertob:matrix.org">Tobias Bernard</a> officially announced the second ever Fractal hackfest:
+<blockquote>there's going to be a Fractal hackfest in Seville in December https://blogs.gnome.org/tbernard/2018/10/26/fractal-hackfest-in-seville</blockquote>
+<h2 id="matrixclientcore">matrix-client-core</h2>
+<a href="https://github.com/Matrixcoffee">Coffee</a> continues his streak of weekly updates by introducing us to <a href="https://gitlab.com/Matrixcoffee/matrix-client-core">matrix-client-core</a>:
+<blockquote>My lightweight bot/client framework, <a href="https://gitlab.com/Matrixcoffee/matrix-client-core">matrix-client-core</a>, received its first tag ever. Version 0.0.1 is relatively stable, and lies on the doorstep of some refactoring work (ongoing) which should keep the master branch backwards compatible for now, but could make things less stable as I add new commits.</blockquote>
+It turns out this isn't strictly a new project:
+<blockquote>[it has] been there all along, quietly powering FAQBot and all of my bots. ? Maybe I have failed to explicitly indicate it as such up until now. (oops)</blockquote>
+Always good news to see more bot-creation tooling!
+<h2 id="synapse0338">Synapse 0.33.8</h2>
+<a href="https://matrix.org/blog/2018/11/01/synapse-v0-33-8-is-here/">Synapse 0.33.8 was released</a>, and <a href="https://matrix.to/#/@andrew:shadura.me">andrewsh</a> made sure it was updated on Debian. <a href="https://hub.docker.com/r/matrixdotorg/synapse/">Docker packages</a> are also updated.
+<h2 id="mxisdv120rc1">mxisd v1.2.0-rc.1</h2>
+<a href="https://matrix.to/#/@max:kamax.io">Max</a> has updates on mxisd, Identity Server for Matrix:
+<blockquote>mxisd <a href="https://github.com/kamax-matrix/mxisd/releases/tag/v1.2.0-rc.1">v1.2.0-rc.1</a> is out with support of all features for the <a href="https://github.com/kamax-matrix/mxisd/blob/master/docs/stores/exec.md">Exec Identity Store</a>, allowing connectivity to totally custom/arbitrary backends. Feedback is extremely welcome!</blockquote>
+<h2 id="halfshotinterfaceswithlibpurple">Half-Shot interfaces with libpurple</h2>
+It's a job that someone needed to do, and that someone was <a href="https://matrix.to/#/@Half-Shot:half-shot.uk">Half-Shot</a> (who else?)
+<blockquote>I've been reviving node-purple (a library for communicating with libpurple) and making a brand new bridge service to make use of it called <a href="https://github.com/matrix-org/matrix-appservice-purple">matrix-appservice-purple</a>. Today I got it to the point where you could link your XMPP account to your matrix user and have it bridge PMs over.
+Work is ongoing to make it bridge group chats, profiles, contacts lists and support other protocols better in the coming weeks</blockquote>
+<h2 id="nsfwimagedetectionapionmatrix">NSFW image detection API (on Matrix)</h2>
+<a href="https://matrix.to/#/@bhat:encom.eu.org">Black Hat</a> is often found working on <a href="https://gitlab.com/b0/spectral">Spectral</a> (previously 'Matrique'.) This week, he has been building <a href="https://matrix.to/#/@nsfw:encom.eu.org">@nsfw:encom.eu.org</a>, which is a bot designed to give scores for how likely an image should be classified as NSFW. It's a simple mechanism, you give it an image, it gives you a JSON object with the result. For example:
+
+<a href="https://matrix.org/blog/wp-content/uploads/2018/11/nsfw-bot.png"><img class="alignnone size-full wp-image-3734" src="https://matrix.org/blog/wp-content/uploads/2018/11/nsfw-bot.png" alt="" width="936" height="1004" /></a>
+
+My avatar returned less than 1% probability of being NSFW, which I was actually a little offended by.
+
+To talk more about the bot and it's development, chat in <a href="https://matrix.to/#/#nsfw:encom.eu.org">#nsfw:encom.eu.org</a>.
+<h2 id="gamingdiscordbridging">Gaming Discord bridging</h2>
+<a href="https://matrix.to/#/@swedneck:swedneck.xyz">swedneck</a> has been dutifully bridging channels from the Linux Gaming discord.
+<blockquote>All but 3 channels on the linux gaming discord have now been bridged to matrix.</blockquote>
+To find these channels, join the community at <a href="https://matrix.to/#/+linux-gaming:matrix.org">+linux-gaming:matrix.org</a> and get chatting.
+<h2 id="otherthoughts">Other thoughts</h2>
+<ul>
+ 	<li><a href="https://matrix.to/#/@kitsune:matrix.org">kitsune</a> is forced by his employers to use Viber, so is thinking of creating a Matrix bridge.</li>
+ 	<li>I spent some time this week repeatedly installing Synapse, then working with <a href="https://matrix.to/#/@natrius:matrix.org">Stefan</a> to create a new, hopefully definitive installation guide (available soon). I can also personally recommend <a href="https://matrix.to/#/@slavi:devture.com">Slavi</a>'s <a href="https://github.com/spantaleev/matrix-docker-ansible-deploy">matrix-docker-ansible-deploy</a> project, this is a great way to get a Synapse installation (and more!) running.</li>
+ 	<li>lately in <a href="https://matrix.to/#/#TWIM:matrix.org">#twim:matrix.org</a> posters have been providing much clearer and atomic updates, which I like a lot</li>
+</ul>
+<h2 id="matrixliveseason3episode2">Matrix Live, season 3 episode 2</h2>
+We continue the new season of Matrix Live. This re-booted season has a slightly different format to previous: in each outing, there will be a single deep-dive topic. This week, Matthew and recent-Matrix-arrival Nad discuss UX for E2E encryption key handling. This is an unsurprisingly complex design question, both in terms of how it should behave and how it should look. Nad shared his <a href="https://matrix.org/blog/2018/11/02/user-experience-preview-end-to-end-encryption-by-default/">latest thinking in a blog post earlier today</a>, and you can watch the video below.
+
+<iframe src="https://www.youtube.com/embed/XB5jsG0Vpw8" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+<h2 id="farewell">Farewell</h2>
+Enjoy your week. We'll see you back here next week, but if you are working on something using Matrix, come chat with us in <a href="https://matrix.to/#/#TWIM:matrix.org">#twim:matrix.org</a>!

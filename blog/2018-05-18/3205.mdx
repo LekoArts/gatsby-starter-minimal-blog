@@ -1,0 +1,98 @@
+---
+date: '2018-05-18'
+title: This Week in Matrix 2018-05-18
+categories:
+  - General
+---
+
+<h1 id="ontheweb">On the Web</h1>
+<h2 id="enterthematrix">Enter the Matrix</h2>
+<a href="https://brendan.abolivier.bzh/">Brendan</a> produced a <a href="https://brendan.abolivier.bzh/enter-the-matrix/">really, really informative article introducing Matrix</a>. As someone who is still very new to the project I found this writng to be very clear and informative, so thank you! The article made it to the <a href="https://news.ycombinator.com/item?id=17063761">top of Hacker News</a>, where you can find a discussion of both the article and Matrix itself.
+<h2 id="presentationaboutmatrix">Presentation about Matrix</h2>
+<a href="https://twitter.com/martinkrafft">martinkrafft</a> presented about Matrix at <a href="https://wossat.nz/">wossat</a> a New Zealand Open Source show and tell meetup. His talk <a href="https://twitter.com/wossat/status/997230578385612801">can be seen here</a>, and focuses on the benefits of Matrix for users.
+<h1 id="specproposals">Spec Proposals</h1>
+As you may have seen from the <a href="https://matrix.org/blog/2018/05/17/introducing-matrix-specification-changes/">previous blog post</a>, we have a new drive to advance the Matrix Specification itself. Part of this is <a href="https://matrix.org/docs/spec/proposals">https://matrix.org/docs/spec/proposals</a>, which lists all the spec change proposals we've accumulated so far, and describes the flow for getting new proposals merged. There is a new room, <a href="https://matrix.to/#/#matrix-spec:matrix.org">#matrix-spec:matrix.org</a> for discussion, please join if you want to get involved in this process. Check out the page and the blog post for more detail.
+
+Next up: try to turn some of the many WIP proposals into Spec PRs...
+<h1 id="fractalhackfest2018">Fractal Hackfest 2018</h1>
+<a href="https://wiki.gnome.org/Hackfests/Fractal2018">Fractal Hackfest 2018</a>: was super successful and productive by all accounts, and there were many! Check out reports from Daniel García Moreno (<a href="http://danigm.net/fractal-hackfest1.html">Day 1</a>, <a href="http://danigm.net/fractal-hackfest2.html">Day 2</a>), <a href="https://eishagsoc.wordpress.com/2018/05/13/fractal-hackfest.html">Eisha Chen-yen-su</a>, <a href="http://bytesgnomeschozo.blogspot.com/2018/05/fracturing-fractal.html">Adrien Plazas</a>, <a href="https://blogs.gnome.org/jsparber/2018/05/15/fractal-hackfest-2018/">Julian Sparber</a>, <a href="https://blogs.gnome.org/tbernard/2018/05/16/fractal-hackfest-in-strasbourg/">Tobias Bernard</a> and <a href="https://www.alexandrefranke.com/blog/20180518-Fractal-hackfest/">Alexandre Franke</a>.
+
+A major topic at the Hackfest was a discussion of splitting the Fractal client into two UIs for the different behaviours of messaging apps. For anyone interested in product design thinking this is a genuinely fascinating topic. I encourage you to read <a href="https://blogs.gnome.org/tbernard/2018/05/16/banquets-and-barbecues/">"Banquets and Barbecues", Tobias' excellent coverage</a> of the latest thinking. The different chat personas are very well explained and the post brings up some of the immediate technical challenges too.
+<h1 id="projectsandproducts">Projects and Products</h1>
+<h2 id="mxisdv11rc1available">mxisd v1.1 RC1 available</h2>
+<a href="https://matrix.to/#/@max:kamax.io">Max</a> reports on <a href="https://github.com/kamax-io/mxisd">mxisd</a>, a Federated Matrix Identity server for self-hosted Matrix infrastructures:
+<blockquote><a href="https://github.com/kamax-io/mxisd/releases/tag/v1.1-rc.1">mxisd v1.1 RC1</a> is out, addressing various privacy issues and being more GDPR-friendly overall. Testing and feedback from the community is very much appreciated</blockquote>
+<h2 id="dimension">Dimension</h2>
+<a href="https://dimension.t2bot.io/">Dimension</a>, an open source integrations manager for matrix clients from <a href="https://github.com/turt2live">TravisR</a>, now supports sticker packs.
+<h2 id="ruma">Ruma</h2>
+Rust-based <a href="https://github.com/ruma/ruma">Ruma</a> has new activity, starting with the release of <a href="https://github.com/ruma/ruma-api-macros/releases/tag/0.2.0">ruma-api-macros 0.2.0</a>. This moves <a href="https://github.com/ruma/ruma-api-macros/releases">ruma-api-macros</a> from dependency on hyper to using types from the http crate. This will give more flexibility about library and framework choices for <a href="https://github.com/ruma/ruma-client-api">ruma-client-api</a> and <a href="https://github.com/ruma/ruma-client">ruma-client</a>.
+<h2 id="federationtestergraphicalfrontend">Federation Tester Graphical Frontend</h2>
+<a href="https://matrix.to/#/@f0x:lain.haus">f0x</a> produced and shared a graphical frontend for the federation tester, already getting some use. Check it out at <a href="https://neo.lain.haus/fed-tester/">https://neo.lain.haus/fed-tester/</a> and see the source <a href="https://github.com/f0x52/fed-tester/commits/master">on GitHub</a>.
+<h2 id="synapse">Synapse</h2>
+<ul>
+ 	<li>Synapse 0.29 out - pretty much a maintenance release.</li>
+ 	<li>Chunk PRs are landing, providing a long-term solution to the ‘depth' issue which is still impacting #matrix and #matrix-dev.</li>
+ 	<li>Lots and lots of GDPR work - you can follow progress at <a href="https://github.com/vector-im/riot-meta/projects/7">https://github.com/vector-im/riot-meta/projects/7</a>.</li>
+ 	<li>Fixes SYN-1(!!!) - server notifications in general.</li>
+ 	<li>...and a last minute update from Andrej Shadura that the official Debian packages for Synapse are now up-to-date in Debian Unstable!!</li>
+</ul>
+<h2 id="riotweb">Riot/Web</h2>
+<ul>
+ 	<li>Riot/0.15 is out! With Stickers, Electron 2.0, Firefox E2E speed ups and lots of polishing</li>
+ 	<li>Working on GDPR now - cookie warnings have already landed on /develop, for instance. Remaining is the consent flow, and the deactivation/erasure flow.</li>
+ 	<li>Currently on a blitz to mop up P1 bugs</li>
+ 	<li>Accidental mission to replace Draft with Slate to make the RTE robust.</li>
+ 	<li>Upcoming: enabling Jitsi everywhere; E2E cross-signing; member lazyloading.</li>
+</ul>
+<h2 id="riotmobile">Riot/Mobile</h2>
+<ul>
+ 	<li>Sticker sending is almost done!</li>
+ 	<li>GDPR work in progress</li>
+ 	<li>Released a fix for unreliable notification (and bg syncing) on Android 8 on Fdroid (released on Wednesday - please update!)</li>
+</ul>
+<h2 id="neoalpha005">Neo Alpha 0.05</h2>
+<a href="https://github.com/f0x52/neo">neo</a> alpha 0.05 was announced by <a href="https://matrix.to/#/@f0x:lain.haus">f0x</a>, go take a look at <a href="https://github.com/f0x52/neo/releases/tag/alpha0.05">https://github.com/f0x52/neo/releases/tag/alpha0.05</a>. From the changelog:
+<blockquote>features to bridge better with telegram, like Replies and Stickers, general ui improvement with fontawesome icons
+added:
+Replies
+Receiving stickers</blockquote>
+and more
+<h2 id="discordbridge">Discord Bridge</h2>
+<a href="https://matrix.to/#/@Half-Shot:half-shot.uk">Half-Shot</a> and <a href="https://matrix.to/#/@andrewm:amorgan.xyz">anoa</a> are working on the <a href="https://github.com/Half-Shot/matrix-appservice-discord">matrix-appservice-discord</a>, and have embarked on bridging Discord edited messages to Matrix
+<blockquote>headed up by anoa, feedback for this is useful as it's early days, <a href="https://github.com/Half-Shot/matrix-appservice-discord/pull/131">https://github.com/Half-Shot/matrix-appservice-discord/pull/131</a></blockquote>
+They've been writing tests and crushing bugs along the way. This is all in aid of the coming 0.2.0 release.
+<h2 id="gomuks">gomuks</h2>
+A <a href="https://github.com/tulir/gomuks">gomuks</a> package was added to added to <a href="https://nixos.org/">NixOS</a> nixpkgs, shows interest in the client: <a href="https://github.com/NixOS/nixpkgs/pull/40510">https://github.com/NixOS/nixpkgs/pull/40510</a>.
+<h2 id="cromfrdogebot">CromFr doge bot</h2>
+<a href="https://matrix.to/#/@CromFr:matrix.org">CromFr</a> has been working on a <a href="https://github.com/CromFr/matrix-doge-bot">doge bot</a>, which he describes as a hack over the hyper / haiku bots", and is hosted on <a href="https://github.com/turt2live">TravisR</a>'s <a href="https://t2bot.io/">https://t2bot.io/</a>. Go try it out in the test room <a href="https://matrix.to/#/#test-doge-bot-crom:matrix.org">#test-doge-bot-crom:matrix.org</a>.
+<h1 id="communityclientserverinteractions">Independent Client-Server interactions</h1>
+<a href="https://matrix.org/blog/wp-content/uploads/2018/05/construct-gomuks.jpeg"><img class="aligncenter wp-image-3220 size-full" src="https://matrix.org/blog/wp-content/uploads/2018/05/construct-gomuks.jpeg" alt="" width="900" height="732" /></a>
+<a href="https://matrix.org/blog/wp-content/uploads/2018/05/mxhsd-fractal.png"><img class="aligncenter wp-image-3219 size-full" src="https://matrix.org/blog/wp-content/uploads/2018/05/mxhsd-fractal.png" alt="" width="912" height="749" /></a> 
+Lots of excitement at the variety of independent clients and servers able to interact over the matrix protocol. The images above show <a href="https://github.com/jevolk/charybdis">The Construct</a> (server) and <a href="https://github.com/tulir/gomuks">gomuks</a> (client), and then <a href="https://github.com/kamax-io/mxhsd">mxhsd</a> and <a href="https://wiki.gnome.org/Apps/Fractal">Fractal</a>. A fundamental part of matrix is to be an open protocol, so it's great to see entirely independent implementations liaising together! While implementing <a href="https://github.com/kamax-io/mxhsd">mxhsd</a>, <a href="https://matrix.to/#/@max:kamax.io">Max</a> has been documenting spec omissions <a href="https://kamax.io/matrix/api/client_server/unstable.html">in a branch of the spec</a> - we're hoping he will contribute these back!
+
+Honourable mention for <a href="https://matrix.to/#/@mujx:matrix.org">mujx</a>, who was sending messages with <a href="https://github.com/mujx/nheko">nheko</a> and <a href="https://github.com/ruma/ruma">Ruma</a> a year ago!
+<h1 id="matrixcoreteamexpansion">Matrix Core team expansion</h1>
+<ul>
+ 	<li>Stève - 17th May (yesterday)</li>
+ 	<li>Amber - 21st (Monday)</li>
+ 	<li>Anoa - 21st (Monday)</li>
+ 	<li>Hubert - 28th May</li>
+ 	<li>Half-Shot - 4th June
+...and one more community member, hopefully (just sorting paperwork currently!)</li>
+</ul>
+Heads up that we're consciously trying to hire a mix of folks from the Matrix community as well as those outside it - and avoid hiring the whole community, both to ensure diversity of viewpoint &amp; experience in the core team, and also to avoid cannibalising folks who working on their own commercial projects on top of Matrix. We'd prefer Matrix to be as decentralised and heterogenous as possible, needless to say - and instead try to support folks in building on Matrix without hiring them into the core team (where we'd expect them to focus on the core project for everyone's benefit). This may change once we have Matrix set up as a separate foundation, once we've got out of beta, of course.
+<h1 id="newrooms">New Rooms</h1>
+<ul>
+ 	<li><a href="https://matrix.to/#/#matrix-spec:matrix.org">#matrix-spec:matrix.org</a> is a new room dedicated to discussions on specific matrix spec proposals, as part of the process we're building around contributing to the matrix spec.</li>
+ 	<li><a href="https://matrix.to/#/@f0x:lain.haus">f0x</a> is hosting a new room dedicated to Matrix client developers <a href="https://matrix.to/#/#matrix-clients:lain.haus">#matrix-clients:lain.haus</a></li>
+ 	<li><a href="https://matrix.to/#/#test-doge-bot-crom:matrix.org">#test-doge-bot-crom:matrix.org</a> to test <a href="https://matrix.to/#/@CromFr:matrix.org">CromFr</a>'s doge bot.</li>
+ 	<li><a href="https://matrix.to/#/#PokemonShit:matrix.org">#PokemonShit:matrix.org</a> a new room for Pokemon discussion.</li>
+</ul>
+<h1 id="nextweekinmatrix">Next week in Matrix</h1>
+Next week I'll take a look at Matrix-related <a href="https://summerofcode.withgoogle.com/projects/?sp-search=matrix">GSOC 2018</a> projects, what the plans are and how the first few weeks are going.
+<h1 id="solong">So Long...</h1>
+That's all for now! Join us on <a href="https://matrix.to/#/#TWIM:matrix.org">#TWIM:matrix.org</a> if you'd like to make an announcement and be featured in this series.
+
+Check out this week's Matrix Live below, and we'll see you next week!
+
+<iframe src="https://www.youtube.com/embed/9OS99m1f4Uo" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe>

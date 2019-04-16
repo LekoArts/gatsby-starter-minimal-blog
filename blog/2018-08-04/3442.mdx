@@ -1,0 +1,116 @@
+---
+date: '2018-08-04'
+title: This Week in Matrix 2018-08-03
+categories:
+  - General
+---
+
+<h2 id="specprogress">Spec Progress</h2>
+Progress on the spec has been motoring since <a href="https://github.com/turt2live">TravisR</a> dived (dove?) into it full time a few weeks ago - the <a href="https://github.com/matrix-org/matrix-doc/issues/1464">Federation API r0 megathread bug</a> that tracks progress on filling in the gaps on the S2S API is clearing its checkboxes at an impressive rate.
+<blockquote class="twitter-tweet" data-lang="en">
+<p dir="ltr" lang="en">Lining up spec PRs for <a href="https://twitter.com/matrixdotorg?ref_src=twsrc%5Etfw">@matrixdotorg</a> sure does look pretty. <a href="https://t.co/YHQ00ZgzYl">pic.twitter.com/YHQ00ZgzYl</a></p>
+— Travis Ralston (@turt2live) <a href="https://twitter.com/turt2live/status/1025473165143592960?ref_src=twsrc%5Etfw">August 3, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+Some points of note regarding current proposals:
+<ul>
+ 	<li><strong><a href="https://github.com/matrix-org/matrix-doc/issues/1466">MSC1466</a></strong> Erik proposes a <code>soft_logout</code> field to be added to the body of 401 responses, to better help handling of encryption keys. <a href="https://github.com/matrix-org/matrix-doc/blob/erikj/soft_logout/proposals/1466-soft-logout.md">Check the proposal notes</a></li>
+ 	<li><strong><a href="https://github.com/matrix-org/matrix-doc/issues/1452">MSC1452</a></strong> agreement has been reached on Homeserver Warning Messages</li>
+</ul>
+<blockquote>We're going with pinned messages (option 2) and room tags (option 5) as that seems to be where the consensus is: it re-uses existing bits of the spec and room tags also help clients that don't know about this specific room tag to handle the room the right way</blockquote>
+<ul>
+ 	<li><strong><a href="https://github.com/matrix-org/matrix-doc/issues/1426">MSC1426</a>/<a href="https://github.com/matrix-org/matrix-doc/issues/1421">MSC1421</a></strong> Discussion about the review process itself</li>
+</ul>
+<ul>
+ 	<li><strong><a href="https://github.com/matrix-org/matrix-doc/issues/1425">MSC1425</a></strong> Room Versioning
+It's likely that in the immediate future we'll want to change the properties of rooms in a way that will not be compatible with existing servers - for example, changing the rules for event auth or state resolution, or changing the format of an event id.</li>
+</ul>
+<ul>
+ 	<li><strong><a href="https://github.com/matrix-org/matrix-doc/issues/1318">MSC1318</a></strong> Documentation describing the anticipated Open Governance of Matrix.org (aka, Matrix.org Foundation)</li>
+</ul>
+<h2 id="pythonsdkpython3">Python SDK -&gt; Python 3 ?</h2>
+The maintainers of the <a href="https://github.com/matrix-org/matrix-python-sdk">Matrix Python SDK</a> are mulling some major changes to the library. In particular, the desire to use <code>await</code> / <code>async</code> syntax means they are considering making Python 3.5 the minimum supported version. Go <a href="https://matrix.to/#/!YHhmBTmGBHGQOlGpaZ:matrix.org">chat about this change</a> and <a href="https://github.com/matrix-org/matrix-python-sdk/issues/262">comment on the proposal issue</a>.
+<h2 id="clients">Clients</h2>
+<h3 id="riotweb016">Riot/Web 0.16</h3>
+Big congratulations to the Riot/Web team on the release of 0.16. You can <a href="https://medium.com/@RiotChat/look-out-its-riot-im-0-16-composer-jitsi-replies-8b29f89271a1">read all about it here</a>, but I'll give you the headlines now:
+<ul>
+ 	<li>Replies are now available, there is UX for them and they look great</li>
+ 	<li>Jitsi is now the default video conferencing provider across Web, iOS and Android, with new widget integrations for Riot Web</li>
+ 	<li>New composer (text box) using Slate.js rather than Draft.js, which fixes many existing bugs and improves performance</li>
+</ul>
+Meanwhile, Lazy Loading implementation is approaching completion, promising several factors of improved resource utilisation!
+<h3 id="nheko052">nheko 0.5.2</h3>
+Also now <a href="https://flathub.org/apps/details/io.github.mujx.Nheko">available on flathub</a>!
+
+Go download <a href="https://github.com/mujx/nheko">nheko</a> and check out the <a href="https://github.com/mujx/nheko/releases/tag/v0.5.2">0.5.2 release notes</a>.
+
+New features <em>just in the last week or so</em>:
+<ul>
+ 	<li>Mark own read messages with a double checkmark</li>
+ 	<li>Add option to specify the scale factor</li>
+ 	<li>Add input field to specify the device name on login.</li>
+ 	<li>Add option to ignore key requests altogether.</li>
+ 	<li>Show device list in user profile &amp; add option to create 1-1 chat.</li>
+</ul>
+Plus lots of improvements and bug fixes.
+<h3 id="libqmatrixclientandquaternion">libQMatrixClient and Quaternion</h3>
+<a href="https://matrix.to/#/@kitsune:matrix.org">kitsune</a> has been working on resend functionality:
+<blockquote><a href="https://github.com/QMatrixClient/libqmatrixclient">libQMatrixClient</a> and <a href="https://github.com/QMatrixClient/Quaternion">Quaternion</a> have gained ability to resend and discard unsent messages.
+this means if Quaternion could not, after several attempts, deliver a message, a user can click "Resend" and it will try again</blockquote>
+On the subject of libQMatrixClient, it's exciting that Konversation, the KDE IRC client, may in future start to use libQMatrixClient for Matrix support!
+<h3 id="matrique">Matrique</h3>
+<a href="http://matrix.to/#/@bhat:encom.eu.org">Black Hat</a> announces a Flatpak repo for <a href="https://gitlab.com/b0/matrique-go">Matrique</a>:
+<blockquote>Matrique now has a Flatpak repo. It is the nightly build of the master branch. You can add the repo by typing flatpak remote-add matrique <a href="https://b0.gitlab.io/matrique-repo/matrique.flatpakrepo">https://b0.gitlab.io/matrique-repo/matrique.flatpakrepo</a> and install it by flatpak install <code>matrique org.eu.encom.matrique</code>
+As it is still Alpha quality, bugs are expected. Feel free to open an issue if anything goes wrong!</blockquote>
+<h3 id="fractal3296">Fractal 3.29.6</h3>
+New release of <a href="https://wiki.gnome.org/Apps/Fractal">Fractal</a> to 3.29.6. Notes from <a href="https://gitlab.gnome.org/World/fractal/commit/8d2ed11379390dac5a773d03e4cfb496261a7bea">the changelog</a>:
+<ul>
+ 	<li>Add German translation</li>
+ 	<li>Message right click menu with: view source, reply, copy text and delete</li>
+ 	<li>Styles for quotes in messages</li>
+ 	<li>Initial sync speed up</li>
+</ul>
+<h3 id="neo">Neo</h3>
+Incremental improvements to <a href="https://github.com/f0x52/neo">Neo</a> from fox:
+<blockquote>Neo now has inline youtube and image url previews, and handles room state changes such as name, avatar and topic as they occur.</blockquote>
+<h3 id="riotmobile">Riot/Mobile</h3>
+<ul>
+ 	<li><strong>Android:</strong> a lot of bug fixes and small UI improvements</li>
+ 	<li><strong>iOS:</strong> Lazy Loading is coming to life, showing huge improvements in bandwidth usage and performance in the app</li>
+</ul>
+<h2 id="updatesonircbridgesfromhalfshot">Updates on IRC bridges from Half-Shot</h2>
+<a href="https://matrix.to/#/@Half-Shot:half-shot.uk">Half-Shot</a> has been working tirelessly on the IRC bridge lately, so I wanted to update on his recent successes:
+<blockquote>I've recently been working on mitigating the effects of a netsplit on the IRC bridge, and optimising it to start and run faster. This week I trimmed down the heap usage (where the memory usually goes) to just under a gigabyte on my 10,000 matrix user test bridge. Previously it could spike to as much as 3.5GB. This optimisation is still in a testing phase but results are looking positive.</blockquote>
+For reference here is the memory usage of the Freenode process during startup:
+
+<a href="https://matrix.org/blog/wp-content/uploads/2018/08/freenode-current.png"><img class="alignnone size-full wp-image-3445" src="https://matrix.org/blog/wp-content/uploads/2018/08/freenode-current.png" alt="" width="853" height="268" /></a>
+
+And here are the results of my local test bridge before and after the change:
+
+Before:
+
+<a href="https://matrix.org/blog/wp-content/uploads/2018/08/freenode-before.png"><img class="alignnone size-full wp-image-3446" src="https://matrix.org/blog/wp-content/uploads/2018/08/freenode-before.png" alt="" width="860" height="385" /></a>
+
+After:
+
+<a href="https://matrix.org/blog/wp-content/uploads/2018/08/freenode-after.png"><img class="alignnone size-full wp-image-3444" src="https://matrix.org/blog/wp-content/uploads/2018/08/freenode-after.png" alt="" width="861" height="381" /></a>
+
+We also made some internal changes to the appservice-bridge to cache the joined state of all the bridge users and therefore avoiding joining rooms which saves us some time on startup.
+<h2 id="matrixforgrafanaandmorefromananace">Matrix for Grafana, and more from Ananace</h2>
+In his regular spot, <a href="https://github.com/ananace/">Ananace</a> has made progress on his Matrix sysadmin/ruby suite:
+<ul>
+ 	<li><a href="https://github.com/ananace/ruby-grafana-matrix">Grafana alerting ingester</a> supports images, plus more per-task configuration options.</li>
+ 	<li>The <a href="https://github.com/ananace/matrix-synapse/">K8s-optimized docker image for Synapse</a> has been updated to 0.33.1</li>
+ 	<li>The <a href="https://github.com/ananace/matrix-releasetracker/">release tracker</a> has gotten multiple performance improvements.</li>
+ 	<li>the <a href="https://github.com/ananace/ruby-matrix-sdk">Ruby SDK</a> continues to be slowly worked on.</li>
+</ul>
+<h2 id="synapse">Synapse</h2>
+<a href="https://matrix.org/blog/2018/08/02/security-update-synapse-0-33-1/">Synapse 0.33.1</a> is out now as a security update release. Please update if you haven't already - it fixes two issues concerning event visibility where if you knew the event ID of an event you could read it even if you didn't have access to it; we don't believe these have been exploited in the wild, but you will definitely want to upgrade now.
+
+Meanwhile the Python 3 port is progressing well (all sytests now pass in Python 3, i think!), and intrepid folks are starting to experiment with running it in production.
+<h2>Decentralised Web Summit &amp; Matrix Live</h2>
+Meanwhile, Matthew &amp; Amandine have been in San Francisco for the 2018 <a href="https://decentralizedweb.net">Decentralised Web Summit</a> - so this week's Matrix Live is live from SFO and gives a quick overview of the sort of things we got up to!  Some of the sessions are already online thanks to the (somewhat unreliable) live stream (e.g. here's Muneeb (Blockstack), Amandine, Danielle (Dat), and Zooko (Zcash) talking about their respective governance models &amp; growing pains over the last 2 years: <a href="https://youtu.be/tsz3ffrJDpw?t=12133">https://youtu.be/tsz3ffrJDpw?t=12133</a>).  The summit was a massive success, with lots of discussions about decentralised reputation, UI/UX for decentralised apps, metadata-resistance, the balance of P2P versus decentralised-servers, etc.  Hopefully some of the conversations we had will result in some major improvements to Matrix in the future!
+
+Edit: <a href="https://matrix.org/blog/wp-content/uploads/2018/08/2018-08-01-DWeb-1.pdf">Here are the slides</a> for our "<a href="https://decentralizedwebsummit2018.sched.com/event/Fhlb/workshop-diving-into-decentralized-communication">Diving into Decentralised Communication</a>" workshop, for those interested in a comparison between Matrix/SSB/Mastodon/Status/Vuvuzela/Briar.  They're pretty minimal, as they just formed a framework for discussion, but might still be of interest.
+
+<iframe src="https://www.youtube.com/embed/Fi-klattR2k" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe>

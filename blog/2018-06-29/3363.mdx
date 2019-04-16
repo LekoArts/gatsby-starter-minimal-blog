@@ -1,0 +1,86 @@
+---
+date: '2018-06-29'
+title: This Week in Matrix 2018-06-29
+categories:
+  - General
+---
+
+<h2 id="welcome">Welcome</h2>
+Welcome to This Week in Matrix, let's see what updates the community has to offer this week!
+<h2 id="koma">koma</h2>
+Announcing his update nearly a week ago, <a href="https://matrix.to/#/@radicus:matrix.org">radicus</a> released <a href="https://github.com/koma-im/koma/releases/tag/0.7.3">v0.7.3</a> of <a href="https://github.com/koma-im/koma/">koma</a>.
+<blockquote>There have been quite some changes since updates of the project were last posted, but the major ones are:
+<ul>
+ 	<li>Upgrade to JavaFx 9</li>
+ 	<li>Experimental support for infinite scroll on message list</li>
+ 	<li>Rewrite ListView to improve performance and reduce jar file size</li>
+</ul>
+</blockquote>
+<h2 id="dialogflowconnector">dialogflow connector</h2>
+<a href="https://matrix.to/#/@vurpo:vurpo.fi">vurpo</a> has released <a href="https://gitlab.com/vurpo/matrix-dialogflow">matrix-dialogflow</a>, which allow the use of DialogFlow agents as chatbots:
+<blockquote>I've written a little bot for connecting a DialogFlow agent to Matrix as a chatbot. I did this for my own personal purposes but I know someone else might find this handy as well.</blockquote>
+<h2 id="mautrixtelegram">mautrix-telegram</h2>
+<a href="@tulir:maunium.net">tulir</a>:
+<blockquote>New stuff in mautrix-telegram:
+<ul>
+ 	<li>A basic telematrix database import script</li>
+ 	<li>Improved config for relaybot message formatting, including the option to use Matrix displaynames (instead of just mxid localparts)
+I've also been planning an improved Matrix-&gt;Telegram formatting converter and a provisioning API for integration managers like Dimension.</li>
+</ul>
+</blockquote>
+<h2 id="jmsdk">jmsdk</h2>
+<a href="https://matrix.to/#/@ma1uta:matrix.org">ma1uta</a> has been working on a matrix client this week. To that end, he has implemented <a href="https://github.com/ma1uta/jmsdk">jmsdk</a>, a "very early version of the matrix sdk and common classes (client, bot, …)"
+<blockquote>Currently implemented the matrix client on the java with full support of the C2S API. It still under development and contains bugs.</blockquote>
+He has also been working on a "bot sdk with core classes to write custom bots and appservices."
+<h2 id="matrixappservicevoip"><a href="https://github.com/kamax-io/matrix-appservice-voip">matrix-appservice-voip</a></h2>
+<a href="https://matrix.to/#/@max:kamax.io">Max</a> has been working on VoIP bridging between Matrix and regular phones using Freeswitch:
+<blockquote>We have successfull VoIP bridging between Matrix and regular phones using Freeswitch, for 1:1, both directions! a v0.1 is scheduled in a few days once configuration is possible and a getting started doc is written.
+
+Next steps:
+<ul>
+ 	<li>more voice backends (think Jitsi, etc.)</li>
+ 	<li>SMS support with Twilio and/or OVH initially</li>
+ 	<li><a href="https://github.com/kamax-io/mxisd">mxisd</a> integration to automatically invite bridge users if needed and suggest bridge users</li>
+ 	<li><a href="https://github.com/kamax-io/mxhsd">mxgwd</a> integration to auto-join HS regular users if a VoIP bridge user invites them, so &gt; calls are directly seen</li>
+ 	<li>And much more in later releases</li>
+</ul>
+Join <a href="https://matrix.to/#/#matrix-appservice-voip:kamax.io">#matrix-appservice-voip:kamax.io</a> for more info, or visit the <a href="https://github.com/kamax-io/matrix-appservice-voip">Github</a> repo</blockquote>
+<h2 id="transform">transform</h2>
+A wild <a href="https://matrix.to/#/@bettiah:matrix.org">bettiah</a> appeared, announced a completely new homeserver implementation in TypeScript:
+<blockquote>I have been working on a homeserver implementation over at <a href="https://github.com/bettiah/transform">https://github.com/bettiah/transform</a> . It is fairly basic at the moment, but the development experience is straight-forward and even fun.</blockquote>
+I'm interested to see a TypeScript backend running, and of course it's great to have more homeserver implementations! Some highlights from the <a href="https://github.com/bettiah/transform">readme</a>:
+<blockquote>Transform is a matrix homeserver built using Typescript and Redis. It is not fully functional yet.
+<strong>Status:</strong> Register, Login, CreateRoom, Invite &amp; Join seem to be functional with riot web client. But quite a lot of functionality is missing and the software is definitely not ready for deployment in a public facing role.
+<strong>Design:</strong> A lot of the code is auto-generated from the excellent swagger specs for the client-server api.
+<strong>Contributing</strong>: It is early days yet. However, Typescript has enabled safe &amp; rapid progress. Redis streams too seem to have a very well thought out api and the whole thing has been a fun experience so far. Contributions are very welcome.</blockquote>
+<h2 id="dsntravellersourcecodereleased">dsn-traveller source code released!</h2>
+Good news for those following the progress of <a href="https://dsn-traveller.dsn.scc.kit.edu/">dsn-traveller</a>, the source is now publicly available!
+
+From <a href="https://matrix.to/#/@florianjacob:matrix.org">Florian</a>:
+<blockquote>I received permission to publish the source code of the DSN Traveller bot (<a href="https://dsn-traveller.dsn.scc.kit.edu/">https://dsn-traveller.dsn.scc.kit.edu/</a>) prior to handing in my thesis: You can find it at <a href="https://github.com/florianjacob/dsn-traveller">https://github.com/florianjacob/dsn-traveller</a>, it's written with <a href="https://github.com/ruma/ruma-client">ruma-client</a> and Rust async/await.</blockquote>
+Room remains at <a href="https://matrix.to/#/#dsn-traveller:dsn-traveller.dsn.scc.kit.edu">#dsn-traveller:dsn-traveller.dsn.scc.kit.edu</a>.
+<h2 id="e2eforpythonsdk">E2E for Python SDK</h2>
+Late breaking, but not itself broken, <a href="https://matrix.to/#/@adam:thebeckmeyers.xyz">&amp;Adam</a> has news from <a href="https://github.com/matrix-org/matrix-python-sdk">matrix-python-sdk</a>:
+<blockquote>first olm-centered E2E PR for the python sdk merged to master (finally). Lots of great work from Zil0 still to be merged waiting on PR review. <a href="https://github.com/matrix-org/matrix-python-sdk/pull/224">https://github.com/matrix-org/matrix-python-sdk/pull/224</a></blockquote>
+<h2 id="fractal">Fractal</h2>
+
+<p>From Tobias: </p>
+
+<blockquote>
+  <p>No new Fractal release this week. Development was quite active nevertheless, with Jordan's new inline audio player landing in master, Julian getting close to landing the first part of the new room settings, and Eisha working on improving the image viewer.</p>
+</blockquote>
+<h2 id="riot">Riot</h2>
+<ul>
+ 	<li>New Release! v15.6 - <a href="https://github.com/vector-im/riot-web/releases/tag/v0.15.6">https://github.com/vector-im/riot-web/releases/tag/v0.15.6</a></li>
+ 	<li>Jitsi by default for Video calls</li>
+ 	<li>Replies to messages</li>
+ 	<li>New room sharing feature</li>
+</ul>
+<h2 id="newrooms">New Rooms</h2>
+<ul>
+ 	<li><a href="https://matrix.to/#/#matrix.fi:matrix.org">#matrix.fi:matrix.org</a> - a room for Finnish speakers</li>
+</ul>
+<h2 id="andso">And so…</h2>
+All good things must come to an end, so it is with this blog post! Watch this week's Matrix Live (hosted by yours truly) below, and come see us in <a href="https://matrix.to/#/#TWIM:matrix.org">#twim:matrix.org</a>!
+
+<iframe src="https://www.youtube.com/embed/JWUcLJ8ueRk" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
