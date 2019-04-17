@@ -26,8 +26,7 @@ This week we continue Matrix Live Season 3 by talking to community member <a hre
 <a href="https://matrix.org/blog/wp-content/uploads/2018/11/maubot-manager2.png"><img class="alignnone size-large wp-image-3759" src="https://matrix.org/blog/wp-content/uploads/2018/11/maubot-manager2-1008x1024.png" alt="" width="1008" height="1024" /></a>
 <h2 id="matrixappservicepurple">matrix-appservice-purple</h2>
 <a href="https://matrix.to/#/@Half-Shot:half-shot.uk">Half-Shot</a> has been working on important work for his final undergrad year. Just kidding! He's been working on bridges as you'd expect:
-<blockquote>I've been working on <a href="https://github.com/matrix-org/matrix-appservice-purple">matrix-appservice-purple</a>, and the community immediately rallied around and helped me get it into shape. We've got automated builds for both the bridge and the libpurple binding modules. In features land, group chats are now working at a basic level and I will be working on supporting profiles next.
-<a href="https://matrix.to/#/#purple-bridge:half-shot.uk">#purple-bridge:half-shot.uk</a> is now a room where you can tell me why your favorite protocol doesn't work with the bridge. (It's also used for updates.)</blockquote>
+<blockquote>I've been working on <a href="https://github.com/matrix-org/matrix-appservice-purple">matrix-appservice-purple</a>, and the community immediately rallied around and helped me get it into shape. We've got automated builds for both the bridge and the libpurple binding modules. In features land, group chats are now working at a basic level and I will be working on supporting profiles next.<br /><a href="https://matrix.to/#/#purple-bridge:half-shot.uk">#purple-bridge:half-shot.uk</a> is now a room where you can tell me why your favorite protocol doesn't work with the bridge. (It's also used for updates.)</blockquote>
 <h2 id="informo">Informo</h2>
 <a href="https://matrix.to/#/@vabd:weu.informo.network">vabd</a>:
 <blockquote>A couple of SCS (Specs Changes Submissions) have been merged into the Informo specs, notably <a href="https://github.com/Informo/specs/pull/2">SCS #2</a> which introduces a complete technical description of the network's nodes and their expected behaviour, and <a href="https://github.com/Informo/specs/pull/4">SCS #4</a> which changes the duration of the call for public review period, shrinking it from 14 days to 7 days, in order to speed specs work up while letting a decent amount of time for people to give a look at new SCSs and voice their concerns.</blockquote>
@@ -40,13 +39,10 @@ By the way, the latest Quaternion release is now available in OpenSUSE Tumblewee
 <blockquote>Synapse has a new release candidate - 0.33.9rc1 - If you'd like to help us test it, you can <a href="https://github.com/matrix-org/synapse/releases/tag/v0.33.9rc1">get it here</a>.</blockquote>
 <h2 id="koma">Koma</h2>
 <a href="https://matrix.to/#/@druig:matrix.org">druig</a>:
-<blockquote>This week in <a href="https://github.com/koma-im/koma/">Koma</a>, I have been working on a correct implementation of the user registration process. Currently waiting for a small issue with synapse to get fixed
-For kotlin programmer who might be interested <a href="https://github.com/koma-im/koma/pull/6">https://github.com/koma-im/koma/pull/6</a></blockquote>
+<blockquote>This week in <a href="https://github.com/koma-im/koma/">Koma</a>, I have been working on a correct implementation of the user registration process. Currently waiting for a small issue with synapse to get fixed<br />For kotlin programmer who might be interested <a href="https://github.com/koma-im/koma/pull/6">https://github.com/koma-im/koma/pull/6</a></blockquote>
 <h2 id="fdroidorghassetupanewmatrixsynapseserver">f-droid.org has set up a new matrix (synapse) server</h2>
 <a href="https://matrix.to/#/@mathijs:matrix.vgorcum.com">Mathijs</a>:
-<blockquote>f-droid.org has set up a new matrix (synapse) server for internal conversation and to chat in #fdroid:matrix.org , which will obviously also get a :f-droid.org alias.
-
-For now the server is private, only allowing core team members to get an account in order to keep the performance manageable.</blockquote>
+<blockquote>f-droid.org has set up a new matrix (synapse) server for internal conversation and to chat in #fdroid:matrix.org , which will obviously also get a :f-droid.org alias.<br /><br />For now the server is private, only allowing core team members to get an account in order to keep the performance manageable.</blockquote>
 <h2 id="mautrixtelegramv040">mautrix-telegram v0.4.0</h2>
 <a href="https://matrix.to/#/@tulir:maunium.net">tulir</a> released an RC for <a href="https://github.com/tulir/mautrix-telegram">mautrix-telegram</a>:
 <blockquote><a href="https://github.com/tulir/mautrix-telegram">mautrix-telegram</a> 0.4.0 release candidate was released. It's mostly a lot of bugfixes.</blockquote>

@@ -38,11 +38,7 @@ It's been some months since we checked in with <a href="https://github.com/Chris
 <a href="https://matrix.org/blog/wp-content/uploads/2018/09/2018-09-14-fluffychat.png"><img class="alignnone size-large wp-image-3560" src="https://matrix.org/blog/wp-content/uploads/2018/09/2018-09-14-fluffychat-576x1024.png" alt="" width="576" height="1024" /></a>
 <h3 id="seaglass">Seaglass</h3>
 <a href="https://matrix.to/#/@neilalexander:matrix.org">Neil</a> has been keeping up the pace with <a href="https://github.com/neilalexander/seaglass">Seaglass</a> development:
-<blockquote>Seaglass has had a substantial rewrite to the room cache to help improve reliability and reduce crashes, better thumbnail behaviour on inline images, various tiny visual tweaks, in-window blending, support for encryption key sharing requests for E2E rooms.
-
-Rendering performance has been massively increased (if you ignore the occasional bug). Resizing the window shouldn't be so slow anymore and a lot of avatar image operations are no longer repeated unnecessarily
-
-Other than that this week has mostly featured lots and lots of bug fixes, hopefully lots of crashes fixed.</blockquote>
+<blockquote>Seaglass has had a substantial rewrite to the room cache to help improve reliability and reduce crashes, better thumbnail behaviour on inline images, various tiny visual tweaks, in-window blending, support for encryption key sharing requests for E2E rooms.<br /><br />Rendering performance has been massively increased (if you ignore the occasional bug). Resizing the window shouldn't be so slow anymore and a lot of avatar image operations are no longer repeated unnecessarily<br /><br />Other than that this week has mostly featured lots and lots of bug fixes, hopefully lots of crashes fixed.</blockquote>
 Screenshot below shows the new E2E UI:
 
 <a href="https://matrix.org/blog/wp-content/uploads/2018/09/2018-09-14-seaglass-e2e-ui.png"><img class="alignnone size-large wp-image-3561" src="https://matrix.org/blog/wp-content/uploads/2018/09/2018-09-14-seaglass-e2e-ui-1024x627.png" alt="" width="1024" height="627" /></a>
@@ -54,9 +50,7 @@ When not escaping typhoons, <a href="https://matrix.to/#/@kitsune:matrix.org">ki
 <blockquote><a href="https://gitlab.com/Nordgedanken/SimpleMatrix">SimpleMatrix</a> now supports Basic messages sending (with Commonmark) and basic receiving of messages.</blockquote>
 <h3 id="minivector">miniVector</h3>
 <a href="https://matrix.to/#/@bubuiic:matrix.org">Marcus</a> has re-packaged miniVector for F-Droid:
-<blockquote>There's now a second matrix client available in F-Droid: <a href="https://f-droid.org/packages/com.lavadip.miniVector/">https://f-droid.org/packages/com.lavadip.miniVector/</a>
-
-This is a fork of Riot Android done by hrjet, f-droid release done by me. It's removing mostly jitsi group call functionality and some other smaller stuff. In doing so it manages to require far less permissions and is also only 12 MB in size instead of riots 20 MB.</blockquote>
+<blockquote>There's now a second matrix client available in F-Droid: <a href="https://f-droid.org/packages/com.lavadip.miniVector/">https://f-droid.org/packages/com.lavadip.miniVector/</a><br /><br />This is a fork of Riot Android done by hrjet, f-droid release done by me. It's removing mostly jitsi group call functionality and some other smaller stuff. In doing so it manages to require far less permissions and is also only 12 MB in size instead of riots 20 MB.</blockquote>
 <h3 id="matrique">Matrique</h3>
 <a href="http://matrix.to/#/@bhat:encom.eu.org">Black Hat</a>:
 <blockquote>Matrique gained alpha support for multiple accounts</blockquote>

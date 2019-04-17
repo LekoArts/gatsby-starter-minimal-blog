@@ -48,8 +48,7 @@ And the first hotfix: application-api r0.1.0-2 with fixed url (/transactions has
 Join <a href="https://matrix.to/#/#jeon:matrix.org">#jeon:matrix.org</a> to discuss the progress of this product more.
 <h2 id="voipsignallingsupporthaslandedinlibqmatrixclient">VoIP signalling support has landed in libQMatrixClient</h2>
 Exciting times for <a href="https://github.com/QMatrixClient/libqmatrixclient">libQMatrixClient</a>!! Thanks <a href="https://matrix.to/#/@kitsune:matrix.org">kitsune</a>, developer of libQMatrixClient and <a href="https://github.com/QMatrixClient/Quaternion">Quaternion</a>:
-<blockquote>After some pretty long time of being in a PR/fork, VoIP signalling support has landed in libQMatrixClient! Many thanks to mariogrip (the founder of UBports) for the initial code and to delijati (a developer behind <a href="https://github.com/uMatriks/uMatriks">uMatriks</a>) for getting it to work with the most recent library.
-The actual VoIP stack does not come included, client developers have to take whatever WebRTC implementation is available for their platform and glue the pieces together. However, as the example of uMatriks shows, this now becomes relatively easy if your platform is on good terms with WebRTC (like UBports). I look forward to further work with UBports community on keeping this platform a first-class Matrix citizen.</blockquote>
+<blockquote>After some pretty long time of being in a PR/fork, VoIP signalling support has landed in libQMatrixClient! Many thanks to mariogrip (the founder of UBports) for the initial code and to delijati (a developer behind <a href="https://github.com/uMatriks/uMatriks">uMatriks</a>) for getting it to work with the most recent library.<br />The actual VoIP stack does not come included, client developers have to take whatever WebRTC implementation is available for their platform and glue the pieces together. However, as the example of uMatriks shows, this now becomes relatively easy if your platform is on good terms with WebRTC (like UBports). I look forward to further work with UBports community on keeping this platform a first-class Matrix citizen.</blockquote>
 Go chat in <a href="https://matrix.to/#/#quaternion:matrix.org">#quaternion:matrix.org</a> to see the ways libQMatrixClient is developing.
 <h2 id="matriqueisnowspectral">Matrique is now Spectral</h2>
 After intense discussion, there is a new name for Matrique: <strong>Spectral</strong>. The repo now sites at <a href="https://gitlab.com/b0/spectral">https://gitlab.com/b0/spectral</a>, there is a new room at <a href="https://matrix.to/#/#spectral:encom.eu.org">#spectral:encom.eu.org</a>, and a new logo:
@@ -82,9 +81,7 @@ ma1uta is also looking forward to the release of Java 11:
 <blockquote>with the Curve25519 key agreement (http://openjdk.java.net/jeps/324) and will try make a pure java implementation of the olm/megolm. Just for fun. :)</blockquote>
 <h2 id="synapsepurge">synapse-purge</h2>
 <a href="@maze:strahlungsfrei.de">Maze</a>, seeing that his synapse database was already at several gigabytes, decided to produce a tool to shrink it:
-<blockquote>The <a href="https://github.com/djmaze/synapse-purge/">synapse-purge</a> tool allows homeserver admins to free disk space by purging old room events from the synapse database. It is an alternative for <em>synpurge</em> which <a href="https://github.com/djmaze/synapse-purge/issues/27">currently does not work correctly</a>.
-
-Configuration is minimalistic at the moment. Meaning it purges all remote rooms on the server with a globally configured preservation period.</blockquote>
+<blockquote>The <a href="https://github.com/djmaze/synapse-purge/">synapse-purge</a> tool allows homeserver admins to free disk space by purging old room events from the synapse database. It is an alternative for <em>synpurge</em> which <a href="https://github.com/djmaze/synapse-purge/issues/27">currently does not work correctly</a>.<br /><br />Configuration is minimalistic at the moment. Meaning it purges all remote rooms on the server with a globally configured preservation period.</blockquote>
 <h2 id="synapse">synapse</h2>
 <a href="https://matrix.to/#/@andrew:shadura.me">andrewsh</a>: <a href="https://github.com/matrix-org/synapse/releases/tag/v0.33.4">0.33.4</a> uploaded to Debian's stretch-backports, pending approval.
 
@@ -110,8 +107,7 @@ Lazy Loading remains the focus, we're getting closer with more bugs solved this 
 Lots of final bug hunting for lazy loading - this is taking longer than you might expect because we're doing end-to-end CI everywhere.
 
 Lots of work on E2E, Dave has been working on:
-<blockquote>UI for e2e key backup that's waiting for some lower level bits
-and hopefully our e2e core code is moving from asm.js to webassembly making it, by current estimations, significantly faster.</blockquote>
+<blockquote>UI for e2e key backup that's waiting for some lower level bits<br />and hopefully our e2e core code is moving from asm.js to webassembly making it, by current estimations, significantly faster.</blockquote>
 Redesign work continuing as well - Bruno has been working on it this week, Jouni the designer will visit next week to continue the process.
 
 Nad has joined us to help with design bandwidth and is working on the onboarding flows for the redesign as well as fixing all the UX issues in Communities!

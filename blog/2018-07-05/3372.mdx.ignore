@@ -52,8 +52,7 @@ Last week I mistakenly referred to <a href="https://github.com/koma-im/koma/">Ko
 <a href="https://matrix.org/blog/wp-content/uploads/2018/07/koma-room-info.png"><img class="alignnone size-full wp-image-3373" src="https://matrix.org/blog/wp-content/uploads/2018/07/koma-room-info.png" alt="" width="293" height="353" /></a>
 <h2 id="synapse">Synapse</h2>
 Neil says:
-<blockquote>We've just cut the next release candidate for Synapse: 0.32.0rc1.
-The upcoming release focuses almost entirely on security; fixing federation bugs and adding new features for countering abuse.</blockquote>
+<blockquote>We've just cut the next release candidate for Synapse: 0.32.0rc1.<br />The upcoming release focuses almost entirely on security; fixing federation bugs and adding new features for countering abuse.</blockquote>
 <h2 id="riot">Riot</h2>
 This week we welcome Bruno to the Riot team, he's off and away working on getting integration tests set up.
 

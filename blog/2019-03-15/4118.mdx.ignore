@@ -14,11 +14,7 @@ This week you're stuck with me, but I'm chatting to Ryan, who works on Riot web.
 <h2 id="spec">Spec</h2>
 <blockquote>Lots of activity but most notably MSC 1915 (a blocker for Matrix 1.0) is making progress. <a href="https://github.com/matrix-org/matrix-doc/pull/1915">https://github.com/matrix-org/matrix-doc/pull/1915</a></blockquote>
 <h2 id="synapse10">Synapse . . . 1.0?</h2>
-<blockquote>It's all about 1.0 for the Synapse gang this week. This means performance improvements across the board in the form of read receipt batching, user directory (room directory coming soon!) and rate limiting on log in and registration APIs.
-
-Brendan shipped the low bandwidth CoAP proxy we demo'd at FOSDEM
-
-As well as a bunch of spec implementation projects to ensure that Synapse (and Sydent) are ready for Synapse 1.0.</blockquote>
+<blockquote>It's all about 1.0 for the Synapse gang this week. This means performance improvements across the board in the form of read receipt batching, user directory (room directory coming soon!) and rate limiting on log in and registration APIs.<br /><br />Brendan shipped the low bandwidth CoAP proxy we demo'd at FOSDEM<br /><br />As well as a bunch of spec implementation projects to ensure that Synapse (and Sydent) are ready for Synapse 1.0.</blockquote>
 <h2 id="synapseworkersprojects">Synapse workers projects</h2>
 Turn-of-phrase of the week from <a href="https://matrix.to/#/@Half-Shot:half-shot.uk">Half-Shot</a> ("make it more performant and less crashy"):
 <blockquote><a href="https://github.com/turt2live/synapse-netcore-workers">synapse-netcore-workers</a> is progressing as strongly as ever. This week has mainly been supporting a couple of users trying to use the fed sender, and also trying to make it more performant and less crashy. I've been using it solidly for two weeks now, and by and large it's been working nicely :)</blockquote>
@@ -58,8 +54,7 @@ There's also a sort of <a href="https://docs.pattle.im/design/philosophy/">desig
 Review of one PR from the community for iOS10 notifications.
 Started implementing device verification with emoji.</blockquote>
 <h2 id="riotandroid">Riot Android</h2>
-<blockquote>We've released v0.8.25 on Thursday, containing refresh of invalid scalar token, and some bugfixes. Links on m.notice messages are now clickable again.
-Started implementing device verification with emoji.</blockquote>
+<blockquote>We've released v0.8.25 on Thursday, containing refresh of invalid scalar token, and some bugfixes. Links on m.notice messages are now clickable again.<br />Started implementing device verification with emoji.</blockquote>
 <h2 id="riotxandroid">RiotX (Android)</h2>
 <blockquote>
 <ul>
@@ -95,9 +90,7 @@ If you're using, or considering using, The Foreman for orchestration this may be
 <blockquote><a href="https://github.com/maubot/maubot">maubot</a> plugins can now add their own endpoints to the main maubot webserver. The pingstat plugin I announced last week uses this feature for the leaderboard widget: <a href="https://maubot.xyz/_matrix/maubot/plugin/pingstat/stats?room_id=!MbRaSiMIRhhxDtJENL:maunium.net">https://maubot.xyz/_matrix/maubot/plugin/pingstat/stats?room_id=!MbRaSiMIRhhxDtJENL:maunium.net</a></blockquote>
 <h2 id="matrixappservicebridge180matrixappserviceirc0120rc1roomupgradesandmore">matrix-appservice-bridge 1.8.0, matrix-appservice-irc 0.12.0-rc1: room upgrades and more</h2>
 <a href="https://matrix.to/#/@Half-Shot:half-shot.uk">Half-Shot</a>:
-<blockquote><a href="https://github.com/matrix-org/matrix-appservice-bridge">matrix-appservice-bridge</a> got a 1.8.0 release last night, featuring automatic handling of room upgrades for all your room upgrade needs. Providing your bridge uses the RoomStore as designed, it's literally a few lines to enable :). <a href="https://github.com/matrix-org/matrix-appservice-bridge/blob/master/CHANGES.md">Changelog here</a>
-
-What is this? A <a href="https://github.com/matrix-org/matrix-appservice-irc">matrix-appservice-irc</a> release? No, it's a release <em>candidate</em>. Announcing that 0.12.0-rc1 is <a href="https://github.com/matrix-org/matrix-appservice-irc/blob/release-v0.12.0/CHANGELOG.md">now out and about</a> for folks to play with. More IRC updates to come in the future :)</blockquote>
+<blockquote><a href="https://github.com/matrix-org/matrix-appservice-bridge">matrix-appservice-bridge</a> got a 1.8.0 release last night, featuring automatic handling of room upgrades for all your room upgrade needs. Providing your bridge uses the RoomStore as designed, it's literally a few lines to enable :). <a href="https://github.com/matrix-org/matrix-appservice-bridge/blob/master/CHANGES.md">Changelog here</a><br /><br />What is this? A <a href="https://github.com/matrix-org/matrix-appservice-irc">matrix-appservice-irc</a> release? No, it's a release <em>candidate</em>. Announcing that 0.12.0-rc1 is <a href="https://github.com/matrix-org/matrix-appservice-irc/blob/release-v0.12.0/CHANGELOG.md">now out and about</a> for folks to play with. More IRC updates to come in the future :)</blockquote>
 <h2 id="mautrixwhatsapp">mautrix-whatsapp</h2>
 <a href="https://matrix.to/#/@tulir:maunium.net">tulir</a>:
 <blockquote><a href="https://github.com/tulir/mautrix-whatsapp">mautrix-whatsapp</a> now has support for postgres databases thanks to a <a href="https://github.com/tulir/mautrix-whatsapp/pull/43">pull request</a> by <a href="https://github.com/Rennerdo30">@Rennerdo30</a></blockquote>
@@ -106,8 +99,7 @@ What is this? A <a href="https://github.com/matrix-org/matrix-appservice-irc">ma
 <blockquote><a href="https://github.com/tulir/mautrix-telegram">mautrix-telegram</a> got a <a href="https://github.com/tulir/mautrix-telegram/pull/290">pull request</a> with a pytest setup and a few unit tests by <a href="https://github.com/V02460">@V02460</a>. I haven't merged that one yet, but will soon.</blockquote>
 <h2 id="matrixdockeransibledeploysupportsdimension">matrix-docker-ansible-deploy supports Dimension</h2>
 This is really neat, and a shout-out that these playbooks are my preferred way to install Synapse and other components. <a href="https://matrix.to/#/@slavi:devture.com">Slavi</a>:
-<blockquote>Thanks to <a href="https://github.com/NullIsNot0">NullIsNot0</a>, <a href="https://github.com/spantaleev/matrix-docker-ansible-deploy">matrix-docker-ansible-deploy</a> can now (optionally) <a href="https://github.com/spantaleev/matrix-docker-ansible-deploy/blob/master/CHANGELOG.md#dimension-integration-manager-support">install</a> the <a href="https://dimension.t2bot.io/">Dimension</a> Integration Manager.
-The playbook can now also assist with <a href="https://github.com/spantaleev/matrix-docker-ansible-deploy/blob/master/CHANGELOG.md#matrix-nginx-proxy-support-for-serving-the-base-domain">serving the base domain</a> from the Matrix server, thus making it easier for some folks to set up well-known Server-Delegation.</blockquote>
+<blockquote>Thanks to <a href="https://github.com/NullIsNot0">NullIsNot0</a>, <a href="https://github.com/spantaleev/matrix-docker-ansible-deploy">matrix-docker-ansible-deploy</a> can now (optionally) <a href="https://github.com/spantaleev/matrix-docker-ansible-deploy/blob/master/CHANGELOG.md#dimension-integration-manager-support">install</a> the <a href="https://dimension.t2bot.io/">Dimension</a> Integration Manager.<br />The playbook can now also assist with <a href="https://github.com/spantaleev/matrix-docker-ansible-deploy/blob/master/CHANGELOG.md#matrix-nginx-proxy-support-for-serving-the-base-domain">serving the base domain</a> from the Matrix server, thus making it easier for some folks to set up well-known Server-Delegation.</blockquote>
 <h2 id="selfhostingguidefornixos">Self-hosting guide for NixOS</h2>
 <a href="https://matrix.to/#/@florianjacob:matrix.org">Florian</a>:
 <blockquote>I wrote a <a href="https://github.com/NixOS/nixpkgs/pull/57699">Matrix self-hosting guide</a> for the <a href="https://nixos.org/">NixOS</a> operating system: Check its progress and give it a test if you're a fellow NixOS user!</blockquote>

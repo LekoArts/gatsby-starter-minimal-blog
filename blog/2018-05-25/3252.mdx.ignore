@@ -63,9 +63,7 @@ Lots of progress on <a href="https://github.com/tulir/mautrix-telegram">mautrix
 </ul>
 <h2 id="matrixappservicesms">matrix-appservice-sms</h2>
 <a href="https://matrix.to/#/@eta:theta.eu.org">eta</a> has been working on <a href="https://github.com/eeeeeta/matrix-appservice-sms/">matrix-appservice-sms</a> this week:
-<blockquote>I have managed to do the first phase of a massive refactor that makes it way more reliable (temporarily store SMS in the database before delivery)
-
-this makes it more resilient to synapse hiccups, as well as general failures</blockquote>
+<blockquote>I have managed to do the first phase of a massive refactor that makes it way more reliable (temporarily store SMS in the database before delivery)<br /><br />this makes it more resilient to synapse hiccups, as well as general failures</blockquote>
 <h1 id="otherprojects">Other Projects</h1>
 <h2 id="matrixboardfrombetz">matrixboard, from betz</h2>
 <a href="https://matrix.to/#/@betz:hackerspaces.be">betz</a> runs the <a href="https://hackerspaces.be/">https://hackerspaces.be/</a> matrix server and has this week, inbetween repairing his Synapse install, been working on a project called <a href="https://github.com/betz/matrixboard">matrixboard</a>. This tool is used to output the last five messages from a given room to displayed as HTML, the idea being to display output from a specific room as a website widget. You can see an example using <a href="https://matrix.to/#/#matrix-dev:matrix.org">#matrix-dev</a> <a href="http://matrix.hackerspaces.be:1337/!XqBunHwQIXUiqCaoxq:matrix.org?color=green">here</a>.

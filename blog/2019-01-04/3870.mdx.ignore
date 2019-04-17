@@ -16,15 +16,13 @@ Decentralisation lover and Python fan Jason Robinson <a href="https://jasonrobin
 <blockquote>one of my dreams of working for a company that is a driver and leader in open source and open standards is coming true</blockquote>
 <h2 id="matrixappservicepurple">matrix-appservice-purple</h2>
 Hey <a href="https://matrix.to/#/@Half-Shot:half-shot.uk">Half-Shot</a>, what bridges have you worked on this week?
-<blockquote><a href="https://github.com/matrix-org/matrix-appservice-purple">matrix-appservice-purple</a> got soft launched on matrix.org and is happily bridging XMPP and matrix communities together. I am on full bug and feature fixing duty for it and the consensus from both sides is that it's looking pretty awesome.
-The matrix-appservice-purple bridge is coming along leaps and bounds, with formatting fixes, presence handling and speedier message delivey both ways. Also a shoutout to the XMPP community for guidling me through the XEP landscape and giving the bridge a thorough testing. :)</blockquote>
+<blockquote><a href="https://github.com/matrix-org/matrix-appservice-purple">matrix-appservice-purple</a> got soft launched on matrix.org and is happily bridging XMPP and matrix communities together. I am on full bug and feature fixing duty for it and the consensus from both sides is that it's looking pretty awesome.<br />The matrix-appservice-purple bridge is coming along leaps and bounds, with formatting fixes, presence handling and speedier message delivey both ways. Also a shoutout to the XMPP community for guidling me through the XEP landscape and giving the bridge a thorough testing. :)</blockquote>
 <h2 id="riotwebexperimental">Riot Web Experimental</h2>
 <a href="http://riot.im/experimental">Riot Web Experimental</a> was <a href="https://medium.com/@RiotChat/redesign-experimenters-needed-afa7c2d4c858">announced in a blog post last month</a>, and is ready to get some more testing! Note that the name is still "experimental", but to get an image of where things are going, please give it a try!
 
 <strong><a href="http://riot.im/experimental">http://riot.im/experimental</a></strong>
 <h2 id="riotios">Riot iOS</h2>
-<blockquote>Photo sharing via the app share extension has been fixed this week.
-At the time of writing, a new Riot iOS is baking with all bug fixes made the last month.</blockquote>
+<blockquote>Photo sharing via the app share extension has been fixed this week.<br />At the time of writing, a new Riot iOS is baking with all bug fixes made the last month.</blockquote>
 <h2 id="riotandroid">Riot Android</h2>
 <blockquote>Riot 0.8.21 has been released on 01/02 on the PlayStore and on F-Droid.
 
@@ -67,8 +65,7 @@ The MSC process is <a href="https://matrix.org/docs/spec/proposals">the formal p
 <blockquote><a href="https://github.com/matrix-org/msc-chatbot">msc-chatbot</a> now exists. It has commands that let you view the status of current MSCs, as well as a daily summary of MSCs to keep people up to date.</blockquote>
 <h2 id="matrixminecraftbridge">Matrix-Minecraft bridge</h2>
 <a href="https://github.com/turt2live">TravisR</a>, as if he has time to be working on such things, has announced the revival of his Matrix-Minecraft bridge:
-<blockquote>I've brought my Matrix&lt;--&gt;Minecraft bridge back to life in the form of a Bukkit plugin. It's still in the very early stages of development and requires you to compile it yourself to get it, but it is a thing. Check it out on GitHub: <a href="https://github.com/turt2live/matrix-minecraft">https://github.com/turt2live/matrix-minecraft</a>
-It'll be designed to work as a public hosted bridge, so someone could use t2bot.io to bridge their minecraft server (for example)</blockquote>
+<blockquote>I've brought my Matrix&lt;--&gt;Minecraft bridge back to life in the form of a Bukkit plugin. It's still in the very early stages of development and requires you to compile it yourself to get it, but it is a thing. Check it out on GitHub: <a href="https://github.com/turt2live/matrix-minecraft">https://github.com/turt2live/matrix-minecraft</a><br />It'll be designed to work as a public hosted bridge, so someone could use t2bot.io to bridge their minecraft server (for example)</blockquote>
 <h2 id="stickerpackdimensionmigrationtool">stickerpack dimension migration tool</h2>
 <a href="https://matrix.to/#/@dandellion:dodsorf.as">Dandellion</a> has created a tool for stickerpack creators:
 <blockquote>I've finished <a href="https://dali99.github.io/stickerpack-dimension-migration-tool/">https://dali99.github.io/stickerpack-dimension-migration-tool/</a> for a niceish way to make migrations files for custom stickerpacks in dimension</blockquote>

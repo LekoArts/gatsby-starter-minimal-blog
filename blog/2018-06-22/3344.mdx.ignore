@@ -8,9 +8,7 @@ categories:
 <em>[Ben is away today, so this week's edition is compiled again by Matthew]</em>
 <h3>libQMatrixClient 0.3.0.2 and Quaternion 0.0.9.2</h3>
 kitsune writes:
-<blockquote><a href="https://github.com/QMatrixClient/libqmatrixclient">libQMatrixClient</a> 0.3.0.2 has been released - no new features, just small fixes including one for an unlucky typo preventing 0.3.0.1 from generating .cpp files with GTAD.
-
-<a href="https://github.com/QMatrixClient/Quaternion">Quaternion</a> 0.0.9.2 is out, another step towards 0.1. Aside from bugfixes and using the latest libQMatrixClient, it features an entirely new timeline layout similar to that of Riot (the old one is still around too). Also, you can now change some settings through the menu rather than by editing a configuration file or registry - including switching timeline layouts on the fly!</blockquote>
+<blockquote><a href="https://github.com/QMatrixClient/libqmatrixclient">libQMatrixClient</a> 0.3.0.2 has been released - no new features, just small fixes including one for an unlucky typo preventing 0.3.0.1 from generating .cpp files with GTAD.<br /><br /><a href="https://github.com/QMatrixClient/Quaternion">Quaternion</a> 0.0.9.2 is out, another step towards 0.1. Aside from bugfixes and using the latest libQMatrixClient, it features an entirely new timeline layout similar to that of Riot (the old one is still around too). Also, you can now change some settings through the menu rather than by editing a configuration file or registry - including switching timeline layouts on the fly!</blockquote>
 <h3><a href="https://matrix.org/blog/wp-content/uploads/2018/06/Screen-Shot-2018-06-22-at-23.18.28.png"><img class="aligncenter size-large wp-image-3348" src="https://matrix.org/blog/wp-content/uploads/2018/06/Screen-Shot-2018-06-22-at-23.18.28-1024x563.png" alt="" width="1024" height="563" /></a></h3>
 <h3>Loading Artist sticker packs!</h3>
 TravisR says:
@@ -20,11 +18,7 @@ TravisR says:
 It also got added to Modular (aka Scalar), the default integration manager for Riot :)
 <h3>releasetracker</h3>
 Ananace writes:
-<blockquote>Decided to actually start pushing code I've been slowly prodding at for the last while, ever since starting the Ruby Matrix SDK in fact. Working on a Sibbell like system that tracks new releases on GitHub projects, posting them into a specified Matrix room.
-
-The <a href="https://github.com/ananace/matrix-releasetracker">release tracker</a> now tracks both full releases and just regular tags, though only one or the other at the moment.
-
-Spun up a proper room for the release tracker, in case people want to help development / feel like using hosted alpha-level software more than running it themselves. <a class="" title="#releasetracker:kittenface.studio" href="https://riot.im/develop/#/room/#releasetracker:kittenface.studio" data-reactroot="">#releasetracker:kittenface.studio</a></blockquote>
+<blockquote>Decided to actually start pushing code I've been slowly prodding at for the last while, ever since starting the Ruby Matrix SDK in fact. Working on a Sibbell like system that tracks new releases on GitHub projects, posting them into a specified Matrix room.<br /><br />The <a href="https://github.com/ananace/matrix-releasetracker">release tracker</a> now tracks both full releases and just regular tags, though only one or the other at the moment.<br /><br />Spun up a proper room for the release tracker, in case people want to help development / feel like using hosted alpha-level software more than running it themselves. <a class="" title="#releasetracker:kittenface.studio" href="https://riot.im/develop/#/room/#releasetracker:kittenface.studio" data-reactroot="">#releasetracker:kittenface.studio</a></blockquote>
 <a href="https://matrix.org/blog/wp-content/uploads/2018/06/releasetracker.png"><img class="aligncenter size-large wp-image-3346" src="https://matrix.org/blog/wp-content/uploads/2018/06/releasetracker-779x1024.png" alt="" width="779" height="1024" /></a>
 <h3>jeon and jmsdk updates</h3>
 ma1uta writes about his <a href="https://github.com/ma1uta/jeon">jeon</a> Java HS, <a href="https://github.com/ma1uta/jmsdk">jmsdk</a> and Matrix <a href="https://ma1uta.github.io/matrix-api.html">spec work</a>:

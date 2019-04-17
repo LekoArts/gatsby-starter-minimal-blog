@@ -7,11 +7,7 @@ categories:
 
 <h2 id="mautrixtelegramnowsupportsdoublepuppeting">mautrix-telegram now supports double puppeting</h2>
 <a href="@tulir:maunium.net">tulir</a> has been working away on <a href="https://github.com/tulir/mautrix-telegram">mautrix-telegram</a>, and has a major breakthrough:
-<blockquote>It means you can log in to the bridge with your Matrix account to make messages you send from other Telegram clients appear from your Matrix account.
-
-It can also be used to enable bridging of ephemeral events, which synapse doesn't send to appservices (read receipts, typing notifications, presence).
-
-Also, the bridge has a new HTML parser which should be much better than the old one. It might have caused some new bugs though (like m.emote bridging breaking)</blockquote>
+<blockquote>It means you can log in to the bridge with your Matrix account to make messages you send from other Telegram clients appear from your Matrix account.<br /><br />It can also be used to enable bridging of ephemeral events, which synapse doesn't send to appservices (read receipts, typing notifications, presence).<br /><br />Also, the bridge has a new HTML parser which should be much better than the old one. It might have caused some new bugs though (like m.emote bridging breaking)</blockquote>
 <h2 id="coffeeandthefaqbot">Coffee and the FAQBot</h2>
 I've been slowly working on matrix.org the last couple of months, updating the FAQ, updating content and UI/appearance of <a href="https://matrix.org/blog/try-matrix-now">try-matrix-now</a>. As you may know, the <a href="https://github.com/Matrixcoffee/FAQBot">FAQBot</a>, created and maintained by <a href="https://github.com/Matrixcoffee">Coffee</a>, uses try-matrix-now for it's data, so Coffee updated the bot to start to use some of the new fields.
 <blockquote>The final puzzle piece needed for FAQBot has been put into place: https://gitlab.com/Matrixcoffee/extract-web-to-org

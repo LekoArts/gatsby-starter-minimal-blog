@@ -15,8 +15,7 @@ Chat in <a href="https://matrix.to/#/#purple-bridge:half-shot.uk">#purple-bridge
 <a href="https://matrix.to/#/#twim:matrix.org"><img src="https://img.shields.io/matrix/twim:matrix.org.svg" alt="TWIM" /></a>
 
 <a href="https://matrix.to/#/@brendan:abolivier.bzh">Brendan</a>:
-<blockquote>A couple of weeks ago, <a href="https://github.com/fr1kin">fr1kin</a> PR'd a nice Matrix badge to the <a href="https://shields.io/">Shields</a> project that tells you how many users are in a public room. There were a few issues with it so I PR'd some changes to make the badge more usable, and it's now merged and live (as of yesterday evening), with examples available <a href="https://shields.io/#/examples/chat">here</a>! ?
-For instance, here's a badge for TWIM: <a href="https://img.shields.io/matrix/twim:matrix.org.svg">https://img.shields.io/matrix/twim:matrix.org.svg</a> ?</blockquote>
+<blockquote>A couple of weeks ago, <a href="https://github.com/fr1kin">fr1kin</a> PR'd a nice Matrix badge to the <a href="https://shields.io/">Shields</a> project that tells you how many users are in a public room. There were a few issues with it so I PR'd some changes to make the badge more usable, and it's now merged and live (as of yesterday evening), with examples available <a href="https://shields.io/#/examples/chat">here</a>! ?<br />For instance, here's a badge for TWIM: <a href="https://img.shields.io/matrix/twim:matrix.org.svg">https://img.shields.io/matrix/twim:matrix.org.svg</a> ?</blockquote>
 <h2 id="specupdate">Spec update</h2>
 <a href="https://github.com/matrix-org/matrix-doc/pull/1756">New MSC for cross-signing</a>, which has different (hopefully better) semantics from the <a href="https://github.com/matrix-org/matrix-doc/issues/1680">previous cross-signing MSC</a>.
 <h2 id="matrixjssdkbotsupportforapplicationservices">matrix-js-bot-sdk support for application services</h2>
@@ -27,9 +26,7 @@ For instance, here's a badge for TWIM: <a href="https://img.shields.io/matrix/tw
 <blockquote>The matrix client API implementation in <a href="https://github.com/koma-im/koma">koma</a> is being extracted into <a href="https://github.com/koma-im/koma-library">a new repo</a>, which is going to be a lightweight library for Kotlin.</blockquote>
 <h2 id="seaglassnowavailableonhomebrew">Seaglass now available on homebrew</h2>
 <a href="https://matrix.to/#/@aaron:raim.ist">Aaron Raimist</a> reports that Seaglass is available on homebrew for macOS:
-<blockquote>Installing Seaglass is now easier than ever. If you already use Homebrew to manage other packages, you can now install Seaglass with a simple <code>brew cask install seaglass</code>.
-
-If you don't use Homebrew, you can still <a href="https://github.com/neilalexander/seaglass/releases">download Seaglass from GitHub</a>.</blockquote>
+<blockquote>Installing Seaglass is now easier than ever. If you already use Homebrew to manage other packages, you can now install Seaglass with a simple <code>brew cask install seaglass</code>.<br /><br />If you don't use Homebrew, you can still <a href="https://github.com/neilalexander/seaglass/releases">download Seaglass from GitHub</a>.</blockquote>
 <h2 id="matrixclientelexists">matrix-client.el is reborn!</h2>
 <a href="https://matrix.to/#/@alphapapa:matrix.org">alphapapa</a> reports from a team who have forked and are maintaining a Matrix client for Emacs:
 <blockquote>Many additions and improvements to matrix-client.el (https://github.com/jgkamat/matrix-client-el) recently, including a "standalone client" mode that launches Emacs to look like this.</blockquote>
@@ -54,16 +51,11 @@ A Matrix bot is being tested to send updates about upcoming rocket launches to t
 <strong><a href="https://matrix.to/#/#aviation:matrix.org">#aviation:matrix.org</a></strong> for anyone interested in aviation. Whether you are a pilot, someone who visits an airshow once in a while, or if <a href="https://www.youtube.com/watch?v=CXv1j3GbgLk">https://www.youtube.com/watch?v=CXv1j3GbgLk</a> piqued your interest, come join.</blockquote>
 <h2 id="t2botioupgrade">t2bot.io upgrade</h2>
 <a href="https://github.com/turt2live">TravisR</a>:
-<blockquote>Just a head's up that I've increased the storage capacity of the database. With current projections, the server should be good for another year or two.
-
-The database is also 1ms closer to Synapse and has a faster CPU in it. It probably won't make a dent in speed on federation, but it is a step forward.
-
-I'll be rolling out python 3 to the homeserver this week too, which should help a little bit.</blockquote>
+<blockquote>Just a head's up that I've increased the storage capacity of the database. With current projections, the server should be good for another year or two.<br /><br />The database is also 1ms closer to Synapse and has a faster CPU in it. It probably won't make a dent in speed on federation, but it is a step forward.<br /><br />I'll be rolling out python 3 to the homeserver this week too, which should help a little bit.</blockquote>
 <a href="https://riot.im/experimental/#/room/#help:t2bot.io/$154511414912clELm:t2l.io">https://riot.im/experimental/#/room/#help:t2bot.io/$154511414912clELm:t2l.io</a>
 <h2 id="fluffychat80rcannounced">FluffyChat 8.0 RC announced</h2>
 <a href="https://matrix.to/#/@krille:chat.regionetz.net">Krille</a> and his Ubuntu Touch fans are looking forward to FluffyChat 8.0:
-<blockquote>Hey guys, in order to release the FluffyChat 8.0 Christmas Edition, the <a href="https://github.com/ChristianPauly/fluffychat">FluffyChat</a> 8.0 release candidate is ready for you! :-)
-Also the weblate translations are ready: <a href="https://hosted.weblate.org/projects/fluffychat/">https://hosted.weblate.org/projects/fluffychat/</a></blockquote>
+<blockquote>Hey guys, in order to release the FluffyChat 8.0 Christmas Edition, the <a href="https://github.com/ChristianPauly/fluffychat">FluffyChat</a> 8.0 release candidate is ready for you! :-)<br />Also the weblate translations are ready: <a href="https://hosted.weblate.org/projects/fluffychat/">https://hosted.weblate.org/projects/fluffychat/</a></blockquote>
 <h2 id="riotios">Riot iOS</h2>
 From the Riot iOS team:
 <ul>
@@ -78,9 +70,7 @@ From the Riot Android team:
 </ul>
 <h2 id="synapse">Synapse</h2>
 Neil from <a href="https://github.com/matrix-org/synapse/">Synapse</a> reports:
-<blockquote>We released <a href="https://github.com/matrix-org/synapse/releases/tag/v0.34.0">0.34.0</a>! This release recommends Python 3 for production and brings with it huge performance improvements. If you've been putting upgrading off upgrading your Synapse, now is the time to do so. For more details <a href="https://matrix.org/blog/2018/12/21/porting-synapse-to-python-3/">here is a post</a> that explains what you should expect and a <a href="https://www.youtube.com/watch?v=Ad3oqEo5leM">recent Matrix Live interviews</a> Amber (hawkowl) on the subject.
-
-Aside from that we are working furiously towards federation R0 and have a bunch of MSCs to get us ever closer. You can <a href="https://github.com/orgs/matrix-org/projects/2">track our progress here</a>.</blockquote>
+<blockquote>We released <a href="https://github.com/matrix-org/synapse/releases/tag/v0.34.0">0.34.0</a>! This release recommends Python 3 for production and brings with it huge performance improvements. If you've been putting upgrading off upgrading your Synapse, now is the time to do so. For more details <a href="https://matrix.org/blog/2018/12/21/porting-synapse-to-python-3/">here is a post</a> that explains what you should expect and a <a href="https://www.youtube.com/watch?v=Ad3oqEo5leM">recent Matrix Live interviews</a> Amber (hawkowl) on the subject.<br /><br />Aside from that we are working furiously towards federation R0 and have a bunch of MSCs to get us ever closer. You can <a href="https://github.com/orgs/matrix-org/projects/2">track our progress here</a>.</blockquote>
 <a href="https://matrix.to/#/@andrewsh:matrix.org">andrewsh</a> notes that 0.34.0 is also available in the Debian repos:
 <blockquote>Synapse 0.34.0~rc2 in Debian since Tuesday, 0.34.0 uploaded today; both use Python 3 only</blockquote>
 <h2 id="dendrite">Dendrite</h2>

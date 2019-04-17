@@ -44,10 +44,7 @@ Git: <a href="https://git.nordgedanken.de/Nordgedanken/SimpleMatrix">https://git
 <a href="https://matrix.org/blog/wp-content/uploads/2018/07/simplematrix.png"><img class="size-large wp-image-3414 aligncenter" src="https://matrix.org/blog/wp-content/uploads/2018/07/simplematrix-1024x576.png" alt="" width="1024" height="576" /></a>
 <h2 id="talesofhalfshotandhismanybridges">Tales of <a href="https://matrix.to/#/@Half-Shot:half-shot.uk">Half-Shot</a> and his many Bridges</h2>
 <h3 id="arrivalofthediscorddms">Arrival of the Discord DMs</h3>
-<blockquote>After lots of begging, frustration and eventually an offer of a free lunch (thanks <a href="https://matrix.to/#/@andrewm:amorgan.xyz">Anoa</a>): I give you Discord DMs.
-This first cut bridges over existing regular and group DMs to Matrix. In the future we will also allow you to create DMs from Matrix so that you can contact users without even logging into Discord. With thanks to the <a href="https://matrix.to/#/#discord:half-shot.uk">#discord:half-shot.uk</a> community for helping shape this feature!
-
-Currently this is in PR form but is very likely to make it into the 0.3 release of <a href="https://github.com/Half-Shot/matrix-appservice-discord">matrix-appservice-discord</a>.</blockquote>
+<blockquote>After lots of begging, frustration and eventually an offer of a free lunch (thanks <a href="https://matrix.to/#/@andrewm:amorgan.xyz">Anoa</a>): I give you Discord DMs.<br />This first cut bridges over existing regular and group DMs to Matrix. In the future we will also allow you to create DMs from Matrix so that you can contact users without even logging into Discord. With thanks to the <a href="https://matrix.to/#/#discord:half-shot.uk">#discord:half-shot.uk</a> community for helping shape this feature!<br /><br />Currently this is in PR form but is very likely to make it into the 0.3 release of <a href="https://github.com/Half-Shot/matrix-appservice-discord">matrix-appservice-discord</a>.</blockquote>
 <h3 id="halfshotfixesthefooneticircbridge">Half-Shot fixes the Foonetic IRC bridge</h3>
 For those who (want to) use Foonetic IRC channels, <a href="https://matrix.to/#/@Half-Shot:half-shot.uk">Half-Shot</a> is here for you! Previously this bridge had been down due to invalid certificates, but this is now resolved.
 <h2>Synapse</h2>

@@ -37,9 +37,7 @@ Key backups are being worked on, and we've had some new thoughts on key verifica
 Well are you?
 
 <a href="https://matrix.to/#/@murz:ru-matrix.org">Alexey</a> and <a href="https://matrix.to/#/@ma1uta:matrix.org">ma1uta</a> have a new Russian-language community wiki available at <a href="https://ru-matrix.org">https://ru-matrix.org</a>. This:
-<blockquote>accumulates Russian translates of Matrix FAQ and manuals, and other info about Matrix in Russian. Also we starts a public Matrix Synapse server for Russian users with free open registration
-
-Russian Matrix users: feel free to add and complement articles in our wiki to make Matrix more friendly for Russian users.</blockquote>
+<blockquote>accumulates Russian translates of Matrix FAQ and manuals, and other info about Matrix in Russian. Also we starts a public Matrix Synapse server for Russian users with free open registration<br /><br />Russian Matrix users: feel free to add and complement articles in our wiki to make Matrix more friendly for Russian users.</blockquote>
 <h2 id="clientnews">Client News</h2>
 <h3 id="seaglass">Seaglass</h3>
 <a href="https://matrix.to/#/@neilalexander:matrix.org">neilalexander</a> has been on a roll the last few weeks working on <a href="https://github.com/neilalexander/seaglass">Seaglass</a>, the macOS-native client:
@@ -99,8 +97,7 @@ while also letting the bridge access it.
 <code>c</code> release: Fix issue where some stole js-sdk code was not checked thoroughly.</blockquote>
 <h3 id="whatsapp">WhatsApp</h3>
 <a href="https://matrix.to/#/@tulir:maunium.net">tulir</a> announces that <a href="https://github.com/tulir/mautrix-whatsapp">mautrix-whatsapp</a> "is now somewhat usable for basic chatting".
-<blockquote>It uses the <a href="https://github.com/Rhymen/go-whatsapp">go-whatsapp</a> library to talk with the WhatsApp Web API. Using the web API means that you'll still need WhatsApp on your phone connected to the internet, but it also means you won't get banned for using the bridge.
-The bridge is still very alpha, but basic message bridging and some advanced features already work. There's a <a href="https://github.com/tulir/mautrix-whatsapp/blob/master/ROADMAP.md">features &amp; roadmap</a> document about that.</blockquote>
+<blockquote>It uses the <a href="https://github.com/Rhymen/go-whatsapp">go-whatsapp</a> library to talk with the WhatsApp Web API. Using the web API means that you'll still need WhatsApp on your phone connected to the internet, but it also means you won't get banned for using the bridge.<br />The bridge is still very alpha, but basic message bridging and some advanced features already work. There's a <a href="https://github.com/tulir/mautrix-whatsapp/blob/master/ROADMAP.md">features &amp; roadmap</a> document about that.</blockquote>
 To come chat about the WhatsApp bridge: <a href="https://matrix.to/#/#whatsapp:maunium.net">#whatsapp:maunium.net</a>.
 <h3 id="mxtoot">mxtoot</h3>
 <a href="https://github.com/ma1uta/mxtoot">mxtoot</a> is a Matrix-Mastodon bot from <a href="https://matrix.to/#/@ma1uta:matrix.org">ma1uta</a>, creator of <a href="https://gitlab.com/ma1uta/jeon">Jeon</a> and the ecosystem around it.

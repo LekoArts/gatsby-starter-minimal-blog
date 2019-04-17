@@ -68,14 +68,10 @@ Next I'll make some developer docs so that other people could actually make thei
 The code is at <a href="https://github.com/maubot/maubot">https://github.com/maubot/maubot</a> and you can ask about maubot in <a href="https://matrix.to/#/#maubot:maunium.net">#maubot:maunium.net</a>.</blockquote>
 <h2 id="matrixclientelnewfeatures">matrix-client.el new features</h2>
 <a href="https://matrix.to/#/@alphapapa:matrix.org">alphapapa</a>:
-<blockquote>Emacs makes it so easy to integrate things. Now you can send <code>org-mode</code> syntax messages with the <code>/org</code> command in <a href="https://github.com/jgkamat/matrix-client-el">matrix-client.el</a>.
-
-Tab-completion of usernames and IDs was added to matrix-client.el.</blockquote>
+<blockquote>Emacs makes it so easy to integrate things. Now you can send <code>org-mode</code> syntax messages with the <code>/org</code> command in <a href="https://github.com/jgkamat/matrix-client-el">matrix-client.el</a>.<br /><br />Tab-completion of usernames and IDs was added to matrix-client.el.</blockquote>
 <h2 id="matrixtogithubapp">matrix-to GitHub app</h2>
 <a href="https://matrix.to/#/@x:riot.ovh">t3chguy</a> has come out of hiding to announce:
-<blockquote><a href="https://github.com/apps/matrix-to">https://github.com/apps/matrix-to</a> is a Github App which makes use of their shiny and new Content Attachments API/Webhook. When a <code>matrix.to</code> or <code>view.matrix.org</code> URL is used this app is activated. It adds a little snippet with the Room Title and Topic (if the room is peekable from matrix.org). In future it'll work for event permalinks, but currently there is no support for peeking context/event in Matrix API.
-
-Example can be seen at <a href="https://github.com/matrix-org/matrix.to/issues/52#issuecomment-449878490">https://github.com/matrix-org/matrix.to/issues/52#issuecomment-449878490</a>. Idea courtesy of <a href="https://github.com/turt2live">TravisR</a>.</blockquote>
+<blockquote><a href="https://github.com/apps/matrix-to">https://github.com/apps/matrix-to</a> is a Github App which makes use of their shiny and new Content Attachments API/Webhook. When a <code>matrix.to</code> or <code>view.matrix.org</code> URL is used this app is activated. It adds a little snippet with the Room Title and Topic (if the room is peekable from matrix.org). In future it'll work for event permalinks, but currently there is no support for peeking context/event in Matrix API.<br /><br />Example can be seen at <a href="https://github.com/matrix-org/matrix.to/issues/52#issuecomment-449878490">https://github.com/matrix-org/matrix.to/issues/52#issuecomment-449878490</a>. Idea courtesy of <a href="https://github.com/turt2live">TravisR</a>.</blockquote>
 <h2 id="seeyounextyear">See you next year</h2>
 So there you have it.
 
