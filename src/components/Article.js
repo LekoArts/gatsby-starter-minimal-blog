@@ -64,7 +64,11 @@ const Article = ({ title, date, excerpt, slug, timeToRead, categories, body }) =
       ))}
     </Subline>
     <PostContent>
-      <div key={slug} id="___gatsby" dangerouslySetInnerHTML={{ __html: body.replace(/---(\n.*)*---/, '') }} />
+      <div
+        key={slug}
+        id="___gatsby"
+        dangerouslySetInnerHTML={{ __html: body ? body.replace(/---(\n.*)*---/, '') : '' }}
+      />
     </PostContent>
   </Post>
 )
