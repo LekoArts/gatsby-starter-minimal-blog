@@ -14,9 +14,7 @@ categories:
 
 <p>Wonderful things are happening and being discovered regarding IoT and Home Automation. <a href="https://matrix.to/#/@uhoreg:matrix.org">uhoreg</a> was the first to point us to <a href="https://matrix.to/#/@tinloaf:matrix.org">tinloaf's</a> project to build a Matrix Chatbot component for <a href="https://www.home-assistant.io/">Home Assistant</a>:</p>
 
-<blockquote>
-  <p>This component allows you to send messages to matrix rooms, as well as to react to messages in matrix rooms. Reacting to commands is accomplished by firing an event when one of the configured commands is triggered.</p>
-</blockquote>
+<blockquote><br />  <p>This component allows you to send messages to matrix rooms, as well as to react to messages in matrix rooms. Reacting to commands is accomplished by firing an event when one of the configured commands is triggered.</p><br /></blockquote>
 
 <p>(this is not the same as notify.matrix <a href="https://www.home-assistant.io/components/notify.matrix/">https://www.home-assistant.io/components/notify.matrix/</a>, which is used to deliver messages from Home Assistant to a room.)</p>
 
@@ -28,9 +26,7 @@ categories:
 
 <p>GDPR has been a <del>favourite</del> topic for a while now. If you didn't already, take a look at the latest thinking from the Matrix Core team here: <a href="https://matrix.org/blog/2018/05/08/gdpr-compliance-in-matrix/">https://matrix.org/blog/2018/05/08/gdpr-compliance-in-matrix/</a></p>
 
-<blockquote>
-  <p>It's worth noting that we feel that GDPR is an excellent piece of legislation from the perspective of forcing us to think more seriously about our privacy – it has forced us to re-prioritise all sorts of long-term deficiencies in Matrix (e.g. dependence on DNS; improving User Interactive authentication; improving logout semantics etc).  There's obviously a lot of work to be done here, but hopefully it should all be worth it!</p>
-</blockquote>
+<blockquote><br />  <p>It's worth noting that we feel that GDPR is an excellent piece of legislation from the perspective of forcing us to think more seriously about our privacy – it has forced us to re-prioritise all sorts of long-term deficiencies in Matrix (e.g. dependence on DNS; improving User Interactive authentication; improving logout semantics etc).  There's obviously a lot of work to be done here, but hopefully it should all be worth it!</p><br /></blockquote>
 
 <h1 id="travisrongdpr">TravisR on GDPR</h1>
 
@@ -48,10 +44,7 @@ categories:
 
 <p>I was surprised and excited to learn that a Russian translation of the Matrix FAQ has been produced by a group of Russian-lanugage users. <a href="https://matrix.to/#/@ma1uta:matrix.org">ma1uta</a> reported:</p>
 
-<blockquote>
-  <p>There are a several Russian-speaking users spontaneously decided to unite and help Matrix. We created a room where translated FAQ using the embedded etherpad widget. Some of us are here: <a href="https://matrix.to/#/@commagray:matrix.org">Magnolia</a> and <a href="https://matrix.to/#/@commagray:matrix.org">Fenneko is a Good Girl</a> for example. Anybody can join to us <a href="https://matrix.to/#/#perevodators:matrix.org">#perevodators:matrix.org</a> and helps. We accept any help.
-  Preview: <a href="https://ma1uta.github.io/index.html">https://ma1uta.github.io/index.html</a></p>
-</blockquote>
+<blockquote><br />  <p>There are a several Russian-speaking users spontaneously decided to unite and help Matrix. We created a room where translated FAQ using the embedded etherpad widget. Some of us are here: <a href="https://matrix.to/#/@commagray:matrix.org">Magnolia</a> and <a href="https://matrix.to/#/@commagray:matrix.org">Fenneko is a Good Girl</a> for example. Anybody can join to us <a href="https://matrix.to/#/#perevodators:matrix.org">#perevodators:matrix.org</a> and helps. We accept any help.<br />  Preview: <a href="https://ma1uta.github.io/index.html">https://ma1uta.github.io/index.html</a></p><br /></blockquote>
 
 <p>They've provided a PR which I will presently merge (though of course, as I don't speak Russian I will need to trust that it's really a translation of the FAQ!)</p>
 
@@ -65,9 +58,7 @@ categories:
 
 <p><a href="https://github.com/f0x52/neo/">Neo</a> from <a href="https://matrix.to/#/@f0x:disroot.org">f0x</a> released <a href="https://github.com/f0x52/neo/releases/tag/alpha0.04">Alpha 0.04</a>.</p>
 
-<blockquote>
-  <p>Added two very ux-improving features, local echo and tab completion. User list, eslinter, auto-retrying requests</p>
-</blockquote>
+<blockquote><br />  <p>Added two very ux-improving features, local echo and tab completion. User list, eslinter, auto-retrying requests</p><br /></blockquote>
 
 <p>Take a look at the changelog for more.</p>
 
@@ -75,17 +66,13 @@ categories:
 
 <p><a href="https://matrix.to/#/@a13xmt">a13xmt</a> came to use with <a href="https://matrixstats.org">https://matrixstats.org</a>, a bot-powered room directory</p>
 
-<blockquote>
-  <p>Public catalog for matrix rooms announced: matrixstats.org. The place where you can find a lot of rooms and sort them by ratings or categories. Presented rooms are collected from different homeservers; some of rooms have detailed statistics. The homeservers itself can be explored without the registration. The project is currently in beta stage, so some features may be missing. We would be glad to receive any feedback and ideas for further improvement. Additional info available at <a href="https://matrixstats.org/about">https://matrixstats.org/about</a>, related discussions at <a href="https://matrix.to/#/#matrixstats:matrix.org">#matrixstats:matrix.org</a>.</p>
-</blockquote>
+<blockquote><br />  <p>Public catalog for matrix rooms announced: matrixstats.org. The place where you can find a lot of rooms and sort them by ratings or categories. Presented rooms are collected from different homeservers; some of rooms have detailed statistics. The homeservers itself can be explored without the registration. The project is currently in beta stage, so some features may be missing. We would be glad to receive any feedback and ideas for further improvement. Additional info available at <a href="https://matrixstats.org/about">https://matrixstats.org/about</a>, related discussions at <a href="https://matrix.to/#/#matrixstats:matrix.org">#matrixstats:matrix.org</a>.</p><br /></blockquote>
 
 <h2 id="quaternion">Quaternion</h2>
 
 <p>says <a href="https://matrix.to/#/@kitsune:matrix.org">kitsune</a>:</p>
 
-<blockquote>
-  <p>TWIM: Quaternion 0.0.9.1 is out, with building/packaging fixes; those who use 0.0.9 need not upgrade (<a href="https://github.com/QMatrixClient/Quaternion/releases/tag/v0.0.9.1">https://github.com/QMatrixClient/Quaternion/releases/tag/v0.0.9.1</a>)</p>
-</blockquote>
+<blockquote><br />  <p>TWIM: Quaternion 0.0.9.1 is out, with building/packaging fixes; those who use 0.0.9 need not upgrade (<a href="https://github.com/QMatrixClient/Quaternion/releases/tag/v0.0.9.1">https://github.com/QMatrixClient/Quaternion/releases/tag/v0.0.9.1</a>)</p><br /></blockquote>
 
 <h2 id="riotweb">Riot/Web</h2>
 

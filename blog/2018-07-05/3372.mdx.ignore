@@ -7,20 +7,11 @@ categories:
 
 <h2 id="matrixsynapsefordockerandk8s">matrix-synapse for Docker and k8s</h2>
 <a href="https://github.com/ananace/">Ananace</a> has been working on configuration files for Synapse:
-<blockquote>So now the K8s stuff has configuration examples for Synapse + Riot + mxisd + coturn, all runnable on your very own Kubernetes cluster - though with some manual tinkering required at the moment.
-I've updated the Kubernetes configuration examples to include everything you need for a full Matrix stack; Synapse + Riot + mxisd - using the built-in K8s ingress
-And + coturn of course, not to forget</blockquote>
+<blockquote>So now the K8s stuff has configuration examples for Synapse + Riot + mxisd + coturn, all runnable on your very own Kubernetes cluster - though with some manual tinkering required at the moment.<br />I've updated the Kubernetes configuration examples to include everything you need for a full Matrix stack; Synapse + Riot + mxisd - using the built-in K8s ingress<br />And + coturn of course, not to forget</blockquote>
 Take a look: <a href="https://github.com/ananace/matrix-synapse">https://github.com/ananace/matrix-synapse</a>
 <h2 id="mautrixtelegramisnowtheprimarytelegrambridgeont2botio">mautrix-telegram is now the primary Telegram bridge on t2bot.io</h2>
 <a href="https://github.com/turt2live">TravisR</a>:
-<blockquote><a href="https://t2bot.io">t2bot.io</a> is now running <a href="https://github.com/tulir/mautrix-telegram">mautrix-telegram</a> as the primary Telegram bridge. Feel free to join the other 10k users on the bridge and bridge your own Telegram group to your room: <a href="https://t2bot.io/telegram/">https://t2bot.io/telegram/</a>.</blockquote>
-We should give a big shout of thanks to <a href="@tulir:maunium.net">tulir</a> for his consistent and continued work on mautrix-telegram.
-<h2 id="dockerimagesforthematrixspec">Docker images for the matrix spec</h2>
-<a href="https://matrix.to/#/@uhoreg:matrix.org">uhoreg</a> has released dockerfiles to build the spec docs into html. This is going to be useful for watching the spec development accelerate over the summer.
-<blockquote>For Docker fans: I've created a couple of Docker images (<a href="https://hub.docker.com/r/uhoreg/matrix-doc-build/">https://hub.docker.com/r/uhoreg/matrix-doc-build/</a> and <a href="https://hub.docker.com/r/uhoreg/matrix-doc-watch/">https://hub.docker.com/r/uhoreg/matrix-doc-watch/</a> ) for building the Matrix spec HTML.</blockquote>
-<h2 id="debianpackaging">Debian packaging</h2>
-<a href="https://matrix.to/#/@andrew:shadura.me">andrewsh</a>:
-<blockquote>I'm packaging Circle IRC/Matrix client for Debian and backporting synapse to stable.</blockquote>
+<blockquote><a href="https://t2bot.io">t2bot.io</a> is now running <a href="https://github.com/tulir/mautrix-telegram">mautrix-telegram</a> as the primary Telegram bridge. Feel free to join the other 10k users on the bridge and bridge your own Telegram group to your room: <a href="https://t2bot.io/telegram/">https://t2bot.io/telegram/</a>.</blockquote><br />We should give a big shout of thanks to <a href="@tulir:maunium.net">tulir</a> for his consistent and continued work on mautrix-telegram.<br /><h2 id="dockerimagesforthematrixspec">Docker images for the matrix spec</h2><br /><a href="https://matrix.to/#/@uhoreg:matrix.org">uhoreg</a> has released dockerfiles to build the spec docs into html. This is going to be useful for watching the spec development accelerate over the summer.<br /><blockquote>For Docker fans: I've created a couple of Docker images (<a href="https://hub.docker.com/r/uhoreg/matrix-doc-build/">https://hub.docker.com/r/uhoreg/matrix-doc-build/</a> and <a href="https://hub.docker.com/r/uhoreg/matrix-doc-watch/">https://hub.docker.com/r/uhoreg/matrix-doc-watch/</a> ) for building the Matrix spec HTML.</blockquote><br /><h2 id="debianpackaging">Debian packaging</h2><br /><a href="https://matrix.to/#/@andrew:shadura.me">andrewsh</a>:<br /><blockquote>I'm packaging Circle IRC/Matrix client for Debian and backporting synapse to stable.</blockquote>
 <h2 id="googlesummerofcode">Google Summer of Code</h2>
 The second evaluation for <a href="https://summerofcode.withgoogle.com/projects/?sp-search=matrix">GSOC 2018</a> is nearly here, so we have some updates from the student participants:
 <h2 id="apwhitehatisworkingondendrite"><a href="@apwhitehat:matrix.org">apwhitehat</a> is working on <a href="https://github.com/matrix-org/dendrite">Dendrite</a></h2>
@@ -39,20 +30,12 @@ On the same topic, <a href="https://matrix.to/#/@andrewm:amorgan.xyz">anoa</a> s
 There is an explanation of the endpoints required for this <a href="https://matrix.org/docs/spec/client_server/r0.3.0.html#end-to-end-encryption">in the CS API docs</a>.
 <h2 id="zil0isworkingone2einthepythonsdk">Zil0 is working on E2E in the Python SDK</h2>
 Sounds like <a href="https://matrix.to/#/@Zil0:matrix.org">Zil0</a> has been going great guns on the <a href="https://github.com/matrix-org/matrix-python-sdk">matrix-python-sdk</a>:
-<blockquote>Encryption in matrix-python-sdk should now work fairly well.
-The biggest parts to write were device tracking and key persistence. All the PRs are now opened, and the code is fully tested and documented.
-It is possible to try out the implementation before it lands by refering to instructions written here.
-Also a special thanks to <a href="https://github.com/poljar">poljar</a> for some great work on new Olm bindings, which allowed the project not to get stuck with packaging issues.
-Further work include encrypted attachments, device verification and key sharing.</blockquote>
+<blockquote>Encryption in matrix-python-sdk should now work fairly well.<br />The biggest parts to write were device tracking and key persistence. All the PRs are now opened, and the code is fully tested and documented.<br />It is possible to try out the implementation before it lands by refering to instructions written here.<br />Also a special thanks to <a href="https://github.com/poljar">poljar</a> for some great work on new Olm bindings, which allowed the project not to get stuck with packaging issues.<br />Further work include encrypted attachments, device verification and key sharing.</blockquote>
 <h2 id="komakotlinclient">koma, kotlin client</h2>
 Last week I mistakenly referred to <a href="https://github.com/koma-im/koma/">Koma</a> as being written in Rust, then Java. This was all incorrect, though being written in Kotlin, Koma does run on the JVM and use JavaFx.
 
 <a href="https://matrix.to/#/@sideboat:matrix.org">sideboat</a>:
-<blockquote>This week in <a href="https://github.com/koma-im/koma/">koma</a>, we are improving the room info window used for viewing and editing the name, icon, and aliases of a room. In the upcoming release, user power levels will be taken into account, so that editing options will only be shown when the user has enough power.</blockquote>
-<a href="https://matrix.org/blog/wp-content/uploads/2018/07/koma-room-info.png"><img class="alignnone size-full wp-image-3373" src="https://matrix.org/blog/wp-content/uploads/2018/07/koma-room-info.png" alt="" width="293" height="353" /></a>
-<h2 id="synapse">Synapse</h2>
-Neil says:
-<blockquote>We've just cut the next release candidate for Synapse: 0.32.0rc1.<br />The upcoming release focuses almost entirely on security; fixing federation bugs and adding new features for countering abuse.</blockquote>
+<blockquote>This week in <a href="https://github.com/koma-im/koma/">koma</a>, we are improving the room info window used for viewing and editing the name, icon, and aliases of a room. In the upcoming release, user power levels will be taken into account, so that editing options will only be shown when the user has enough power.</blockquote><br /><a href="https://matrix.org/blog/wp-content/uploads/2018/07/koma-room-info.png"><img class="alignnone size-full wp-image-3373" src="https://matrix.org/blog/wp-content/uploads/2018/07/koma-room-info.png" alt="" width="293" height="353" /></a><br /><h2 id="synapse">Synapse</h2><br />Neil says:<br /><blockquote>We've just cut the next release candidate for Synapse: 0.32.0rc1.<br />The upcoming release focuses almost entirely on security; fixing federation bugs and adding new features for countering abuse.</blockquote>
 <h2 id="riot">Riot</h2>
 This week we welcome Bruno to the Riot team, he's off and away working on getting integration tests set up.
 
