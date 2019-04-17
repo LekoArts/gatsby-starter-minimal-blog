@@ -190,6 +190,24 @@ const GlobalStyle = createGlobalStyle`
   [hidden] {
     display: none !important;
   }
+
+.video-container {
+	position:relative;
+	padding-bottom:56.25%;
+	padding-top:30px;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+	height:0;
+	overflow:hidden;
+}
+
+.video-container iframe, .video-container object, .video-container embed {
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+}
 `
 
 const Footer = styled.footer`
