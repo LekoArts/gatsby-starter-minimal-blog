@@ -84,11 +84,8 @@ Get release notes for <a href="https://github.com/tulir/mautrix-telegram/release
 <blockquote>QMatrixClient project has been busy merging PRs from contributors (close to tray and middle-click in room list and user list, to mention a couple) and streamlining the translation process before the upcoming releases of <a href="https://github.com/QMatrixClient/libqmatrixclient">libQMatrixClient</a> 0.5 and <a href="https://github.com/QMatrixClient/Quaternion">Quaternion</a> 0.0.9.4. At the same time the feature branch to support room versions and room upgrades is at an advanced stage; expect the features to land in master next week.</blockquote>
 <h2 id="matrixarchivekeyring">matrix-archive-keyring</h2>
 <a href="https://matrix.to/#/@lindalap:matrix.org">Linda</a> has been working on new Debian package called <code>matrix-archive-keyring</code>:
-<blockquote>I've paused porting Synapse to OpenBSD this week, while I attempt to both fix and <em>revert</em> some security issues caused by <code>sudo apt-key add</code> for Matrix.org and Riot.im packages for Debian-based GNU/Linux distribution users.
-
-<a href="https://github.com/matrix-org/synapse/pull/4609">matrix-org/synapse PR #4609</a> was my first attempt to fix the problem, however I fell short this time in ease-of-use and my implementation had other issues. (Read: The <code>repo-key.asc</code> downloaded from Matrix.org Debian repository should go to <code>/usr/share/keyrings</code>, and must not be added by <code>apt-key add</code> or added to <code>/etc/apt/trusted.gpg.d</code> directly. I attempted the latter with my first PR; but that would've allowed the Matrix.org signing key to also be used to verify packages from Debian's main repositories. Yikes!)
-
-As my second attempt, I'm now creating a new Debian package called <code>matrix-archive-keyring</code>. There's multiple things this package intends to do:
+<blockquote>I've paused porting Synapse to OpenBSD this week, while I attempt to both fix and <em>revert</em> some security issues caused by <code>sudo apt-key add</code> for Matrix.org and Riot.im packages for Debian-based GNU/Linux distribution users.<br /><a href="https://github.com/matrix-org/synapse/pull/4609">matrix-org/synapse PR #4609</a> was my first attempt to fix the problem, however I fell short this time in ease-of-use and my implementation had other issues. (Read: The <code>repo-key.asc</code> downloaded from Matrix.org Debian repository should go to <code>/usr/share/keyrings</code>, and must not be added by <code>apt-key add</code> or added to <code>/etc/apt/trusted.gpg.d</code> directly. I attempted the latter with my first PR; but that would've allowed the Matrix.org signing key to also be used to verify packages from Debian's main repositories. Yikes!)<br />As my second attempt, I'm now creating a new Debian package called <code>matrix-archive-keyring</code>. There's multiple things this package intends to do:
+</blockquote>
 <ul>
  	<li>A post-install script to remove any previously added Matrix.org package signing keys from <code>/etc/apt/trusted.gpg</code>. (This is the file <code>apt-key add</code> most commonly uses, and the most commonly found bad advice on the Internet.)</li>
  	<li>Convert <code>repo-key.asc</code> to a de-armorized <code>.gpg</code> format, understood better by apt(8). (Essentially, <code>gpg --dearmor</code>.)</li>
@@ -97,11 +94,8 @@ As my second attempt, I'm now creating a new Debian package called <code>matrix-
  	<li>Deliver any updates to <code>repo-key.asc</code> directly to you via <code>apt upgrade</code>. Your operating system might then also do it automatically for you if <code>unattended-upgrades(8)</code> is installed on your system. ?</li>
  	<li>Make sure everything goes away when this keyring package is uninstalled. No more <code>sudo sh -c 'apt-key del C35EB17E1EAE708E6603A9B3AD0592FE47F0DF61; rm /etc/apt/sources.list.d/matrix-org.list</code> to get rid of the repository.</li>
 </ul>
-I have one more interesting enhancement to disclose.
-
-We can ask you with <code>debconf</code> if you want to install <code>deb https://matrix.org/packages/debian $(lsb_release -cs) main</code> to <code>/etc/apt/sources.list.d/matrix-org.list</code> while you're installing the new keyring with <code>apt install matrix-archive-keyring</code>.
-
-You'll most likely notice the difference in install instructions, as a result of this package. Before and after:
+<blockquote>
+I have one more interesting enhancement to disclose.<br />We can ask you with <code>debconf</code> if you want to install <code>deb https://matrix.org/packages/debian $(lsb_release -cs) main</code> to <code>/etc/apt/sources.list.d/matrix-org.list</code> while you're installing the new keyring with <code>apt install matrix-archive-keyring</code>.<br />You'll most likely notice the difference in install instructions, as a result of this package. Before and after:</blockquote>
 <pre><code># Before
 sudo apt install -y lsb-release curl apt-transport-https
 echo "deb https://matrix.org/packages/debian `lsb_release -cs` main" |
@@ -115,9 +109,7 @@ sudo apt install matrix-synapse-py3
 sudo apt install matrix-archive-keyring
 sudo sh -c 'apt update &amp;&amp; apt install matrix-synapse-py3
 </code></pre>
-If you are a Debian or Ubuntu user and Synapse homeserver operator using Matrix.org repositories, I'll be towncrying when this package becomes available as much as I can. All you should need to do then is <code>apt install matrix-archive-keyring</code> and it should patch the security holes in your operating system if you've formerly installed packages from Matrix.org or Riot.im! (The command may change a bit, because next Debian operating system release "Buster" has entered soft-freeze just today (2019-02-12) and not accepting new packages into that release.)
-
-PS: I'm at <a href="https://matrix.to/#/#debian-matrix:matrix.org">#debian-matrix:matrix.org</a>, please come talk to us if Debian packaging interests you!</blockquote>
+<blockquote>If you are a Debian or Ubuntu user and Synapse homeserver operator using Matrix.org repositories, I'll be towncrying when this package becomes available as much as I can. All you should need to do then is <code>apt install matrix-archive-keyring</code> and it should patch the security holes in your operating system if you've formerly installed packages from Matrix.org or Riot.im! (The command may change a bit, because next Debian operating system release "Buster" has entered soft-freeze just today (2019-02-12) and not accepting new packages into that release.)<br />PS: I'm at <a href="https://matrix.to/#/#debian-matrix:matrix.org">#debian-matrix:matrix.org</a>, please come talk to us if Debian packaging interests you!</blockquote>
 &nbsp;
 <blockquote>For the eager early testers not afraid of building from source, <code>matrix-archive-keyring</code> version <code>2015.12.09+debian0.10</code> is available for early testing (attached).
 <pre><code># Something like this!

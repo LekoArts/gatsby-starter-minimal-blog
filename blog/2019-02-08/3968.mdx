@@ -73,7 +73,7 @@ Some progress pictures below, desktop and mobile version.
 <h2 id="preparingforsynapseonopenbsd">Preparing for Synapse on OpenBSD</h2>
 <a href="https://matrix.to/#/@lindalap:matrix.org">Linda</a> has been making progress on a project to get Synapse running on OpenBSD, and to that end has been preparing and improving the dependencies that we take for granted on Linux. To summarise the current status:
 <blockquote>This week I've been porting Synapse's dependencies to OpenBSD <code>-current</code> distribution. There is no port yet for Synapse in OpenBSD.
-Ports missing from OpenBSD <code>6.4</code> for Synapse's dependencies were:
+Ports missing from OpenBSD <code>6.4</code> for Synapse's dependencies were:</blockquote>
 <ul>
  	<li><code>py-frozendict</code>: ok'd, waiting…</li>
  	<li><code>py-unpaddedbase64</code>: TBD</li>
@@ -87,9 +87,6 @@ Ports missing from OpenBSD <code>6.4</code> for Synapse's dependencies were:
  	<li><code>coturn</code>: TBD, maybe?</li>
 </ul>
 waiting = usually waiting for an OpenBSD developer to "ok" and import
-
-Of those, <code>py-phonenumbers</code> was added to OpenBSD <code>-snapshots</code> (<code>-current</code>) distribution. <code>py-phonenumbers</code> (?) and <code>py-service_identity</code> received updates to ports. <code>py-prometheus_client</code>, <code>py-daemonize</code> and <code>py-frozendict</code> are ported ready and waiting to be given "ok" at OpenBSD's <code>ports@</code> mailing list.
-There is <a href="https://github.com/jasperla/openbsd-wip/tree/master/net/synapse">an unofficial up-to-date Synapse port exists at GitHub</a> maintained by someone else, which I've not yet tested. (At glance, I can take a guess the <code>devel/tz</code> port may not be required.)
-(<code>coturn</code> doesn't have a port yet, may have to look at it later.)</blockquote>
+<blockquote>Of those, <code>py-phonenumbers</code> was added to OpenBSD<br /><code>-snapshots</code> (<code>-current</code>) distribution. <code>py-phonenumbers</code> (?) and <code>py-service_identity</code> received updates to ports. <code>py-prometheus_client</code>, <code>py-daemonize</code> and <code>py-frozendict</code> are ported ready and waiting to be given "ok" at OpenBSD's <code>ports@</code> mailing list.<br />There is <a href="https://github.com/jasperla/openbsd-wip/tree/master/net/synapse">an unofficial up-to-date Synapse port exists at GitHub</a> maintained by someone else, which I've not yet tested. (At glance, I can take a guess the <code>devel/tz</code> port may not be required.)<br />(<code>coturn</code> doesn't have a port yet, may have to look at it later.)</blockquote>
 <h2 id="cul8r">c u l8r</h2>
 Phew! That was a lot! See you next week, and if you have a project you'd like to see featured in This Week in Matrix, come chat to us in <a href="https://matrix.to/#/#TWIM:matrix.org">#twim:matrix.org</a>!
