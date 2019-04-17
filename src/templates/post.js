@@ -64,7 +64,7 @@ const Post = ({ pageContext: { slug, prev, next }, data: { mdx: postNode } }) =>
             {post.categories.map((cat, i) => (
               <React.Fragment key={cat}>
                 {!!i && ', '}
-                <Link to={`/categories/${kebabCase(cat)}`}>{cat}</Link>
+                <Link to={`/blog/category/${kebabCase(cat)}`}>{cat}</Link>
               </React.Fragment>
             ))}
           </Subline>
