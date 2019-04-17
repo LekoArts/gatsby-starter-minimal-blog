@@ -63,9 +63,8 @@ const Article = ({ title, date, excerpt, slug, timeToRead, categories, body }) =
         </React.Fragment>
       ))}
     </Subline>
-    <Excerpt>{excerpt}</Excerpt>
     <PostContent>
-      <MDXRenderer>{body}</MDXRenderer>
+      <div key={slug} id="___gatsby" dangerouslySetInnerHTML={{ __html: body.replace(/---(\n.*)*---/, '') }} />
     </PostContent>
   </Post>
 )

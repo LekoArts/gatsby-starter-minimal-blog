@@ -51,6 +51,7 @@ const PostContent = styled.div`
 
 const Post = ({ pageContext: { slug, prev, next }, data: { mdx: postNode } }) => {
   const post = postNode.frontmatter
+  const rawBody = postNode.rawBody.replace(/---(\n.*)*---/, '')
 
   return (
     <Layout customSEO>
@@ -69,7 +70,7 @@ const Post = ({ pageContext: { slug, prev, next }, data: { mdx: postNode } }) =>
             ))}
           </Subline>
           <PostContent>
-            <MDXRenderer>{postNode.code.body}</MDXRenderer>
+            <div key={slug} id="___gatsby" dangerouslySetInnerHTML={{ __html: rawBody }} />
           </PostContent>
           <PrevNext prev={prev} next={next} />
         </Content>
@@ -111,6 +112,7 @@ export const postQuery = graphql`
         categories
       }
       timeToRead
+      rawBody
       parent {
         ... on File {
           mtime
