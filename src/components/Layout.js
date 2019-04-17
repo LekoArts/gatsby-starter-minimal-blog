@@ -219,7 +219,7 @@ const Nav = styled.nav`
   }
   li a {
     display: block;
-    padding: 20px 20px;
+    padding: 12px 16px;
     text-decoration: none;
   }
   li a:hover,
@@ -230,7 +230,7 @@ const Nav = styled.nav`
     display: block;
     float: left;
     font-size: 2em;
-    padding: 20px 24px;
+    padding: 14px 20px;
     text-decoration: none;
   }
   .menu {
@@ -296,7 +296,7 @@ const Nav = styled.nav`
       float: left;
     }
     li a {
-      padding: 20px 22px;
+      padding: 16px 20px;
     }
     .menu {
       clear: none;
