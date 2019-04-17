@@ -59,13 +59,7 @@ Under the hood:
 </blockquote>
 <h2 id="maubot">maubot</h2>
 <a href="https://matrix.to/#/@tulir:maunium.net">tulir</a> working on <a href="https://github.com/maubot/maubot">maubot</a>:
-<blockquote>The new command handling system in maubot is ready. The new system should be much nicer to use when developing plugins.
-
-Previously <a href="https://github.com/maubot/maubot">maubot</a> had a system that was designed after the improved bot support spec proposal, but it wasn't very nice or pythonic. If/when the proposal or something similar goes through, I'll probably add support for it in the new command handling system.
-
-Next I'll make some developer docs so that other people could actually make their own plugins.
-
-The code is at <a href="https://github.com/maubot/maubot">https://github.com/maubot/maubot</a> and you can ask about maubot in <a href="https://matrix.to/#/#maubot:maunium.net">#maubot:maunium.net</a>.</blockquote>
+<blockquote>The new command handling system in maubot is ready. The new system should be much nicer to use when developing plugins.<br /><br />Previously <a href="https://github.com/maubot/maubot">maubot</a> had a system that was designed after the improved bot support spec proposal, but it wasn't very nice or pythonic. If/when the proposal or something similar goes through, I'll probably add support for it in the new command handling system.<br /><br />Next I'll make some developer docs so that other people could actually make their own plugins.<br /><br />The code is at <a href="https://github.com/maubot/maubot">https://github.com/maubot/maubot</a> and you can ask about maubot in <a href="https://matrix.to/#/#maubot:maunium.net">#maubot:maunium.net</a>.</blockquote>
 <h2 id="matrixclientelnewfeatures">matrix-client.el new features</h2>
 <a href="https://matrix.to/#/@alphapapa:matrix.org">alphapapa</a>:
 <blockquote>Emacs makes it so easy to integrate things. Now you can send <code>org-mode</code> syntax messages with the <code>/org</code> command in <a href="https://github.com/jgkamat/matrix-client-el">matrix-client.el</a>.<br /><br />Tab-completion of usernames and IDs was added to matrix-client.el.</blockquote>

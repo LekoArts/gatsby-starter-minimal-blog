@@ -67,13 +67,7 @@ Come chat about the project in <a href="https://matrix.to/#/#nheko-reborn:matrix
 </ul>
 <h2 id="journal">journal</h2>
 <a href="https://github.com/lukebarnard1/">lukebarnard</a> has continued work on <a href="https://github.com/lukebarnard1/journal">journal</a>, a matrix-backed blog engine:
-<blockquote>I've posted another blog on <a href="https://github.com/lukebarnard1/journal">journal</a> about the next steps for the project, including my thoughts on verifying blog content.
-
-<a href="https://journal.lukebarnard.co.uk/journal/26-jan-2019">https://journal.lukebarnard.co.uk/journal/26-jan-2019</a>
-
-I'm planning to start work on the component that will scrape blog content from a matrix room. This will most likely involve a dedicated bot that syncs new journal blog events, verifies the blog signature and then writes the blog content to a file on the blog server.
-
-I'll probably ramble about the details of that at some point.</blockquote>
+<blockquote>I've posted another blog on <a href="https://github.com/lukebarnard1/journal">journal</a> about the next steps for the project, including my thoughts on verifying blog content.<br /><br /><a href="https://journal.lukebarnard.co.uk/journal/26-jan-2019">https://journal.lukebarnard.co.uk/journal/26-jan-2019</a><br /><br />I'm planning to start work on the component that will scrape blog content from a matrix room. This will most likely involve a dedicated bot that syncs new journal blog events, verifies the blog signature and then writes the blog content to a file on the blog server.<br /><br />I'll probably ramble about the details of that at some point.</blockquote>
 <h2 id="fedtester">fed-tester</h2>
 <a href="https://matrix.to/#/@f0x:lain.haus">f0x</a> made a bunch of updates to his federation testing GUI:
 <blockquote>The fed-tester frontend has received an overhaul. It's dark now, is more responsive, and will show the new <a href="https://github.com/matrix-org/matrix-federation-tester/pull/14/">ValidCertificates</a>, and Information fields. Found errors and warnings are now shown at the top, instead of having to traverse the table yourself. Hosted at <a href="https://neo.lain.haus/fed-tester">https://neo.lain.haus/fed-tester</a> with code at <a href="https://git.lain.haus/f0x/fed-tester">https://git.lain.haus/f0x/fed-tester</a> Room for both the frontend and backend is <a href="https://matrix.to/#/#fed-tester:lain.haus">#fed-tester:lain.haus</a></blockquote>
