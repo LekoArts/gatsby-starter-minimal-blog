@@ -24,37 +24,42 @@ const GlobalStyle = createGlobalStyle`
   html {
     font-family: ${props => props.theme.fontFamily.sansSerif};
     font-size: ${props => props.theme.baseFontSize};
+    line-height: 2.0rem;
+    font-weight: 400;
     h1 {
-      font-size: 3.052rem;
+      font-size: 2rem;
+      font-weight: 600;
+      line-height: 2.6rem;
     }
     h2 {
-      font-size: 2.441rem;
+      font-size: 1.4rem;
+      margin: 2rem auto 1rem;
     }
     h3 {
-      font-size: 1.953rem;
+      font-size: 1.2rem;
     }
     h4 {
-      font-size: 1.563rem;
+      font-size: 1.1rem;
     }
     h5 {
-      font-size: 1.25rem;
+      font-size: 1rem;
     }
     @media (max-width: ${props => props.theme.breakpoints.phone}) {
       font-size: 16px;
       h1 {
-        font-size: 2.488rem;
+        font-size: 2rem;
       }
       h2 {
-        font-size: 2.074rem;
+        font-size: 1.4rem;
       }
       h3 {
-        font-size: 1.728rem;
+        font-size: 1.2rem;
       }
       h4 {
-        font-size: 1.444rem;
+        font-size: 1.1rem;
       }
       h5 {
-        font-size: 1.2rem;
+        font-size: 1rem;
       }
     }
   }
@@ -196,6 +201,9 @@ const Footer = styled.footer`
 
 const Nav = styled.nav`
   background-color: #fff;
+  -webkit-box-shadow: 0px 2px 4px 0px rgba(214,214,214,0.4);
+  -moz-box-shadow: 0px 2px 4px 0px rgba(214,214,214,0.4);
+  box-shadow: 0px 2px 4px 0px rgba(214,214,214,0.4);
   position: fixed;
   width: 100%;
   z-index: 9999;
@@ -222,10 +230,11 @@ const Nav = styled.nav`
     display: block;
     float: left;
     font-size: 2em;
-    padding: 10px 20px;
+    padding: 20px 24px;
     text-decoration: none;
   }
   .menu {
+    font-size: 16px;
     clear: both;
     max-height: 0;
     transition: max-height .2s ease-out;
@@ -234,7 +243,8 @@ const Nav = styled.nav`
     cursor: pointer;
     display: inline-block;
     float: right;
-    padding: 28px 20px;
+    padding: 32px 24px;
+    margin-bottom: -20px;
     position: relative;
     user-select: none;
   }

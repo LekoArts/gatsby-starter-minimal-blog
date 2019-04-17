@@ -46,7 +46,7 @@ const Title = styled.h1`
 `
 
 const PostContent = styled.div`
-  margin-top: 4rem;
+  margin-top: 1.6rem;
 `
 
 const Post = ({ pageContext: { slug, prev, next }, data: { mdx: postNode } }) => {
