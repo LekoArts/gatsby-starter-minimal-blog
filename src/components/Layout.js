@@ -133,6 +133,7 @@ const GlobalStyle = createGlobalStyle`
   }
   img {
     vertical-align: middle;
+    max-width: 100%;
   }
   [role='button'] {
     cursor: pointer;
