@@ -49,9 +49,7 @@ We are working on iOS 12 notifications features.</blockquote>
 </blockquote>
 <h2 id="dimensionstickerpacks">Dimension sticker packs</h2>
 <a href="https://github.com/turt2live">TravisR</a> has introduced sticker packs for <a href="https://dimension.t2bot.io/">Dimension</a>:
-<blockquote>Dimension now has beta support for custom sticker packs.
-
-To create a sticker pack:
+<blockquote>Dimension now has beta support for custom sticker packs. To create a sticker pack:</blockquote>
 <ol>
  	<li>Start a conversation with @stickers:t2bot.io</li>
  	<li>Say <code>!stickers newpack</code> and follow the prompts.</li>
@@ -69,9 +67,8 @@ To add the sticker pack to your sticker picker:
  	<li>Paste the URL of the sticker pack into the box and click "Add Stickerpack".</li>
  	<li>Start using your new stickers.</li>
 </ol>
-These instructions are also available at <a href="https://github.com/turt2live/matrix-dimension/blob/master/docs/custom_stickerpacks.md">https://github.com/turt2live/matrix-dimension/blob/master/docs/custom_stickerpacks.md</a> as is the admin/operator guide for running your own sticker bot (you're not stuck with using t2bot.io unless you want to be).
-
-Custom sticker packs are still beta while the proposals to share this with the wider Matrix ecosystem are still works in progress. This serves as a proof of concept to see how crazy of an idea it is to have stickerpacks-as-rooms (yes, they're just plain Matrix rooms under the hood) and what needs ironing out before moving ahead with the MSC.</blockquote>
+<blockquote>
+These instructions are also available at <a href="https://github.com/turt2live/matrix-dimension/blob/master/docs/custom_stickerpacks.md">https://github.com/turt2live/matrix-dimension/blob/master/docs/custom_stickerpacks.md</a> as is the admin/operator guide for running your own sticker bot (you're not stuck with using t2bot.io unless you want to be).<br />Custom sticker packs are still beta while the proposals to share this with the wider Matrix ecosystem are still works in progress. This serves as a proof of concept to see how crazy of an idea it is to have stickerpacks-as-rooms (yes, they're just plain Matrix rooms under the hood) and what needs ironing out before moving ahead with the MSC.</blockquote>
 <h2 id="matrixnotificationprofilemanager">matrix-notification-profile-manager</h2>
 <a href="https://matrix.to/#/@brendan:abolivier.bzh">Brendan</a> has created a notification profile manager:
 <blockquote>Over the past few weeks, I grew a bit fed up of always having to turn on and off every notification rule each time I'm having a slight change in what I'm working on or depending on what mood I was in (e.g. want to focus only on work-related stuff and nothing else, don't want to hear about work at all, somewhere in the middle, etc.), so I built a <a href="https://github.com/babolivier/matrix-notification-profile-manager">notification profile manager for Matrix</a>. It's available both as a command line interface or a Go package in case people want to build on top of it.<br /><br />It allows one to take a snapshot of their current notifications settings and save that as a profile, so that this profile can be applied later. It also allows one to delete a profile or list the existing profiles (more features to be added as time goes by). In order to make the whole thing interoperable with other projects building on top of the Go package, it also uses the user's account data on the user's Matrix homeserver to store profiles.</blockquote>
