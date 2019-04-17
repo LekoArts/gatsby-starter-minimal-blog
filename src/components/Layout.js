@@ -193,9 +193,26 @@ const GlobalStyle = createGlobalStyle`
 
 const Footer = styled.footer`
   text-align: center;
-  padding: 3rem 1rem;
-  span {
-    font-size: 0.75rem;
+  padding: 0;
+  font-size: 0.9rem;
+  .footer__text {
+    margin: 2rem;
+  }
+  .footer-highlight {
+    background-color: #ebebeb;
+    padding: 1rem 0.5rem;
+    text-align: left;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .footer-highlight__link {
+    margin: 1rem;
+  }
+  .footer-highlight__small {
+    position: absolute;
+    margin-right: 1rem;
+    right: 0;
+    font-size: 0.6rem;
   }
 `
 
@@ -364,10 +381,16 @@ const Layout = ({ children, customSEO }) => {
         <GlobalStyle />
         {children}
         <Footer>
-          &copy; 2019 Matrix.org. All rights reserved. <br /> <br />
-          <a href="https://matrix.org/docs/guides/matrix_org_legal.html">Legal</a> <br /> <br />
-          <a href="https://matrix.org/docs/api">Client-Server APIs</a> <br /> <br />
-          <span>Last build: {buildTime}</span>
+          <div className="footer__text">&copy; 2019 Matrix.org. All rights reserved.</div>
+          <div className="footer-highlight">
+            <a className="footer-highlight__link" href="https://matrix.org/docs/guides/matrix_org_legal.html">
+              Legal
+            </a>
+            <a className="footer-highlight__link" href="https://matrix.org/docs/api">
+              Client-Server APIs
+            </a>
+            <span className="footer-highlight__small">Last build: {buildTime}</span>
+          </div>
         </Footer>
       </>
     </ThemeProvider>
