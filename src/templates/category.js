@@ -24,7 +24,7 @@ const Content = styled.div`
 `
 
 const Category = ({ pageContext: { category }, data: { allMdx } }) => {
-  const { edges, totalCount } = allMdx
+  const { nodes, totalCount } = allMdx
   const subline = `${totalCount} post${totalCount === 1 ? '' : 's'} tagged with "${category}"`
 
   return (
@@ -39,15 +39,15 @@ const Category = ({ pageContext: { category }, data: { allMdx } }) => {
           <Subline sectionTitle>
             {subline} (See <Link to="/categories">all categories</Link>)
           </Subline>
-          {edges.map(post => (
+          {nodes.map(post => (
             <Article
-              title={post.node.frontmatter.title}
-              date={post.node.frontmatter.date}
-              excerpt={post.node.excerpt}
-              timeToRead={post.node.timeToRead}
-              slug={post.node.fields.slug}
-              categories={post.node.frontmatter.categories}
-              key={post.node.fields.slug}
+              title={post.frontmatter.title}
+              date={post.frontmatter.date}
+              excerpt={post.excerpt}
+              timeToRead={post.timeToRead}
+              slug={post.fields.slug}
+              categories={post.frontmatter.categories}
+              key={post.fields.slug}
             />
           ))}
         </Content>
@@ -64,7 +64,7 @@ Category.propTypes = {
   }).isRequired,
   data: PropTypes.shape({
     allMdx: PropTypes.shape({
-      edges: PropTypes.array.isRequired,
+      nodes: PropTypes.array.isRequired,
       totalCount: PropTypes.number.isRequired,
     }),
   }).isRequired,
@@ -77,19 +77,17 @@ export const postQuery = graphql`
       filter: { frontmatter: { categories: { eq: $category } } }
     ) {
       totalCount
-      edges {
-        node {
-          frontmatter {
-            title
-            date(formatString: "MM/DD/YYYY")
-            categories
-          }
-          fields {
-            slug
-          }
-          excerpt(pruneLength: 200)
-          timeToRead
+      nodes {
+        frontmatter {
+          title
+          date(formatString: "MM/DD/YYYY")
+          categories
         }
+        fields {
+          slug
+        }
+        excerpt(pruneLength: 200)
+        timeToRead
       }
     }
   }

@@ -40,15 +40,13 @@ exports.createPages = async ({ graphql, actions }) => {
     graphql(`
       {
         allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
-          edges {
-            node {
-              fields {
-                slug
-              }
-              frontmatter {
-                title
-                categories
-              }
+          nodes {
+            fields {
+              slug
+            }
+            frontmatter {
+              title
+              categories
             }
           }
         }
@@ -56,17 +54,17 @@ exports.createPages = async ({ graphql, actions }) => {
     `)
   )
 
-  const posts = result.data.allMdx.edges
+  const posts = result.data.allMdx.nodes
 
-  posts.forEach((edge, index) => {
-    const next = index === 0 ? null : posts[index - 1].node
-    const prev = index === posts.length - 1 ? null : posts[index + 1].node
+  posts.forEach((n, index) => {
+    const next = index === 0 ? null : posts[index - 1]
+    const prev = index === posts.length - 1 ? null : posts[index + 1]
 
     createPage({
-      path: edge.node.fields.slug,
+      path: n.fields.slug,
       component: postTemplate,
       context: {
-        slug: edge.node.fields.slug,
+        slug: n.fields.slug,
         prev,
         next,
       },
@@ -75,9 +73,9 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const categorySet = new Set()
 
-  _.each(posts, edge => {
-    if (_.get(edge, 'node.frontmatter.categories')) {
-      edge.node.frontmatter.categories.forEach(cat => {
+  _.each(posts, n => {
+    if (_.get(n, 'frontmatter.categories')) {
+      n.frontmatter.categories.forEach(cat => {
         categorySet.add(cat)
       })
     }
