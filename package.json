@@ -32,7 +32,7 @@
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
     "react-live": "^2.1.2",
-    "styled-components": "^4.2.1",
+    "styled-components": "^4.3.1",
     "typeface-bitter": "^0.0.71",
     "typeface-open-sans": "^0.0.54"
   },
