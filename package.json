@@ -6,7 +6,7 @@
   "dependencies": {
     "@mdx-js/mdx": "^1.0.20",
     "@mdx-js/react": "^1.0.20",
-    "babel-plugin-styled-components": "^1.10.0",
+    "babel-plugin-styled-components": "^1.10.1",
     "gatsby": "^2.8.6",
     "gatsby-mdx": "^0.6.3",
     "gatsby-plugin-catch-links": "^2.0.15",
