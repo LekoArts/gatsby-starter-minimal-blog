@@ -4404,11 +4404,12 @@ eslint-plugin-jsx-a11y@^6.0.3:
     has "^1.0.3"
     jsx-ast-utils "^2.0.1"
 
-eslint-plugin-jsx-a11y@^6.2.2:
-  version "6.2.2"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-jsx-a11y/-/eslint-plugin-jsx-a11y-6.2.2.tgz#485a71cd90e8e811ec1dd8294ace47a4b7a073b5"
-  integrity sha512-ut8SE5Run3X5sTHOANlVu5zJPHVPzluWVB/vfQgbgXcIl/DUJ0tO/SV67SzTTMp6PZGH1vojvUNYItCH2+S21w==
+eslint-plugin-jsx-a11y@^6.2.3:
+  version "6.2.3"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-jsx-a11y/-/eslint-plugin-jsx-a11y-6.2.3.tgz#b872a09d5de51af70a97db1eea7dc933043708aa"
+  integrity sha512-CawzfGt9w83tyuVekn0GDPU9ytYtxyxyFZ3aSWROmnRRFQFT2BiPJd7jvRdzNDi6oLWaS2asMeYSNMjWTV4eNg==
   dependencies:
+    "@babel/runtime" "^7.4.5"
     aria-query "^3.0.0"
     array-includes "^3.0.3"
     ast-types-flow "^0.0.7"
