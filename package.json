@@ -34,7 +34,7 @@
     "react-live": "^2.1.2",
     "styled-components": "^4.3.2",
     "typeface-bitter": "^0.0.71",
-    "typeface-open-sans": "^0.0.54"
+    "typeface-open-sans": "^0.0.75"
   },
   "keywords": [
     "gatsby",
