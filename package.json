@@ -23,7 +23,7 @@
     "gatsby-remark-external-links": "0.0.4",
     "gatsby-remark-images": "^3.1.6",
     "gatsby-source-filesystem": "^2.1.5",
-    "lodash": "^4.17.14",
+    "lodash": "^4.17.15",
     "mdx-utils": "0.2.0",
     "polished": "^3.4.1",
     "prism-react-renderer": "^0.1.7",
