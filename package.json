@@ -7,7 +7,7 @@
     "@mdx-js/mdx": "^1.1.5",
     "@mdx-js/react": "^1.1.5",
     "babel-plugin-styled-components": "^1.10.6",
-    "gatsby": "^2.13.50",
+    "gatsby": "^2.13.51",
     "gatsby-plugin-catch-links": "^2.1.2",
     "gatsby-plugin-google-analytics": "^2.1.6",
     "gatsby-plugin-lodash": "^3.1.2",
