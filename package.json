@@ -4,8 +4,8 @@
   "version": "3.0.0",
   "author": "LekoArts <hello@lekoarts.de> (https://www.lekoarts.de)",
   "dependencies": {
-    "@mdx-js/mdx": "^1.4.4",
-    "@mdx-js/react": "^1.4.4",
+    "@mdx-js/mdx": "^1.4.5",
+    "@mdx-js/react": "^1.4.5",
     "babel-plugin-styled-components": "^1.10.6",
     "gatsby": "^2.15.11",
     "gatsby-plugin-catch-links": "^2.1.8",
