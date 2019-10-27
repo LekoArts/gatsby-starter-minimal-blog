@@ -14,6 +14,13 @@ const StyledEditor = styled(LiveEditor)`
   margin-bottom: 1rem;
 `
 
+const LineNo = styled.span`
+  display: inline-block;
+  width: 2em;
+  user-select: none;
+  opacity: 0.3;
+`
+
 const Code = ({ codeString, language, ...props }) => {
   if (props['react-live']) {
     return (
@@ -30,6 +37,7 @@ const Code = ({ codeString, language, ...props }) => {
         <pre className={className} style={style}>
           {tokens.map((line, i) => (
             <div {...getLineProps({ line, key: i })}>
+              <LineNo>{i + 1}</LineNo>
               {line.map((token, key) => (
                 <span {...getTokenProps({ token, key })} />
               ))}
