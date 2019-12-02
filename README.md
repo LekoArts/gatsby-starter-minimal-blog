@@ -193,9 +193,39 @@ slug: "/about"
 
 To edit the hero text ("Hi, I'm Lupin...), create a file at `src/@lekoarts/gatsby-theme-minimal-blog/texts/hero.mdx` to edit the text.
 
+If you are shadowing the `gatsby-theme-minimal-blog/components/homepage.tsx` and update the `gatsby-theme-minimal-blog/texts/hero.mdx`, you need to add a front matter for the `hero.mdx`.
+
+```mdx
+---
+title: hero
+---
+
+<Text sx={{ fontSize: [4, 5, 6], fontWeight: `bold`, color: `heading` }}>
+  Hi all, my buddies.
+</Text>
+
+I'm Lupin - currently teaching "Defense against the Dark Arts" at Hogwarts, Great Britain. I recently published a book called [Those nasty Dementors](https://www.lekoarts.de).
+It teaches everything you need to know about defending against Dementors.
+```
+
 #### Changing the "Projects" part
 
 To edit the projects part below "Latest posts", create a file at `src/@lekoarts/gatsby-theme-minimal-blog/texts/bottom.mdx` to edit the contents.
+
+If you are shadowing the `gatsby-theme-minimal-blog/components/homepage.tsx` and update the `gatsby-theme-minimal-blog/texts/bottom.mdx`, you need to add a front matter for the `bottom.mdx`.
+
+```mdx
+---
+title: bottom
+---
+
+<Title text="Projects" />
+
+- [Articulate evidence](https://www.lekoarts.de/en/projects/docma-award-super-short-story-telling-about-harry-potter)
+- [Super Short Story Telling: Harry Potter](https://www.lekoarts.de/en/projects/docma-award-super-short-story-telling-about-harry-potter)
+- [Instagram Project "Proprius"](https://www.lekoarts.de/en/projects/private-instagram-project-proprius)
+
+```
 
 ### Change your `static` folder
 
