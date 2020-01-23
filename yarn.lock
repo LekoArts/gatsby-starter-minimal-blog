@@ -1307,10 +1307,10 @@
     gatsby-transformer-sharp "^2.3.13"
     lodash.kebabcase "^4.1.1"
 
-"@lekoarts/gatsby-theme-minimal-blog@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@lekoarts/gatsby-theme-minimal-blog/-/gatsby-theme-minimal-blog-2.0.0.tgz#f1cc08d72442dae5ed90011d716d759db35f9223"
-  integrity sha512-VuVGuhB38aWDUXjpV85yy6xnw8Sh9NrZ7SW0RtwBkcJE2cd2TKBx7r4tKW+K1sncIvIyUfsDbtqaxJWG9mDXMA==
+"@lekoarts/gatsby-theme-minimal-blog@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@lekoarts/gatsby-theme-minimal-blog/-/gatsby-theme-minimal-blog-2.0.1.tgz#86fb871b297fa1ded63962d26223300b83dbbb45"
+  integrity sha512-Hv104f9GKjoi6oFPQG3EICjZrYJZAlzcvuEDUGRyOeM4ImahCdf6zvNzCvHk5eBOr6JlkpqjmZKf+PJndf7Y8A==
   dependencies:
     "@emotion/core" "^10.0.27"
     "@lekoarts/gatsby-theme-minimal-blog-core" "^2.0.0"
@@ -6256,9 +6256,9 @@ gatsby-transformer-sharp@^2.3.13:
     sharp "^0.23.4"
 
 gatsby@^2.13.3:
-  version "2.19.2"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.19.2.tgz#ef5fa07b608858827c5fb535b75b1ecb5b0d0832"
-  integrity sha512-zydZ8BrJrfckjTcevnnuNBJRg8yLcg47uBb9fmzYMz7RWg9Xp0GW/5M3kDr1+cssS6xT8JyN0IaiSHMxszlhSQ==
+  version "2.19.3"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.19.3.tgz#16b7e0f1067a05b12f52d5899cef14473cb02b81"
+  integrity sha512-jnJ4t3iejcoB+bujV55O1m5uiq19EF/Jq9cWO+M0OSbbPRl3qplDQCbKzhSOXXcoTb7k0jxPMdUOqQ53rX9vpA==
   dependencies:
     "@babel/code-frame" "^7.5.5"
     "@babel/core" "^7.7.5"
