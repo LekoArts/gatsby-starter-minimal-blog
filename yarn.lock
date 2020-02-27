@@ -1274,7 +1274,7 @@
     gatsby-transformer-sharp "^2.3.14"
     lodash.kebabcase "^4.1.1"
 
-"@lekoarts/gatsby-theme-minimal-blog@^2.0.3":
+"@lekoarts/gatsby-theme-minimal-blog@^2.1.0":
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/@lekoarts/gatsby-theme-minimal-blog/-/gatsby-theme-minimal-blog-2.1.0.tgz#e6ca8bb5240b5d7f5f74f49facbec855be88b116"
   integrity sha512-ytseQV0rTkRZdU1d0JMcBMAuTFlGJEWokcB3E0eIC5ooMOeP8JqoosDzWA4PUXUSTTi9Sp7zfUILqyvRPIKj9g==
