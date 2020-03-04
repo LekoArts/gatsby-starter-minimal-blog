@@ -1275,9 +1275,9 @@
     lodash.kebabcase "^4.1.1"
 
 "@lekoarts/gatsby-theme-minimal-blog@^2.2.1":
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/@lekoarts/gatsby-theme-minimal-blog/-/gatsby-theme-minimal-blog-2.2.1.tgz#ea9ea9f5f57a5e9ddf89da2b2e1c0d1cd9521acc"
-  integrity sha512-ZiSOKH9XF4gojjofpu0/BBS8FD7SbDqkXVkv8cN7+a/MRQbCSTBdPphAA5yxv0RXyKSJ5Mj+KJauP/jHhw901w==
+  version "2.2.2"
+  resolved "https://registry.yarnpkg.com/@lekoarts/gatsby-theme-minimal-blog/-/gatsby-theme-minimal-blog-2.2.2.tgz#18b64547c162a41e5cc93b5761ea8468f22e6e9b"
+  integrity sha512-W7T5f6sW+CFk+1uauH1j7boov7Ko2G9rWjuTYsssryLyCCNMIVBz9g/rmo1XpHmGSxcojmFyTKoOqMN7JoNjmw==
   dependencies:
     "@emotion/core" "^10.0.28"
     "@lekoarts/gatsby-theme-minimal-blog-core" "^2.2.1"
