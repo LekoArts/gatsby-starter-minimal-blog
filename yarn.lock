@@ -1380,14 +1380,14 @@
     "@babel/runtime" "^7.7.2"
     core-js "^3.4.1"
 
-"@lekoarts/gatsby-theme-minimal-blog-core@^2.2.5":
-  version "2.2.5"
-  resolved "https://registry.yarnpkg.com/@lekoarts/gatsby-theme-minimal-blog-core/-/gatsby-theme-minimal-blog-core-2.2.5.tgz#0e3b23c132d2bf3f4a3bf9bd7376d1b97681a5c1"
-  integrity sha512-51mIyx6yjqQhvUc4+UifYWsTQXKLiDW/tLgTT+PP6Bf3FLLtM73cEJIWTAspCE7Z9YeI/unLuV2xKHnUG+r4Aw==
+"@lekoarts/gatsby-theme-minimal-blog-core@^2.2.6":
+  version "2.2.6"
+  resolved "https://registry.yarnpkg.com/@lekoarts/gatsby-theme-minimal-blog-core/-/gatsby-theme-minimal-blog-core-2.2.6.tgz#50e799e65d9e5e6681a4ff8d64006bc27abad9fc"
+  integrity sha512-ytyRwQbjQvU+OAVaTXg/f2FZk2CEmobnVRDTFabKALsRNXZRZzZUaEBygIS50AiKf+pln24Rz0j3LJrx/JOBPA==
   dependencies:
     "@mdx-js/mdx" "^1.5.8"
     "@mdx-js/react" "^1.5.8"
-    gatsby-plugin-mdx "^1.1.4"
+    gatsby-plugin-mdx "^1.1.7"
     gatsby-plugin-sharp "^2.5.4"
     gatsby-plugin-typescript "^2.3.1"
     gatsby-remark-images "^3.2.2"
@@ -1395,20 +1395,20 @@
     gatsby-transformer-sharp "^2.4.4"
     lodash.kebabcase "^4.1.1"
 
-"@lekoarts/gatsby-theme-minimal-blog@^2.2.7":
-  version "2.2.7"
-  resolved "https://registry.yarnpkg.com/@lekoarts/gatsby-theme-minimal-blog/-/gatsby-theme-minimal-blog-2.2.7.tgz#4f72db2a6171e2b3b3fe9a22ca48390a3da28d8f"
-  integrity sha512-mMhIKbR1NRMjfEdcc9xBoSryPYfrzckXHLhWN0mKzDpyEjaRLKSjtSo56wW+wcjnN5qtWwrx6DoqDo9aruTLtQ==
+"@lekoarts/gatsby-theme-minimal-blog@^2.2.8":
+  version "2.2.8"
+  resolved "https://registry.yarnpkg.com/@lekoarts/gatsby-theme-minimal-blog/-/gatsby-theme-minimal-blog-2.2.8.tgz#39f27a5bf0147bb81435b8833307ef0160346dc3"
+  integrity sha512-yze6fd2BOTlr8dOgviOH/7zcndEb/kcsNmA+3CXib5ZbiEQ9Pd76wStQwC4YqBfOuxkDFwTuiVUZoIYwbbpvPQ==
   dependencies:
     "@emotion/core" "^10.0.28"
-    "@lekoarts/gatsby-theme-minimal-blog-core" "^2.2.5"
+    "@lekoarts/gatsby-theme-minimal-blog-core" "^2.2.6"
     "@mdx-js/react" "^1.5.8"
     "@theme-ui/color" "^0.2.53"
     "@theme-ui/components" "^0.2.50"
     "@theme-ui/presets" "^0.2.44"
     gatsby-plugin-catch-links "^2.2.1"
     gatsby-plugin-feed "^2.4.1"
-    gatsby-plugin-react-helmet "^3.2.1"
+    gatsby-plugin-react-helmet "^3.2.2"
     gatsby-plugin-theme-ui "^0.2.53"
     gatsby-plugin-typescript "^2.3.1"
     lodash.kebabcase "^4.1.1"
@@ -6206,7 +6206,7 @@ gatsby-plugin-manifest@^2.2.3:
     semver "^5.7.1"
     sharp "^0.25.1"
 
-gatsby-plugin-mdx@^1.1.4:
+gatsby-plugin-mdx@^1.1.7:
   version "1.1.7"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-mdx/-/gatsby-plugin-mdx-1.1.7.tgz#af94eff3f10ae2475ac0714b08f3e97d0fc77b0f"
   integrity sha512-CTEeZQQ/hYDPv9mX06259zwiQc67OGBPzigBL8ZEMSgg5ANzzfR143Wd74RGPvT04GnMNjfWKcg8yBPTf75EaA==
@@ -6283,7 +6283,7 @@ gatsby-plugin-page-creator@^2.2.1:
     lodash "^4.17.15"
     micromatch "^3.1.10"
 
-gatsby-plugin-react-helmet@^3.2.1:
+gatsby-plugin-react-helmet@^3.2.2:
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-react-helmet/-/gatsby-plugin-react-helmet-3.2.2.tgz#8817da61cd57b8fd9cf1cc6fb55c1e9564aa6a3c"
   integrity sha512-mPd7gefGIxqAuxFJgDuttR9+DnRLKLrCh61ND1iLSeOp9GoYS/qH8Rhka6fkpmBXOtUVyujzaUthhB/ll/a4RA==
