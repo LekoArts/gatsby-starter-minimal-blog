@@ -28,5 +28,8 @@
   },
   "devDependencies": {
     "cross-env": "^5.2.0"
+  },
+  "resolutions": {
+    "gatsby-plugin-mdx": "1.2.1"
   }
 }
