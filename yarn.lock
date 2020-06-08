@@ -1663,44 +1663,44 @@
   resolved "https://registry.yarnpkg.com/@kwsites/exec-p/-/exec-p-0.4.0.tgz#ab3765d482849ba6e825721077c248cf9f3323b7"
   integrity sha512-44DWNv5gDR9EwrCTVQ4ZC99yPqVS0VCWrYIBl45qNR8XQy+4lbl0IQG8kBDf6NHwj4Ib4c2z1Fq1IUJOCbkZcw==
 
-"@lekoarts/gatsby-theme-minimal-blog-core@^2.3.5":
-  version "2.3.5"
-  resolved "https://registry.yarnpkg.com/@lekoarts/gatsby-theme-minimal-blog-core/-/gatsby-theme-minimal-blog-core-2.3.5.tgz#c8a292c30e774e9f5897305917a469a128b7cb3d"
-  integrity sha512-MORLHFwA4/lnRG4OWOcyh4a8SdGvQe91VSmuzmtDCrs2am6kKL6Tvijn1BoD/i9SESSbxKBUKa7TaUGA08PNdQ==
+"@lekoarts/gatsby-theme-minimal-blog-core@^2.3.6":
+  version "2.3.6"
+  resolved "https://registry.yarnpkg.com/@lekoarts/gatsby-theme-minimal-blog-core/-/gatsby-theme-minimal-blog-core-2.3.6.tgz#f65f618d8761a38da7fad0314c1f8491d1de3467"
+  integrity sha512-oqRuSY14WFuJQb5a4bVeSU7sUIvTNpA7ral2woReFq7BJCReFdD5QXiEYdRZ2F61hkrGGtNUbyNN5xTZV5GnEA==
   dependencies:
-    "@mdx-js/mdx" "^1.6.4"
-    "@mdx-js/react" "^1.6.4"
-    gatsby-plugin-mdx "^1.2.13"
-    gatsby-plugin-sharp "^2.6.9"
-    gatsby-plugin-typescript "^2.4.3"
-    gatsby-remark-images "^3.3.8"
-    gatsby-source-filesystem "^2.3.8"
-    gatsby-transformer-sharp "^2.5.3"
+    "@mdx-js/mdx" "^1.6.5"
+    "@mdx-js/react" "^1.6.5"
+    gatsby-plugin-mdx "^1.2.14"
+    gatsby-plugin-sharp "^2.6.10"
+    gatsby-plugin-typescript "^2.4.4"
+    gatsby-remark-images "^3.3.9"
+    gatsby-source-filesystem "^2.3.10"
+    gatsby-transformer-sharp "^2.5.4"
     lodash.kebabcase "^4.1.1"
 
-"@lekoarts/gatsby-theme-minimal-blog@^2.3.6":
-  version "2.3.6"
-  resolved "https://registry.yarnpkg.com/@lekoarts/gatsby-theme-minimal-blog/-/gatsby-theme-minimal-blog-2.3.6.tgz#3bc566f642cedbd86e9ce22363d9bc81cc7be2b3"
-  integrity sha512-q1Hus3n8yTO0gGn4nnhg6xGZWVg5J49nEU4C1YA8jZn9ojeQON3tnUZpnHnIYP5K9Jjslr96Dmu7p+nuLrrAkg==
+"@lekoarts/gatsby-theme-minimal-blog@^2.3.7":
+  version "2.3.7"
+  resolved "https://registry.yarnpkg.com/@lekoarts/gatsby-theme-minimal-blog/-/gatsby-theme-minimal-blog-2.3.7.tgz#74b7fcaac5761bf6cc0dcdcb3fb2305cd5b195aa"
+  integrity sha512-yGYW0dGOZ0Am8/JO0IvjpPttT6Wvgbvcl4V3825X+vkiD+Fk7YUF3qvXElNPw8qGi8I79MtbgU0CFnBTiem+LQ==
   dependencies:
-    "@lekoarts/gatsby-theme-minimal-blog-core" "^2.3.5"
+    "@lekoarts/gatsby-theme-minimal-blog-core" "^2.3.6"
     "@theme-ui/color" "^0.3.1"
     "@theme-ui/components" "^0.3.1"
     "@theme-ui/presets" "^0.3.0"
-    gatsby-plugin-catch-links "^2.3.3"
-    gatsby-plugin-feed "^2.5.3"
-    gatsby-plugin-react-helmet "^3.3.2"
+    gatsby-plugin-catch-links "^2.3.4"
+    gatsby-plugin-feed "^2.5.4"
+    gatsby-plugin-react-helmet "^3.3.3"
     gatsby-plugin-theme-ui "^0.3.0"
-    gatsby-plugin-typescript "^2.4.3"
+    gatsby-plugin-typescript "^2.4.4"
     lodash.kebabcase "^4.1.1"
     mdx-utils "^0.2.0"
     prism-react-renderer "^1.1.1"
-    react-helmet "^6.0.0"
+    react-helmet "^6.1.0"
     react-live "^2.2.2"
     theme-ui "^0.3.1"
     typeface-ibm-plex-sans "^0.0.75"
 
-"@mdx-js/mdx@^1.6.4", "@mdx-js/mdx@^1.6.5":
+"@mdx-js/mdx@^1.6.5":
   version "1.6.5"
   resolved "https://registry.yarnpkg.com/@mdx-js/mdx/-/mdx-1.6.5.tgz#4e00ca5d38d678c6070d73819bb696e4030e2662"
   integrity sha512-DC13eeEM0Dv9OD+UVhyB69BlV29d2eoAmfiR/XdgNl4R7YmRNEPGRD3QvGUdRUDxYdJBHauMz5ZIV507cNXXaA==
@@ -1725,7 +1725,7 @@
     unist-builder "2.0.3"
     unist-util-visit "2.0.2"
 
-"@mdx-js/react@^1.0.0", "@mdx-js/react@^1.5.2", "@mdx-js/react@^1.6.4", "@mdx-js/react@^1.6.5":
+"@mdx-js/react@^1.0.0", "@mdx-js/react@^1.5.2", "@mdx-js/react@^1.6.5":
   version "1.6.5"
   resolved "https://registry.yarnpkg.com/@mdx-js/react/-/react-1.6.5.tgz#70380f25209b62ef69349b7eef09fad7e1103824"
   integrity sha512-y1Yu9baw3KokFrs7g5RxHpJNSU4e1zk/5bAJX94yVATglG5HyAL0lYMySU8YzebXNE+fJJMCx9CuiQHy2ezoew==
@@ -7180,7 +7180,7 @@ gatsby-page-utils@^0.2.8:
     lodash "^4.17.15"
     micromatch "^3.1.10"
 
-gatsby-plugin-catch-links@^2.3.3:
+gatsby-plugin-catch-links@^2.3.4:
   version "2.3.4"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-catch-links/-/gatsby-plugin-catch-links-2.3.4.tgz#e834c8ba59a77d5af372cc17b76fb5a44e1e8425"
   integrity sha512-O0zPqfz8qmfn9/LgSMVpvPqgWrckTFha46hMH9grPQ4GVNKmaaDm7RzE9pI/qTxxD0b8EkKHDaF2JM2BeDkVcw==
@@ -7188,7 +7188,7 @@ gatsby-plugin-catch-links@^2.3.3:
     "@babel/runtime" "^7.10.2"
     escape-string-regexp "^1.0.5"
 
-gatsby-plugin-feed@^2.5.3:
+gatsby-plugin-feed@^2.5.4:
   version "2.5.4"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-feed/-/gatsby-plugin-feed-2.5.4.tgz#5d94956137496b31d8d0b4b2ff702a8da8694783"
   integrity sha512-/0kZZ2tp89kqkm0QGbvRgqq6IKgYLnfmjiM8exrWu++JJeIALynvks0PMLuj4L7vD4mxfDztC7JwRDhcvGlwMw==
@@ -7217,7 +7217,7 @@ gatsby-plugin-manifest@^2.2.3:
     semver "^5.7.1"
     sharp "^0.25.1"
 
-gatsby-plugin-mdx@^1.2.13:
+gatsby-plugin-mdx@^1.2.14:
   version "1.2.14"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-mdx/-/gatsby-plugin-mdx-1.2.14.tgz#570d8703cf25a0a5e0a9bbaf240e5d1a06974517"
   integrity sha512-BjWeETOubeYKoFZtjO0XT9Uudgd/Mcz9pgh5OrSYOv97jgwlob0Ea44B6/JzH5h/uw0oQxQ3aLD7pmyq0hPS+Q==
@@ -7294,14 +7294,14 @@ gatsby-plugin-page-creator@^2.3.8:
     lodash "^4.17.15"
     micromatch "^3.1.10"
 
-gatsby-plugin-react-helmet@^3.3.2:
+gatsby-plugin-react-helmet@^3.3.3:
   version "3.3.3"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-react-helmet/-/gatsby-plugin-react-helmet-3.3.3.tgz#85f2c2b1ee404dfc35e1f7596edba7438900fc56"
   integrity sha512-GaNBEZlOUY0kYGMjlh3Cpretn5yBkgQZi+Z2ZpJL7VdxlrgTl7B5lccGZDxteMu5QAgrM/WVkeEOvkKUE6ZxrQ==
   dependencies:
     "@babel/runtime" "^7.10.2"
 
-gatsby-plugin-sharp@^2.6.9:
+gatsby-plugin-sharp@^2.6.10:
   version "2.6.10"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-2.6.10.tgz#b33e6ade2ac9b6fae248363838b052f7075efc53"
   integrity sha512-XgA9D05UOCBjRuDjdQpltS1k48m43g/TF8HY7Cmx7tksFVQ7+Q8OVsgxtZhpbLyVJ6EglYaDA5OFvSkkrks2IA==
@@ -7341,7 +7341,7 @@ gatsby-plugin-theme-ui@^0.3.0:
   resolved "https://registry.yarnpkg.com/gatsby-plugin-theme-ui/-/gatsby-plugin-theme-ui-0.3.0.tgz#ab84216536ae45abe09a6edf24156b9dbf50d6a5"
   integrity sha512-Q2tS8EeYMy7AAtt6hvDtEsd1uwrLMjkDNqabyXhAo38AFoWQ0oKtq9u1YqbiRvp1TK06pAMPQQ3to48LAqc9Cw==
 
-gatsby-plugin-typescript@^2.4.3, gatsby-plugin-typescript@^2.4.4:
+gatsby-plugin-typescript@^2.4.4:
   version "2.4.4"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-typescript/-/gatsby-plugin-typescript-2.4.4.tgz#481ba616b608d55ccf3aa869bdfbd2731d68fc1d"
   integrity sha512-BWTqUEQ70DrqXQIEE5hl+0NK19ggDLksGZdt4OYJF3cFUmYn6sNhYu9cvKLcj4DLSxFVe1fJl7vK9n0HLdCwRA==
@@ -7431,7 +7431,7 @@ gatsby-recipes@^0.1.38:
     ws "^7.3.0"
     xstate "^4.10.0"
 
-gatsby-remark-images@^3.3.8:
+gatsby-remark-images@^3.3.9:
   version "3.3.9"
   resolved "https://registry.yarnpkg.com/gatsby-remark-images/-/gatsby-remark-images-3.3.9.tgz#3c029116b158068d23632c69ca5e83c9150038f1"
   integrity sha512-pJCunn1r63zyqbRigWNQoSp9KKZ+BCFTtJPqtm6nAypC1C18TevNyfj9p5GGo2fdW3gR+vfeyU0MX9Zi/3m7PQ==
@@ -7448,7 +7448,7 @@ gatsby-remark-images@^3.3.8:
     unist-util-select "^1.5.0"
     unist-util-visit-parents "^2.1.2"
 
-gatsby-source-filesystem@^2.3.8:
+gatsby-source-filesystem@^2.3.10:
   version "2.3.10"
   resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-2.3.10.tgz#3cbf31dbf52349928db564e13b5bf182e1394708"
   integrity sha512-hX58a6eAjkmViq2Esvg9Q2JNN12UScCktvv7ci4u9dgxmQ+1GQCGtwfRm2WmI8EIiH8+ifbXSNxyFDpPr8yTgQ==
@@ -7507,7 +7507,7 @@ gatsby-telemetry@^1.3.10:
     stack-utils "1.0.2"
     uuid "3.4.0"
 
-gatsby-transformer-sharp@^2.5.3:
+gatsby-transformer-sharp@^2.5.4:
   version "2.5.4"
   resolved "https://registry.yarnpkg.com/gatsby-transformer-sharp/-/gatsby-transformer-sharp-2.5.4.tgz#410b4d42d1bba16eced34468fcb3127e6bb53545"
   integrity sha512-3Dx6C7UJiFhjooElQ9O9b5HPMUpySrDYVVAkAAezOMojJwyn/FDws0Oiy6/B6jHjdRtWL4N2F0Vjr2R02Cqo7A==
@@ -12593,7 +12593,7 @@ react-focus-lock@^2.3.1:
     use-callback-ref "^1.2.1"
     use-sidecar "^1.0.1"
 
-react-helmet@^6.0.0:
+react-helmet@^6.0.0, react-helmet@^6.1.0:
   version "6.1.0"
   resolved "https://registry.yarnpkg.com/react-helmet/-/react-helmet-6.1.0.tgz#a750d5165cb13cf213e44747502652e794468726"
   integrity sha512-4uMzEY9nlDlgxr61NL3XbKRy1hEkXmKNXhjbAIOVw5vcFrsdYbH2FEwcNyWvWinl103nXgzYNlns9ca+8kFiWw==
