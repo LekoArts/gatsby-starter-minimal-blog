@@ -1673,10 +1673,10 @@
     gatsby-transformer-sharp "^2.5.4"
     lodash.kebabcase "^4.1.1"
 
-"@lekoarts/gatsby-theme-minimal-blog@^2.3.8":
-  version "2.3.8"
-  resolved "https://registry.yarnpkg.com/@lekoarts/gatsby-theme-minimal-blog/-/gatsby-theme-minimal-blog-2.3.8.tgz#2a12e54892c74e3557b36e226061cc255d7f4e08"
-  integrity sha512-zxwGgorXTpi7yU+S2X6BE96xdZDG8Z2U6mLoq+pHtyB8vLEz2Ewxbt1csaaKmInH3JEUvFvDU5YD6xYE1G1R6g==
+"@lekoarts/gatsby-theme-minimal-blog@^2.3.9":
+  version "2.3.9"
+  resolved "https://registry.yarnpkg.com/@lekoarts/gatsby-theme-minimal-blog/-/gatsby-theme-minimal-blog-2.3.9.tgz#eb87cb4ab4c3acbfe997834fac46dee4689a00b0"
+  integrity sha512-CLhKCo2Flg+o5TZT/ECsjt3VcDPXAFmkPj80jp7nm4xyj1K+0AAY0Y7qd5gYTqv6H5BsKtdmAHy8X3V1TMiMbg==
   dependencies:
     "@lekoarts/gatsby-theme-minimal-blog-core" "^2.3.6"
     "@theme-ui/color" "^0.3.1"
@@ -2789,9 +2789,9 @@ acorn@^6.1.1, acorn@^6.4.1:
   integrity sha512-ZVA9k326Nwrj3Cj9jlh3wGFutC2ZornPNARZwsNYqQYgN0EsV2d53w5RN/co65Ohn4sUAUtb1rSUAOD6XN9idA==
 
 acorn@^7.1.1, acorn@^7.2.0:
-  version "7.3.0"
-  resolved "https://registry.yarnpkg.com/acorn/-/acorn-7.3.0.tgz#34025cfa3ca25b3240d80700dc3bb695f8d86614"
-  integrity sha512-Q/reetejf1Yf8vY7wyZI8DOsrMr9r7RfnDYBVjIdE61Rk8atUkbV1Kyi/diJzgAWiDiHEPWpNoqpPb+2CUbudQ==
+  version "7.3.1"
+  resolved "https://registry.yarnpkg.com/acorn/-/acorn-7.3.1.tgz#85010754db53c3fbaf3b9ea3e083aa5c5d147ffd"
+  integrity sha512-tLc0wSnatxAQHVHUapaHdz72pi9KUyHjq5KyHjGg9Y8Ifdc79pTh2XvI6I1/chZbnM7QtNKzh66ooDogPZSleA==
 
 address@1.0.3:
   version "1.0.3"
