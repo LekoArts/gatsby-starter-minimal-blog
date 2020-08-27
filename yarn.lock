@@ -1448,10 +1448,10 @@
     "@babel/runtime" "^7.7.2"
     regenerator-runtime "^0.13.3"
 
-"@lekoarts/gatsby-theme-minimal-blog-core@^2.3.11":
-  version "2.3.11"
-  resolved "https://registry.yarnpkg.com/@lekoarts/gatsby-theme-minimal-blog-core/-/gatsby-theme-minimal-blog-core-2.3.11.tgz#c5eb8d83102a3c316318bbfc8fa70372fe576255"
-  integrity sha512-bjgwZbmw/OI9euBPJoYFZjrsSTfwjW3aNw6hVeii6YClT8qKQP2orT8YLvyCiRHd5nmiSoigysrgV7gMCHVclg==
+"@lekoarts/gatsby-theme-minimal-blog-core@^2.4.0":
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/@lekoarts/gatsby-theme-minimal-blog-core/-/gatsby-theme-minimal-blog-core-2.4.0.tgz#9ece35ff68b01b5a01750857bad945d3f13c7074"
+  integrity sha512-VXxWCrM8hywm3MQsIM2NVVyFTEDgqykmnl/KHdhsOAexgxxxtu009Vos1nl+L5DoYi9DyHbeDbNUZZbRgjqpKg==
   dependencies:
     "@mdx-js/mdx" "^1.6.16"
     "@mdx-js/react" "^1.6.16"
@@ -1463,12 +1463,12 @@
     gatsby-transformer-sharp "^2.5.13"
     lodash.kebabcase "^4.1.1"
 
-"@lekoarts/gatsby-theme-minimal-blog@^2.4.2":
-  version "2.4.2"
-  resolved "https://registry.yarnpkg.com/@lekoarts/gatsby-theme-minimal-blog/-/gatsby-theme-minimal-blog-2.4.2.tgz#83ddd46bd2a825be64b49fdf06f118bd7b02b3d5"
-  integrity sha512-Ft8OEYK81yuN6mCaZe0wJs12Kmi42Is8fHB/vD5mVMtYnqG0X38NgKwX5cO4aoo+1YYw/uxhP0IcG4EFcsXjvw==
+"@lekoarts/gatsby-theme-minimal-blog@^2.5.0":
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/@lekoarts/gatsby-theme-minimal-blog/-/gatsby-theme-minimal-blog-2.5.0.tgz#a8cdea6f19d49055e9e78d41fc25f053a8e41d81"
+  integrity sha512-jP22bMxWx1jveO0SZXXjf0SO7Z4Fj+kQAWkN03pqIS+bDx2REFG2X8ZOJ079kNWE8ZmPyU8skvx/GYUYp5boLA==
   dependencies:
-    "@lekoarts/gatsby-theme-minimal-blog-core" "^2.3.11"
+    "@lekoarts/gatsby-theme-minimal-blog-core" "^2.4.0"
     "@loadable/component" "^5.13.1"
     "@theme-ui/color" "^0.3.1"
     "@theme-ui/components" "^0.3.1"
@@ -4908,9 +4908,9 @@ dataloader@^1.4.0:
   integrity sha512-68s5jYdlvasItOJnCuI2Q9s4q98g0pCyL3HrcKJu8KNugUl8ahgmZYg38ysLTgQjjXX3H8CJLkAvWrclWfcalw==
 
 date-fns@^2.0.1, date-fns@^2.14.0, date-fns@^2.8.1:
-  version "2.15.0"
-  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.15.0.tgz#424de6b3778e4e69d3ff27046ec136af58ae5d5f"
-  integrity sha512-ZCPzAMJZn3rNUvvQIMlXhDr4A+Ar07eLeGsGREoWU19a3Pqf5oYa+ccd+B3F6XVtQY6HANMFdOQ8A+ipFnvJdQ==
+  version "2.16.0"
+  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.16.0.tgz#d34f0f5f2fd498c984513042e8f7247ea86c4cb7"
+  integrity sha512-DWTRyfOA85sZ4IiXPHhiRIOs3fW5U6Msrp+gElXARa6EpoQTXPyHQmh7hr+ssw2nx9FtOQWnAMJKgL5vaJqILw==
 
 debug@2, debug@2.6.9, debug@^2.2.0, debug@^2.3.3, debug@^2.6.0, debug@^2.6.6, debug@^2.6.9:
   version "2.6.9"
@@ -14309,9 +14309,9 @@ timers-browserify@^2.0.4:
     setimmediate "^1.0.4"
 
 timm@^1.6.1:
-  version "1.6.2"
-  resolved "https://registry.yarnpkg.com/timm/-/timm-1.6.2.tgz#dfd8c6719f7ba1fcfc6295a32670a1c6d166c0bd"
-  integrity sha512-IH3DYDL1wMUwmIlVmMrmesw5lZD6N+ZOAFWEyLrtpoL9Bcrs9u7M/vyOnHzDD2SMs4irLkVjqxZbHrXStS/Nmw==
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/timm/-/timm-1.7.0.tgz#c538100a58d066a53cb6cadeb8fb6b0dfd66e270"
+  integrity sha512-oVYHPG5KiUJ3KrbBTmW2kTauIO9E1lDEUM6K92HVuwnPfTt7W8UXZG3vqOo4tVaHRI9AHToVHqhzIUUFkDN6rA==
 
 timsort@^0.3.0:
   version "0.3.0"
