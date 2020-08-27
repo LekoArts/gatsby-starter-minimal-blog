@@ -1463,10 +1463,10 @@
     gatsby-transformer-sharp "^2.5.13"
     lodash.kebabcase "^4.1.1"
 
-"@lekoarts/gatsby-theme-minimal-blog@^2.4.1":
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/@lekoarts/gatsby-theme-minimal-blog/-/gatsby-theme-minimal-blog-2.4.1.tgz#4acd7bb901d9d17cbe95ff759938bd28c6ff0249"
-  integrity sha512-Byt0yev6J33wTCs+dd2nFhGqZcBiVHby93UBXkaU01ae3gFAwt67+ekfd9tj7q+Yl/HSO2igGTjrnvYQ/WWxZw==
+"@lekoarts/gatsby-theme-minimal-blog@^2.4.2":
+  version "2.4.2"
+  resolved "https://registry.yarnpkg.com/@lekoarts/gatsby-theme-minimal-blog/-/gatsby-theme-minimal-blog-2.4.2.tgz#83ddd46bd2a825be64b49fdf06f118bd7b02b3d5"
+  integrity sha512-Ft8OEYK81yuN6mCaZe0wJs12Kmi42Is8fHB/vD5mVMtYnqG0X38NgKwX5cO4aoo+1YYw/uxhP0IcG4EFcsXjvw==
   dependencies:
     "@lekoarts/gatsby-theme-minimal-blog-core" "^2.3.11"
     "@loadable/component" "^5.13.1"
