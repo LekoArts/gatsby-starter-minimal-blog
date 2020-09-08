@@ -6,7 +6,23 @@ const shouldAnalyseBundle = process.env.ANALYSE_BUNDLE
 
 module.exports = {
   siteMetadata: {
-    siteTitleAlt: `Minimal Blog - Gatsby Theme`,
+    // Used for the title template on pages other than the index site
+    siteTitle: `Rajat's blog`,
+    // Default title of the page
+    siteTitleAlt: `Rajat's blog`,
+    // Can be used for e.g. JSONLD
+    siteHeadline: `Rajat's blog`,
+    // Will be used to generate absolute URLs for og:image etc.
+    siteUrl: `https://guptarajat.me`,
+    // Used for SEO
+    siteDescription: `Portfolio and blog`,
+    // Will be set on the <html /> tag
+    siteLanguage: `en`,
+    // Used for og:image and must be placed inside the `static` folder
+    siteImage: ``,
+    // Twitter Handle
+    author: `@rajatguptaa57`,
+    // Links displayed in the header on the right side
   },
   plugins: [
     {
@@ -22,15 +38,27 @@ module.exports = {
             title: `About`,
             slug: `/about`,
           },
+          {
+            title: `Contact`,
+            slug: `/contact`,
+          },
         ],
         externalLinks: [
           {
             name: `Twitter`,
-            url: `https://twitter.com/lekoarts_de`,
+            url: `https://twitter.com/rajatguptaa57`,
           },
           {
-            name: `Instagram`,
-            url: `https://www.instagram.com/lekoarts.de/`,
+            name: `LinkedIn`,
+            url: `https://www.linkedin.com/in/rajatguptaa57/`,
+          },
+          {
+            name: `GitHub`,
+            url: `https://www.github.com/rajatguptaa57/`,
+          },
+          {
+            name: `Medium`,
+            url: `https://www.medium.com/@rajatguptaa57/`,
           },
         ],
       },
