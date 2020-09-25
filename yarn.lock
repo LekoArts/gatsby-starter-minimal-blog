@@ -1451,10 +1451,10 @@
     "@babel/runtime" "^7.7.2"
     regenerator-runtime "^0.13.3"
 
-"@lekoarts/gatsby-theme-minimal-blog-core@^2.4.4":
-  version "2.4.4"
-  resolved "https://registry.yarnpkg.com/@lekoarts/gatsby-theme-minimal-blog-core/-/gatsby-theme-minimal-blog-core-2.4.4.tgz#083c54fddc4b38902aa687c186fdd12e01ffa7ef"
-  integrity sha512-+mjpAbj2t2u6DF9vI+xeXHl+hzOjz1e57o2wvBum5UaQlycMGgxK9MleFp9LG/iTDBjI/+lqYLAoGQXD/DEg9Q==
+"@lekoarts/gatsby-theme-minimal-blog-core@^2.5.0":
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/@lekoarts/gatsby-theme-minimal-blog-core/-/gatsby-theme-minimal-blog-core-2.5.0.tgz#0f212e823d477332e3b0b2b7c9490e4e60fdd3c9"
+  integrity sha512-9N3ybU1At3Ret14SiYEnzwpgbUip4ISFH3AVW4UPe/tduCBsfIYCEYnS6R+5KwOmRJlGHLIOEDoZjU/ZI/Q79w==
   dependencies:
     "@mdx-js/mdx" "^1.6.18"
     "@mdx-js/react" "^1.6.18"
@@ -1466,12 +1466,12 @@
     gatsby-transformer-sharp "^2.5.15"
     lodash.kebabcase "^4.1.1"
 
-"@lekoarts/gatsby-theme-minimal-blog@^2.5.4":
-  version "2.5.4"
-  resolved "https://registry.yarnpkg.com/@lekoarts/gatsby-theme-minimal-blog/-/gatsby-theme-minimal-blog-2.5.4.tgz#0a7d13ed9418e0b207f265c296da5d2d81b20cba"
-  integrity sha512-T9p1pN5zydMFtecZnplYYs5GUMzOMgmPpvxWNxDqoazJTAqbBo7fM6FvqDxApfq4pQS2tArLWNYSQ2lbwsR74w==
+"@lekoarts/gatsby-theme-minimal-blog@^2.6.0":
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/@lekoarts/gatsby-theme-minimal-blog/-/gatsby-theme-minimal-blog-2.6.0.tgz#385b4076a0ea8a2ef10c71bec231558b1d42b3ff"
+  integrity sha512-AzpMB/c/+2ie85XnwlEl7CvHTdnbIQHZaVJGch+A7wIIsdcJfhcoR2k+wZ+GKNB+tTSAj/6wvRH6zvVdBXjH7A==
   dependencies:
-    "@lekoarts/gatsby-theme-minimal-blog-core" "^2.4.4"
+    "@lekoarts/gatsby-theme-minimal-blog-core" "^2.5.0"
     "@loadable/component" "^5.13.2"
     "@theme-ui/color" "^0.3.1"
     "@theme-ui/components" "^0.3.1"
