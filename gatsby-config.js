@@ -15,7 +15,7 @@ module.exports = {
     // Will be used to generate absolute URLs for og:image etc.
     siteUrl: `https://guptarajat.me`,
     // Used for SEO
-    siteDescription: ``,
+    siteDescription: `An amalgamation of my thoughts, books, and tech.`,
     // Will be set on the <html /> tag
     siteLanguage: `en`,
     // Used for og:image and must be placed inside the `static` folder
@@ -31,30 +31,18 @@ module.exports = {
       options: {
         navigation: [
           {
-            title: `Blog`,
+            title: `All Posts`,
             slug: `/blog`,
           },
           {
             title: `About`,
             slug: `/about`,
           },
-          {
-            title: `Contact`,
-            slug: `/contact`,
-          },
         ],
         externalLinks: [
           {
             name: `Twitter`,
             url: `https://twitter.com/rajatguptaa57`,
-          },
-          {
-            name: `LinkedIn`,
-            url: `https://www.linkedin.com/in/rajatguptaa57/`,
-          },
-          {
-            name: `GitHub`,
-            url: `https://www.github.com/rajatguptaa57/`,
           },
           {
             name: `Medium`,
