@@ -6731,7 +6731,7 @@ gatsby-plugin-catch-links@^4.15.0:
     "@babel/runtime" "^7.15.4"
     escape-string-regexp "^1.0.5"
 
-gatsby-plugin-feed@^4.12.1:
+gatsby-plugin-feed@^4.18.1:
   version "4.18.1"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-feed/-/gatsby-plugin-feed-4.18.1.tgz#74606a86e9e7d74063dfac05cb5a0baa6c845149"
   integrity sha512-akP96zP2eUu3O70LMtubq+22kAe0OEbZi4N76Bi+k0ZrD8p14AQkjX9XLCGjqfmcdYmvdtxTOIf5Z7aZKh0DkQ==
@@ -6744,7 +6744,7 @@ gatsby-plugin-feed@^4.12.1:
     lodash.merge "^4.6.2"
     rss "^1.2.2"
 
-gatsby-plugin-gatsby-cloud@^4.12.1:
+gatsby-plugin-gatsby-cloud@^4.18.1:
   version "4.18.1"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-gatsby-cloud/-/gatsby-plugin-gatsby-cloud-4.18.1.tgz#3b41576f1e2fc947216683396f76ea693d773761"
   integrity sha512-FDrLl3w3WHVJCzddTYcSCqEi4DLvS9e8/9LY312QnxOqPv+fnLoSDYDyqazyK9/mu6gMz8cUU7UoHsMqpZNbCg==
@@ -6757,7 +6757,7 @@ gatsby-plugin-gatsby-cloud@^4.12.1:
     lodash "^4.17.21"
     webpack-assets-manifest "^5.1.0"
 
-gatsby-plugin-manifest@^4.12.1:
+gatsby-plugin-manifest@^4.18.1:
   version "4.18.1"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-4.18.1.tgz#e99bacadbf8af8f81e5d32df2612bd0110623288"
   integrity sha512-LR4S/MCbUP7Fk3A4xwrA9nhIx9RjDTAE5DAXfXMKvnh1f6an6d+x9XKDqNnGtixVOnlfy3jK0IxLzC1HCjNKSQ==
@@ -6860,7 +6860,7 @@ gatsby-plugin-sharp@^4.15.1:
     sharp "^0.30.3"
     svgo "1.3.2"
 
-gatsby-plugin-sitemap@^5.12.1:
+gatsby-plugin-sitemap@^5.18.1:
   version "5.18.1"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-sitemap/-/gatsby-plugin-sitemap-5.18.1.tgz#b57a2dc132a21531cf37f1a0406e0d24b2d42630"
   integrity sha512-GocioXBB8538/fBMNvp/1pPGGJUhowCsHsIsJ3+8AQ7NniOOpj1FSrUm9XOT9Tb4rmur+YjsgEV3ptm5uU27ow==
@@ -7011,7 +7011,7 @@ gatsby-worker@^1.18.0:
     "@babel/core" "^7.15.5"
     "@babel/runtime" "^7.15.4"
 
-gatsby@^4.12.1:
+gatsby@^4.18.2:
   version "4.18.2"
   resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-4.18.2.tgz#694613a37c6cb17db59d0efcb6f54486c2e120aa"
   integrity sha512-ZWdo0TXsSRmwlmOeeuoWwXKQNteHm9VxJWF9Ud+c33r7ZXQgTA5WtRYjiBpjZuNAUwsiONNAe+wKK5jVY8B4LQ==
